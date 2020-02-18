@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -173,11 +175,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002181718214_EnabledMigration.cs" />
+    <Compile Include="Migrations\202002181718214_EnabledMigration.Designer.cs">
+      <DependentUpon>202002181718214_EnabledMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="MSreplication_options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="spt_fallback_db.cs" />
+    <Compile Include="spt_fallback_dev.cs" />
+    <Compile Include="spt_fallback_usg.cs" />
+    <Compile Include="spt_monitor.cs" />
+    <Compile Include="spt_values.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="SystematycznoscContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -251,6 +265,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002181718214_EnabledMigration.resx">
+      <DependentUpon>202002181718214_EnabledMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
