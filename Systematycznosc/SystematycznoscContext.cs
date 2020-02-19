@@ -1,16 +1,21 @@
+using Microsoft.AspNet.Identity.EntityFramework;
+
 namespace Systematycznosc
 {
     using System;
     using System.Data.Entity;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
+    using Systematycznosc.Models;
+    
 
-    public partial class SystematycznoscContext : DbContext
+    public partial class SystematycznoscContext : IdentityDbContext<ApplicationUser>
     {
         public SystematycznoscContext()
             : base("name=SystematycznoscContext")
         {
         }
+
 
         public virtual DbSet<MSreplication_options> MSreplication_options { get; set; }
         public virtual DbSet<spt_fallback_db> spt_fallback_db { get; set; }
@@ -18,6 +23,11 @@ namespace Systematycznosc
         public virtual DbSet<spt_fallback_usg> spt_fallback_usg { get; set; }
         public virtual DbSet<spt_monitor> spt_monitor { get; set; }
         public virtual DbSet<spt_values> spt_values { get; set; }
+
+        public static SystematycznoscContext Create()
+        {
+            return new SystematycznoscContext();
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
