@@ -9,8 +9,8 @@ namespace Systematycznosc.ViewModels
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
         [EmailAddress]
+        [Display(Name = "Email")]
         public string Email { get; set; }
 
         [Required]

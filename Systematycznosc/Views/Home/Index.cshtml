@@ -1,20 +1,4 @@
 ﻿@model LoginViewModel
 @using Systematycznosc.ViewModels
 @{
-    Layout = "~/Views/Shared/EmptyPage.cshtml";
-}
-
-@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <div id="container">
-        <form>
-            @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
-            @Html.PasswordFor(m => m.Password, new { @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
-            @Html.CheckBoxFor(m => m.RememberMe)
-            @Html.LabelFor(m => m.RememberMe)
-            @Html.ActionLink("Zarejestruj", "Register", "Account")
-            <input type="submit" value="Zaloguj się">
-        </form>
-    </div>
 }

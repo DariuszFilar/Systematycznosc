@@ -1,5 +1,6 @@
 ﻿@model Systematycznosc.ViewModels.RegisterViewModel
 @using Systematycznosc.ViewModels
+@using Microsoft.AspNet.Identity
 
 @{
     Layout = "~/Views/Shared/EmptyPage.cshtml";
@@ -11,9 +12,19 @@
     @Html.AntiForgeryToken()
     <div id="container">
         <form>
+            @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
             @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
+            @if (!Html.ViewData.ModelState.IsValid)
+            {
+                {<div class="text-danger">
+                        Adres E-mail jest już zajęty.
+                    </div>}
+            }
+            @Html.ValidationMessageFor(model => model.Email)
             @Html.PasswordFor(m => m.Password, new { @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @type = "password", placeholder = "Potwierdź hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
+            @Html.ValidationMessageFor(model => model.Password)
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @type = "password", placeholder = "Potwierdź hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='Potwierdź hasło'" })
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
             <input type="submit" class="btn btn-default" value="Zarejestruj" />
             @Html.ActionLink("Zaloguj się", "Index", "Home")
         </form>

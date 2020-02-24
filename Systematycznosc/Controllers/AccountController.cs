@@ -81,7 +81,8 @@ namespace Systematycznosc.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    //return RedirectToLocal(returnUrl);
+                    return RedirectToAction("Index", "Home");
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -156,6 +157,7 @@ namespace Systematycznosc.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
@@ -442,7 +444,7 @@ namespace Systematycznosc.Controllers
         {
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError("", error);
+                ModelState.AddModelError("!", error);
             }
         }
 
