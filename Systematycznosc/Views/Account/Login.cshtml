@@ -12,7 +12,7 @@
         <form>
             @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
             @Html.ValidationMessageFor(model => model.Email)
-            @Html.PasswordFor(m => m.Password, new {id="customerEmailId", @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
+            @Html.PasswordFor(m => m.Password, new { id = "customerEmailId", @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
             @Html.CheckBoxFor(m => m.RememberMe)
             @Html.LabelFor(m => m.RememberMe)
             @Html.ActionLink("Zarejestruj", "Register", "Account")
@@ -20,13 +20,8 @@
         </form>
     </div>
 }
-@section scripts{
+@section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-    <script>
-        $(document).ready(function () {
-            $('#customerEmailId').attr('required', true);
-        })
-    </script>
 }
 
 

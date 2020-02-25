@@ -12,12 +12,11 @@
     @Html.AntiForgeryToken()
     <div id="container">
         <form>
-            @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
             @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
             @if (!Html.ViewData.ModelState.IsValid)
             {
                 {<div class="text-danger">
-                        Adres E-mail jest już zajęty.
+                        Adres E-mail: @Model.Email.ToString() jest już zajęty.
                     </div>}
             }
             @Html.ValidationMessageFor(model => model.Email)

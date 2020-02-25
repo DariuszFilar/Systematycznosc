@@ -82,7 +82,7 @@ namespace Systematycznosc.Controllers
             {
                 case SignInStatus.Success:
                     //return RedirectToLocal(returnUrl);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", new {RememberMe = model.RememberMe });
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
