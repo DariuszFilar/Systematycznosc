@@ -183,9 +183,14 @@
     <Compile Include="Migrations\202002191627006_FixingViewModels.Designer.cs">
       <DependentUpon>202002191627006_FixingViewModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002261357181_AddedUserProfiles.cs" />
+    <Compile Include="Migrations\202002261357181_AddedUserProfiles.Designer.cs">
+      <DependentUpon>202002261357181_AddedUserProfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\UserProfile.cs" />
     <Compile Include="MSreplication_options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="spt_fallback_db.cs" />
@@ -210,6 +215,7 @@
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\SetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
     <Compile Include="ViewModels\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\VerifyPhoneNumberViewModel.cs" />
   </ItemGroup>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002191627006_FixingViewModels.resx">
       <DependentUpon>202002191627006_FixingViewModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002261357181_AddedUserProfiles.resx">
+      <DependentUpon>202002261357181_AddedUserProfiles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
