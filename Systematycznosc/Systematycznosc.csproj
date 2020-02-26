@@ -270,6 +270,10 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\EmptyPage.cshtml" />
+    <Content Include="Views\Home\MorningQuestions.cshtml" />
+    <Content Include="Views\Home\EveningQuestions.cshtml" />
+    <Content Include="Views\Home\Goals.cshtml" />
+    <Content Include="Views\Home\TODO.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

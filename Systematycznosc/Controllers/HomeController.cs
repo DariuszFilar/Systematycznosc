@@ -27,5 +27,30 @@ namespace Systematycznosc.Controllers
 
             return View();
         }
+
+        public ActionResult MorningQuestions()
+        {
+            ViewBag.Message = "MorningQuestions.";
+
+            return View();
+        }
+        public ActionResult EveningQuestions()
+        {
+            ViewBag.Message = "EveningQuestions.";
+
+            return View();
+        }
+        public ActionResult Goals()
+        {
+            ViewBag.Message = "Goals.";
+
+            return View();
+        }
+        public ActionResult TODO()
+        {
+            ViewBag.Message = "TODO.";
+
+            return View();
+        }
     }
 }
