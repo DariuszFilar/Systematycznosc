@@ -20,7 +20,8 @@ namespace Systematycznosc.ViewModels
         public string Id { get; set; }
 
         public string Gender { get; set; }
-        public string[] GendersForDropDown => new string[] { "Mężczyzna", "Kobieta" };
+        public string[] GendersForDropDown => new string[] {"Mężczyzna", "Kobieta" };
+
 
         public int Age => GetAge(BirthDate);
 

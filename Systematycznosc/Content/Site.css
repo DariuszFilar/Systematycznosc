@@ -1,5 +1,6 @@
 ﻿body {
-    background-image: url(../Content/Images/EmptyPage.jpg);
+    /*background-image: url(../Content/Images/EmptyPage.jpg);*/
+    background-color:#1abc9c;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -8,6 +9,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 56px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,4 +24,12 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#navbar-top {
+    min-height: 96px;
+    max-height: 96px;
+    padding: 24px;
+    font-weight: 700;
+    background-color: #2c3e50;
 }

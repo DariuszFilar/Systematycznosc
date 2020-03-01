@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("Create", "Profile", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Manage", "Profile", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -24,7 +24,7 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Gender, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
-            @Html.DropDownListFor(x => x.Gender, new SelectList(Model.GendersForDropDown))
+            @Html.DropDownListFor(x => x.Gender, new SelectList(Model.GendersForDropDown), "---wybierz---")
         </div>
     </div>
     <div class="form-group">
@@ -37,5 +37,5 @@
 
     <button type="submit" value="Log in" class="btn bg-info">Zapisz</button>
 
-    @Html.ActionLink("Powród do profilu", "Index", "profile", null, new { @class = "btn bg-info icon-user nav_bar_first_small_screen", style = "color:white;" })
+    @Html.ActionLink("Powród do profilu", "Index", "profile", null, new { @class = "btn bg-info", style = "color: black" })
 }
