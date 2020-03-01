@@ -13,15 +13,15 @@ namespace Systematycznosc.ViewModels
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "Hasło musi mieć minimum {2} znaków.", MinimumLength = 6)]
+        [Required(ErrorMessage = "Musisz wpisać hasło <br/>")]
+        [StringLength(100, ErrorMessage = "Hasło musi mieć minimum {2} znaków.<br/> ", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "Hasła nie są identyczne.")]
+        [Compare("Password", ErrorMessage = "Hasła nie są identyczne.<br/>")]
         public string ConfirmPassword { get; set; }
     }
 }

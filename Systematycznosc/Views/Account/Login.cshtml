@@ -1,5 +1,6 @@
 ﻿@model Systematycznosc.ViewModels.LoginViewModel
 @using Systematycznosc.ViewModels
+@using Microsoft.AspNet.Identity
 
 @{
     Layout = "~/Views/Shared/EmptyPage.cshtml";
@@ -10,9 +11,14 @@
     @Html.AntiForgeryToken()
     <div id="container">
         <form>
+            @if (!Html.ViewData.ModelState.IsValid)
+                {<div class="text-danger">
+                        Nieudana próba zalogowania.
+                    </div>}
             @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
             @Html.ValidationMessageFor(model => model.Email)
             @Html.PasswordFor(m => m.Password, new { id = "customerEmailId", @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
+            @Html.ValidationMessageFor(model => model.Password)
             @Html.CheckBoxFor(m => m.RememberMe)
             @Html.LabelFor(m => m.RememberMe)
             @Html.ActionLink("Zarejestruj", "Register", "Account")
@@ -20,6 +26,7 @@
         </form>
     </div>
 }
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

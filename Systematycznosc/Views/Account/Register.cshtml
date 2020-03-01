@@ -6,19 +6,16 @@
     Layout = "~/Views/Shared/EmptyPage.cshtml";
 }
 
-
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <div id="container">
         <form>
-            @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
             @if (!Html.ViewData.ModelState.IsValid)
-            {
                 {<div class="text-danger">
-                        Adres E-mail: @Model.Email.ToString() jest już zajęty.
+                        Adres e-mail: @Model.Email.ToString() jest już zajęty.
                     </div>}
-            }
+            @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
             @Html.ValidationMessageFor(model => model.Email)
             @Html.PasswordFor(m => m.Password, new { @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
             @Html.ValidationMessageFor(model => model.Password)
@@ -29,7 +26,6 @@
         </form>
     </div>
 }
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -71,8 +71,7 @@ namespace Systematycznosc.Controllers
         {
             if (!ModelState.IsValid)
             {
-                //return View(model);
-                RedirectToAction("Index", "home");
+                return View(model);
             }
 
             // This doesn't count login failures towards account lockout
@@ -89,9 +88,8 @@ namespace Systematycznosc.Controllers
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return RedirectToAction("Index", "home");
-                    //return View(model);
+                    ModelState.AddModelError("", "Nieudana próba zalogowania.");
+                    return View(model);
             }
         }
 
