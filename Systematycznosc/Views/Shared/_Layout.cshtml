@@ -22,9 +22,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("CREDO", "TODO", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
-                    <li>@Html.ActionLink("Poranne Pytania", "MorningQuestions", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
-                    <li>@Html.ActionLink("Wieczorne Pytania", "EveningQuestions", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
+                    <li>@Html.ActionLink("Credo", "Credo", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
+                    <li>@Html.ActionLink("Pytania", "Questions", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
                     <li>@Html.ActionLink("Cele", "Goals", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
                     <li>@Html.ActionLink("Do zrobienia", "TODO", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
                 </ul>
@@ -35,9 +34,8 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>Copyright &copy; @DateTime.Now.Year - Dariusz Filar</p>
         </footer>
     </div>
 

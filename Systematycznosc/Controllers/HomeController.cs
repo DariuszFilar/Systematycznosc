@@ -3,53 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Systematycznosc.ViewModels;
 
 namespace Systematycznosc.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
+        private SystematycznoscContext _context;
+        public HomeController() { _context = new SystematycznoscContext(); }
         public ActionResult Index()
         {
             return View();
         }
-
+        public ActionResult Credo()
+        {
+            CredoViewModel model = new CredoViewModel();
+            return View(model);
+        }
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
-
-        public ActionResult MorningQuestions()
+        public ActionResult Questions()
         {
-            ViewBag.Message = "MorningQuestions.";
-
-            return View();
-        }
-        public ActionResult EveningQuestions()
-        {
-            ViewBag.Message = "EveningQuestions.";
-
             return View();
         }
         public ActionResult Goals()
         {
-            ViewBag.Message = "Goals.";
-
             return View();
         }
         public ActionResult TODO()
         {
-            ViewBag.Message = "TODO.";
-
             return View();
         }
     }

@@ -24,6 +24,7 @@ namespace Systematycznosc
         public virtual DbSet<spt_monitor> spt_monitor { get; set; }
         public virtual DbSet<spt_values> spt_values { get; set; }
         public virtual DbSet<UserProfile> UserProfiles { get; set; }
+        public virtual DbSet<Credo> Credo { get; set; }
 
 
         public static SystematycznoscContext Create()
