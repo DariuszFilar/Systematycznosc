@@ -1,17 +1,16 @@
-﻿body:before{height:100%;}
-body {
+﻿body {
     background-image: url(../Content/Images/EmptyPage.jpg);
     /*background-color: #1abc9c;*/
-    padding-top: 50px;
-    padding-bottom: 20px;
-    height:100%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 56px;
+}
+
+html, body {
+    height: 100%;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -58,13 +57,17 @@ footer {
 }
 
 #CredoDiv {
-    background-color:lightsalmon !important;
+    /*background-color: lightsalmon !important;*/
+    background-image: url(../Content/Images/grey_wash_wall.jpg);
     padding-left: 70px;
     padding-right: 70px;
-    padding-top: 30px;
-    padding-bottom: 1px;
-    height:100%;
+    padding-top: 114px;
+    padding-bottom: 0px;
+    height: 100%;
+    position: absolute;
+    width: inherit;
 }
+
 .numberlist {
     width: auto;
 }
@@ -89,7 +92,8 @@ footer {
         padding: .4em .4em .4em 2em;
         *padding: .4em;
         margin: .5em 0;
-        background-color: #2c3e50;
+        /*background-color: #2c3e50;*/
+        background-color: lightslategray;
         color: #FFF;
         text-decoration: none;
         -moz-border-radius: .3em;
@@ -109,15 +113,18 @@ footer {
             left: -1.3em;
             top: 50%;
             margin-top: -1.3em;
-            background: #87ceeb;
+            /*background: #87ceeb;*/
+            background-color: lightcoral;
             height: 2em;
             width: 2em;
-            line-height: 2em;
+            /*line-height: 2em;*/
+            line-height: 37px;
             border: .3em solid #fff;
             text-align: center;
             font-weight: bold;
             -moz-border-radius: 2em;
             -webkit-border-radius: 2em;
             border-radius: 2em;
-            color: #FFF;
+            /*color: #FFF;*/
+            color:gold;
         }

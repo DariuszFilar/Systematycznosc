@@ -21,6 +21,11 @@ namespace Systematycznosc.Controllers
             CredoViewModel model = new CredoViewModel();
             return View(model);
         }
+        public ActionResult CredoEdit()
+        {
+            CredoViewModel model = new CredoViewModel();
+            return View(model);
+        }
         public ActionResult About()
         {
             return View();

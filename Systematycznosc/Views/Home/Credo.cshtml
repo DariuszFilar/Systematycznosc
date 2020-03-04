@@ -2,20 +2,22 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div id="">
-    
-    <div class="numberlist" id="CredoDiv">
-        <div style="color:white">Czyli najważniejszy rzeczy którymi się kierujesz.</div>
+
+<div id="CredoDiv">
+    <div class="numberlist">
+        <div style="color:gold; font-size:55px; text-align:center;">CREDO</div>
+        <div style="color:white; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia:</div>
         <ol>
-            <li><a href="">To ja jestem odpowiedzialny za swoje życie.</a></li>
-            <li><a href="">2. To co myslę mnie spotyka.</a></li>
-            <li><a href="">3. Mój los zależy od moich nawyków.</a></li>
-            <li><a href="">4. Pamiętam kogo Kocham.</a></li>
-            <li><a href="">5. Dbam o rodzinę i przyjaciół.</a></li>
-            <li><a href="">6. Siła jest iluzją perswazji.</a></li>
-            <li><a href="">7. Jestem pewny siebie.</a></li>
-            <li><a href="">8. To ja stawiam warunki.</a></li>
+            
+            @for (int i = 1; i < 11; i++)
+            {
+                if (Model.Credo1 == null)
+                {
+                    <li><a href="">@Model.Credo1</a></li>
+                }
+            }
         </ol>
     </div>
+    <div>Dodaj/Edytuj</div>
 </div>
-    </div>
+
