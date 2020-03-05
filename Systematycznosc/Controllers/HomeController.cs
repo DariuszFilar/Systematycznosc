@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,12 +19,81 @@ namespace Systematycznosc.Controllers
         }
         public ActionResult Credo()
         {
-            CredoViewModel model = new CredoViewModel();
-            return View(model);
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+
+            if (userProfile != null)
+            {
+                CredoViewModel model = new CredoViewModel(userProfile);
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Manage", "Profile");
+            }
         }
+        [HttpGet]
         public ActionResult CredoEdit()
         {
-            CredoViewModel model = new CredoViewModel();
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+
+            if (credo != null)
+            {
+                CredoViewModel model = new CredoViewModel(credo);
+                return View(model);
+
+            }
+            else
+            {
+                CredoViewModel model = new CredoViewModel();
+                return View(model);
+
+            }
+
+        }
+        [HttpPost]
+        public ActionResult CredoEdit(CredoViewModel model)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null)
+                return View();
+
+            if (credo != null)
+            {
+                credo.Credo1 = model.Credo1;
+                credo.Credo2 = model.Credo2;
+                credo.Credo3 = model.Credo3;
+                credo.Credo4 = model.Credo4;
+                credo.Credo5 = model.Credo5;
+                credo.Credo6 = model.Credo6;
+                credo.Credo7 = model.Credo7;
+                credo.Credo8 = model.Credo8;
+                credo.Credo9 = model.Credo9;
+                credo.Credo10 = model.Credo10;
+            }
+            else
+            {
+                user.Credo = new Models.Credo
+                {
+                    Credo1 = model.Credo1,
+                    Credo2 = model.Credo2,
+                    Credo3 = model.Credo3,
+                    Credo4 = model.Credo4,
+                    Credo5 = model.Credo5,
+                    Credo6 = model.Credo6,
+                    Credo7 = model.Credo7,
+                    Credo8 = model.Credo8,
+                    Credo9 = model.Credo9,
+                    Credo10 = model.Credo10
+                };
+            }
+            _context.SaveChanges();
             return View(model);
         }
         public ActionResult About()

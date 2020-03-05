@@ -192,6 +192,10 @@
     <Compile Include="Migrations\202003021439004_AddedCredo.Designer.cs">
       <DependentUpon>202003021439004_AddedCredo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003051608099_AddedCredoInUserModel.cs" />
+    <Compile Include="Migrations\202003051608099_AddedCredoInUserModel.Designer.cs">
+      <DependentUpon>202003051608099_AddedCredoInUserModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -318,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003021439004_AddedCredo.resx">
       <DependentUpon>202003021439004_AddedCredo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003051608099_AddedCredoInUserModel.resx">
+      <DependentUpon>202003051608099_AddedCredoInUserModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
