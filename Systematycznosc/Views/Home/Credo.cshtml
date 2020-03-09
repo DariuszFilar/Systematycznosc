@@ -8,14 +8,47 @@
         <div style="color:gold; font-size:55px; text-align:center;">CREDO</div>
         <div style="color:white; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia:</div>
         <ol>
-            
-            @for (int i = 1; i < 11; i++)
+            @if (Model.Credo1 != null)
             {
-                if (Model.Credo1 == null)
-                {
-                    <li><a href="">@Model.Credo1</a></li>
-                }
+                <li><a href="">@Model.Credo1</a></li>
             }
+            @if (Model.Credo2 != null)
+            {
+                <li><a href="">@Model.Credo2</a></li>
+            }
+            @if (Model.Credo3 != null)
+            {
+                <li><a href="">@Model.Credo3</a></li>
+            }
+            @if (Model.Credo4 != null)
+            {
+                <li><a href="">@Model.Credo4</a></li>
+            }
+            @if (Model.Credo5 != null)
+            {
+                <li><a href="">@Model.Credo5</a></li>
+            }
+            @if (Model.Credo6 != null)
+            {
+                <li><a href="">@Model.Credo6</a></li>
+            }
+            @if (Model.Credo7 != null)
+            {
+                <li><a href="">@Model.Credo7</a></li>
+            }
+            @if (Model.Credo8 != null)
+            {
+                <li><a href="">@Model.Credo8</a></li>
+            }
+            @if (Model.Credo9 != null)
+            {
+                <li><a href="">@Model.Credo9</a></li>
+            }
+            @if (Model.Credo10 != null)
+            {
+                <li><a href="">@Model.Credo10</a></li>
+            }
+
         </ol>
     </div>
     <div>Dodaj/Edytuj</div>

@@ -21,10 +21,11 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
 
             if (userProfile != null)
             {
-                CredoViewModel model = new CredoViewModel(userProfile);
+                CredoViewModel model = new CredoViewModel(credo);
                 return View(model);
             }
             else
