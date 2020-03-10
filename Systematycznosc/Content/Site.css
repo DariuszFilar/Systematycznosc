@@ -126,5 +126,9 @@ footer {
             -webkit-border-radius: 2em;
             border-radius: 2em;
             /*color: #FFF;*/
-            color:gold;
+            color: gold;
         }
+
+#HoverNone {
+    text-decoration: none !important;
+}

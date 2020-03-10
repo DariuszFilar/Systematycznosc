@@ -23,9 +23,14 @@ namespace Systematycznosc.Controllers
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
             var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
 
-            if (userProfile != null)
+            if (userProfile != null && credo !=null)
             {
                 CredoViewModel model = new CredoViewModel(credo);
+                return View(model);
+            }
+            else if (userProfile != null && credo == null)
+            {
+                CredoViewModel model = new CredoViewModel();
                 return View(model);
             }
             else

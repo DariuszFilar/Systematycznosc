@@ -24,8 +24,19 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            UserProfileViewModel model = new UserProfileViewModel(userProfile);
-            return View(model);
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+
+            if (userProfile != null)
+            {
+                UserProfileViewModel model = new UserProfileViewModel(userProfile);
+                return View(model);
+            }
+            else
+            {
+                UserProfileViewModel model = new UserProfileViewModel();
+                return View(model);
+            }
+
         }
         [HttpPost]
         public ActionResult Manage(UserProfileViewModel model)
@@ -33,8 +44,17 @@ namespace Systematycznosc.Controllers
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
 
-            user.UserProfile = new UserProfile { Name = model.Name, Nickname = model.Nickname, Gender = model.Gender };
-
+            if (user.UserProfile != null)
+            {
+                user.UserProfile.Name = model.Name;
+                user.UserProfile.Nickname = model.Nickname;
+                user.UserProfile.Gender = model.Gender;
+                user.UserProfile.BirthDate = model.BirthDate;
+            }
+            else
+            {
+                user.UserProfile = new UserProfile { Id = model.Id, Name = model.Name, Nickname = model.Nickname, Gender = model.Gender };
+            }
             _context.SaveChanges();
             return View(model);
         }
