@@ -4,84 +4,94 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>CredoEdit</h2>
+<div id="CredoDiv" style="font-size:20px;">
+    @using (Html.BeginForm("CredoEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", style = " text-align: center;" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="text-align:center;">
 
-@using (Html.BeginForm("CredoEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-<div id="CredoDiv" style="">
-    <div class="form-group">
-        @Html.LabelFor(m => m.Credo1, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo1, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo1, "", new { @class = "text-danger" })
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo1, "Credo nr 1:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Credo1, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo1, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Credo2, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo2, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo2, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Credo3, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo3, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo3, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Credo4, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo4, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo4, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Credo5, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo5, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo5, "", new { @class = "text-danger" })
-        </div>
-    </div> <div class="form-group">
-        @Html.LabelFor(m => m.Credo6, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo6, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo6, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Credo7, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo7, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo7, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Credo8, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo8, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo8, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Credo9, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo9, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo9, "", new { @class = "text-danger" })
-        </div>
-    </div> <div class="form-group">
-        @Html.LabelFor(m => m.Credo10, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Credo10, new { @class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Credo10, "", new { @class = "text-danger" })
-        </div>
-    </div>
+        <div class="form-group" style="text-align:center;">
 
-    <button type="submit" value="Log in" class="btn bg-info">Zapisz</button>
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo2, "Credo nr 2:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Credo2, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
 
-    @Html.ActionLink("Powród do profilu", "Credo", "Home", null, new { @class = "btn bg-info icon-user nav_bar_first_small_screen", style = "color:white;" })
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo3, "Credo nr 3:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Credo3, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo4, "Credo nr 4:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Credo4, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo4, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo5, "Credo nr 5:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Credo5, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo5, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo6, "Credo nr 6:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Credo6, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo6, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo1, "Credo nr 7:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Credo7, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo7, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo8, "Credo nr 8:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Credo8, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo8, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo9, "Credo nr 9:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Credo9, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo9, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Credo10, "Credo nr 10:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; padding-left:0px;" })
+                @Html.TextBoxFor(m => m.Credo10, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Credo10, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <button type="submit" value="Log in" class="btn btn-warning">Zapisz</button>
+
+        @Html.ActionLink("Powród do Credo", "Credo", "Home", null, new { @class = "btn bg-info icon-user nav_bar_first_small_screen btn-warning", style = "color:white;" })
+
+    }
 </div>
-}
-
