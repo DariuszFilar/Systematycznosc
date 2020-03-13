@@ -15,7 +15,19 @@ namespace Systematycznosc.Controllers
         public HomeController() { _context = new SystematycznoscContext(); }
         public ActionResult Index()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+
+            if (credo != null)
+            {
+                UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
+                CredoViewModel Credo = new CredoViewModel();
+                wrapper.CredoViewModel = Credo;
+                wrapper.UserProfileViewModel = new UserProfileViewModel();
+                return View(wrapper);
+            }
+            else { return View(); }
         }
         public ActionResult Credo()
         {

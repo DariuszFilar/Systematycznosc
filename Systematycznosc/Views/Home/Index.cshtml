@@ -1,17 +1,19 @@
-﻿@model UserProfileViewModel
+﻿@model UserProfileViewModelWrapper
 @using Systematycznosc.ViewModels
 
 
-<div id="CredoDiv" style="padding-left: 0px;padding-right: 0px; padding-top:95px;">
-    <div id="HomeSection1">
+<div id="CredoDiv" style="padding-left: 0px;padding-right: 0px; padding-top:95px; padding-bottom:0px;">
+    <div id="HomeSection1" style="padding-bottom:0px;">
         <header class="masthead  text-white text-center">
             <div class=" d-flex align-items-center flex-column">
 
                 <!-- Masthead Avatar Image -->
-                <img class="masthead-avatar mb-5" src="img/avataaars.svg" alt="">
+                @*<img class="masthead-avatar mb-5" src="img/avataaars.svg" alt="">*@
+
+                <img src="~/Content/Images/darek.jpg" class="img-circle" style="max-width:305px; padding-top:85px;">
 
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Witaj @Model.UserProfileViewModel.Name</h1>
 
                 <!-- Icon Divider -->
                 <div class="divider-custom divider-light">
@@ -23,9 +25,20 @@
                 </div>
 
                 <!-- Masthead Subheading -->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+                <p class="masthead-subheading font-weight-light mb-0" style="font-size:20px; padding-bottom:85px; margin-bottom:0px;">W pomocniku systematyczności</p>
 
             </div>
         </header>
+    </div>
+    <div id="HomeSection2" style="padding-top:0px;">
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; margin-top:0px; padding-top:85px;">Twoje Credo:</h1>
+
+        <div class="divider-custom divider-light" style="">
+            <div class="divider-custom-line" style="background-color:#000!important"></div>
+            <div class="divider-custom-icon" >
+                <i class="glyphicon glyphicon-star" style="font-size: 55px; color:black!important;"></i>
+            </div>
+            <div class="divider-custom-line" style="background-color:#000!important"></div>
+        </div>
     </div>
 </div>
