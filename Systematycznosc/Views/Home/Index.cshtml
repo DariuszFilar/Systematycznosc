@@ -35,10 +35,57 @@
 
         <div class="divider-custom divider-light" style="">
             <div class="divider-custom-line" style="background-color:#000!important"></div>
-            <div class="divider-custom-icon" >
+            <div class="divider-custom-icon">
                 <i class="glyphicon glyphicon-star" style="font-size: 55px; color:black!important;"></i>
             </div>
             <div class="divider-custom-line" style="background-color:#000!important"></div>
+        </div>
+        <div class="numberlist">
+            <div style="color:gold; font-size:55px; text-align:center;">CREDO</div>
+            <div style="color:white; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia:</div>
+            <ol>
+                @if (Model.CredoViewModel.Credo1 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo1</a></li>
+                }
+                @if (Model.CredoViewModel.Credo2 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo2</a></li>
+                }
+                @if (Model.CredoViewModel.Credo3 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo3</a></li>
+                }
+                @if (Model.CredoViewModel.Credo4 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo4</a></li>
+                }
+                @if (Model.CredoViewModel.Credo5 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo5</a></li>
+                }
+                @if (Model.CredoViewModel.Credo6 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo6</a></li>
+                }
+                @if (Model.CredoViewModel.Credo7 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo7</a></li>
+                }
+                @if (Model.CredoViewModel.Credo8 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo8</a></li>
+                }
+                @if (Model.CredoViewModel.Credo9 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo9</a></li>
+                }
+                @if (Model.CredoViewModel.Credo10 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo10</a></li>
+                }
+
+            </ol>
         </div>
     </div>
 </div>

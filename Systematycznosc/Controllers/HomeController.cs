@@ -22,7 +22,7 @@ namespace Systematycznosc.Controllers
             if (credo != null)
             {
                 UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
-                CredoViewModel Credo = new CredoViewModel();
+                CredoViewModel Credo = new CredoViewModel(credo);
                 wrapper.CredoViewModel = Credo;
                 wrapper.UserProfileViewModel = new UserProfileViewModel();
                 return View(wrapper);
