@@ -196,10 +196,16 @@
     <Compile Include="Migrations\202003051608099_AddedCredoInUserModel.Designer.cs">
       <DependentUpon>202003051608099_AddedCredoInUserModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003171511033_AddedQuestionsTables.cs" />
+    <Compile Include="Migrations\202003171511033_AddedQuestionsTables.Designer.cs">
+      <DependentUpon>202003171511033_AddedQuestionsTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Credo.cs" />
+    <Compile Include="Models\EveningQuestions.cs" />
+    <Compile Include="Models\MorningQuestions.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="MSreplication_options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -214,6 +220,7 @@
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\ConfigureTwoFactorViewModel.cs" />
     <Compile Include="ViewModels\CredoViewModel.cs" />
+    <Compile Include="ViewModels\EveningQuestionsViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginListViewModel.cs" />
     <Compile Include="ViewModels\FactorViewModel.cs" />
@@ -222,6 +229,8 @@
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
+    <Compile Include="ViewModels\MorningQuestionsViewModel.cs" />
+    <Compile Include="ViewModels\QuestionsViewModelWrapper.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\SendCodeViewModel.cs" />
@@ -326,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003051608099_AddedCredoInUserModel.resx">
       <DependentUpon>202003051608099_AddedCredoInUserModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003171511033_AddedQuestionsTables.resx">
+      <DependentUpon>202003171511033_AddedQuestionsTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

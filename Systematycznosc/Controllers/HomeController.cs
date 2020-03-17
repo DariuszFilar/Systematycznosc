@@ -35,7 +35,7 @@ namespace Systematycznosc.Controllers
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
             var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
 
-            if (userProfile != null && credo !=null)
+            if (userProfile != null && credo != null)
             {
                 CredoViewModel model = new CredoViewModel(credo);
                 return View(model);
@@ -125,7 +125,46 @@ namespace Systematycznosc.Controllers
         }
         public ActionResult Questions()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
+            var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
+
+            if (userProfile != null && morningQuestions != null && eveningQuestions !=null)
+            {
+                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
+                MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
+                EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
+                wrapper.MorningQuestionsViewModel = MorningQuestions;
+                wrapper.EveningQuestionsViewModel = EveningQuestions;
+                return View(wrapper);
+            }
+
+            if (userProfile != null && morningQuestions != null && eveningQuestions == null)
+            {
+                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
+                MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
+                wrapper.MorningQuestionsViewModel = MorningQuestions;
+                return View(wrapper);
+            }
+            else if (userProfile != null && eveningQuestions != null && morningQuestions == null)
+            {
+                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
+                EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
+                wrapper.EveningQuestionsViewModel = EveningQuestions;
+                return View(wrapper);
+            }
+            else if (userProfile != null && eveningQuestions == null && morningQuestions == null)
+            {
+                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
+                wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel();
+                wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel();
+                return View(wrapper);
+            }
+            else
+            {
+                return RedirectToAction("Manage", "Profile");
+            }
         }
         public ActionResult Goals()
         {
