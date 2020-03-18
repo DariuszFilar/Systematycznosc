@@ -303,6 +303,8 @@
     <Content Include="Views\Home\Credo.cshtml" />
     <Content Include="Views\Home\Questions.cshtml" />
     <Content Include="Views\Home\CredoEdit.cshtml" />
+    <Content Include="Views\Home\MorningQuestionsEdit.cshtml" />
+    <Content Include="Views\Home\EveningQuestionsEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
