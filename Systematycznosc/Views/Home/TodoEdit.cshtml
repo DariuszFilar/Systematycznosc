@@ -1,0 +1,97 @@
+﻿@model Systematycznosc.ViewModels.TodoViewModel
+@{
+    ViewBag.Title = "CredoEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="CredoDiv" style="font-size:20px;">
+    @using (Html.BeginForm("TodoEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", style = " text-align: center;" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo1, "Rzecz nr 1:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Todo1, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo2, "Rzecz nr 2:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Todo2, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo3, "Rzecz nr 3:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Todo3, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo4, "Rzecz nr 4:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Todo4, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo4, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo5, "Rzecz nr 5:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Todo5, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo5, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo6, "Rzecz nr 6:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Todo6, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo6, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo7, "Rzecz nr 7:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Todo7, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo7, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo8, "Rzecz nr 8:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Todo8, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo8, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo9, "Rzecz nr 9:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Todo9, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo9, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Todo10, "Rzecz nr 10:", new { @class = "col-md-2 control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; padding-left:0px;" })
+                @Html.TextBoxFor(m => m.Todo10, new { @class = "form-control", style = "float:none!important; display:inline-block;" })
+                @Html.ValidationMessageFor(m => m.Todo10, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <button type="submit" value="Log in" class="btn btn-warning">Zapisz</button>
+
+        @Html.ActionLink("Powród do rzeczy do zrobienia", "Todo", "Home", null, new { @class = "btn bg-info icon-user nav_bar_first_small_screen btn-warning", style = "color:white;" })
+
+    }
+</div>

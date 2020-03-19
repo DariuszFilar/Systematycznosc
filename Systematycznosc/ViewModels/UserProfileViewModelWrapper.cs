@@ -11,6 +11,9 @@ namespace Systematycznosc.ViewModels
         public CredoViewModel CredoViewModel { get; set; }
 
         public UserProfileViewModelWrapper() { }
+        public MorningQuestionsViewModel MorningQuestionsViewModel { get; set; }
+        public EveningQuestionsViewModel EveningQuestionsViewModel { get; set; }
+        public TodoViewModel TodoViewModel { get; set; }
 
         public UserProfileViewModelWrapper(UserProfile userProfile)
         {

@@ -18,12 +18,21 @@ namespace Systematycznosc.Controllers
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
             var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+            var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
+            var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
+            var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
 
             if (credo != null)
             {
                 UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
                 CredoViewModel Credo = new CredoViewModel(credo);
+                MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
+                EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
+                TodoViewModel Todo = new TodoViewModel(todo);
+                wrapper.TodoViewModel = Todo;
                 wrapper.CredoViewModel = Credo;
+                wrapper.MorningQuestionsViewModel = MorningQuestions;
+                wrapper.EveningQuestionsViewModel = EveningQuestions;
                 wrapper.UserProfileViewModel = new UserProfileViewModel();
                 return View(wrapper);
             }
@@ -292,9 +301,89 @@ namespace Systematycznosc.Controllers
         {
             return View();
         }
-        public ActionResult TODO()
+
+        [HttpGet]
+        public ActionResult Todo()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
+
+            if (userProfile != null && todo != null)
+            {
+                TodoViewModel model = new TodoViewModel(todo);
+                return View(model);
+            }
+            else if (userProfile != null && todo == null)
+            {
+                TodoViewModel model = new TodoViewModel();
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Manage", "Profile");
+            }
+        }
+        [HttpGet]
+        public ActionResult TodoEdit()
+        {
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
+
+            if (todo != null)
+            {
+                TodoViewModel model = new TodoViewModel(todo);
+                return View(model);
+            }
+            else
+            {
+                TodoViewModel model = new TodoViewModel();
+                return View(model);
+            }
+        }
+        [HttpPost]
+        public ActionResult TodoEdit(TodoViewModel model)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null)
+                return View();
+
+            if (todo != null)
+            {
+                todo.Todo1 = model.Todo1;
+                todo.Todo2 = model.Todo2;
+                todo.Todo3 = model.Todo3;
+                todo.Todo4 = model.Todo4;
+                todo.Todo5 = model.Todo5;
+                todo.Todo6 = model.Todo6;
+                todo.Todo7 = model.Todo7;
+                todo.Todo8 = model.Todo8;
+                todo.Todo9 = model.Todo9;
+                todo.Todo10 = model.Todo10;
+            }
+            else
+            {
+                user.Todo = new Models.Todo
+                {
+                    Todo1 = model.Todo1,
+                    Todo2 = model.Todo2,
+                    Todo3 = model.Todo3,
+                    Todo4 = model.Todo4,
+                    Todo5 = model.Todo5,
+                    Todo6 = model.Todo6,
+                    Todo7 = model.Todo7,
+                    Todo8 = model.Todo8,
+                    Todo9 = model.Todo9,
+                    Todo10= model.Todo10
+                };
+            }
+            _context.SaveChanges();
+            return View(model);
         }
     }
 }

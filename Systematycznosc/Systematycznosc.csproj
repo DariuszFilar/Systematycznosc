@@ -200,12 +200,21 @@
     <Compile Include="Migrations\202003171511033_AddedQuestionsTables.Designer.cs">
       <DependentUpon>202003171511033_AddedQuestionsTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003191042038_AddedTODOTable.cs" />
+    <Compile Include="Migrations\202003191042038_AddedTODOTable.Designer.cs">
+      <DependentUpon>202003191042038_AddedTODOTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003191057572_ChangedTODOtoTodo.cs" />
+    <Compile Include="Migrations\202003191057572_ChangedTODOtoTodo.Designer.cs">
+      <DependentUpon>202003191057572_ChangedTODOtoTodo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Credo.cs" />
     <Compile Include="Models\EveningQuestions.cs" />
     <Compile Include="Models\MorningQuestions.cs" />
+    <Compile Include="Models\Todo.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="MSreplication_options.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -235,6 +244,7 @@
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\SetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\TodoViewModel.cs" />
     <Compile Include="ViewModels\UserProfileViewModel.cs" />
     <Compile Include="ViewModels\UserProfileViewModelWrapper.cs" />
     <Compile Include="ViewModels\VerifyCodeViewModel.cs" />
@@ -298,13 +308,14 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\EmptyPage.cshtml" />
     <Content Include="Views\Home\Goals.cshtml" />
-    <Content Include="Views\Home\TODO.cshtml" />
+    <Content Include="Views\Home\Todo.cshtml" />
     <Content Include="Views\Profile\Manage.cshtml" />
     <Content Include="Views\Home\Credo.cshtml" />
     <Content Include="Views\Home\Questions.cshtml" />
     <Content Include="Views\Home\CredoEdit.cshtml" />
     <Content Include="Views\Home\MorningQuestionsEdit.cshtml" />
     <Content Include="Views\Home\EveningQuestionsEdit.cshtml" />
+    <Content Include="Views\Home\TodoEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -340,6 +351,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003171511033_AddedQuestionsTables.resx">
       <DependentUpon>202003171511033_AddedQuestionsTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003191042038_AddedTODOTable.resx">
+      <DependentUpon>202003191042038_AddedTODOTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003191057572_ChangedTODOtoTodo.resx">
+      <DependentUpon>202003191057572_ChangedTODOtoTodo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

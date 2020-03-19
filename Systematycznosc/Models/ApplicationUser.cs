@@ -15,6 +15,7 @@ namespace Systematycznosc.Models
         public Credo Credo { get; set; }
         public MorningQuestions MorningQuestions { get; set; }
         public EveningQuestions EveningQuestions { get; set; }
+        public Todo Todo { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
