@@ -11,8 +11,12 @@ namespace Systematycznosc.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private SystematycznoscContext _context;
-        public HomeController() { _context = new SystematycznoscContext(); }
+     
+        private readonly SystematycznoscContext _context;
+
+        public HomeController() { _context = new SystematycznoscContext();}
+       
+
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
