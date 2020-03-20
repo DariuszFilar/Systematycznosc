@@ -7,40 +7,64 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Freelancer - Start Bootstrap Theme</title>
+
+    <!-- Custom fonts for this theme -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Theme CSS -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
 </head>
 
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top text-uppercase" id="navbar-top">
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Główny Panel", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white; font-size: 1.75em;" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Credo", "Credo", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
-                    <li>@Html.ActionLink("Pytania", "Questions", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
-                    <li>@Html.ActionLink("Cele", "Goals", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
-                    <li>@Html.ActionLink("Do zrobienia", "TODO", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</li>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">@Html.ActionLink("Główny Panel", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white; font-size: 1.75em;" })</a>
+            <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Credo">@Html.ActionLink("Credo", "Credo", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Pytania">>@Html.ActionLink("Pytania", "Questions", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Cele">>>@Html.ActionLink("Cele", "Goals", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Do zrobienia">>@Html.ActionLink("Do zrobienia", "TODO", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</a>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
-    <div class="container body-content">
+    </nav>
+    <div>
         @RenderBody()
-        <footer class="" style="">
-            <p>Copyright &copy; @DateTime.Now.Year - Dariusz Filar</p>
-        </footer>
-    </div>
+        <!-- Copyright Section -->
+        <section class="copyright py-4 text-center text-white">
+            <div class="container" style="padding-bottom:24px; padding-top:24px; font-size: 20px;">
+                <small>Copyright &copy; Dariusz Filar 2019</small>
+            </div>
+        </section>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </div>
 </body>
 </html>
 

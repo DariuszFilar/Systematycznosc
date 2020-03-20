@@ -1,260 +1,298 @@
 ﻿@model UserProfileViewModelWrapper
 @using Systematycznosc.ViewModels
 
+<header class="masthead bg-primary text-white text-center">
+    <div class=" d-flex align-items-center flex-column">
 
-    <div id="CredoDiv" style="padding-left: 0px;padding-right: 0px; padding-top:95px; padding-bottom:0px;">
-        <div id="HomeSection1" style="padding-bottom:0px;">
-            <header class="masthead  text-white text-center">
-                <div class=" d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image -->
+        <img src="~/Content/Images/darek.jpg" class="img-circle" style="max-width:305px; padding-top:85px;">
 
-                    <!-- Masthead Avatar Image -->
-                    @*<img class="masthead-avatar mb-5" src="img/avataaars.svg" alt="">*@
+        <!-- Masthead Heading -->
+        @if (Model.UserProfileViewModel.Name != null)
+        {
+            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Witaj @Model.UserProfileViewModel.Name</h1>
+        }
 
-                    <img src="~/Content/Images/darek.jpg" class="img-circle" style="max-width:305px; padding-top:85px;">
-
-                    <!-- Masthead Heading -->
-                    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Witaj @Model.UserProfileViewModel.Name</h1>
-
-                    <!-- Icon Divider -->
-                    <div class="divider-custom divider-light">
-                        <div class="divider-custom-line"></div>
-                        <div class="divider-custom-icon">
-                            <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                        </div>
-                        <div class="divider-custom-line"></div>
-                    </div>
-
-                    <!-- Masthead Subheading -->
-                    <p class="masthead-subheading font-weight-light mb-0" style="font-size:20px; padding-bottom:85px; margin-bottom:0px;">W pomocniku systematyczności</p>
-
-                </div>
-            </header>
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light" style="padding-top:20px;">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+            </div>
+            <div class="divider-custom-line"></div>
         </div>
-        <div id="HomeSection2" style="padding-top:0px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; margin-top:0px; padding-top:85px;">Twoje Credo:</h1>
 
-            <div class="divider-custom divider-light" style="">
-                <div class="divider-custom-line" style="background-color:#000!important"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px; color:black!important;"></i>
-                </div>
-                <div class="divider-custom-line" style="background-color:#000!important"></div>
-            </div>
-            <div class="numberlist">
-                <div style="color:white; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia:</div>
-                <ol>
-                    @if (Model.CredoViewModel.Credo1 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo1</a></li>
-                    }
-                    @if (Model.CredoViewModel.Credo2 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo2</a></li>
-                    }
-                    @if (Model.CredoViewModel.Credo3 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo3</a></li>
-                    }
-                    @if (Model.CredoViewModel.Credo4 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo4</a></li>
-                    }
-                    @if (Model.CredoViewModel.Credo5 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo5</a></li>
-                    }
-                    @if (Model.CredoViewModel.Credo6 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo6</a></li>
-                    }
-                    @if (Model.CredoViewModel.Credo7 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo7</a></li>
-                    }
-                    @if (Model.CredoViewModel.Credo8 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo8</a></li>
-                    }
-                    @if (Model.CredoViewModel.Credo9 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo9</a></li>
-                    }
-                    @if (Model.CredoViewModel.Credo10 != null)
-                    {
-                        <li><a href="">@Model.CredoViewModel.Credo10</a></li>
-                    }
+        <!-- Masthead Subheading -->
+        <p class="masthead-subheading font-weight-light mb-0">W pomocniku systematyczności</p>
 
-                </ol>
+    </div>
+</header>
+
+<section class="page-section portfolio" id="portfolio">
+    <div class=" d-flex align-items-center flex-column">
+
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Credo:</h1>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
             </div>
+            <div class="divider-custom-line"></div>
         </div>
-        <div id="HomeSection3" style="padding-top:0px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; margin-top:0px; padding-top:85px;">Poranne Pytania:</h1>
+        <div class="numberlist">
+            <div style="color:black; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia:</div>
+            <ol>
+                @if (Model.CredoViewModel.Credo1 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo1</a></li>
+                }
+                @if (Model.CredoViewModel.Credo2 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo2</a></li>
+                }
+                @if (Model.CredoViewModel.Credo3 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo3</a></li>
+                }
+                @if (Model.CredoViewModel.Credo4 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo4</a></li>
+                }
+                @if (Model.CredoViewModel.Credo5 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo5</a></li>
+                }
+                @if (Model.CredoViewModel.Credo6 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo6</a></li>
+                }
+                @if (Model.CredoViewModel.Credo7 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo7</a></li>
+                }
+                @if (Model.CredoViewModel.Credo8 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo8</a></li>
+                }
+                @if (Model.CredoViewModel.Credo9 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo9</a></li>
+                }
+                @if (Model.CredoViewModel.Credo10 != null)
+                {
+                    <li><a href="">@Model.CredoViewModel.Credo10</a></li>
+                }
 
-            <div class="divider-custom divider-light" style="">
-                <div class="divider-custom-line" style="background-color:#000!important"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px; color:black!important;"></i>
-                </div>
-                <div class="divider-custom-line" style="background-color:#000!important"></div>
-            </div>
-            <div class="numberlist">
-                <div style="color:white; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego dnia:</div>
-                <ol>
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions1</a></li>
-                    }
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions2 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions2</a></li>
-                    }
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions3 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions3</a></li>
-                    }
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions4 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions4</a></li>
-                    }
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions5 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions5</a></li>
-                    }
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions6 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions6</a></li>
-                    }
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions7 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions7</a></li>
-                    }
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions8 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions8</a></li>
-                    }
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions9 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions9</a></li>
-                    }
-                    @if (Model.MorningQuestionsViewModel.MorningQuestions10 != null)
-                    {
-                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions10</a></li>
-                    }
-
-                </ol>
-            </div>
-        </div>
-        <div id="HomeSection4" style="padding-top:0px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; margin-top:0px; padding-top:85px;">Wieczorne Pytania:</h1>
-
-            <div class="divider-custom divider-light" style="">
-                <div class="divider-custom-line" style="background-color:#000!important"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px; color:black!important;"></i>
-                </div>
-                <div class="divider-custom-line" style="background-color:#000!important"></div>
-            </div>
-            <div class="numberlist">
-                <div style="color:white; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego wieczoru:</div>
-                <ol>
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion1</a></li>
-                    }
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion2 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion2</a></li>
-                    }
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion3 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion3</a></li>
-                    }
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion4 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion4</a></li>
-                    }
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion5 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion5</a></li>
-                    }
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion6 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion6</a></li>
-                    }
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion7 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion7</a></li>
-                    }
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion8 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion8</a></li>
-                    }
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion9 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion9</a></li>
-                    }
-                    @if (Model.EveningQuestionsViewModel.EveningQuestion10 != null)
-                    {
-                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion10</a></li>
-                    }
-
-                </ol>
-            </div>
-        </div>
-        <div id="HomeSection5" style="padding-top:0px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; margin-top:0px; padding-top:85px;">Do zrobienia:</h1>
-
-            <div class="divider-custom divider-light" style="">
-                <div class="divider-custom-line" style="background-color:#000!important"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px; color:black!important;"></i>
-                </div>
-                <div class="divider-custom-line" style="background-color:#000!important"></div>
-            </div>
-            <div class="numberlist">
-                <div style="color:white; font-size:37px; text-align:center;">Rzeczy do zrobienia:</div>
-                <ol>
-                    @if (Model.TodoViewModel.Todo1 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo1</a></li>
-                    }
-                    @if (Model.TodoViewModel.Todo2 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo2</a></li>
-                    }
-                    @if (Model.TodoViewModel.Todo3 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo3</a></li>
-                    }
-                    @if (Model.TodoViewModel.Todo4 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo4</a></li>
-                    }
-                    @if (Model.TodoViewModel.Todo5 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo5</a></li>
-                    }
-                    @if (Model.TodoViewModel.Todo6 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo6</a></li>
-                    }
-                    @if (Model.TodoViewModel.Todo7 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo7</a></li>
-                    }
-                    @if (Model.TodoViewModel.Todo8 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo8</a></li>
-                    }
-                    @if (Model.TodoViewModel.Todo9 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo9</a></li>
-                    }
-                    @if (Model.TodoViewModel.Todo10 != null)
-                    {
-                        <li><a href="">@Model.TodoViewModel.Todo10</a></li>
-                    }
-                </ol>
-            </div>
+            </ol>
         </div>
     </div>
+</section>
+
+<section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Pytania poranne:</h1>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light" style="">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="numberlist">
+            <div style="color:white; font-size:37px; text-align:center;">Pytanie na które warto odpowiedzieć każdego ranka:</div>
+            <ol>
+                @if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions1</a></li>
+                }
+                @if (Model.MorningQuestionsViewModel.MorningQuestions2 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions2</a></li>
+                }
+                @if (Model.MorningQuestionsViewModel.MorningQuestions3 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions3</a></li>
+                }
+                @if (Model.MorningQuestionsViewModel.MorningQuestions4 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions4</a></li>
+                }
+                @if (Model.MorningQuestionsViewModel.MorningQuestions5 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions5</a></li>
+                }
+                @if (Model.MorningQuestionsViewModel.MorningQuestions6 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions6</a></li>
+                }
+                @if (Model.MorningQuestionsViewModel.MorningQuestions7 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions7</a></li>
+                }
+                @if (Model.MorningQuestionsViewModel.MorningQuestions8 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions8</a></li>
+                }
+                @if (Model.MorningQuestionsViewModel.MorningQuestions9 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions9</a></li>
+                }
+                @if (Model.MorningQuestionsViewModel.MorningQuestions10 != null)
+                {
+                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions10</a></li>
+                }
+
+            </ol>
+        </div>
+
+    </div>
+</section>
+
+<section class="page-section portfolio" id="portfolio">
+    <div class=" d-flex align-items-center flex-column">
+
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Pytania wieczorne:</h1>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="numberlist">
+            <div style="color:black; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego wieczoru:</div>
+            <ol>
+                @if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion1</a></li>
+                }
+                @if (Model.EveningQuestionsViewModel.EveningQuestion2 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion2</a></li>
+                }
+                @if (Model.EveningQuestionsViewModel.EveningQuestion3 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion3</a></li>
+                }
+                @if (Model.EveningQuestionsViewModel.EveningQuestion4 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion4</a></li>
+                }
+                @if (Model.EveningQuestionsViewModel.EveningQuestion5 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion5</a></li>
+                }
+                @if (Model.EveningQuestionsViewModel.EveningQuestion6 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion6</a></li>
+                }
+                @if (Model.EveningQuestionsViewModel.EveningQuestion7 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion7</a></li>
+                }
+                @if (Model.EveningQuestionsViewModel.EveningQuestion8 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion8</a></li>
+                }
+                @if (Model.EveningQuestionsViewModel.EveningQuestion9 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion9</a></li>
+                }
+                @if (Model.EveningQuestionsViewModel.EveningQuestion10 != null)
+                {
+                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion10</a></li>
+                }
+
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Lista rzeczy do zrobienia:</h1>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom divider-light" style="">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="numberlist">
+            <div style="color:white; font-size:37px; text-align:center;">Jak się tym zajmiesz, będzie Ci lepiej:</div>
+            <ol>
+                @if (Model.TodoViewModel.Todo1 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo1</a></li>
+                }
+                @if (Model.TodoViewModel.Todo2 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo2</a></li>
+                }
+                @if (Model.TodoViewModel.Todo3 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo3</a></li>
+                }
+                @if (Model.TodoViewModel.Todo4 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo4</a></li>
+                }
+                @if (Model.TodoViewModel.Todo5 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo5</a></li>
+                }
+                @if (Model.TodoViewModel.Todo6 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo6</a></li>
+                }
+                @if (Model.TodoViewModel.Todo7 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo7</a></li>
+                }
+                @if (Model.TodoViewModel.Todo8 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo8</a></li>
+                }
+                @if (Model.TodoViewModel.Todo9 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo9</a></li>
+                }
+                @if (Model.TodoViewModel.Todo10 != null)
+                {
+                    <li><a href="">@Model.TodoViewModel.Todo10</a></li>
+                }
+            </ol>
+        </div>
+
+    </div>
+</section>
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/freelancer.min.js"></script>

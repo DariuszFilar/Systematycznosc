@@ -26,21 +26,22 @@ namespace Systematycznosc.Controllers
             var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
             var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
 
-            if (credo != null)
+            if (userProfile != null)
             {
                 UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
                 CredoViewModel Credo = new CredoViewModel(credo);
                 MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
                 EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
                 TodoViewModel Todo = new TodoViewModel(todo);
+                UserProfileViewModel UserProfile = new UserProfileViewModel(userProfile);
+                wrapper.UserProfileViewModel = UserProfile;
                 wrapper.TodoViewModel = Todo;
                 wrapper.CredoViewModel = Credo;
                 wrapper.MorningQuestionsViewModel = MorningQuestions;
                 wrapper.EveningQuestionsViewModel = EveningQuestions;
-                wrapper.UserProfileViewModel = new UserProfileViewModel();
                 return View(wrapper);
             }
-            else { return View(); }
+            else { return RedirectToAction("Manage", "Profile"); }
         }
         public ActionResult Credo()
         {
