@@ -11,11 +11,11 @@ namespace Systematycznosc.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-     
+
         private readonly SystematycznoscContext _context;
 
-        public HomeController() { _context = new SystematycznoscContext();}
-       
+        public HomeController() { _context = new SystematycznoscContext(); }
+
 
         public ActionResult Index()
         {
@@ -25,20 +25,20 @@ namespace Systematycznosc.Controllers
             var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
             var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
             var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
+            UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
 
             if (userProfile != null)
             {
-                UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
-                CredoViewModel Credo = new CredoViewModel(credo);
-                MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
-                EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
-                TodoViewModel Todo = new TodoViewModel(todo);
+                if (credo == null) { wrapper.CredoViewModel = new CredoViewModel(); }
+                else { CredoViewModel Credo = new CredoViewModel(credo); wrapper.CredoViewModel = Credo; }
+                if (morningQuestions == null) { wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel(); }
+                else {MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions); wrapper.MorningQuestionsViewModel = MorningQuestions; }
+                if (eveningQuestions == null) { wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel(); }
+                else { EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions); wrapper.EveningQuestionsViewModel = EveningQuestions; }
+                if (todo == null) { wrapper.TodoViewModel = new TodoViewModel(); }
+                else { TodoViewModel Todo = new TodoViewModel(todo); wrapper.TodoViewModel = Todo; }
                 UserProfileViewModel UserProfile = new UserProfileViewModel(userProfile);
                 wrapper.UserProfileViewModel = UserProfile;
-                wrapper.TodoViewModel = Todo;
-                wrapper.CredoViewModel = Credo;
-                wrapper.MorningQuestionsViewModel = MorningQuestions;
-                wrapper.EveningQuestionsViewModel = EveningQuestions;
                 return View(wrapper);
             }
             else { return RedirectToAction("Manage", "Profile"); }
@@ -144,7 +144,7 @@ namespace Systematycznosc.Controllers
             var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
             var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
 
-            if (userProfile != null && morningQuestions != null && eveningQuestions !=null)
+            if (userProfile != null && morningQuestions != null && eveningQuestions != null)
             {
                 QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
                 MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
@@ -384,7 +384,7 @@ namespace Systematycznosc.Controllers
                     Todo7 = model.Todo7,
                     Todo8 = model.Todo8,
                     Todo9 = model.Todo9,
-                    Todo10= model.Todo10
+                    Todo10 = model.Todo10
                 };
             }
             _context.SaveChanges();
