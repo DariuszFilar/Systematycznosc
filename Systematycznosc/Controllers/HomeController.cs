@@ -390,5 +390,10 @@ namespace Systematycznosc.Controllers
             _context.SaveChanges();
             return View(model);
         }
+
+        public ActionResult Birthday()
+        {
+            return View();
+        }
     }
 }

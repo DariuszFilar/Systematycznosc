@@ -208,12 +208,27 @@
     <Compile Include="Migrations\202003191057572_ChangedTODOtoTodo.Designer.cs">
       <DependentUpon>202003191057572_ChangedTODOtoTodo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003231122383_AddedBirthday.cs" />
+    <Compile Include="Migrations\202003231122383_AddedBirthday.Designer.cs">
+      <DependentUpon>202003231122383_AddedBirthday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003231142115_FixedOtherBirthday.cs" />
+    <Compile Include="Migrations\202003231142115_FixedOtherBirthday.Designer.cs">
+      <DependentUpon>202003231142115_FixedOtherBirthday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003231204000_FixedBirthdayTable.cs" />
+    <Compile Include="Migrations\202003231204000_FixedBirthdayTable.Designer.cs">
+      <DependentUpon>202003231204000_FixedBirthdayTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Credo.cs" />
     <Compile Include="Models\EveningQuestions.cs" />
+    <Compile Include="Models\FamilyBirthday.cs" />
+    <Compile Include="Models\FriendsBirthday.cs" />
     <Compile Include="Models\MorningQuestions.cs" />
+    <Compile Include="Models\OthersBirthday.cs" />
     <Compile Include="Models\Todo.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="MSreplication_options.cs" />
@@ -226,6 +241,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="SystematycznoscContext.cs" />
     <Compile Include="ViewModels\AddPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\BirthdayViewModelWrapper.cs" />
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\ConfigureTwoFactorViewModel.cs" />
     <Compile Include="ViewModels\CredoViewModel.cs" />
@@ -233,12 +249,15 @@
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginListViewModel.cs" />
     <Compile Include="ViewModels\FactorViewModel.cs" />
+    <Compile Include="ViewModels\FamilyBirthdayViewModel.cs" />
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\ForgotViewModel.cs" />
+    <Compile Include="ViewModels\FriendsBirthdayViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
     <Compile Include="ViewModels\MorningQuestionsViewModel.cs" />
+    <Compile Include="ViewModels\OthersBirthdayViewModel.cs" />
     <Compile Include="ViewModels\QuestionsViewModelWrapper.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
@@ -316,6 +335,7 @@
     <Content Include="Views\Home\MorningQuestionsEdit.cshtml" />
     <Content Include="Views\Home\EveningQuestionsEdit.cshtml" />
     <Content Include="Views\Home\TodoEdit.cshtml" />
+    <Content Include="Views\Home\Birthday.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -357,6 +377,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003191057572_ChangedTODOtoTodo.resx">
       <DependentUpon>202003191057572_ChangedTODOtoTodo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003231122383_AddedBirthday.resx">
+      <DependentUpon>202003231122383_AddedBirthday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003231142115_FixedOtherBirthday.resx">
+      <DependentUpon>202003231142115_FixedOtherBirthday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003231204000_FixedBirthdayTable.resx">
+      <DependentUpon>202003231204000_FixedBirthdayTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -28,6 +28,11 @@ namespace Systematycznosc
         public virtual DbSet<EveningQuestions> EveningQuestions { get; set; }
         public virtual DbSet<MorningQuestions> MorningQuestions { get; set; }
         public virtual DbSet<Todo> Todo { get; set; }
+        public virtual DbSet<FamilyBirthday> FamilyBirthday { get; set; }
+        public virtual DbSet<FriendsBirthday> FriendsBirthday { get; set; }
+        public virtual DbSet<OthersBirthday> OthersBirthday { get; set; }
+
+
 
 
         public static SystematycznoscContext Create()
