@@ -32,7 +32,7 @@ namespace Systematycznosc.Controllers
                 if (credo == null) { wrapper.CredoViewModel = new CredoViewModel(); }
                 else { CredoViewModel Credo = new CredoViewModel(credo); wrapper.CredoViewModel = Credo; }
                 if (morningQuestions == null) { wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel(); }
-                else {MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions); wrapper.MorningQuestionsViewModel = MorningQuestions; }
+                else { MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions); wrapper.MorningQuestionsViewModel = MorningQuestions; }
                 if (eveningQuestions == null) { wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel(); }
                 else { EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions); wrapper.EveningQuestionsViewModel = EveningQuestions; }
                 if (todo == null) { wrapper.TodoViewModel = new TodoViewModel(); }
@@ -393,7 +393,66 @@ namespace Systematycznosc.Controllers
 
         public ActionResult Birthday()
         {
-            return View();
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var familyBirthday = _context.FamilyBirthday.FirstOrDefault(x => x.Id == userId);
+            var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
+            var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
+            BirthdayViewModelWrapper wrapper = new BirthdayViewModelWrapper();
+
+            if (userProfile != null && familyBirthday != null && friendsBirthday != null && othersBirthday != null)
+            {
+                FamilyBirthdayViewModel FamilyBirthday = new FamilyBirthdayViewModel(familyBirthday);
+                FriendsBirthdayViewModel FriendsBirthday = new FriendsBirthdayViewModel(friendsBirthday);
+                OthersBirthdayViewModel OthersBirthday = new OthersBirthdayViewModel(othersBirthday);
+                wrapper.FamilyBirthdayViewModel = FamilyBirthday;
+                wrapper.FriendsBirthdayViewModel = FriendsBirthday;
+                wrapper.OthersBirthdayViewModel = OthersBirthday;
+                return View(wrapper);
+            }
+
+            if (userProfile != null && familyBirthday != null && friendsBirthday != null && othersBirthday == null)
+            {
+                FamilyBirthdayViewModel FamilyBirthday = new FamilyBirthdayViewModel(familyBirthday);
+                FriendsBirthdayViewModel FriendsBirthday = new FriendsBirthdayViewModel(friendsBirthday);
+                wrapper.FamilyBirthdayViewModel = FamilyBirthday;
+                wrapper.FriendsBirthdayViewModel = FriendsBirthday;
+                wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel();
+                return View(wrapper);
+            }
+            else if (userProfile != null && familyBirthday != null && friendsBirthday == null && othersBirthday == null)
+            {
+                FamilyBirthdayViewModel FamilyBirthday = new FamilyBirthdayViewModel(familyBirthday);
+                wrapper.FamilyBirthdayViewModel = FamilyBirthday;
+                wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel();
+                wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel();
+                return View(wrapper);
+            }
+            else if (userProfile != null && familyBirthday == null && friendsBirthday != null && othersBirthday == null)
+            {
+                FriendsBirthdayViewModel FriendsBirthday = new FriendsBirthdayViewModel(friendsBirthday);
+                wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel();
+                wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel();
+                return View(wrapper);
+            }
+            else if (userProfile != null && familyBirthday == null && friendsBirthday == null && othersBirthday != null)
+            {
+                OthersBirthdayViewModel OthersBirthday = new OthersBirthdayViewModel(othersBirthday);
+                wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel();
+                wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel();
+                return View(wrapper);
+            }
+            else if (userProfile == null)
+            {
+                return RedirectToAction("Manage", "Profile");
+            }
+            else
+            {
+                wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel();
+                wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel();
+                wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel();
+                return View(wrapper);
+            }
         }
     }
 }
