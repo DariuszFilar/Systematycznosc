@@ -2,9 +2,25 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery UI Datepicker - Default functionality</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#datepicker").datepicker();
+            });
+        </script>
+    </head>
+    
     <div id="CredoDiv" style="font-size:20px;">
         <div style="color:gold; font-size:55px; text-align:center;">Urodziny rodziny:</div>
         <div style="color:white; font-size:37px; text-align:center;">Pamięć nic nie kosztuje:</div>
+        <p>Date: <input type="text" id="datepicker"></p>
         @using (Html.BeginForm("FamilyBirthdayEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", style = " text-align: center;" }))
         {
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
