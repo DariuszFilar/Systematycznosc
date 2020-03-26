@@ -454,5 +454,86 @@ namespace Systematycznosc.Controllers
                 return View(wrapper);
             }
         }
+        [HttpGet]
+        public ActionResult FamilyBirthdayEdit()
+        {
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var familyBirthday = _context.FamilyBirthday.FirstOrDefault(x => x.Id == userId);
+
+            if (familyBirthday != null)
+            {
+                FamilyBirthdayViewModel model = new FamilyBirthdayViewModel(familyBirthday);
+                return View(model);
+            }
+            else
+            {
+                FamilyBirthdayViewModel model = new FamilyBirthdayViewModel();
+                return View(model);
+            }
+        }
+        [HttpPost]
+        public ActionResult FamilyBirthdayEdit(FamilyBirthdayViewModel model)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var familyBirthday = _context.FamilyBirthday.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null)
+                return View();
+
+            if (familyBirthday != null)
+            {
+                familyBirthday.FamilyBirthday1 = model.FamilyBirthday1;
+                familyBirthday.FamilyBirthday2 = model.FamilyBirthday2;
+                familyBirthday.FamilyBirthday3 = model.FamilyBirthday3;
+                familyBirthday.FamilyBirthday4 = model.FamilyBirthday4;
+                familyBirthday.FamilyBirthday5 = model.FamilyBirthday5;
+                familyBirthday.FamilyBirthday6 = model.FamilyBirthday6;
+                familyBirthday.FamilyBirthday7 = model.FamilyBirthday7;
+                familyBirthday.FamilyBirthday8 = model.FamilyBirthday8;
+                familyBirthday.FamilyBirthday9 = model.FamilyBirthday9;
+                familyBirthday.FamilyBirthday10 = model.FamilyBirthday10;
+                familyBirthday.FamilyBirthdayName1 = model.FamilyBirthdayName1;
+                familyBirthday.FamilyBirthdayName2 = model.FamilyBirthdayName2;
+                familyBirthday.FamilyBirthdayName3 = model.FamilyBirthdayName3;
+                familyBirthday.FamilyBirthdayName4 = model.FamilyBirthdayName4;
+                familyBirthday.FamilyBirthdayName5 = model.FamilyBirthdayName5;
+                familyBirthday.FamilyBirthdayName6 = model.FamilyBirthdayName6;
+                familyBirthday.FamilyBirthdayName7 = model.FamilyBirthdayName7;
+                familyBirthday.FamilyBirthdayName8 = model.FamilyBirthdayName8;
+                familyBirthday.FamilyBirthdayName9 = model.FamilyBirthdayName9;
+                familyBirthday.FamilyBirthdayName10 = model.FamilyBirthdayName10;
+            }
+            else
+            {
+                user.FamilyBirthday = new Models.FamilyBirthday
+                {
+                    FamilyBirthday1 = model.FamilyBirthday1,
+                    FamilyBirthday2 = model.FamilyBirthday2,
+                    FamilyBirthday3 = model.FamilyBirthday3,
+                    FamilyBirthday4 = model.FamilyBirthday4,
+                    FamilyBirthday5 = model.FamilyBirthday5,
+                    FamilyBirthday6 = model.FamilyBirthday6,
+                    FamilyBirthday7 = model.FamilyBirthday7,
+                    FamilyBirthday8 = model.FamilyBirthday8,
+                    FamilyBirthday9 = model.FamilyBirthday9,
+                    FamilyBirthday10 = model.FamilyBirthday10,
+                    FamilyBirthdayName1 = model.FamilyBirthdayName1,
+                    FamilyBirthdayName2 = model.FamilyBirthdayName2,
+                    FamilyBirthdayName3 = model.FamilyBirthdayName3,
+                    FamilyBirthdayName4 = model.FamilyBirthdayName4,
+                    FamilyBirthdayName5 = model.FamilyBirthdayName5,
+                    FamilyBirthdayName6 = model.FamilyBirthdayName6,
+                    FamilyBirthdayName7 = model.FamilyBirthdayName7,
+                    FamilyBirthdayName8 = model.FamilyBirthdayName8,
+                    FamilyBirthdayName9 = model.FamilyBirthdayName9,
+                    FamilyBirthdayName10 = model.FamilyBirthdayName10,
+                };
+            }
+            _context.SaveChanges();
+            return View(model);
+        }
     }
 }

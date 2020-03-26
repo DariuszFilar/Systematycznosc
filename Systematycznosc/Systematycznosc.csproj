@@ -379,6 +379,7 @@
     <Content Include="Views\Home\EveningQuestionsEdit.cshtml" />
     <Content Include="Views\Home\TodoEdit.cshtml" />
     <Content Include="Views\Home\Birthday.cshtml" />
+    <Content Include="Views\Home\FamilyBirthdayEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

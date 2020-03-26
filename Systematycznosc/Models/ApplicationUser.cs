@@ -15,6 +15,9 @@ namespace Systematycznosc.Models
         public Credo Credo { get; set; }
         public MorningQuestions MorningQuestions { get; set; }
         public EveningQuestions EveningQuestions { get; set; }
+        public FamilyBirthday FamilyBirthday { get; set; }
+        public FriendsBirthday FriendsBirthday { get; set; }
+        public OthersBirthday OthersBirthday { get; set; }
         public Todo Todo { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
