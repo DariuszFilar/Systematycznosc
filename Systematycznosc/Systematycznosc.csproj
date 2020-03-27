@@ -220,6 +220,18 @@
     <Compile Include="Migrations\202003231204000_FixedBirthdayTable.Designer.cs">
       <DependentUpon>202003231204000_FixedBirthdayTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003270845389_AddedNullFamilyBirthday.cs" />
+    <Compile Include="Migrations\202003270845389_AddedNullFamilyBirthday.Designer.cs">
+      <DependentUpon>202003270845389_AddedNullFamilyBirthday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003270930531_Test.cs" />
+    <Compile Include="Migrations\202003270930531_Test.Designer.cs">
+      <DependentUpon>202003270930531_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003270932266_Test1.cs" />
+    <Compile Include="Migrations\202003270932266_Test1.Designer.cs">
+      <DependentUpon>202003270932266_Test1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -430,6 +442,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003231204000_FixedBirthdayTable.resx">
       <DependentUpon>202003231204000_FixedBirthdayTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003270845389_AddedNullFamilyBirthday.resx">
+      <DependentUpon>202003270845389_AddedNullFamilyBirthday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003270930531_Test.resx">
+      <DependentUpon>202003270930531_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003270932266_Test1.resx">
+      <DependentUpon>202003270932266_Test1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

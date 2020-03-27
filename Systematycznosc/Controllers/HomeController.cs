@@ -11,7 +11,6 @@ namespace Systematycznosc.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-
         private readonly SystematycznoscContext _context;
 
         public HomeController() { _context = new SystematycznoscContext(); }
@@ -34,7 +33,8 @@ namespace Systematycznosc.Controllers
                 if (morningQuestions == null) { wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel(); }
                 else { MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions); wrapper.MorningQuestionsViewModel = MorningQuestions; }
                 if (eveningQuestions == null) { wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel(); }
-                else { EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions); wrapper.EveningQuestionsViewModel = EveningQuestions; }
+                else { EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions); 
+                    wrapper.EveningQuestionsViewModel = EveningQuestions; }
                 if (todo == null) { wrapper.TodoViewModel = new TodoViewModel(); }
                 else { TodoViewModel Todo = new TodoViewModel(todo); wrapper.TodoViewModel = Todo; }
                 UserProfileViewModel UserProfile = new UserProfileViewModel(userProfile);
