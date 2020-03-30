@@ -535,5 +535,168 @@ namespace Systematycznosc.Controllers
             _context.SaveChanges();
             return View(model);
         }
+
+        [HttpGet]
+        public ActionResult FriendsBirthdayEdit()
+        {
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
+
+            if (friendsBirthday != null)
+            {
+                FriendsBirthdayViewModel model = new FriendsBirthdayViewModel(friendsBirthday);
+                return View(model);
+            }
+            else
+            {
+                FriendsBirthdayViewModel model = new FriendsBirthdayViewModel();
+                return View(model);
+            }
+        }
+        [HttpPost]
+        public ActionResult FriendsBirthdayEdit(FriendsBirthdayViewModel model)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null)
+                return View();
+
+            if (friendsBirthday != null)
+            {
+                friendsBirthday.FriendsBirthday1 = model.FriendsBirthday1;
+                friendsBirthday.FriendsBirthday2 = model.FriendsBirthday2;
+                friendsBirthday.FriendsBirthday3 = model.FriendsBirthday3;
+                friendsBirthday.FriendsBirthday4 = model.FriendsBirthday4;
+                friendsBirthday.FriendsBirthday5 = model.FriendsBirthday5;
+                friendsBirthday.FriendsBirthday6 = model.FriendsBirthday6;
+                friendsBirthday.FriendsBirthday7 = model.FriendsBirthday7;
+                friendsBirthday.FriendsBirthday8 = model.FriendsBirthday8;
+                friendsBirthday.FriendsBirthday9 = model.FriendsBirthday9;
+                friendsBirthday.FriendsBirthday10 = model.FriendsBirthday10;
+                friendsBirthday.FriendsBirthdayName1 = model.FriendsBirthdayName1;
+                friendsBirthday.FriendsBirthdayName2 = model.FriendsBirthdayName2;
+                friendsBirthday.FriendsBirthdayName3 = model.FriendsBirthdayName3;
+                friendsBirthday.FriendsBirthdayName4 = model.FriendsBirthdayName4;
+                friendsBirthday.FriendsBirthdayName5 = model.FriendsBirthdayName5;
+                friendsBirthday.FriendsBirthdayName6 = model.FriendsBirthdayName6;
+                friendsBirthday.FriendsBirthdayName7 = model.FriendsBirthdayName7;
+                friendsBirthday.FriendsBirthdayName8 = model.FriendsBirthdayName8;
+                friendsBirthday.FriendsBirthdayName9 = model.FriendsBirthdayName9;
+                friendsBirthday.FriendsBirthdayName10 = model.FriendsBirthdayName10;
+            }
+            else
+            {
+                user.FriendsBirthday = new Models.FriendsBirthday
+                {
+                    FriendsBirthday1 = model.FriendsBirthday1,
+                    FriendsBirthday2 = model.FriendsBirthday2,
+                    FriendsBirthday3 = model.FriendsBirthday3,
+                    FriendsBirthday4 = model.FriendsBirthday4,
+                    FriendsBirthday5 = model.FriendsBirthday5,
+                    FriendsBirthday6 = model.FriendsBirthday6,
+                    FriendsBirthday7 = model.FriendsBirthday7,
+                    FriendsBirthday8 = model.FriendsBirthday8,
+                    FriendsBirthday9 = model.FriendsBirthday9,
+                    FriendsBirthday10 = model.FriendsBirthday10,
+                    FriendsBirthdayName1 = model.FriendsBirthdayName1,
+                    FriendsBirthdayName2 = model.FriendsBirthdayName2,
+                    FriendsBirthdayName3 = model.FriendsBirthdayName3,
+                    FriendsBirthdayName4 = model.FriendsBirthdayName4,
+                    FriendsBirthdayName5 = model.FriendsBirthdayName5,
+                    FriendsBirthdayName6 = model.FriendsBirthdayName6,
+                    FriendsBirthdayName7 = model.FriendsBirthdayName7,
+                    FriendsBirthdayName8 = model.FriendsBirthdayName8,
+                    FriendsBirthdayName9 = model.FriendsBirthdayName9,
+                    FriendsBirthdayName10 = model.FriendsBirthdayName10,
+                };
+            }
+            _context.SaveChanges();
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult OthersBirthdayEdit()
+        {
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
+
+            if (othersBirthday != null)
+            {
+                OthersBirthdayViewModel model = new OthersBirthdayViewModel(othersBirthday);
+                return View(model);
+            }
+            else
+            {
+                OthersBirthdayViewModel model = new OthersBirthdayViewModel();
+                return View(model);
+            }
+        }
+        [HttpPost]
+        public ActionResult OthersBirthdayEdit(OthersBirthdayViewModel model)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null)
+                return View();
+
+            if (othersBirthday != null)
+            {
+                othersBirthday.OthersBirthday1 = model.OthersBirthday1;
+                othersBirthday.OthersBirthday2 = model.OthersBirthday2;
+                othersBirthday.OthersBirthday3 = model.OthersBirthday3;
+                othersBirthday.OthersBirthday4 = model.OthersBirthday4;
+                othersBirthday.OthersBirthday5 = model.OthersBirthday5;
+                othersBirthday.OthersBirthday6 = model.OthersBirthday6;
+                othersBirthday.OthersBirthday7 = model.OthersBirthday7;
+                othersBirthday.OthersBirthday8 = model.OthersBirthday8;
+                othersBirthday.OthersBirthday9 = model.OthersBirthday9;
+                othersBirthday.OthersBirthday10 = model.OthersBirthday10;
+                othersBirthday.OthersBirthdayName1 = model.OthersBirthdayName1;
+                othersBirthday.OthersBirthdayName2 = model.OthersBirthdayName2;
+                othersBirthday.OthersBirthdayName3 = model.OthersBirthdayName3;
+                othersBirthday.OthersBirthdayName4 = model.OthersBirthdayName4;
+                othersBirthday.OthersBirthdayName5 = model.OthersBirthdayName5;
+                othersBirthday.OthersBirthdayName6 = model.OthersBirthdayName6;
+                othersBirthday.OthersBirthdayName7 = model.OthersBirthdayName7;
+                othersBirthday.OthersBirthdayName8 = model.OthersBirthdayName8;
+                othersBirthday.OthersBirthdayName9 = model.OthersBirthdayName9;
+                othersBirthday.OthersBirthdayName10 = model.OthersBirthdayName10;
+            }
+            else
+            {
+                user.OthersBirthday = new Models.OthersBirthday
+                {
+                    OthersBirthday1 = model.OthersBirthday1,
+                    OthersBirthday2 = model.OthersBirthday2,
+                    OthersBirthday3 = model.OthersBirthday3,
+                    OthersBirthday4 = model.OthersBirthday4,
+                    OthersBirthday5 = model.OthersBirthday5,
+                    OthersBirthday6 = model.OthersBirthday6,
+                    OthersBirthday7 = model.OthersBirthday7,
+                    OthersBirthday8 = model.OthersBirthday8,
+                    OthersBirthday9 = model.OthersBirthday9,
+                    OthersBirthday10 = model.OthersBirthday10,
+                    OthersBirthdayName1 = model.OthersBirthdayName1,
+                    OthersBirthdayName2 = model.OthersBirthdayName2,
+                    OthersBirthdayName3 = model.OthersBirthdayName3,
+                    OthersBirthdayName4 = model.OthersBirthdayName4,
+                    OthersBirthdayName5 = model.OthersBirthdayName5,
+                    OthersBirthdayName6 = model.OthersBirthdayName6,
+                    OthersBirthdayName7 = model.OthersBirthdayName7,
+                    OthersBirthdayName8 = model.OthersBirthdayName8,
+                    OthersBirthdayName9 = model.OthersBirthdayName9,
+                    OthersBirthdayName10 = model.OthersBirthdayName10,
+                };
+            }
+            _context.SaveChanges();
+            return View(model);
+        }
     }
 }
