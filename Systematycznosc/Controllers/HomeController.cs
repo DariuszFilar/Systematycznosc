@@ -24,6 +24,9 @@ namespace Systematycznosc.Controllers
             var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
             var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
             var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
+            var familyBirthday = _context.FamilyBirthday.FirstOrDefault(x => x.Id == userId);
+            var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
+            var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
             UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
 
             if (userProfile != null)
@@ -39,7 +42,14 @@ namespace Systematycznosc.Controllers
                 else { TodoViewModel Todo = new TodoViewModel(todo); wrapper.TodoViewModel = Todo; }
                 UserProfileViewModel UserProfile = new UserProfileViewModel(userProfile);
                 wrapper.UserProfileViewModel = UserProfile;
+                if (familyBirthday == null) { wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel(); }
+                else { FamilyBirthdayViewModel FamilyBirthday = new FamilyBirthdayViewModel(familyBirthday); wrapper.FamilyBirthdayViewModel = FamilyBirthday; }
+                if (friendsBirthday == null) { wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel(); }
+                else { FriendsBirthdayViewModel FriendsBirthday = new FriendsBirthdayViewModel(friendsBirthday); wrapper.FriendsBirthdayViewModel = FriendsBirthday; }
+                if (othersBirthday == null) { wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel(); }
+                else { OthersBirthdayViewModel OthersBirthday = new OthersBirthdayViewModel(othersBirthday); wrapper.OthersBirthdayViewModel = OthersBirthday; }
                 return View(wrapper);
+
             }
             else { return RedirectToAction("Manage", "Profile"); }
         }

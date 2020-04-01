@@ -14,6 +14,9 @@ namespace Systematycznosc.ViewModels
         public MorningQuestionsViewModel MorningQuestionsViewModel { get; set; }
         public EveningQuestionsViewModel EveningQuestionsViewModel { get; set; }
         public TodoViewModel TodoViewModel { get; set; }
+        public FamilyBirthdayViewModel FamilyBirthdayViewModel { get; set; }
+        public FriendsBirthdayViewModel FriendsBirthdayViewModel { get; set; }
+        public OthersBirthdayViewModel OthersBirthdayViewModel { get; set; }
 
         public UserProfileViewModelWrapper(UserProfile userProfile)
         {

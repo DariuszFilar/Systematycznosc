@@ -10710,3 +10710,7 @@ form .row:first-child .floating-label-form-group {
             /*color: #FFF;*/
             color: gold;
         }
+
+.element.style {
+    width: 1999px;
+}

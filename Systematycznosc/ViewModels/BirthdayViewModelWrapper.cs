@@ -13,6 +13,7 @@ namespace Systematycznosc.ViewModels
         public OthersBirthdayViewModel OthersBirthdayViewModel { get; set; }
         public UserProfileViewModel UserProfileViewModel { get; set; }
 
+
         public BirthdayViewModelWrapper() { }
 
         public BirthdayViewModelWrapper(UserProfile userProfile)

@@ -13,11 +13,11 @@
     <br>
     <br>
 
-    <table id="table_id" class="table table-active" style="max-width:1150px;">
+    <table id="table_id" class="table table-active" style="max-width:600px;">
         <thead>
             <tr>
-                <th>Imię:</th>
-                <th>Urodziny:</th>
+                <th style="width: 300px">Imię:</th>
+                <th style="width: 300px">Urodziny (M/D/R):</th>
             </tr>
         </thead>
         <tbody>
@@ -25,9 +25,9 @@
                 <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName1</td>
                 <td>
                     @if (Model.FamilyBirthdayViewModel.FamilyBirthday1.HasValue)
-                        {
-                @Model.FamilyBirthdayViewModel.FamilyBirthday1.Value.ToString("MM/dd/yyyy")
-            }
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday1.Value.ToString("MM/dd/yyyy")
+                    }
                 </td>
             </tr>
             <tr>
@@ -113,20 +113,135 @@
             </tr>
         </tbody>
     </table>
-
-
+    <div style="padding-top:20px;">
+    <table id="table_id2" class="table table-active" style="max-width: 600px!important">
+        <thead>
+            <tr>
+                <th style="width: 300px">Imię:</th>
+                <th style="width: 300px">Urodziny (M/D/R):</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName1</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday1.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday1.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName2</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday2.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday2.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName3</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday3.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday3.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName4</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday4.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday4.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName5</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday5.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday5.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName6</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday6.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday6.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName7</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday7.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday7.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName8</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday8.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday8.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName9</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday9.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday9.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName10</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday10.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday10.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+        </div>
 </div>
 @section Scripts
 {
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.11/sorting/date-eu.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.12/sorting/datetime-moment.js"></script>
 }
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
+
     $(document).ready(function () {
 
+        $.fn.dataTable.moment('DD/MM/YY');
         $('#table_id').DataTable({
+
+            paging: false,
+            searching: false,
+            info: false,
+            "order": [[1, "asc"]],
+          
+
+        });
+        $.fn.dataTable.moment('DD/MM/YY');
+        $('#table_id2').DataTable({
+
             paging: false,
             searching: false,
             info: false,
