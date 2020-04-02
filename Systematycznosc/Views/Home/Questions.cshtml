@@ -5,108 +5,144 @@
     ViewBag.Title = "Questions";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-    <div id="CredoDiv">
-        <div class="numberlist">
-            <div style="color:gold; font-size:55px; text-align:center;">Poranne pytania:</div>
-            <div style="color:white; font-size:37px; text-align:center;">Warte je zadać sobie każdego ranka:</div>
-            <ol>
-                @if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions1</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions2 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions2</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions3 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions3</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions4 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions4</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions5 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions5</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions6 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions6</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions7 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions7</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions8 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions8</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions9 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions9</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions10 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions10</a></li>
-                }
 
-            </ol>
+<div id="SiteContent">
+    <section class="page-section portfolio bg-primary text-white mb-0" id="portfolio">
+        <div class="d-flex align-items-center flex-column">
+            <!-- Masthead Avatar Image -->
+            <!-- Masthead Heading -->
+            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Pytania poranne</h1>
+
+            <!-- Icon Divider -->
+            <div class="divider-custom divider-light" style="">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="numberlist">
+                <div style="color:white; font-size:37px; text-align:center;">Pytanie na które warto odpowiedzieć każdego ranka</div>
+                <ol>
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions1</a></li>
+                    }
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions2 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions2</a></li>
+                    }
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions3 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions3</a></li>
+                    }
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions4 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions4</a></li>
+                    }
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions5 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions5</a></li>
+                    }
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions6 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions6</a></li>
+                    }
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions7 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions7</a></li>
+                    }
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions8 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions8</a></li>
+                    }
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions9 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions9</a></li>
+                    }
+                    @if (Model.MorningQuestionsViewModel.MorningQuestions10 != null)
+                    {
+                        <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions10</a></li>
+                    }
+
+                </ol>
+            </div>
+
         </div>
-        <a href="@Url.Action("MorningQuestionsEdit", "Home")" id="HoverNone">
-            <div class="glyphicon glyphicon-plus-sign " style="font-size: 150px; display:block; text-align:center; color: gold; text-decoration:none;"></div>
-        </a>
-
-        <div class="numberlist">
-            <div style="color:gold; font-size:55px; text-align:center;">Wieczorne pytania:</div>
-            <div style="color:white; font-size:37px; text-align:center;">Warte je zadać sobie każdego wieczoru:</div>
-            <ol>
-                @if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion1</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion2 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion2</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion3 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion3</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion4 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion4</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion5 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion5</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion6 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion6</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion7 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion7</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion8 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion8</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion9 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion9</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion10 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion10</a></li>
-                }
-
-            </ol>
+        <div style="max-width: 150px; margin-left:auto; margin-right:auto">
+            <a href="@Url.Action("MorningQuestionsEdit", "Home")" id="HoverNone">
+                <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
+            </a>
         </div>
-        <a href="@Url.Action("EveningQuestionsEdit", "Home")" id="HoverNone">
-            <div class="glyphicon glyphicon-plus-sign " style="font-size: 150px; display:block; text-align:center; color: gold; text-decoration:none;"></div>
-        </a>
+        </section>
+    <section class="page-section portfolio" id="portfolio" style="background-color:white!important">
+        <div class=" d-flex align-items-center flex-column">
 
-    </div>
+            <!-- Masthead Avatar Image -->
+            <!-- Masthead Heading -->
+            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Pytania wieczorne</h1>
+
+            <!-- Icon Divider -->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="numberlist">
+                <div style="color:black; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego wieczoru</div>
+                <ol>
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion1</a></li>
+                    }
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion2 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion2</a></li>
+                    }
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion3 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion3</a></li>
+                    }
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion4 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion4</a></li>
+                    }
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion5 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion5</a></li>
+                    }
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion6 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion6</a></li>
+                    }
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion7 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion7</a></li>
+                    }
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion8 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion8</a></li>
+                    }
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion9 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion9</a></li>
+                    }
+                    @if (Model.EveningQuestionsViewModel.EveningQuestion10 != null)
+                    {
+                        <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion10</a></li>
+                    }
+
+                </ol>
+            </div>
+        </div>
+        <div style="max-width: 150px; margin-left:auto; margin-right:auto">
+            <a href="@Url.Action("EveningQuestionsEdit", "Home")" id="HoverNone">
+                <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
+            </a>
+        </div>
+    </section>
+
+</div>
 

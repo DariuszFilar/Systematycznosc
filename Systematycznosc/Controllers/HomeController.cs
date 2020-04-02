@@ -169,6 +169,7 @@ namespace Systematycznosc.Controllers
                 QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
                 MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
                 wrapper.MorningQuestionsViewModel = MorningQuestions;
+                wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel();
                 return View(wrapper);
             }
             else if (userProfile != null && eveningQuestions != null && morningQuestions == null)
@@ -176,6 +177,7 @@ namespace Systematycznosc.Controllers
                 QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
                 EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
                 wrapper.EveningQuestionsViewModel = EveningQuestions;
+                wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel();
                 return View(wrapper);
             }
             else if (userProfile != null && eveningQuestions == null && morningQuestions == null)

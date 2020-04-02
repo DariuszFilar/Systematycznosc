@@ -10652,6 +10652,8 @@ form .row:first-child .floating-label-form-group {
 
 .numberlist {
     width: auto;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
     .numberlist ol {
@@ -10713,4 +10715,19 @@ form .row:first-child .floating-label-form-group {
 
 .element.style {
     width: 1999px;
+}
+
+#SiteContent {
+    margin-top: 100px;
+}
+
+a:hover .glyphicon {
+    text-decoration: none;
+}
+.a:hover {
+    text-decoration: none;
+}
+
+#HoverNone{
+    text-decoration:none!important;
 }

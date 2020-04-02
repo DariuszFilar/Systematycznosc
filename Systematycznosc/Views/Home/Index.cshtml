@@ -33,7 +33,7 @@
 
         <!-- Masthead Avatar Image -->
         <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Credo:</h1>
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Credo</h1>
 
         <!-- Icon Divider -->
         <div class="divider-custom">
@@ -44,7 +44,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <div class="numberlist">
-            <div style="color:black; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia:</div>
+            <div style="color:black; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
             <ol>
                 @if (Model.CredoViewModel.Credo1 != null)
                 {
@@ -96,7 +96,7 @@
     <div class="d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image -->
         <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Pytania poranne:</h1>
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Pytania poranne</h1>
 
         <!-- Icon Divider -->
         <div class="divider-custom divider-light" style="">
@@ -107,7 +107,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <div class="numberlist">
-            <div style="color:white; font-size:37px; text-align:center;">Pytanie na które warto odpowiedzieć każdego ranka:</div>
+            <div style="color:white; font-size:37px; text-align:center;">Pytanie na które warto odpowiedzieć każdego ranka</div>
             <ol>
                 @if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
                 {
@@ -161,7 +161,7 @@
 
         <!-- Masthead Avatar Image -->
         <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Pytania wieczorne:</h1>
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Pytania wieczorne</h1>
 
         <!-- Icon Divider -->
         <div class="divider-custom">
@@ -172,7 +172,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <div class="numberlist">
-            <div style="color:black; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego wieczoru:</div>
+            <div style="color:black; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego wieczoru</div>
             <ol>
                 @if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
                 {
@@ -224,7 +224,7 @@
     <div class="d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image -->
         <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Lista rzeczy do zrobienia:</h1>
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Lista rzeczy do zrobienia</h1>
 
         <!-- Icon Divider -->
         <div class="divider-custom divider-light" style="">
@@ -235,7 +235,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <div class="numberlist">
-            <div style="color:white; font-size:37px; text-align:center;">Jak się tym zajmiesz, będzie Ci lepiej:</div>
+            <div style="color:white; font-size:37px; text-align:center;">Jak się tym zajmiesz, będzie Ci lepiej</div>
             <ol>
                 @if (Model.TodoViewModel.Todo1 != null)
                 {
@@ -288,7 +288,7 @@
 
         <!-- Masthead Avatar Image -->
         <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny:</h1>
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny rodziny</h1>
 
         <!-- Icon Divider -->
         <div class="divider-custom">
@@ -298,7 +298,7 @@
             </div>
             <div class="divider-custom-line"></div>
         </div>
-        <table id="table_id" class="table table-active" style="width:1100px;">
+        <table id="table_id" class="table table-active" style="width:1100px; font-size:18px;">
             <thead>
                 <tr>
                     <th style="width: 300px">Imię:</th>
@@ -399,6 +399,236 @@
             </tbody>
         </table>
     </div>
+    <div class=" d-flex align-items-center flex-column">
+
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny przyjaciół</h1>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <table id="table_id2" class="table table-active" style="width:1100px; font-size:18px;">
+            <thead>
+                <tr>
+                    <th style="width: 300px">Imię:</th>
+                    <th style="width: 300px">Urodziny (M/D/R):</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName1</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday1.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday1.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName2</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday2.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday2.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName3</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday3.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday3.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName4</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday4.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday4.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName5</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday5.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday5.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName6</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday6.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday6.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName7</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday7.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday7.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName8</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday8.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday8.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName9</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday9.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday9.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName10</td>
+                    <td>
+                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday10.HasValue)
+                        {
+                            @Model.FriendsBirthdayViewModel.FriendsBirthday10.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class=" d-flex align-items-center flex-column">
+
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny innych</h1>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <table id="table_id3" class="table table-active" style="width:1100px; font-size:18px;">
+            <thead>
+                <tr>
+                    <th style="width: 300px">Imię:</th>
+                    <th style="width: 300px">Urodziny (M/D/R):</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName1</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday1.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday1.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName2</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday2.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday2.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName3</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday3.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday3.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName4</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday4.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday4.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName5</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday5.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday5.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName6</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday6.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday6.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName7</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday7.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday7.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName8</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday8.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday8.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName9</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday9.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday9.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName10</td>
+                    <td>
+                        @if (Model.OthersBirthdayViewModel.OthersBirthday10.HasValue)
+                        {
+                            @Model.OthersBirthdayViewModel.OthersBirthday10.Value.ToString("MM/dd/yyyy")
+                        }
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </section>
 
 
@@ -440,6 +670,14 @@
         });
         $.fn.dataTable.moment('DD/MM/YY');
         $('#table_id2').DataTable({
+
+            paging: false,
+            searching: false,
+            info: false,
+            "order": [[1, "asc"]],
+        });
+        $.fn.dataTable.moment('DD/MM/YY');
+        $('#table_id3').DataTable({
 
             paging: false,
             searching: false,
