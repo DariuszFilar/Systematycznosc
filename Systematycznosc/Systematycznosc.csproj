@@ -236,6 +236,14 @@
     <Compile Include="Migrations\202003301214294_FixedBirthdayTable1.Designer.cs">
       <DependentUpon>202003301214294_FixedBirthdayTable1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004031020342_AddedRelationshipTable.cs" />
+    <Compile Include="Migrations\202004031020342_AddedRelationshipTable.Designer.cs">
+      <DependentUpon>202004031020342_AddedRelationshipTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004031021248_AddedRelationshipTable2.cs" />
+    <Compile Include="Migrations\202004031021248_AddedRelationshipTable2.Designer.cs">
+      <DependentUpon>202004031021248_AddedRelationshipTable2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -245,6 +253,7 @@
     <Compile Include="Models\FriendsBirthday.cs" />
     <Compile Include="Models\MorningQuestions.cs" />
     <Compile Include="Models\OthersBirthday.cs" />
+    <Compile Include="Models\Relationship.cs" />
     <Compile Include="Models\Todo.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="MSreplication_options.cs" />
@@ -276,6 +285,7 @@
     <Compile Include="ViewModels\OthersBirthdayViewModel.cs" />
     <Compile Include="ViewModels\QuestionsViewModelWrapper.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\RelationshipViewModel.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\SetPasswordViewModel.cs" />
@@ -398,6 +408,8 @@
     <Content Include="Views\Home\FamilyBirthdayEdit.cshtml" />
     <Content Include="Views\Home\FriendsBirthdayEdit.cshtml" />
     <Content Include="Views\Home\OthersBirthdayEdit.cshtml" />
+    <Content Include="Views\Home\Relationship.cshtml" />
+    <Content Include="Views\Home\RelationshipEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -460,6 +472,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003301214294_FixedBirthdayTable1.resx">
       <DependentUpon>202003301214294_FixedBirthdayTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004031020342_AddedRelationshipTable.resx">
+      <DependentUpon>202004031020342_AddedRelationshipTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004031021248_AddedRelationshipTable2.resx">
+      <DependentUpon>202004031021248_AddedRelationshipTable2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -31,6 +31,7 @@ namespace Systematycznosc
         public virtual DbSet<FamilyBirthday> FamilyBirthday { get; set; }
         public virtual DbSet<FriendsBirthday> FriendsBirthday { get; set; }
         public virtual DbSet<OthersBirthday> OthersBirthday { get; set; }
+        public virtual DbSet<Relationship> Relationship { get; set; }
 
 
 

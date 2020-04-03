@@ -17,6 +17,7 @@ namespace Systematycznosc.ViewModels
         public FamilyBirthdayViewModel FamilyBirthdayViewModel { get; set; }
         public FriendsBirthdayViewModel FriendsBirthdayViewModel { get; set; }
         public OthersBirthdayViewModel OthersBirthdayViewModel { get; set; }
+        public RelationshipViewModel RelationshipViewModel { get; set; }
 
         public UserProfileViewModelWrapper(UserProfile userProfile)
         {

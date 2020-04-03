@@ -12,7 +12,7 @@ namespace Systematycznosc.ViewModels
         public FriendsBirthdayViewModel FriendsBirthdayViewModel { get; set; }
         public OthersBirthdayViewModel OthersBirthdayViewModel { get; set; }
         public UserProfileViewModel UserProfileViewModel { get; set; }
-
+        
 
         public BirthdayViewModelWrapper() { }
 

@@ -96,7 +96,7 @@
     <div class="d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image -->
         <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Pytania poranne</h1>
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Związek</h1>
 
         <!-- Icon Divider -->
         <div class="divider-custom divider-light" style="">
@@ -107,7 +107,71 @@
             <div class="divider-custom-line"></div>
         </div>
         <div class="numberlist">
-            <div style="color:white; font-size:37px; text-align:center;">Pytanie na które warto odpowiedzieć każdego ranka</div>
+            <div style="color:white; font-size:37px; text-align:center;">Rzeczy o których warto pamiętać byś był szczęśliwy</div>
+            <ol>
+                @if (Model.RelationshipViewModel.Relationship1 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship1</a></li>
+                }
+                @if (Model.RelationshipViewModel.Relationship2 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship2</a></li>
+                }
+                @if (Model.RelationshipViewModel.Relationship3 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship3</a></li>
+                }
+                @if (Model.RelationshipViewModel.Relationship4 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship4</a></li>
+                }
+                @if (Model.RelationshipViewModel.Relationship5 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship5</a></li>
+                }
+                @if (Model.RelationshipViewModel.Relationship6 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship6</a></li>
+                }
+                @if (Model.RelationshipViewModel.Relationship7 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship7</a></li>
+                }
+                @if (Model.RelationshipViewModel.Relationship8 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship8</a></li>
+                }
+                @if (Model.RelationshipViewModel.Relationship9 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship9</a></li>
+                }
+                @if (Model.RelationshipViewModel.Relationship10 != null)
+                {
+                    <li><a href="">@Model.RelationshipViewModel.Relationship10</a></li>
+                }
+
+            </ol>
+        </div>
+
+    </div>
+</section>
+
+<section class="page-section portfolio" id="about">
+    <div class="d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Pytania poranne</h1>
+
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="numberlist">
+            <div style="color:black; font-size:37px; text-align:center;">Pytania na które warto odpowiedzieć każdego poranku</div>
             <ol>
                 @if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
                 {
@@ -156,7 +220,7 @@
     </div>
 </section>
 
-<section class="page-section portfolio" id="portfolio">
+<section class="page-section bg-primary text-white mb-0" id="about">
     <div class=" d-flex align-items-center flex-column">
 
         <!-- Masthead Avatar Image -->
@@ -164,7 +228,7 @@
         <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Pytania wieczorne</h1>
 
         <!-- Icon Divider -->
-        <div class="divider-custom">
+        <div class="divider-custom divider-light" style="">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
                 <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
@@ -172,7 +236,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <div class="numberlist">
-            <div style="color:black; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego wieczoru</div>
+            <div style="color:white; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego wieczoru</div>
             <ol>
                 @if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
                 {
@@ -220,14 +284,14 @@
     </div>
 </section>
 
-<section class="page-section bg-primary text-white mb-0" id="about">
+<section class="page-section portfolio" id="portfolio">
     <div class="d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image -->
         <!-- Masthead Heading -->
         <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Lista rzeczy do zrobienia</h1>
 
         <!-- Icon Divider -->
-        <div class="divider-custom divider-light" style="">
+        <div class="divider-custom">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
                 <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
@@ -235,7 +299,7 @@
             <div class="divider-custom-line"></div>
         </div>
         <div class="numberlist">
-            <div style="color:white; font-size:37px; text-align:center;">Jak się tym zajmiesz, będzie Ci lepiej</div>
+            <div style="color:black; font-size:37px; text-align:center;">Jak się tym zajmiesz, będzie Ci lepiej</div>
             <ol>
                 @if (Model.TodoViewModel.Todo1 != null)
                 {
@@ -283,22 +347,23 @@
     </div>
 </section>
 
-<section class="page-section portfolio" id="portfolio">
+<section class="page-section bg-primary text-white mb-0" id="about">
     <div class=" d-flex align-items-center flex-column">
 
         <!-- Masthead Avatar Image -->
         <!-- Masthead Heading -->
         <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny rodziny</h1>
 
+
         <!-- Icon Divider -->
-        <div class="divider-custom">
+        <div class="divider-custom divider-light" style="">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
                 <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
             </div>
             <div class="divider-custom-line"></div>
         </div>
-        <table id="table_id" class="table table-active" style="width:1100px; font-size:18px;">
+        <table id="table_id" class="table table-info table-hover" style="width:1100px; font-size:18px;">
             <thead>
                 <tr>
                     <th style="width: 300px">Imię:</th>
@@ -405,15 +470,16 @@
         <!-- Masthead Heading -->
         <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny przyjaciół</h1>
 
+
         <!-- Icon Divider -->
-        <div class="divider-custom">
+        <div class="divider-custom divider-light" style="">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
                 <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
             </div>
             <div class="divider-custom-line"></div>
         </div>
-        <table id="table_id2" class="table table-active" style="width:1100px; font-size:18px;">
+        <table id="table_id2" class="table table-info table-hover" style="width:1100px; font-size:18px;">
             <thead>
                 <tr>
                     <th style="width: 300px">Imię:</th>
@@ -520,15 +586,16 @@
         <!-- Masthead Heading -->
         <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny innych</h1>
 
+
         <!-- Icon Divider -->
-        <div class="divider-custom">
+        <div class="divider-custom divider-light" style="">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
                 <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
             </div>
             <div class="divider-custom-line"></div>
         </div>
-        <table id="table_id3" class="table table-active" style="width:1100px; font-size:18px;">
+        <table id="table_id3" class="table table-info table-hover" style="width:1100px; font-size:18px;">
             <thead>
                 <tr>
                     <th style="width: 300px">Imię:</th>

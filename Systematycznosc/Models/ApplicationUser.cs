@@ -19,6 +19,8 @@ namespace Systematycznosc.Models
         public FriendsBirthday FriendsBirthday { get; set; }
         public OthersBirthday OthersBirthday { get; set; }
         public Todo Todo { get; set; }
+        public Relationship Relationship { get; set; }
+       
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
