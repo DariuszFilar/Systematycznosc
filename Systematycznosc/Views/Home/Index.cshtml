@@ -1,6 +1,13 @@
 ﻿@model UserProfileViewModelWrapper
 @using Systematycznosc.ViewModels
 
+@{
+    string icon = "";
+    string color = "";
+    int colornumber = 2;
+    string colordescription = "";
+}
+
 <header class="masthead bg-primary text-white text-center">
     <div class=" d-flex align-items-center flex-column">
 
@@ -26,677 +33,859 @@
         <p class="masthead-subheading font-weight-light mb-0">W pomocniku systematyczności</p>
 
     </div>
+    @{
+        if (Model.CredoViewModel.Credo1 == null && Model.EveningQuestionsViewModel.EveningQuestion1 == null && Model.FamilyBirthdayViewModel.FamilyBirthday1 == null && Model.FriendsBirthdayViewModel.FriendsBirthday1 == null
+        && Model.MorningQuestionsViewModel.MorningQuestions1 == null && Model.OthersBirthdayViewModel.OthersBirthday1 == null && Model.RelationshipViewModel.Relationship1 == null && Model.TodoViewModel.Todo1 == null)
+        {
+            <h1 class="masthead-heading text-uppercase mb-0" style="color: red; font-size:55px; padding-top:55px; line-height: 88px;">By spersonalizować pomocnika wejdź w zakładki u góry i dodaj interesujące Cię rzeczy</h1>}
+    }
+
 </header>
 
-<section class="page-section portfolio" id="portfolio">
-    <div class=" d-flex align-items-center flex-column">
+@{ if (Model.CredoViewModel.Credo1 != null)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
 
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Credo</h1>
 
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+    if (Model.CredoViewModel.Credo1 != null)
+    {
+        <section class="page-section portfolio @color" id="credo">
+            <div class=" d-flex align-items-center flex-column">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Credo</h1>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
+                    <ol>
+                        @if (Model.CredoViewModel.Credo1 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo1</a></li>
+                        }
+                        @if (Model.CredoViewModel.Credo2 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo2</a></li>
+                        }
+                        @if (Model.CredoViewModel.Credo3 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo3</a></li>
+                        }
+                        @if (Model.CredoViewModel.Credo4 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo4</a></li>
+                        }
+                        @if (Model.CredoViewModel.Credo5 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo5</a></li>
+                        }
+                        @if (Model.CredoViewModel.Credo6 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo6</a></li>
+                        }
+                        @if (Model.CredoViewModel.Credo7 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo7</a></li>
+                        }
+                        @if (Model.CredoViewModel.Credo8 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo8</a></li>
+                        }
+                        @if (Model.CredoViewModel.Credo9 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo9</a></li>
+                        }
+                        @if (Model.CredoViewModel.Credo10 != null)
+                        {
+                            <li><a href="">@Model.CredoViewModel.Credo10</a></li>
+                        }
+
+                    </ol>
+                </div>
             </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="numberlist">
-            <div style="color:black; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
-            <ol>
-                @if (Model.CredoViewModel.Credo1 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo1</a></li>
-                }
-                @if (Model.CredoViewModel.Credo2 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo2</a></li>
-                }
-                @if (Model.CredoViewModel.Credo3 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo3</a></li>
-                }
-                @if (Model.CredoViewModel.Credo4 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo4</a></li>
-                }
-                @if (Model.CredoViewModel.Credo5 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo5</a></li>
-                }
-                @if (Model.CredoViewModel.Credo6 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo6</a></li>
-                }
-                @if (Model.CredoViewModel.Credo7 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo7</a></li>
-                }
-                @if (Model.CredoViewModel.Credo8 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo8</a></li>
-                }
-                @if (Model.CredoViewModel.Credo9 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo9</a></li>
-                }
-                @if (Model.CredoViewModel.Credo10 != null)
-                {
-                    <li><a href="">@Model.CredoViewModel.Credo10</a></li>
-                }
+        </section>
+    }
+}
 
-            </ol>
-        </div>
-    </div>
-</section>
+@{
+    if (Model.RelationshipViewModel.Relationship1 != null)
+     {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
 
-<section class="page-section bg-primary text-white mb-0" id="about">
-    <div class="d-flex align-items-center flex-column">
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Związek</h1>
 
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light" style="">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+    if (Model.RelationshipViewModel.Relationship1 != null)
+    {
+
+        <section class="page-section @color mb-0" id="Relationship">
+            <div class="d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Związek</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@color; font-size:37px; text-align:center;">Rzeczy o których warto pamiętać byś był szczęśliwy</div>
+                    <ol>
+                        @if (Model.RelationshipViewModel.Relationship1 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship1</a></li>
+                        }
+                        @if (Model.RelationshipViewModel.Relationship2 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship2</a></li>
+                        }
+                        @if (Model.RelationshipViewModel.Relationship3 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship3</a></li>
+                        }
+                        @if (Model.RelationshipViewModel.Relationship4 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship4</a></li>
+                        }
+                        @if (Model.RelationshipViewModel.Relationship5 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship5</a></li>
+                        }
+                        @if (Model.RelationshipViewModel.Relationship6 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship6</a></li>
+                        }
+                        @if (Model.RelationshipViewModel.Relationship7 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship7</a></li>
+                        }
+                        @if (Model.RelationshipViewModel.Relationship8 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship8</a></li>
+                        }
+                        @if (Model.RelationshipViewModel.Relationship9 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship9</a></li>
+                        }
+                        @if (Model.RelationshipViewModel.Relationship10 != null)
+                        {
+                            <li><a href="">@Model.RelationshipViewModel.Relationship10</a></li>
+                        }
+
+                    </ol>
+                </div>
             </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="numberlist">
-            <div style="color:white; font-size:37px; text-align:center;">Rzeczy o których warto pamiętać byś był szczęśliwy</div>
-            <ol>
-                @if (Model.RelationshipViewModel.Relationship1 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship1</a></li>
-                }
-                @if (Model.RelationshipViewModel.Relationship2 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship2</a></li>
-                }
-                @if (Model.RelationshipViewModel.Relationship3 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship3</a></li>
-                }
-                @if (Model.RelationshipViewModel.Relationship4 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship4</a></li>
-                }
-                @if (Model.RelationshipViewModel.Relationship5 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship5</a></li>
-                }
-                @if (Model.RelationshipViewModel.Relationship6 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship6</a></li>
-                }
-                @if (Model.RelationshipViewModel.Relationship7 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship7</a></li>
-                }
-                @if (Model.RelationshipViewModel.Relationship8 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship8</a></li>
-                }
-                @if (Model.RelationshipViewModel.Relationship9 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship9</a></li>
-                }
-                @if (Model.RelationshipViewModel.Relationship10 != null)
-                {
-                    <li><a href="">@Model.RelationshipViewModel.Relationship10</a></li>
-                }
+        </section>
+    }
+}
 
-            </ol>
-        </div>
+@{ if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
+     {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
 
-    </div>
-</section>
 
-<section class="page-section portfolio" id="about">
-    <div class="d-flex align-items-center flex-column">
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Pytania poranne</h1>
+    if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
+    {
+        <section class="page-section portfolio @color" id="MorningQuestions">
+            <div class="d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Pytania poranne</h1>
 
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Pytania na które warto odpowiedzieć każdego poranku</div>
+                    <ol>
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions1</a></li>
+                        }
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions2 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions2</a></li>
+                        }
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions3 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions3</a></li>
+                        }
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions4 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions4</a></li>
+                        }
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions5 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions5</a></li>
+                        }
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions6 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions6</a></li>
+                        }
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions7 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions7</a></li>
+                        }
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions8 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions8</a></li>
+                        }
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions9 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions9</a></li>
+                        }
+                        @if (Model.MorningQuestionsViewModel.MorningQuestions10 != null)
+                        {
+                            <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions10</a></li>
+                        }
+
+                    </ol>
+                </div>
+
             </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="numberlist">
-            <div style="color:black; font-size:37px; text-align:center;">Pytania na które warto odpowiedzieć każdego poranku</div>
-            <ol>
-                @if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions1</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions2 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions2</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions3 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions3</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions4 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions4</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions5 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions5</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions6 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions6</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions7 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions7</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions8 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions8</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions9 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions9</a></li>
-                }
-                @if (Model.MorningQuestionsViewModel.MorningQuestions10 != null)
-                {
-                    <li><a href="">@Model.MorningQuestionsViewModel.MorningQuestions10</a></li>
-                }
+        </section>
+    }
+}
 
-            </ol>
-        </div>
+@{ if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
 
-    </div>
-</section>
+    if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
+    {
+        <section class="page-section mb-0 @color" id="EveningQuestions">
+            <div class=" d-flex align-items-center flex-column">
 
-<section class="page-section bg-primary text-white mb-0" id="about">
-    <div class=" d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Pytania wieczorne</h1>
 
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Pytania wieczorne</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego wieczoru</div>
+                    <ol>
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion1</a></li>
+                        }
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion2 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion2</a></li>
+                        }
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion3 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion3</a></li>
+                        }
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion4 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion4</a></li>
+                        }
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion5 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion5</a></li>
+                        }
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion6 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion6</a></li>
+                        }
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion7 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion7</a></li>
+                        }
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion8 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion8</a></li>
+                        }
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion9 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion9</a></li>
+                        }
+                        @if (Model.EveningQuestionsViewModel.EveningQuestion10 != null)
+                        {
+                            <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion10</a></li>
+                        }
 
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light" style="">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </ol>
+                </div>
             </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="numberlist">
-            <div style="color:white; font-size:37px; text-align:center;">Warto na nie odpowiedzieć każdego wieczoru</div>
-            <ol>
-                @if (Model.EveningQuestionsViewModel.EveningQuestion1 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion1</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion2 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion2</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion3 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion3</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion4 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion4</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion5 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion5</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion6 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion6</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion7 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion7</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion8 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion8</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion9 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion9</a></li>
-                }
-                @if (Model.EveningQuestionsViewModel.EveningQuestion10 != null)
-                {
-                    <li><a href="">@Model.EveningQuestionsViewModel.EveningQuestion10</a></li>
-                }
+        </section>
+    }
+}
 
-            </ol>
-        </div>
-    </div>
-</section>
+@{ if (Model.TodoViewModel.Todo1 != null)
+   {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
 
-<section class="page-section portfolio" id="portfolio">
-    <div class="d-flex align-items-center flex-column">
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Lista rzeczy do zrobienia</h1>
+    if (Model.TodoViewModel.Todo1 != null)
+    {
+        <section class="page-section portfolio @color" id="Todo">
+            <div class="d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Lista rzeczy do zrobienia</h1>
 
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Jak się tym zajmiesz, będzie Ci lepiej</div>
+                    <ol>
+                        @if (Model.TodoViewModel.Todo1 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo1</a></li>
+                        }
+                        @if (Model.TodoViewModel.Todo2 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo2</a></li>
+                        }
+                        @if (Model.TodoViewModel.Todo3 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo3</a></li>
+                        }
+                        @if (Model.TodoViewModel.Todo4 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo4</a></li>
+                        }
+                        @if (Model.TodoViewModel.Todo5 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo5</a></li>
+                        }
+                        @if (Model.TodoViewModel.Todo6 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo6</a></li>
+                        }
+                        @if (Model.TodoViewModel.Todo7 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo7</a></li>
+                        }
+                        @if (Model.TodoViewModel.Todo8 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo8</a></li>
+                        }
+                        @if (Model.TodoViewModel.Todo9 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo9</a></li>
+                        }
+                        @if (Model.TodoViewModel.Todo10 != null)
+                        {
+                            <li><a href="">@Model.TodoViewModel.Todo10</a></li>
+                        }
+                    </ol>
+                </div>
+
             </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="numberlist">
-            <div style="color:black; font-size:37px; text-align:center;">Jak się tym zajmiesz, będzie Ci lepiej</div>
-            <ol>
-                @if (Model.TodoViewModel.Todo1 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo1</a></li>
-                }
-                @if (Model.TodoViewModel.Todo2 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo2</a></li>
-                }
-                @if (Model.TodoViewModel.Todo3 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo3</a></li>
-                }
-                @if (Model.TodoViewModel.Todo4 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo4</a></li>
-                }
-                @if (Model.TodoViewModel.Todo5 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo5</a></li>
-                }
-                @if (Model.TodoViewModel.Todo6 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo6</a></li>
-                }
-                @if (Model.TodoViewModel.Todo7 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo7</a></li>
-                }
-                @if (Model.TodoViewModel.Todo8 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo8</a></li>
-                }
-                @if (Model.TodoViewModel.Todo9 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo9</a></li>
-                }
-                @if (Model.TodoViewModel.Todo10 != null)
-                {
-                    <li><a href="">@Model.TodoViewModel.Todo10</a></li>
-                }
-            </ol>
-        </div>
+        </section>}
+}
 
-    </div>
-</section>
-
-<section class="page-section bg-primary text-white mb-0" id="about">
-    <div class=" d-flex align-items-center flex-column">
-
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny rodziny</h1>
+@{ if (Model.FamilyBirthdayViewModel.FamilyBirthday1 != null)
+ {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
 
 
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light" style="">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+    if (Model.FamilyBirthdayViewModel.FamilyBirthday1 != null)
+
+    { <section class="page-section portfolio mb-0 @color" id="FamilyBirthday" style="">
+            <div class=" d-flex align-items-center flex-column" style="padding-bottom:150px">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription;">Urodziny rodziny</h1>
+
+
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <table id="table_id" class="table table-info table-hover" style="width:1100px; font-size:18px;">
+                    <thead>
+                        <tr>
+                            <th style="width: 300px">Imię:</th>
+                            <th style="width: 300px">Urodziny (M/D/R):</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName1</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday1.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday1.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName2</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday2.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday2.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName3</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday3.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday3.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName4</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday4.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday4.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName5</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday5.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday5.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName6</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday6.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday6.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName7</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday7.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday7.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName8</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday8.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday8.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName9</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday9.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday9.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName10</td>
+                            <td>
+                                @if (Model.FamilyBirthdayViewModel.FamilyBirthday10.HasValue)
+                                {
+                                    @Model.FamilyBirthdayViewModel.FamilyBirthday10.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <table id="table_id" class="table table-info table-hover" style="width:1100px; font-size:18px;">
-            <thead>
-                <tr>
-                    <th style="width: 300px">Imię:</th>
-                    <th style="width: 300px">Urodziny (M/D/R):</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName1</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday1.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday1.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName2</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday2.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday2.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName3</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday3.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday3.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName4</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday4.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday4.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName5</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday5.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday5.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName6</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday6.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday6.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName7</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday7.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday7.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName8</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday8.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday8.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName9</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday9.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday9.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName10</td>
-                    <td>
-                        @if (Model.FamilyBirthdayViewModel.FamilyBirthday10.HasValue)
-                        {
-                            @Model.FamilyBirthdayViewModel.FamilyBirthday10.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class=" d-flex align-items-center flex-column">
+        </section>}
+}
 
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny przyjaciół</h1>
+@{ if (Model.FriendsBirthdayViewModel.FriendsBirthday1 != null)
+     {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
+
+    if (Model.FriendsBirthdayViewModel.FriendsBirthday1 != null)
+    {
+        <section class="page-section portfolio @color" id="portfolio" style="">
+            <div class=" d-flex align-items-center flex-column" style="padding-bottom:150px">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription;">Urodziny Przyjaciół</h1>
 
 
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light" style="">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <table id="table_id2" class="table table-info table-hover" style="width:1100px; font-size:18px;">
+                    <thead>
+                        <tr>
+                            <th style="width: 300px">Imię:</th>
+                            <th style="width: 300px">Urodziny (M/D/R):</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName1</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday1.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday1.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName2</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday2.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday2.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName3</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday3.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday3.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName4</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday4.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday4.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName5</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday5.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday5.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName6</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday6.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday6.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName7</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday7.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday7.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName8</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday8.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday8.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName9</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday9.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday9.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName10</td>
+                            <td>
+                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday10.HasValue)
+                                {
+                                    @Model.FriendsBirthdayViewModel.FriendsBirthday10.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <table id="table_id2" class="table table-info table-hover" style="width:1100px; font-size:18px;">
-            <thead>
-                <tr>
-                    <th style="width: 300px">Imię:</th>
-                    <th style="width: 300px">Urodziny (M/D/R):</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName1</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday1.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday1.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName2</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday2.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday2.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName3</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday3.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday3.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName4</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday4.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday4.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName5</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday5.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday5.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName6</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday6.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday6.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName7</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday7.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday7.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName8</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday8.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday8.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName9</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday9.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday9.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName10</td>
-                    <td>
-                        @if (Model.FriendsBirthdayViewModel.FriendsBirthday10.HasValue)
-                        {
-                            @Model.FriendsBirthdayViewModel.FriendsBirthday10.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class=" d-flex align-items-center flex-column">
+        </section>
 
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny innych</h1>
+    } }
+
+@{ if (Model.OthersBirthdayViewModel.OthersBirthday1 != null)
+  {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
+
+    if (Model.OthersBirthdayViewModel.OthersBirthday1 != null)
+    {
+        <section class="page-section portfolio @color mb-0" id="OthersBirthdays" style="">
+            <div class=" d-flex align-items-center flex-column" style="padding-bottom:150px">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription;">Urodziny innych</h1>
 
 
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light" style="">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <table id="table_id3" class="table table-info table-hover" style="width:1100px; font-size:18px;">
+                    <thead>
+                        <tr>
+                            <th style="width: 300px">Imię:</th>
+                            <th style="width: 300px">Urodziny (M/D/R):</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName1</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday1.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday1.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName2</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday2.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday2.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName3</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday3.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday3.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName4</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday4.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday4.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName5</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday5.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday5.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName6</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday6.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday6.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName7</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday7.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday7.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName8</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday8.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday8.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName9</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday9.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday9.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>@Model.OthersBirthdayViewModel.OthersBirthdayName10</td>
+                            <td>
+                                @if (Model.OthersBirthdayViewModel.OthersBirthday10.HasValue)
+                                {
+                                    @Model.OthersBirthdayViewModel.OthersBirthday10.Value.ToString("MM/dd/yyyy")
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <table id="table_id3" class="table table-info table-hover" style="width:1100px; font-size:18px;">
-            <thead>
-                <tr>
-                    <th style="width: 300px">Imię:</th>
-                    <th style="width: 300px">Urodziny (M/D/R):</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName1</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday1.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday1.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName2</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday2.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday2.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName3</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday3.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday3.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName4</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday4.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday4.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName5</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday5.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday5.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName6</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday6.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday6.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName7</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday7.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday7.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName8</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday8.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday8.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName9</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday9.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday9.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-                <tr>
-                    <td>@Model.OthersBirthdayViewModel.OthersBirthdayName10</td>
-                    <td>
-                        @if (Model.OthersBirthdayViewModel.OthersBirthday10.HasValue)
-                        {
-                            @Model.OthersBirthdayViewModel.OthersBirthday10.Value.ToString("MM/dd/yyyy")
-                        }
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+        </section>}
+}
 
 
 
