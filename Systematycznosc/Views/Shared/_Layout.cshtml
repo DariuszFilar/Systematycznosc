@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title Pomocnik Systematyczności</title>
+
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/themes/base/css")
     @Scripts.Render("~/bundles/modernizr")
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>Twój pomocnik systematyczności</title>
 
     <!-- Custom fonts for this theme -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,8 +38,9 @@
                 <ul class="navbar-nav ml-auto" style="align-items:center;">
                     <li class="nav-item mx-0 mx-lg-1">
                         <a class="py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Credo">@Html.ActionLink("Credo", "Credo", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</a>
-                    </li><li class="nav-item mx-0 mx-lg-1">
-                        <a class="py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Credo">@Html.ActionLink("Związek", "Relationship", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1">
+                        <a class="py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Związek">@Html.ActionLink("Związek", "Relationship", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</a>
                     </li>
                     <li class="nav-item mx-0 mx-lg-1 cent">
                         <a class="py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Pytania">@Html.ActionLink("Pytania", "Questions", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:white" })</a>
@@ -58,6 +59,7 @@
             </div>
         </div>
     </nav>
+
     <div>
         @RenderBody()
         <!-- Copyright Section -->
