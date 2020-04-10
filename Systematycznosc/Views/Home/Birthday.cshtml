@@ -1,376 +1,376 @@
 ﻿@model Systematycznosc.ViewModels.BirthdayViewModelWrapper
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <style>
+        body {
+            background-color: #1abc9c
+        }
+    </style>
+}
 }
 
-<div id="SiteContent">
-    <section class="page-section portfolio bg-primary text-white mb-0" id="portfolio">
-        <div class=" d-flex align-items-center flex-column">
+<div class=" d-flex align-items-center flex-column page-section portfolio bg-primary text-white mb-0">
 
-            <!-- Masthead Avatar Image -->
-            <!-- Masthead Heading -->
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny rodziny</h1>
+    <!-- Masthead Avatar Image -->
+    <!-- Masthead Heading -->
+    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny rodziny</h1>
 
 
-            <!-- Icon Divider -->
-            <div class="divider-custom divider-light" style="">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <table id="table_id" class="table table-info table-hover" style="font-size:18px;">
-                <thead>
-                    <tr>
-                        <th style="width: 300px">Imię:</th>
-                        <th style="width: 300px">Urodziny (M/D/R):</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName1</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday1.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday1.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName2</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday2.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday2.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName3</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday3.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday3.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName4</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday4.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday4.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName5</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday5.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday5.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName6</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday6.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday6.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName7</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday7.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday7.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName8</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday8.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday8.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName9</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday9.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday9.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName10</td>
-                        <td>
-                            @if (Model.FamilyBirthdayViewModel.FamilyBirthday10.HasValue)
-                            {
-                                @Model.FamilyBirthdayViewModel.FamilyBirthday10.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div style="max-width: 150px; margin-left:auto; margin-right:auto; padding-top: 50px; padding-bottom:50px;">
-                <a href="@Url.Action("FamilyBirthdayEdit", "Home")" id="HoverNone">
-                    <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
-                </a>
-            </div>
+    <!-- Icon Divider -->
+    <div class="divider-custom divider-light" style="">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
         </div>
-        <section class="page-section portfolio" id="portfolio" style="background-color:white!important">
-            <div class=" d-flex align-items-center flex-column">
+        <div class="divider-custom-line"></div>
+    </div>
+    <table id="table_id" class="table table-info table-hover" style="font-size:18px;">
+        <thead>
+            <tr>
+                <th style="width: 300px">Imię:</th>
+                <th style="width: 300px">Urodziny (M/D/R):</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName1</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday1.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday1.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName2</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday2.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday2.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName3</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday3.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday3.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName4</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday4.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday4.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName5</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday5.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday5.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName6</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday6.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday6.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName7</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday7.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday7.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName8</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday8.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday8.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName9</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday9.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday9.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FamilyBirthdayViewModel.FamilyBirthdayName10</td>
+                <td>
+                    @if (Model.FamilyBirthdayViewModel.FamilyBirthday10.HasValue)
+                    {
+                        @Model.FamilyBirthdayViewModel.FamilyBirthday10.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="max-width: 150px; margin-left:auto; margin-right:auto; padding-top: 50px; padding-bottom:50px;">
+        <a href="@Url.Action("FamilyBirthdayEdit", "Home")" id="HoverNone">
+            <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
+        </a>
+    </div>
+</div>
+<div class=" d-flex align-items-center flex-column" style="background-color:white!important">
 
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:black!important;">Urodziny Przyjaciół</h1>
-
-
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <table id="table_id2" class="table table-info table-hover" style="font-size:18px;">
-                    <thead>
-                        <tr>
-                            <th style="width: 300px">Imię:</th>
-                            <th style="width: 300px">Urodziny (M/D/R):</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName1</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday1.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday1.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName2</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday2.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday2.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName3</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday3.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday3.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName4</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday4.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday4.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName5</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday5.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday5.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName6</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday6.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday6.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName7</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday7.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday7.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName8</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday8.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday8.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName9</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday9.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday9.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName10</td>
-                            <td>
-                                @if (Model.FriendsBirthdayViewModel.FriendsBirthday10.HasValue)
-                                {
-                                    @Model.FriendsBirthdayViewModel.FriendsBirthday10.Value.ToString("MM/dd/yyyy")
-                                }
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div style="max-width: 150px; margin-left:auto; margin-right:auto; padding-top: 50px; padding-bottom:50px;">
-                    <a href="@Url.Action("FriendsBirthdayEdit", "Home")" id="HoverNone">
-                        <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
-                    </a>
-                </div>
-            </div>
-        </section>
-        <div class=" d-flex align-items-center flex-column">
-
-            <!-- Masthead Avatar Image -->
-            <!-- Masthead Heading -->
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny innych</h1>
+    <!-- Masthead Avatar Image -->
+    <!-- Masthead Heading -->
+    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:black!important;">Urodziny Przyjaciół</h1>
 
 
-            <!-- Icon Divider -->
-            <div class="divider-custom divider-light" style="">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <table id="table_id3" class="table table-info table-hover" style="font-size:18px;">
-                <thead>
-                    <tr>
-                        <th style="width: 300px">Imię:</th>
-                        <th style="width: 300px">Urodziny (M/D/R):</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName1</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday1.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday1.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName2</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday2.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday2.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName3</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday3.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday3.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName4</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday4.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday4.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName5</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday5.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday5.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName6</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday6.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday6.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName7</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday7.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday7.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName8</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday8.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday8.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName9</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday9.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday9.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>@Model.OthersBirthdayViewModel.OthersBirthdayName10</td>
-                        <td>
-                            @if (Model.OthersBirthdayViewModel.OthersBirthday10.HasValue)
-                            {
-                                @Model.OthersBirthdayViewModel.OthersBirthday10.Value.ToString("MM/dd/yyyy")
-                            }
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div style="max-width: 150px; margin-left:auto; margin-right:auto; padding-top: 50px; padding-bottom:50px;">
-                <a href="@Url.Action("OthersBirthdayEdit", "Home")" id="HoverNone">
-                    <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
-                </a>
-            </div>
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
         </div>
-    </section>
+        <div class="divider-custom-line"></div>
+    </div>
+    <table id="table_id2" class="table table-info table-hover" style="font-size:18px;">
+        <thead>
+            <tr>
+                <th style="width: 300px">Imię:</th>
+                <th style="width: 300px">Urodziny (M/D/R):</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName1</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday1.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday1.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName2</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday2.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday2.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName3</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday3.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday3.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName4</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday4.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday4.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName5</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday5.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday5.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName6</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday6.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday6.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName7</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday7.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday7.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName8</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday8.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday8.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName9</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday9.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday9.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.FriendsBirthdayViewModel.FriendsBirthdayName10</td>
+                <td>
+                    @if (Model.FriendsBirthdayViewModel.FriendsBirthday10.HasValue)
+                    {
+                        @Model.FriendsBirthdayViewModel.FriendsBirthday10.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="max-width: 150px; margin-left:auto; margin-right:auto; padding-top: 50px; padding-bottom:50px;">
+        <a href="@Url.Action("FriendsBirthdayEdit", "Home")" id="HoverNone">
+            <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
+        </a>
+    </div>
+</div>
+<div class=" d-flex align-items-center flex-column">
+
+    <!-- Masthead Avatar Image -->
+    <!-- Masthead Heading -->
+    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">Urodziny innych</h1>
+
+
+    <!-- Icon Divider -->
+    <div class="divider-custom divider-light" style="">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+    </div>
+    <table id="table_id3" class="table table-info table-hover" style="font-size:18px;">
+        <thead>
+            <tr>
+                <th style="width: 300px">Imię:</th>
+                <th style="width: 300px">Urodziny (M/D/R):</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName1</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday1.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday1.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName2</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday2.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday2.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName3</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday3.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday3.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName4</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday4.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday4.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName5</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday5.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday5.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName6</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday6.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday6.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName7</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday7.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday7.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName8</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday8.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday8.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName9</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday9.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday9.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>@Model.OthersBirthdayViewModel.OthersBirthdayName10</td>
+                <td>
+                    @if (Model.OthersBirthdayViewModel.OthersBirthday10.HasValue)
+                    {
+                        @Model.OthersBirthdayViewModel.OthersBirthday10.Value.ToString("MM/dd/yyyy")
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="max-width: 150px; margin-left:auto; margin-right:auto; padding-top: 50px; padding-bottom:50px;">
+        <a href="@Url.Action("OthersBirthdayEdit", "Home")" id="HoverNone">
+            <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
+        </a>
+    </div>
 </div>
 @section Scripts
 {

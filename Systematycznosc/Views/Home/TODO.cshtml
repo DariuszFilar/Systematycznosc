@@ -2,77 +2,79 @@
 @{
     ViewBag.Title = "Todo";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <style>
+        body {
+            background-color: #1abc9c
+        }
+    </style>
 }
 
 
-<div id="SiteContent">
-    <section class="page-section portfolio bg-primary text-white mb-0" id="portfolio">
-        <div class=" d-flex align-items-center flex-column">
+<div class="page-section portfolio bg-primary text-white mb-0" id="portfolio">
+    <div class=" d-flex align-items-center flex-column">
 
-            <!-- Masthead Avatar Image -->
-            <!-- Masthead Heading -->
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Todo</h1>
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Todo</h1>
 
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line" style="background-color:white!important;"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
-                </div>
-                <div class="divider-custom-line" style="background-color:white!important;"></div>
+        <!-- Icon Divider -->
+        <div class="divider-custom">
+            <div class="divider-custom-line" style="background-color:white!important;"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
             </div>
-            <div class="numberlist">
-                <div style="font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
-                <ol>
-                    @if (Model.Todo1 != null)
-                    {
-                        <li><a href="">@Model.Todo1</a></li>
-                    }
-                    @if (Model.Todo2 != null)
-                    {
-                        <li><a href="">@Model.Todo2</a></li>
-                    }
-                    @if (Model.Todo3 != null)
-                    {
-                        <li><a href="">@Model.Todo3</a></li>
-                    }
-                    @if (Model.Todo4 != null)
-                    {
-                        <li><a href="">@Model.Todo4</a></li>
-                    }
-                    @if (Model.Todo5 != null)
-                    {
-                        <li><a href="">@Model.Todo5</a></li>
-                    }
-                    @if (Model.Todo6 != null)
-                    {
-                        <li><a href="">@Model.Todo6</a></li>
-                    }
-                    @if (Model.Todo7 != null)
-                    {
-                        <li><a href="">@Model.Todo7</a></li>
-                    }
-                    @if (Model.Todo8 != null)
-                    {
-                        <li><a href="">@Model.Todo8</a></li>
-                    }
-                    @if (Model.Todo9 != null)
-                    {
-                        <li><a href="">@Model.Todo9</a></li>
-                    }
-                    @if (Model.Todo10 != null)
-                    {
-                        <li><a href="">@Model.Todo10</a></li>
-                    }
-                </ol>
-            </div>
+            <div class="divider-custom-line" style="background-color:white!important;"></div>
         </div>
-        <div style="max-width: 150px; margin-left:auto; margin-right:auto" ">
-            <a href="@Url.Action("TodoEdit", "Home")" id="HoverNone">
-                <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
-            </a>
+        <div class="numberlist">
+            <div style="font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
+            <ol>
+                @if (Model.Todo1 != null)
+                {
+                    <li><a href="">@Model.Todo1</a></li>
+                }
+                @if (Model.Todo2 != null)
+                {
+                    <li><a href="">@Model.Todo2</a></li>
+                }
+                @if (Model.Todo3 != null)
+                {
+                    <li><a href="">@Model.Todo3</a></li>
+                }
+                @if (Model.Todo4 != null)
+                {
+                    <li><a href="">@Model.Todo4</a></li>
+                }
+                @if (Model.Todo5 != null)
+                {
+                    <li><a href="">@Model.Todo5</a></li>
+                }
+                @if (Model.Todo6 != null)
+                {
+                    <li><a href="">@Model.Todo6</a></li>
+                }
+                @if (Model.Todo7 != null)
+                {
+                    <li><a href="">@Model.Todo7</a></li>
+                }
+                @if (Model.Todo8 != null)
+                {
+                    <li><a href="">@Model.Todo8</a></li>
+                }
+                @if (Model.Todo9 != null)
+                {
+                    <li><a href="">@Model.Todo9</a></li>
+                }
+                @if (Model.Todo10 != null)
+                {
+                    <li><a href="">@Model.Todo10</a></li>
+                }
+            </ol>
         </div>
-    </section>
-
+    </div>
+    <div style="max-width: 150px; margin-left:auto; margin-right:auto" ">
+        <a href="@Url.Action("TodoEdit", "Home")" id="HoverNone">
+            <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
+        </a>
+    </div>
 </div>
 
