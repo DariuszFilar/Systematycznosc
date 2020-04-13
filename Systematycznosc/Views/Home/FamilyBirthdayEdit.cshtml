@@ -4,114 +4,108 @@
 }
 
 
-<div id="SiteContent">
-    <section class="page-section portfolio bg-primary text-white mb-0" id="portfolio">
-        <div class=" d-flex align-items-center flex-column">
+<div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
 
-            <!-- Masthead Avatar Image -->
-            <!-- Masthead Heading -->
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Urodziny rodziny</h1>
+    <!-- Masthead Avatar Image -->
+    <!-- Masthead Heading -->
+    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">Urodziny rodziny</h1>
 
-            <!-- Icon Divider -->
-            <div class="divider-custom">
-                <div class="divider-custom-line" style="background-color:white!important;"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
-                </div>
-                <div class="divider-custom-line" style="background-color:white!important;"></div>
-            </div>
-            @using (Html.BeginForm("FamilyBirthdayEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
-            {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName1, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName1, new { @class = "", style = "  float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName1, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday1, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday1?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName2, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName2, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName2, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday2, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday2?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName3, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName3, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName3, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday3, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday3?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName4, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName4, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName4, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday4, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday4?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName5, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName5, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName5, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday5, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday5?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName6, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName6, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName6, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday6, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday6?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName7, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName7, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName7, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday7, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday7?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName8, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName8, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName8, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday8, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday8?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName9, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName9, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName9, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday9, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday9?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-                <div class="form-group" style="text-align:center;">
-                    <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                        @Html.LabelFor(m => m.FamilyBirthdayName10, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => m.FamilyBirthdayName10, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => m.FamilyBirthdayName10, "", new { @class = "text-danger" })
-                        @Html.TextBoxFor(model => model.FamilyBirthday10, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday10?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
-                    </div>
-                </div>
-
-
-
-                <button style="font-size:25px;" type="submit" value="Log in" class="btn btn-info">Zapisz</button>
-
-                @Html.ActionLink("Powród do urodzin", "Birthday", "Home", null, new { @class = "btn bg-info icon-user nav_bar_first_small_screen", style = "color:white; font-size:25px;" })
-
-            }
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
         </div>
-    </section>
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
+    </div>
+    @using (Html.BeginForm("FamilyBirthdayEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName1, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName1, new { @class = "", style = "  float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName1, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday1, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday1?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName2, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName2, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName2, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday2, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday2?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName3, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName3, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName3, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday3, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday3?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName4, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName4, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName4, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday4, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday4?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName5, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName5, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName5, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday5, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday5?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName6, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName6, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName6, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday6, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday6?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName7, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName7, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName7, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday7, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday7?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName8, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName8, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName8, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday8, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday8?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName9, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName9, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName9, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday9, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday9?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.FamilyBirthdayName10, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName10, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.FamilyBirthdayName10, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.FamilyBirthday10, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday10?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
 
+        <div style="padding-bottom:50px;">
+            <button style="font-size:25px;" type="submit" value="Log in" class="btn btn-info">Zapisz</button>
+
+            @Html.ActionLink("Powród do urodzin", "Birthday", "Home", null, new { @class = "btn bg-info icon-user nav_bar_first_small_screen", style = "color:white; font-size:25px;" })
+        </div>
+    }
 </div>

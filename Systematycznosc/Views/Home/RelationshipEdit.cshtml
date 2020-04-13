@@ -5,112 +5,108 @@
 }
 
 
-    <div id="SiteContent">
-        <section class="page-section portfolio bg-primary text-white mb-0" id="portfolio">
-            <div class=" d-flex align-items-center flex-column">
+<div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
 
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Związek</h1>
+    <!-- Masthead Avatar Image -->
+    <!-- Masthead Heading -->
+    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;" id="Opener">Związek</h1>
 
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                    <div class="divider-custom-line" style="background-color:white!important;"></div>
-                    <div class="divider-custom-icon">
-                        <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
-                    </div>
-                    <div class="divider-custom-line" style="background-color:white!important;"></div>
-                </div>
-                @using (Html.BeginForm("RelationshipEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; " }))
-                {
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship1, "Relationship nr 1:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.Relationship1, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship1, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship2, "Relationship nr 2:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.Relationship2, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship2, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship3, "Relationship nr 3:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.Relationship3, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship3, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship4, "Relationship nr 4:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.Relationship4, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship4, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship5, "Relationship nr 5:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.Relationship5, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship5, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship6, "Relationship nr 6:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.Relationship6, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship6, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship1, "Relationship nr 7:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.Relationship7, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship7, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship8, "Relationship nr 8:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.Relationship8, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship8, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship9, "Relationship nr 9:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.Relationship9, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship9, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group" style="text-align:center;">
-
-                        <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                            @Html.LabelFor(m => m.Relationship10, "Relationship nr 10:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; padding-left:0px;" })
-                            @Html.TextBoxFor(m => m.Relationship10, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                            @Html.ValidationMessageFor(m => m.Relationship10, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-
-                    <button style="font-size:25px;" type="submit" value="Log in" class="btn btn-info">Zapisz</button>
-
-                    @Html.ActionLink("Powród do związek", "Relationship", "Home", null, new { @class = "btn bg-info icon-user nav_bar_first_small_screen", style = "color:white; font-size:25px;" })
-
-                }
-            </div>
-        </section>
-
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
+        </div>
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
+    @using (Html.BeginForm("RelationshipEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; " }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship1, "Relationship nr 1:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Relationship1, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship2, "Relationship nr 2:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Relationship2, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship3, "Relationship nr 3:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Relationship3, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship4, "Relationship nr 4:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Relationship4, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship4, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship5, "Relationship nr 5:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Relationship5, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship5, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship6, "Relationship nr 6:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Relationship6, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship6, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship1, "Relationship nr 7:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Relationship7, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship7, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship8, "Relationship nr 8:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Relationship8, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship8, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship9, "Relationship nr 9:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.Relationship9, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship9, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.Relationship10, "Relationship nr 10:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; padding-left:0px;" })
+                @Html.TextBoxFor(m => m.Relationship10, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.Relationship10, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div style="padding-bottom:50px;">
+            <button style="font-size:25px;" type="submit" value="Log in" class="btn btn-info">Zapisz</button>
+
+            @Html.ActionLink("Powród do związek", "Relationship", "Home", null, new { @class = "btn bg-info icon-user nav_bar_first_small_screen", style = "color:white; font-size:25px;" })
+        </div>
+    }
+</div>

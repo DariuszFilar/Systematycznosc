@@ -10758,3 +10758,15 @@ footer {
     width: 100%;
 }
 /* as it's absolute, you should give it a specific height, or let it be as wide as its content */
+
+
+@media (max-width: 768px) {
+    #Opener {
+        padding-top: 100px !important;
+    }
+}
+@media (min-width: 768px) {
+    #Opener {
+        padding-top: 200px !important;
+    }
+}
