@@ -3,14 +3,19 @@
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
-    @Html.AntiForgeryToken()
-
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink(User.Identity.GetUserName(), "Manage", "Profile", routeValues: null, htmlAttributes: new { title = "Manage", @style="color:white"})
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()" style="color:white">Wyloguj</a></li>
-    </ul>
+        @Html.AntiForgeryToken()
+    <div style="text-align:center;">
+        @Html.ActionLink(User.Identity.GetUserName(), "Manage", "Profile", routeValues: null, htmlAttributes: new { title = "Manage", @style = "color:white", @class = "" })
+    </div>
+    <div style="text-align:center;">
+        <a href="javascript:document.getElementById('logoutForm').submit()" style="color:white" class="">Wyloguj</a>
+    </div>
+        @*<ul class="navbar-nav navbar-right">
+            <li class="py-3 px-0 rounded js-scroll-trigger" href="#Credo">
+                @Html.ActionLink(User.Identity.GetUserName(), "Manage", "Profile", routeValues: null, htmlAttributes: new { title = "Manage", @style = "color:white", @class="navbar-brand" })
+            </li>
+            <li class="py-3 px-0  rounded js-scroll-trigger" href="#Credo"><a href="javascript:document.getElementById('logoutForm').submit()" style="color:white" class="navbar-brand">Wyloguj</a></li>
+        </ul>*@
     }
 }
 else
