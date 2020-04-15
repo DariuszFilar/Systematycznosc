@@ -1,6 +1,11 @@
 ﻿@model Systematycznosc.ViewModels.FamilyBirthdayViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <style>
+        body {
+            background-color: #1abc9c
+        }
+    </style>
 }
 
 
@@ -8,7 +13,7 @@
 
     <!-- Masthead Avatar Image -->
     <!-- Masthead Heading -->
-    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">Urodziny rodziny</h1>
+    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; text-align:center;" id="Opener">Urodziny rodziny</h1>
 
     <!-- Icon Divider -->
     <div class="divider-custom">
@@ -102,10 +107,14 @@
             </div>
         </div>
 
-        <div style="padding-bottom:50px;">
-            <button style="font-size:25px;" type="submit" value="Log in" class="btn btn-info">Zapisz</button>
+        <div style="padding-bottom:50px; padding-top:20px;">
+            <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
+            </div>
+            <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                @Html.ActionLink("Powród do urodzin", "Birthday", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+            </div>
 
-            @Html.ActionLink("Powród do urodzin", "Birthday", "Home", null, new { @class = "btn bg-info icon-user nav_bar_first_small_screen", style = "color:white; font-size:25px;" })
         </div>
     }
 </div>

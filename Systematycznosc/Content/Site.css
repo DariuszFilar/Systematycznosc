@@ -10656,6 +10656,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 .numberlist {
+    color:white;
     width: auto;
     margin-left: 30px;
     margin-right: 30px;
@@ -10666,7 +10667,7 @@ form .row:first-child .floating-label-form-group {
         list-style: none;
         *list-style: decimal;
         font: 15px 'trebuchet MS', 'lucida sans';
-        padding: 0;
+        padding: 10px;
         margin-bottom: 4em;
     }
 
@@ -10691,7 +10692,7 @@ form .row:first-child .floating-label-form-group {
     }
 
         .numberlist a:hover {
-            background: #cbe7f8;
+            background: #B9C2CA;
             text-decoration: underline;
         }
 
@@ -10708,7 +10709,7 @@ form .row:first-child .floating-label-form-group {
             width: 2em;
             /*line-height: 2em;*/
             line-height: 37px;
-            border: .3em solid #fff;
+            border: .3em solid white;
             text-align: center;
             font-weight: bold;
             -moz-border-radius: 2em;
@@ -10776,37 +10777,22 @@ footer {
     }
 }
 
-/*@media (min-width: 768px) {
+@media(max-width:1000px) {
+
     .navbar-collapse.collapse {
         display: none !important;
-        height: auto !important;
-        padding-bottom: 0;
-        overflow: visible !important;
     }
-}
-@media (min-width: 992px) {
-    .navbar-collapse.collapse {
-        display: flex !important;
-        height: auto !important;
-        padding-bottom: 0;
-        overflow: visible !important;
-    }
-}
 
-@media (min-width: 768px) {
-    .navbar-collapse.show {
-        display:flex;
-        height: auto !important;
-        padding-bottom: 0;
-        overflow: visible !important;
+    .navbar-collapse {
+        border-top: 1px solid #1abc9c;
+        overflow-x: visible !important;
+    }
+
+        .navbar-collapse.in {
+            overflow-y: auto !important;
+        }
+
+    .collapse.in {
+        display: block !important;
     }
 }
-
-@media (min-width: 992px) {
-    .navbar-collapse.show {
-        display:flex;
-        height: auto !important;
-        padding-bottom: 0;
-        overflow: visible !important;
-    }
-}*/
