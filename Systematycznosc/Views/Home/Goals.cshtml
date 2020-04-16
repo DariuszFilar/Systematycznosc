@@ -1,5 +1,145 @@
-﻿
+﻿@*@model Systematycznosc.ViewModels.BirthdayViewModelWrapper*@
 @{
-    ViewBag.Title = "Goals";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    <style>
+        body {
+            background-color: #1abc9c
+        }
+    </style>
 }
+
+
+<div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
+
+    <!-- Masthead Avatar Image -->
+    <!-- Masthead Heading -->
+    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">Todo</h1>
+
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
+        </div>
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
+    </div>
+
+
+
+
+
+    <table id="table_id" class="table table-info table-hover" style="font-size:18px;">
+        <thead>
+            <tr>
+                <th style="width: 300px">Data:</th>
+                <th style="width: 300px">Ile dni temu:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @{DateTime oneTwentyDaysAgo1 = DateTime.Today; }
+                    <div>@oneTwentyDaysAgo1.ToShortDateString()</div>
+                </td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>
+                    @{DateTime oneTwentyDaysAgo2 = DateTime.Today.AddDays(-1); }
+                    <div>@oneTwentyDaysAgo2.ToShortDateString()</div>
+                </td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>
+                    @{DateTime oneTwentyDaysAgo3 = DateTime.Today.AddDays(-2); }
+                    <div>@oneTwentyDaysAgo3.ToShortDateString()</div>
+                </td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>
+                    @{DateTime oneTwentyDaysAgo4 = DateTime.Today.AddDays(-3); }
+                    <div>@oneTwentyDaysAgo4.ToShortDateString()</div>
+                </td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>
+                    @{DateTime oneTwentyDaysAgo5 = DateTime.Today.AddDays(-4); }
+                    <div>@oneTwentyDaysAgo5.ToShortDateString()</div>
+                </td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>
+                    @{DateTime oneTwentyDaysAgo6 = DateTime.Today.AddDays(-5); }
+                    <div>@oneTwentyDaysAgo6.ToShortDateString()</div>
+                </td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>
+                    @{DateTime oneTwentyDaysAgo7 = DateTime.Today.AddDays(-6); }
+                    <div>@oneTwentyDaysAgo7.ToShortDateString()</div>
+                </td>
+                <td>7</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+    <div style="max-width: 150px; margin-left:auto; margin-right:auto; padding-top: 50px; padding-bottom:50px;">
+        <a href="@Url.Action("GoalsEdit", "Home")" id="HoverNone">
+            <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
+        </a>
+    </div>
+</div>
+
+@section Scripts
+{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.11/sorting/date-eu.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.10.12/sorting/datetime-moment.js"></script>
+}
+@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $.fn.dataTable.moment('DD/MM/YY');
+        $('#table_id').DataTable({
+
+            paging: false,
+            searching: false,
+            info: false,
+            "order": [[1, "asc"]],
+
+
+        });
+        $.fn.dataTable.moment('DD/MM/YY');
+        $('#table_id2').DataTable({
+
+            paging: false,
+            searching: false,
+            info: false,
+            "order": [[1, "asc"]],
+        });
+        $.fn.dataTable.moment('DD/MM/YY');
+        $('#table_id3').DataTable({
+
+            paging: false,
+            searching: false,
+            info: false,
+            "order": [[1, "asc"]],
+        });
+    });
+</script>
