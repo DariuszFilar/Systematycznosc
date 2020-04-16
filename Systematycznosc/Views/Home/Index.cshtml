@@ -36,6 +36,11 @@
         if (Model.CredoViewModel.Credo1 == null && Model.EveningQuestionsViewModel.EveningQuestion1 == null && Model.FamilyBirthdayViewModel.FamilyBirthday1 == null && Model.FriendsBirthdayViewModel.FriendsBirthday1 == null
         && Model.MorningQuestionsViewModel.MorningQuestions1 == null && Model.OthersBirthdayViewModel.OthersBirthday1 == null && Model.RelationshipViewModel.Relationship1 == null && Model.TodoViewModel.Todo1 == null)
         {
+            <style>
+                body {
+                    background-color: #1abc9c
+                }
+            </style>
             <h1 class="masthead-heading text-uppercase mb-0" style="color: red; font-size:55px; padding-top:55px; line-height: 88px;">By spersonalizować pomocnika wejdź w zakładki u góry i dodaj interesujące Cię rzeczy</h1>}
     }
 
@@ -129,7 +134,7 @@
 
 @{
     if (Model.RelationshipViewModel.Relationship1 != null)
-     {
+    {
         colornumber++;
         if ((colornumber % 2) == 0)
         {
@@ -214,7 +219,7 @@
 }
 
 @{ if (Model.MorningQuestionsViewModel.MorningQuestions1 != null)
-     {
+    {
         colornumber++;
         if ((colornumber % 2) == 0)
         {
@@ -385,7 +390,7 @@
 }
 
 @{ if (Model.TodoViewModel.Todo1 != null)
-   {
+    {
         colornumber++;
         if ((colornumber % 2) == 0)
         {
@@ -468,7 +473,7 @@
 }
 
 @{ if (Model.FamilyBirthdayViewModel.FamilyBirthday1 != null)
- {
+    {
         colornumber++;
         if ((colornumber % 2) == 0)
         {
@@ -640,7 +645,7 @@
 }
 
 @{ if (Model.FriendsBirthdayViewModel.FriendsBirthday1 != null)
-     {
+    {
         colornumber++;
         if ((colornumber % 2) == 0)
         {
@@ -812,7 +817,7 @@
     } }
 
 @{ if (Model.OthersBirthdayViewModel.OthersBirthday1 != null)
-  {
+    {
         colornumber++;
         if ((colornumber % 2) == 0)
         {
