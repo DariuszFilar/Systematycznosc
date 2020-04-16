@@ -50,10 +50,11 @@ namespace Systematycznosc.Controllers
                 user.UserProfile.Nickname = model.Nickname;
                 user.UserProfile.Gender = model.Gender;
                 user.UserProfile.BirthDate = model.BirthDate;
+                user.UserProfile.Photo = model.Photo;
             }
             else
             {
-                user.UserProfile = new UserProfile { Id = model.Id, Name = model.Name, Nickname = model.Nickname, Gender = model.Gender };
+                user.UserProfile = new UserProfile { Id = model.Id, Name = model.Name, Nickname = model.Nickname, Gender = model.Gender, Photo=model.Photo};
             }
             _context.SaveChanges();
             return View(model);

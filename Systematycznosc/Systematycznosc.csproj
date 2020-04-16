@@ -244,6 +244,10 @@
     <Compile Include="Migrations\202004031021248_AddedRelationshipTable2.Designer.cs">
       <DependentUpon>202004031021248_AddedRelationshipTable2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004161643115_AddedPhoto.cs" />
+    <Compile Include="Migrations\202004161643115_AddedPhoto.Designer.cs">
+      <DependentUpon>202004161643115_AddedPhoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -479,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004031021248_AddedRelationshipTable2.resx">
       <DependentUpon>202004031021248_AddedRelationshipTable2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004161643115_AddedPhoto.resx">
+      <DependentUpon>202004161643115_AddedPhoto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

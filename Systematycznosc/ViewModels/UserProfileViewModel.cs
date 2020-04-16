@@ -22,6 +22,7 @@ namespace Systematycznosc.ViewModels
         public string Gender { get; set; }
         public string[] GendersForDropDown => new string[] {"Mężczyzna", "Kobieta" };
 
+        public string Photo { get; set; }
 
         public int Age => GetAge(BirthDate);
 
@@ -42,6 +43,7 @@ namespace Systematycznosc.ViewModels
             this.BirthDate = userProfile.BirthDate;
             this.Gender = userProfile.Gender;
             this.Id = userProfile.Id;
+            this.Photo = userProfile.Photo;
         }
     }
 }

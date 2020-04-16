@@ -12,7 +12,12 @@
     <div class=" d-flex align-items-center flex-column">
 
         <!-- Masthead Avatar Image -->
-        <img src="~/Content/Images/darek.jpg" class="img-circle" style="max-width:305px; padding-top:85px;">
+        @{if (Model.UserProfileViewModel.Photo != null)
+            {<img src="@Model.UserProfileViewModel.Photo" class="img-circle" style="max-width:305px; padding-top:85px;">}
+            else
+            {
+                <img src="https://blackrockdigital.github.io/startbootstrap-freelancer/assets/img/avataaars.svg" class="img-circle" style="max-width:305px; padding-top:85px;">}
+        }
         <!-- Masthead Heading -->
         @if (Model.UserProfileViewModel.Name != null)
         {

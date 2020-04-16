@@ -23,6 +23,8 @@ namespace Systematycznosc
         public DateTime BirthDate { get; set; }
 
         public string Gender { get; set; }
+
+        public string Photo { get; set; }
         
     }
 }
