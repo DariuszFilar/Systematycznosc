@@ -438,11 +438,46 @@ namespace Systematycznosc.Controllers
             }
         }
 
+        //private void AddErrors(IdentityResult result)
+        //{
+        //    foreach (var error in result.Errors)
+        //    {
+        //        ModelState.AddModelError("!", error);
+        //    }
+        //}
+
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError("!", error);
+
+                string errorMessage = error;
+                if (error.EndsWith("is already taken."))
+                {
+                    errorMessage = "Ten mail jest już zajęty.";
+                    ModelState.AddModelError("", errorMessage);
+                    break;
+                }
+                if (error.EndsWith("digit character."))
+                {
+                    errorMessage = "Hasło musi zawierać minimum: 6 znaków, dużą literę oraz ze znak specjalny (np. \".\").";
+                    ModelState.AddModelError("", errorMessage);
+                    break;
+                }
+                if (error.EndsWith("('A'-'Z')."))
+                {
+                    errorMessage = "Hasło musi zawierać minimum: 6 znaków, dużą literę oraz ze znak specjalny (np. \".\").";
+                    ModelState.AddModelError("", errorMessage);
+                    break;
+                }
+                if (error.EndsWith("('0'-'9')."))
+                {
+                    errorMessage = "Hasło musi zawierać minimum: 6 znaków, dużą literę oraz ze znak specjalny (np. \".\").";
+                    ModelState.AddModelError("", errorMessage);
+                    break;
+                }
+                
+                ModelState.AddModelError("", error);
             }
         }
 

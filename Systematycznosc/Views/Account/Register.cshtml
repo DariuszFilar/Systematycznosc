@@ -11,10 +11,11 @@
     @Html.AntiForgeryToken()
     <div id="container">
         <form>
-            @if (!Html.ViewData.ModelState.IsValid)
+            @*@if (!Html.ViewData.ModelState.IsValid)
                 {<div class="text-danger">
                         Adres e-mail: @Model.Email.ToString() jest już zajęty.
-                    </div>}
+                    </div>}*@
+            @Html.ValidationSummary("", new { @class = "text-danger" })
             @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
             @Html.ValidationMessageFor(model => model.Email)
             @Html.PasswordFor(m => m.Password, new { @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })

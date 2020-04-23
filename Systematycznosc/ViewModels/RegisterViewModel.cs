@@ -23,5 +23,7 @@ namespace Systematycznosc.ViewModels
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "Hasła nie są identyczne.<br/>")]
         public string ConfirmPassword { get; set; }
+
+
     }
 }
