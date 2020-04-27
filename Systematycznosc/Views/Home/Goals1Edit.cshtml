@@ -1,4 +1,4 @@
-﻿@model Systematycznosc.ViewModels.GoalsViewModelWrapper
+﻿@model Systematycznosc.ViewModels.Goals1ViewModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -14,7 +14,11 @@
 
     <!-- Masthead Avatar Image -->
     <!-- Masthead Heading -->
-    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">Cele dzienne</h1>
+    @{ if (Model.GoalName != null)
+        { <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">@Model.GoalName</h1>}
+    else
+    { <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">Twój cel nr 1</h1>}
+    }
 
     <!-- Icon Divider -->
     <div class="divider-custom">
@@ -24,10 +28,14 @@
         </div>
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
-    <div style="font-size:37px; text-align:center; padding-bottom:50px;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
-
-
-
+    @{ if (Model.GoalQuestion != null)
+        {
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalQuestion</div>}
+        else
+        {
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;">Pytanie odnośnie celu</div>
+        }
+    }
 
     <table id="table_id" class="table table-info table-hover" style="font-size:18px;">
         <thead>
@@ -39,13 +47,13 @@
         <tbody>
             <tr>
                 @{ DateTime data1 = DateTime.Today;
-                    if (Model.Goals1ViewModel.GoalDate1 == data1)
+                    if (Model.GoalDate1 == data1)
                     {
                         <td>
                             <div>@data1.ToShortDateString()</div>
                         </td>
                         <td>
-                            <div>@Model.Goals1ViewModel.Goal1</div>
+                            <div>@Model.Goal1</div>
                         </td>
                     }
                     else
@@ -60,13 +68,13 @@
             </tr>
             <tr>
                 @{ DateTime data2 = DateTime.Today.AddDays(-1); ;
-                    if (Model.Goals1ViewModel.GoalDate2 == data2)
+                    if (Model.GoalDate2 == data2)
                     {
                         <td>
                             <div>@data2.ToShortDateString()</div>
                         </td>
                         <td>
-                            <div>@Model.Goals1ViewModel.Goal2</div>
+                            <div>@Model.Goal2</div>
                         </td>
                     }
                     else
@@ -82,11 +90,34 @@
         </tbody>
     </table>
 
-    <div style="max-width: 150px; margin-left:auto; margin-right:auto; padding-top: 50px; padding-bottom:50px;">
-        <a href="@Url.Action("Goals1Edit", "Home")" id="HoverNone">
-            <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>
-        </a>
-    </div>
+    @using (Html.BeginForm("Goals1Edit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; " }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.GoalName, "Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.GoalName, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.GoalName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.GoalQuestion, "Pytanie odnośnie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.GoalQuestion, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.GoalQuestion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div style="padding-bottom:50px; padding-top:20px;">
+            <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
+            </div>
+            <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                @Html.ActionLink("Powród do Credo", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+            </div>
+        </div>
+    }
 </div>
 
 @section Scripts

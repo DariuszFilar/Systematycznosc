@@ -248,6 +248,14 @@
     <Compile Include="Migrations\202004161643115_AddedPhoto.Designer.cs">
       <DependentUpon>202004161643115_AddedPhoto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004241019318_AddedGoals1.cs" />
+    <Compile Include="Migrations\202004241019318_AddedGoals1.Designer.cs">
+      <DependentUpon>202004241019318_AddedGoals1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004271225422_AddedGoalQuestion.cs" />
+    <Compile Include="Migrations\202004271225422_AddedGoalQuestion.Designer.cs">
+      <DependentUpon>202004271225422_AddedGoalQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -255,6 +263,7 @@
     <Compile Include="Models\EveningQuestions.cs" />
     <Compile Include="Models\FamilyBirthday.cs" />
     <Compile Include="Models\FriendsBirthday.cs" />
+    <Compile Include="Models\Goals1.cs" />
     <Compile Include="Models\MorningQuestions.cs" />
     <Compile Include="Models\OthersBirthday.cs" />
     <Compile Include="Models\Relationship.cs" />
@@ -282,6 +291,8 @@
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\ForgotViewModel.cs" />
     <Compile Include="ViewModels\FriendsBirthdayViewModel.cs" />
+    <Compile Include="ViewModels\Goals1ViewModel.cs" />
+    <Compile Include="ViewModels\GoalsViewModelWrapper.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
@@ -415,6 +426,7 @@
     <Content Include="Views\Home\OthersBirthdayEdit.cshtml" />
     <Content Include="Views\Home\Relationship.cshtml" />
     <Content Include="Views\Home\RelationshipEdit.cshtml" />
+    <Content Include="Views\Home\Goals1Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -486,6 +498,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004161643115_AddedPhoto.resx">
       <DependentUpon>202004161643115_AddedPhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004241019318_AddedGoals1.resx">
+      <DependentUpon>202004241019318_AddedGoals1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004271225422_AddedGoalQuestion.resx">
+      <DependentUpon>202004271225422_AddedGoalQuestion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

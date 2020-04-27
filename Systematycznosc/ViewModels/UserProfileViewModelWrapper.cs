@@ -9,7 +9,6 @@ namespace Systematycznosc.ViewModels
     {
         public UserProfileViewModel UserProfileViewModel { get; set; }
         public CredoViewModel CredoViewModel { get; set; }
-
         public UserProfileViewModelWrapper() { }
         public MorningQuestionsViewModel MorningQuestionsViewModel { get; set; }
         public EveningQuestionsViewModel EveningQuestionsViewModel { get; set; }
@@ -18,7 +17,7 @@ namespace Systematycznosc.ViewModels
         public FriendsBirthdayViewModel FriendsBirthdayViewModel { get; set; }
         public OthersBirthdayViewModel OthersBirthdayViewModel { get; set; }
         public RelationshipViewModel RelationshipViewModel { get; set; }
-
+        public Goals1ViewModel Goals1ViewModel { get; set; }
         public UserProfileViewModelWrapper(UserProfile userProfile)
         {
             this.UserProfileViewModel = new UserProfileViewModel(userProfile);

@@ -320,10 +320,6 @@ namespace Systematycznosc.Controllers
             _context.SaveChanges();
             return View(model);
         }
-        public ActionResult Goals()
-        {
-            return View();
-        }
 
         [HttpGet]
         public ActionResult Todo()
@@ -797,6 +793,76 @@ namespace Systematycznosc.Controllers
                     Relationship8 = model.Relationship8,
                     Relationship9 = model.Relationship9,
                     Relationship10 = model.Relationship10
+                };
+            }
+            _context.SaveChanges();
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult Goals()
+        {
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
+            GoalsViewModelWrapper wrapper = new GoalsViewModelWrapper();
+
+            if (userProfile != null && goals1 != null)
+            {
+                Goals1ViewModel Goals1 = new Goals1ViewModel(goals1);
+                wrapper.Goals1ViewModel = Goals1;
+                return View(wrapper);
+            }
+            if (userProfile != null && goals1 == null)
+            {
+                wrapper.Goals1ViewModel = new Goals1ViewModel();
+                return View(wrapper);
+            }
+            else
+            {
+                return RedirectToAction("Manage", "Profile");
+            }
+        }
+        [HttpGet]
+        public ActionResult Goals1Edit()
+        {
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
+
+            if (goals1 != null)
+            {
+                Goals1ViewModel model = new Goals1ViewModel(goals1);
+                return View(model);
+            }
+            else
+            {
+                Goals1ViewModel model = new Goals1ViewModel();
+                return View(model);
+            }
+        }
+        [HttpPost]
+        public ActionResult Goals1Edit(Goals1ViewModel model)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null)
+                return View();
+
+            if (goals1 != null)
+            {
+                goals1.GoalName = model.GoalName;
+                goals1.GoalQuestion = model.GoalQuestion;
+            }
+            else
+            {
+                user.Goals1 = new Models.Goals1
+                {
+                    GoalName = model.GoalName,
+                    GoalQuestion = model.GoalQuestion,
+
                 };
             }
             _context.SaveChanges();
