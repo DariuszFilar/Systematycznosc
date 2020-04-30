@@ -90,22 +90,21 @@
         </tbody>
     </table>
 
-    @using (Html.BeginForm("Goals1Edit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; " }))
+    @using (Html.BeginForm("Goals1Edit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
     {
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group" style="text-align:center;">
-
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.GoalName, "Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.GoalName, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.GoalName, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
                 @Html.ValidationMessageFor(m => m.GoalName, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group" style="text-align:center;">
 
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.GoalQuestion, "Pytanie odnośnie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.GoalQuestion, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.LabelFor(m => m.GoalQuestion, "Pytanie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.GoalQuestion, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
                 @Html.ValidationMessageFor(m => m.GoalQuestion, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -114,7 +113,7 @@
                 <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
             </div>
             <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                @Html.ActionLink("Powród do Credo", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+                @Html.ActionLink("Powród do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
             </div>
         </div>
     }

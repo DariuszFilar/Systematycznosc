@@ -28,6 +28,7 @@ namespace Systematycznosc.Controllers
             var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
             var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
             var relationship = _context.Relationship.FirstOrDefault(x => x.Id == userId);
+            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
             UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
 
             if (userProfile != null)
@@ -54,6 +55,8 @@ namespace Systematycznosc.Controllers
                 else { OthersBirthdayViewModel OthersBirthday = new OthersBirthdayViewModel(othersBirthday); wrapper.OthersBirthdayViewModel = OthersBirthday; }
                 if (relationship == null) { wrapper.RelationshipViewModel = new RelationshipViewModel(); }
                 else { RelationshipViewModel Relationship = new RelationshipViewModel(relationship); wrapper.RelationshipViewModel = Relationship; }
+                if (goals1 == null) { wrapper.Goals1ViewModel = new Goals1ViewModel(); }
+                else { Goals1ViewModel Goals1 = new Goals1ViewModel(goals1); wrapper.Goals1ViewModel = Goals1; }
                 return View(wrapper);
 
             }
@@ -804,23 +807,127 @@ namespace Systematycznosc.Controllers
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
             var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
-            GoalsViewModelWrapper wrapper = new GoalsViewModelWrapper();
+            GoalsViewModelWrapper model = new GoalsViewModelWrapper();
 
             if (userProfile != null && goals1 != null)
             {
                 Goals1ViewModel Goals1 = new Goals1ViewModel(goals1);
-                wrapper.Goals1ViewModel = Goals1;
-                return View(wrapper);
+                model.Goals1ViewModel = Goals1;
+                return View(model);
             }
             if (userProfile != null && goals1 == null)
             {
-                wrapper.Goals1ViewModel = new Goals1ViewModel();
-                return View(wrapper);
+                model.Goals1ViewModel = new Goals1ViewModel();
+                return View(model);
             }
             else
             {
                 return RedirectToAction("Manage", "Profile");
             }
+        }
+        [HttpPost]
+        public ActionResult Goals(GoalsViewModelWrapper model)
+        {
+            var userId = User.Identity.GetUserId();
+            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null)
+                return View();
+
+            if (goals1 != null)
+            {
+                //Dla wolnych miejsc
+                if (goals1.GoalDate1 != null && goals1.GoalDate2 == null && goals1.GoalDate1 != DateTime.Today) 
+                { 
+                    goals1.GoalDate2 = DateTime.Today;
+                    goals1.Goal2 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate2 = goals1.GoalDate2;
+                    model.Goals1ViewModel.Goal2 = goals1.Goal2;
+                    _context.SaveChanges();
+                    return View(model);
+
+                }
+                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 == null && goals1.GoalDate2 != DateTime.Today) 
+                {
+                    goals1.GoalDate3 = DateTime.Today;
+                    goals1.Goal3 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate3 = goals1.GoalDate3;
+                    model.Goals1ViewModel.Goal3 = goals1.Goal3;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 == null && goals1.GoalDate3 != DateTime.Today) 
+                {
+                    goals1.GoalDate4 = DateTime.Today;
+                    goals1.Goal4 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate4 = goals1.GoalDate4;
+                    model.Goals1ViewModel.Goal4 = goals1.Goal4;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 != null && goals1.GoalDate5 == null && goals1.GoalDate4 != DateTime.Today)
+                {
+                    goals1.GoalDate5 = DateTime.Today;
+                    goals1.Goal5 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate5 = goals1.GoalDate5;
+                    model.Goals1ViewModel.Goal5 = goals1.Goal5;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+                if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 != null && goals1.GoalDate5 != null && goals1.GoalDate6 == null && goals1.GoalDate5 != DateTime.Today)
+                {
+                    goals1.GoalDate6 = DateTime.Today;
+                    goals1.Goal6 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate6 = goals1.GoalDate6;
+                    model.Goals1ViewModel.Goal6 = goals1.Goal6;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+                if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 != null && goals1.GoalDate5 != null && goals1.GoalDate6 != null && 
+                    goals1.GoalDate6 == null && goals1.GoalDate1 != DateTime.Today)
+                {
+                    goals1.GoalDate7 = DateTime.Today;
+                    goals1.Goal7 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate7 = goals1.GoalDate7;
+                    model.Goals1ViewModel.Goal7 = goals1.Goal7;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+               //Dla zajętych
+               if (goals1.GoalDate7 != null && goals1.GoalDate7 != DateTime.Today)
+                {
+                    goals1.Goal1 = goals1.Goal2;
+                    goals1.GoalDate1 = goals1.GoalDate2;
+                    goals1.Goal2 = goals1.Goal3;
+                    goals1.GoalDate2 = goals1.GoalDate3;
+                    goals1.Goal3 = goals1.Goal4;
+                    goals1.GoalDate3 = goals1.GoalDate4;
+                    goals1.Goal4 = goals1.Goal5;
+                    goals1.GoalDate4 = goals1.GoalDate5;
+                    goals1.Goal5 = goals1.Goal6;
+                    goals1.GoalDate5 = goals1.GoalDate6;
+                    goals1.Goal6 = goals1.Goal7;
+                    goals1.GoalDate6 = goals1.GoalDate7;
+                    goals1.Goal7 = model.Goals1ViewModel.Goal1;
+                    goals1.GoalDate7 = DateTime.Today;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+            }
+
+            else
+            {
+                user.Goals1 = new Models.Goals1
+                {
+                    GoalDate1 = DateTime.Today,
+                    Goal1 = model.Goals1ViewModel.Goal1          
+                };
+                model.Goals1ViewModel.GoalDate1 = DateTime.Today;
+            }
+
+            _context.SaveChanges();
+            return View(model);
         }
         [HttpGet]
         public ActionResult Goals1Edit()
