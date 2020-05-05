@@ -837,9 +837,59 @@ namespace Systematycznosc.Controllers
 
             if (goals1 != null)
             {
+                //Dla tych samych dat
+                if (goals1.GoalDate1 != null && goals1.GoalDate1 == DateTime.Today)
+                {
+                    goals1.GoalDate1 = DateTime.Today;
+                    goals1.Goal1 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate1 = goals1.GoalDate1;
+                    model.Goals1ViewModel.Goal1 = goals1.Goal1;
+                }
+                if (goals1.GoalDate2 != null && goals1.GoalDate2 == DateTime.Today)
+                {
+                    goals1.GoalDate2 = DateTime.Today;
+                    goals1.Goal2 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate2 = goals1.GoalDate2;
+                    model.Goals1ViewModel.Goal2 = goals1.Goal2;
+                }
+                if (goals1.GoalDate3 != null && goals1.GoalDate3 == DateTime.Today)
+                {
+                    goals1.GoalDate3 = DateTime.Today;
+                    goals1.Goal3 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate3 = goals1.GoalDate3;
+                    model.Goals1ViewModel.Goal3 = goals1.Goal3;
+                }
+                if (goals1.GoalDate4 != null && goals1.GoalDate4 == DateTime.Today)
+                {
+                    goals1.GoalDate4 = DateTime.Today;
+                    goals1.Goal4 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate4 = goals1.GoalDate4;
+                    model.Goals1ViewModel.Goal4 = goals1.Goal4;
+                }
+                if (goals1.GoalDate5 != null && goals1.GoalDate5 == DateTime.Today)
+                {
+                    goals1.GoalDate5 = DateTime.Today;
+                    goals1.Goal5 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate5 = goals1.GoalDate5;
+                    model.Goals1ViewModel.Goal5 = goals1.Goal5;
+                }
+                if (goals1.GoalDate6 != null && goals1.GoalDate6 == DateTime.Today)
+                {
+                    goals1.GoalDate6 = DateTime.Today;
+                    goals1.Goal6 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate6 = goals1.GoalDate6;
+                    model.Goals1ViewModel.Goal6 = goals1.Goal6;
+                }
+                if (goals1.GoalDate7 != null && goals1.GoalDate7 == DateTime.Today)
+                {
+                    goals1.GoalDate7 = DateTime.Today;
+                    goals1.Goal7 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate7 = goals1.GoalDate7;
+                    model.Goals1ViewModel.Goal7 = goals1.Goal7;
+                }
                 //Dla wolnych miejsc
-                if (goals1.GoalDate1 != null && goals1.GoalDate2 == null && goals1.GoalDate1 != DateTime.Today) 
-                { 
+                if (goals1.GoalDate1 != null && goals1.GoalDate2 == null && goals1.GoalDate1 != DateTime.Today)
+                {
                     goals1.GoalDate2 = DateTime.Today;
                     goals1.Goal2 = model.Goals1ViewModel.Goal1;
                     model.Goals1ViewModel.GoalDate2 = goals1.GoalDate2;
@@ -848,7 +898,7 @@ namespace Systematycznosc.Controllers
                     return View(model);
 
                 }
-                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 == null && goals1.GoalDate2 != DateTime.Today) 
+                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 == null && goals1.GoalDate2 != DateTime.Today)
                 {
                     goals1.GoalDate3 = DateTime.Today;
                     goals1.Goal3 = model.Goals1ViewModel.Goal1;
@@ -857,7 +907,7 @@ namespace Systematycznosc.Controllers
                     _context.SaveChanges();
                     return View(model);
                 }
-                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 == null && goals1.GoalDate3 != DateTime.Today) 
+                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 == null && goals1.GoalDate3 != DateTime.Today)
                 {
                     goals1.GoalDate4 = DateTime.Today;
                     goals1.Goal4 = model.Goals1ViewModel.Goal1;
@@ -884,7 +934,7 @@ namespace Systematycznosc.Controllers
                     _context.SaveChanges();
                     return View(model);
                 }
-                if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 != null && goals1.GoalDate5 != null && goals1.GoalDate6 != null && 
+                if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 != null && goals1.GoalDate5 != null && goals1.GoalDate6 != null &&
                     goals1.GoalDate6 == null && goals1.GoalDate1 != DateTime.Today)
                 {
                     goals1.GoalDate7 = DateTime.Today;
@@ -894,8 +944,8 @@ namespace Systematycznosc.Controllers
                     _context.SaveChanges();
                     return View(model);
                 }
-               //Dla zajętych
-               if (goals1.GoalDate7 != null && goals1.GoalDate7 != DateTime.Today)
+                //Dla zajętych
+                if (goals1.GoalDate7 != null && goals1.GoalDate7 != DateTime.Today)
                 {
                     goals1.Goal1 = goals1.Goal2;
                     goals1.GoalDate1 = goals1.GoalDate2;
@@ -912,6 +962,7 @@ namespace Systematycznosc.Controllers
                     goals1.Goal7 = model.Goals1ViewModel.Goal1;
                     goals1.GoalDate7 = DateTime.Today;
                     _context.SaveChanges();
+                    model.Goals1ViewModel = new Goals1ViewModel(goals1);
                     return View(model);
                 }
             }
@@ -921,11 +972,11 @@ namespace Systematycznosc.Controllers
                 user.Goals1 = new Models.Goals1
                 {
                     GoalDate1 = DateTime.Today,
-                    Goal1 = model.Goals1ViewModel.Goal1          
+                    Goal1 = model.Goals1ViewModel.Goal1
                 };
                 model.Goals1ViewModel.GoalDate1 = DateTime.Today;
             }
-
+            model.Goals1ViewModel = new Goals1ViewModel(goals1);
             _context.SaveChanges();
             return View(model);
         }
