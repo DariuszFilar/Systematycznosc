@@ -838,6 +838,13 @@ namespace Systematycznosc.Controllers
             if (goals1 != null)
             {
                 //Dla tych samych dat
+                if (goals1.GoalDate1 == null)
+                {
+                    goals1.GoalDate1 = DateTime.Today;
+                    goals1.Goal1 = model.Goals1ViewModel.Goal1;
+                    model.Goals1ViewModel.GoalDate1 = goals1.GoalDate1;
+                    model.Goals1ViewModel.Goal1 = goals1.Goal1;
+                }
                 if (goals1.GoalDate1 != null && goals1.GoalDate1 == DateTime.Today)
                 {
                     goals1.GoalDate1 = DateTime.Today;

@@ -37,58 +37,543 @@
         }
     }
 
-    <table id="table_id" class="table table-info table-hover" style="font-size:18px;">
-        <thead>
-            <tr>
-                <th style="width: 300px">Data:</th>
-                <th style="width: 300px">Status:</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                @{ DateTime data1 = DateTime.Today;
-                    if (Model.GoalDate1 == data1)
-                    {
-                        <td>
-                            <div>@data1.ToShortDateString()</div>
-                        </td>
-                        <td>
-                            <div>@Model.Goal1</div>
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            <div>@data1.ToShortDateString()</div>
-                        </td>
-                        <td>
-                            <div>Nie</div>
-                        </td>
-                    } }
-            </tr>
-            <tr>
-                @{ DateTime data2 = DateTime.Today.AddDays(-1); ;
-                    if (Model.GoalDate2 == data2)
-                    {
-                        <td>
-                            <div>@data2.ToShortDateString()</div>
-                        </td>
-                        <td>
-                            <div>@Model.Goal2</div>
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            <div>@data2.ToShortDateString()</div>
-                        </td>
-                        <td>
-                            <div>Nie</div>
-                        </td>
-                    } }
-            </tr>
-        </tbody>
-    </table>
+<table id="table_id" class="table table-info table-hover" style="font-size:18px; width:auto;">
+    <thead>
+        <tr>
+            <th style="width: 300px">Data:</th>
+            <th style="width: 300px">Status:</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @{ DateTime data1 = DateTime.Today;
+                if (Model.GoalDate1 == data1)
+                {
+                    <td>
+                        <div>@data1.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal1</div>
+                    </td>
+                }
+                else if (Model.GoalDate2 == data1)
+                {
+                    <td>
+                        <div>@data1.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal2</div>
+                    </td>
+                }
+                else if (Model.GoalDate3 == data1)
+                {
+                    <td>
+                        <div>@data1.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal3</div>
+                    </td>
+                }
+                else if (Model.GoalDate4 == data1)
+                {
+                    <td>
+                        <div>@data1.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal4</div>
+                    </td>
+                }
+                else if (Model.GoalDate5 == data1)
+                {
+                    <td>
+                        <div>@data1.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal5</div>
+                    </td>
+                }
+                else if (Model.GoalDate6 == data1)
+                {
+                    <td>
+                        <div>@data1.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal6</div>
+                    </td>
+                }
+                else if (Model.GoalDate7 == data1)
+                {
+                    <td>
+                        <div>@data1.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal7</div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div>@data1.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>Nie</div>
+                    </td>
+                }
+
+            }
+        </tr>
+        <tr>
+            @{ DateTime data2 = DateTime.Today.AddDays(-1); ;
+                if (Model.GoalDate1 == data2)
+                {
+                    <td>
+                        <div>@data2.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal1</div>
+                    </td>
+                }
+                else if (Model.GoalDate2 == data2)
+                {
+                    <td>
+                        <div>@data2.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal2</div>
+                    </td>
+                }
+                else if (Model.GoalDate3 == data2)
+                {
+                    <td>
+                        <div>@data2.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal3</div>
+                    </td>
+                }
+                else if (Model.GoalDate4 == data2)
+                {
+                    <td>
+                        <div>@data2.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal4</div>
+                    </td>
+                }
+                else if (Model.GoalDate5 == data2)
+                {
+                    <td>
+                        <div>@data2.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal5</div>
+                    </td>
+                }
+                else if (Model.GoalDate6 == data2)
+                {
+                    <td>
+                        <div>@data2.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal6</div>
+                    </td>
+                }
+                else if (Model.GoalDate7 == data2)
+                {
+                    <td>
+                        <div>@data2.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal7</div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div>@data2.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>Nie</div>
+                    </td>
+                } }
+        </tr>
+        <tr>
+            @{ DateTime data3 = DateTime.Today.AddDays(-2); ;
+                if (Model.GoalDate1 == data3)
+                {
+                    <td>
+                        <div>@data3.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal1</div>
+                    </td>
+                }
+                else if (Model.GoalDate2 == data3)
+                {
+                    <td>
+                        <div>@data3.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal2</div>
+                    </td>
+                }
+                else if (Model.GoalDate3 == data3)
+                {
+                    <td>
+                        <div>@data3.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal3</div>
+                    </td>
+                }
+                else if (Model.GoalDate4 == data3)
+                {
+                    <td>
+                        <div>@data3.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal4</div>
+                    </td>
+                }
+                else if (Model.GoalDate5 == data3)
+                {
+                    <td>
+                        <div>@data3.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal5</div>
+                    </td>
+                }
+                else if (Model.GoalDate6 == data3)
+                {
+                    <td>
+                        <div>@data3.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal6</div>
+                    </td>
+                }
+                else if (Model.GoalDate7 == data3)
+                {
+                    <td>
+                        <div>@data3.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal7</div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div>@data3.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>Nie</div>
+                    </td>
+                } }
+        </tr>
+        <tr>
+            @{ DateTime data4 = DateTime.Today.AddDays(-3); ;
+                if (Model.GoalDate1 == data4)
+                {
+                    <td>
+                        <div>@data4.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal1</div>
+                    </td>
+                }
+                else if (Model.GoalDate2 == data4)
+                {
+                    <td>
+                        <div>@data4.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal2</div>
+                    </td>
+                }
+                else if (Model.GoalDate3 == data4)
+                {
+                    <td>
+                        <div>@data4.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal3</div>
+                    </td>
+                }
+                else if (Model.GoalDate4 == data4)
+                {
+                    <td>
+                        <div>@data4.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal4</div>
+                    </td>
+                }
+                else if (Model.GoalDate5 == data4)
+                {
+                    <td>
+                        <div>@data4.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal5</div>
+                    </td>
+                }
+                else if (Model.GoalDate6 == data4)
+                {
+                    <td>
+                        <div>@data4.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal6</div>
+                    </td>
+                }
+                else if (Model.GoalDate7 == data4)
+                {
+                    <td>
+                        <div>@data4.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal7</div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div>@data3.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>Nie</div>
+                    </td>
+                } }
+        </tr>
+        <tr>
+            @{ DateTime data5 = DateTime.Today.AddDays(-4); ;
+                if (Model.GoalDate1 == data5)
+                {
+                    <td>
+                        <div>@data5.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal1</div>
+                    </td>
+                }
+                else if (Model.GoalDate2 == data5)
+                {
+                    <td>
+                        <div>@data5.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal2</div>
+                    </td>
+                }
+                else if (Model.GoalDate3 == data5)
+                {
+                    <td>
+                        <div>@data5.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal3</div>
+                    </td>
+                }
+                else if (Model.GoalDate4 == data5)
+                {
+                    <td>
+                        <div>@data5.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal4</div>
+                    </td>
+                }
+                else if (Model.GoalDate5 == data5)
+                {
+                    <td>
+                        <div>@data5.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal5</div>
+                    </td>
+                }
+                else if (Model.GoalDate6 == data5)
+                {
+                    <td>
+                        <div>@data5.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal6</div>
+                    </td>
+                }
+                else if (Model.GoalDate7 == data5)
+                {
+                    <td>
+                        <div>@data5.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal7</div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div>@data5.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>Nie</div>
+                    </td>
+                } }
+        </tr>
+        <tr>
+            @{ DateTime data6 = DateTime.Today.AddDays(-5); ;
+                if (Model.GoalDate1 == data6)
+                {
+                    <td>
+                        <div>@data6.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal1</div>
+                    </td>
+                }
+                else if (Model.GoalDate2 == data6)
+                {
+                    <td>
+                        <div>@data6.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal2</div>
+                    </td>
+                }
+                else if (Model.GoalDate3 == data6)
+                {
+                    <td>
+                        <div>@data6.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal3</div>
+                    </td>
+                }
+                else if (Model.GoalDate4 == data6)
+                {
+                    <td>
+                        <div>@data6.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal4</div>
+                    </td>
+                }
+                else if (Model.GoalDate5 == data6)
+                {
+                    <td>
+                        <div>@data6.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal5</div>
+                    </td>
+                }
+                else if (Model.GoalDate6 == data6)
+                {
+                    <td>
+                        <div>@data6.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal6</div>
+                    </td>
+                }
+                else if (Model.GoalDate7 == data6)
+                {
+                    <td>
+                        <div>@data6.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal7</div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div>@data6.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>Nie</div>
+                    </td>
+                } }
+        </tr>
+        <tr>
+            @{ DateTime data7 = DateTime.Today.AddDays(-6); ;
+                if (Model.GoalDate1 == data7)
+                {
+                    <td>
+                        <div>@data7.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal1</div>
+                    </td>
+                }
+                else if (Model.GoalDate2 == data7)
+                {
+                    <td>
+                        <div>@data7.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal2</div>
+                    </td>
+                }
+                else if (Model.GoalDate3 == data7)
+                {
+                    <td>
+                        <div>@data7.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal3</div>
+                    </td>
+                }
+                else if (Model.GoalDate4 == data7)
+                {
+                    <td>
+                        <div>@data7.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal4</div>
+                    </td>
+                }
+                else if (Model.GoalDate5 == data7)
+                {
+                    <td>
+                        <div>@data7.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal5</div>
+                    </td>
+                }
+                else if (Model.GoalDate6 == data7)
+                {
+                    <td>
+                        <div>@data7.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal6</div>
+                    </td>
+                }
+                else if (Model.GoalDate7 == data7)
+                {
+                    <td>
+                        <div>@data7.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>@Model.Goal7</div>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <div>@data7.ToShortDateString()</div>
+                    </td>
+                    <td>
+                        <div>Nie</div>
+                    </td>
+                } }
+        </tr>
+    </tbody>
+</table>
 
     @using (Html.BeginForm("Goals1Edit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
     {
