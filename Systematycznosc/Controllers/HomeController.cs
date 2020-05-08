@@ -836,136 +836,136 @@ namespace Systematycznosc.Controllers
             if (goals != null)
             {
                 //Dla tych samych dat
-                if (goals.GoalDate1 == null)
+                if (goals.AGoalDate1 == null)
                 {
-                    goals.GoalDate1 = DateTime.Today;
-                    goals.Goal1 = model.Goal1;
-                    model.GoalDate1 = goals.GoalDate1;
-                    model.Goal1 = goals.Goal1;
+                    goals.AGoalDate1 = DateTime.Today;
+                    goals.AGoal1 = model.AGoal1;
+                    model.AGoalDate1 = goals.AGoalDate1;
+                    model.AGoal1 = goals.AGoal1;
                 }
-                if (goals.GoalDate1 != null && goals.GoalDate1 == DateTime.Today)
+                if (goals.AGoalDate1 != null && goals.AGoalDate1 == DateTime.Today)
                 {
-                    goals.GoalDate1 = DateTime.Today;
-                    goals.Goal1 = model.Goal1;
-                    model.GoalDate1 = goals.GoalDate1;
-                    model.Goal1 = goals.Goal1;
+                    goals.AGoalDate1 = DateTime.Today;
+                    goals.AGoal1 = model.AGoal1;
+                    model.AGoalDate1 = goals.AGoalDate1;
+                    model.AGoal1 = goals.AGoal1;
                 }
-                if (goals.GoalDate2 != null && goals.GoalDate2 == DateTime.Today)
+                if (goals.AGoalDate2 != null && goals.AGoalDate2 == DateTime.Today)
                 {
-                    goals.GoalDate2 = DateTime.Today;
-                    goals.Goal2 = model.Goal1;
-                    model.GoalDate2 = goals.GoalDate2;
-                    model.Goal2 = goals.Goal2;
+                    goals.AGoalDate2 = DateTime.Today;
+                    goals.AGoal2 = model.AGoal1;
+                    model.AGoalDate2 = goals.AGoalDate2;
+                    model.AGoal2 = goals.AGoal2;
                 }
-                if (goals.GoalDate3 != null && goals.GoalDate3 == DateTime.Today)
+                if (goals.AGoalDate3 != null && goals.AGoalDate3 == DateTime.Today)
                 {
-                    goals.GoalDate3 = DateTime.Today;
-                    goals.Goal3 = model.Goal1;
-                    model.GoalDate3 = goals.GoalDate3;
-                    model.Goal3 = goals.Goal3;
+                    goals.AGoalDate3 = DateTime.Today;
+                    goals.AGoal3 = model.AGoal1;
+                    model.AGoalDate3 = goals.AGoalDate3;
+                    model.AGoal3 = goals.AGoal3;
                 }
-                if (goals.GoalDate4 != null && goals.GoalDate4 == DateTime.Today)
+                if (goals.AGoalDate4 != null && goals.AGoalDate4 == DateTime.Today)
                 {
-                    goals.GoalDate4 = DateTime.Today;
-                    goals.Goal4 = model.Goal1;
-                    model.GoalDate4 = goals.GoalDate4;
-                    model.Goal4 = goals.Goal4;
+                    goals.AGoalDate4 = DateTime.Today;
+                    goals.AGoal4 = model.AGoal1;
+                    model.AGoalDate4 = goals.AGoalDate4;
+                    model.AGoal4 = goals.AGoal4;
                 }
-                if (goals.GoalDate5 != null && goals.GoalDate5 == DateTime.Today)
+                if (goals.AGoalDate5 != null && goals.AGoalDate5 == DateTime.Today)
                 {
-                    goals.GoalDate5 = DateTime.Today;
-                    goals.Goal5 = model.Goal1;
-                    model.GoalDate5 = goals.GoalDate5;
-                    model.Goal5 = goals.Goal5;
+                    goals.AGoalDate5 = DateTime.Today;
+                    goals.AGoal5 = model.AGoal1;
+                    model.AGoalDate5 = goals.AGoalDate5;
+                    model.AGoal5 = goals.AGoal5;
                 }
-                if (goals.GoalDate6 != null && goals.GoalDate6 == DateTime.Today)
+                if (goals.AGoalDate6 != null && goals.AGoalDate6 == DateTime.Today)
                 {
-                    goals.GoalDate6 = DateTime.Today;
-                    goals.Goal6 = model.Goal1;
-                    model.GoalDate6 = goals.GoalDate6;
-                    model.Goal6 = goals.Goal6;
+                    goals.AGoalDate6 = DateTime.Today;
+                    goals.AGoal6 = model.AGoal1;
+                    model.AGoalDate6 = goals.AGoalDate6;
+                    model.AGoal6 = goals.AGoal6;
                 }
-                if (goals.GoalDate7 != null && goals.GoalDate7 == DateTime.Today)
+                if (goals.AGoalDate7 != null && goals.AGoalDate7 == DateTime.Today)
                 {
-                    goals.GoalDate7 = DateTime.Today;
-                    goals.Goal7 = model.Goal1;
-                    model.GoalDate7 = goals.GoalDate7;
-                    model.Goal7 = goals.Goal7;
+                    goals.AGoalDate7 = DateTime.Today;
+                    goals.AGoal7 = model.AGoal1;
+                    model.AGoalDate7 = goals.AGoalDate7;
+                    model.AGoal7 = goals.AGoal7;
                 }
                 //Dla wolnych miejsc
-                if (goals.GoalDate1 != null && goals.GoalDate2 == null && goals.GoalDate1 != DateTime.Today)
+                if (goals.AGoalDate1 != null && goals.AGoalDate2 == null && goals.AGoalDate1 != DateTime.Today)
                 {
-                    goals.GoalDate2 = DateTime.Today;
-                    goals.Goal2 = model.Goal1;
-                    model.GoalDate2 = goals.GoalDate2;
-                    model.Goal2 = goals.Goal2;
+                    goals.AGoalDate2 = DateTime.Today;
+                    goals.AGoal2 = model.AGoal1;
+                    model.AGoalDate2 = goals.AGoalDate2;
+                    model.AGoal2 = goals.AGoal2;
                     _context.SaveChanges();
                     return View(model);
 
                 }
-                else if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 == null && goals.GoalDate2 != DateTime.Today)
+                else if (goals.AGoalDate1 != null && goals.AGoalDate2 != null && goals.AGoalDate3 == null && goals.AGoalDate2 != DateTime.Today)
                 {
-                    goals.GoalDate3 = DateTime.Today;
-                    goals.Goal3 = model.Goal1;
-                    model.GoalDate3 = goals.GoalDate3;
-                    model.Goal3 = goals.Goal3;
+                    goals.AGoalDate3 = DateTime.Today;
+                    goals.AGoal3 = model.AGoal1;
+                    model.AGoalDate3 = goals.AGoalDate3;
+                    model.AGoal3 = goals.AGoal3;
                     _context.SaveChanges();
                     return View(model);
                 }
-                else if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 != null && goals.GoalDate4 == null && goals.GoalDate3 != DateTime.Today)
+                else if (goals.AGoalDate1 != null && goals.AGoalDate2 != null && goals.AGoalDate3 != null && goals.AGoalDate4 == null && goals.AGoalDate3 != DateTime.Today)
                 {
-                    goals.GoalDate4 = DateTime.Today;
-                    goals.Goal4 = model.Goal1;
-                    model.GoalDate4 = goals.GoalDate4;
-                    model.Goal4 = goals.Goal4;
+                    goals.AGoalDate4 = DateTime.Today;
+                    goals.AGoal4 = model.AGoal1;
+                    model.AGoalDate4 = goals.AGoalDate4;
+                    model.AGoal4 = goals.AGoal4;
                     _context.SaveChanges();
                     return View(model);
                 }
-                else if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 != null && goals.GoalDate4 != null && goals.GoalDate5 == null && goals.GoalDate4 != DateTime.Today)
+                else if (goals.AGoalDate1 != null && goals.AGoalDate2 != null && goals.AGoalDate3 != null && goals.AGoalDate4 != null && goals.AGoalDate5 == null && goals.AGoalDate4 != DateTime.Today)
                 {
-                    goals.GoalDate5 = DateTime.Today;
-                    goals.Goal5 = model.Goal1;
-                    model.GoalDate5 = goals.GoalDate5;
-                    model.Goal5 = goals.Goal5;
+                    goals.AGoalDate5 = DateTime.Today;
+                    goals.AGoal5 = model.AGoal1;
+                    model.AGoalDate5 = goals.AGoalDate5;
+                    model.AGoal5 = goals.AGoal5;
                     _context.SaveChanges();
                     return View(model);
                 }
-                if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 != null && goals.GoalDate4 != null && goals.GoalDate5 != null && goals.GoalDate6 == null && goals.GoalDate5 != DateTime.Today)
+                if (goals.AGoalDate1 != null && goals.AGoalDate2 != null && goals.AGoalDate3 != null && goals.AGoalDate4 != null && goals.AGoalDate5 != null && goals.AGoalDate6 == null && goals.AGoalDate5 != DateTime.Today)
                 {
-                    goals.GoalDate6 = DateTime.Today;
-                    goals.Goal6 = model.Goal1;
-                    model.GoalDate6 = goals.GoalDate6;
-                    model.Goal6 = goals.Goal6;
+                    goals.AGoalDate6 = DateTime.Today;
+                    goals.AGoal6 = model.AGoal1;
+                    model.AGoalDate6 = goals.AGoalDate6;
+                    model.AGoal6 = goals.AGoal6;
                     _context.SaveChanges();
                     return View(model);
                 }
-                if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 != null && goals.GoalDate4 != null && goals.GoalDate5 != null && goals.GoalDate6 != null &&
-                    goals.GoalDate6 == null && goals.GoalDate1 != DateTime.Today)
+                if (goals.AGoalDate1 != null && goals.AGoalDate2 != null && goals.AGoalDate3 != null && goals.AGoalDate4 != null && goals.AGoalDate5 != null && goals.AGoalDate6 != null &&
+                    goals.AGoalDate6 == null && goals.AGoalDate1 != DateTime.Today)
                 {
-                    goals.GoalDate7 = DateTime.Today;
-                    goals.Goal7 = model.Goal1;
-                    model.GoalDate7 = goals.GoalDate7;
-                    model.Goal7 = goals.Goal7;
+                    goals.AGoalDate7 = DateTime.Today;
+                    goals.AGoal7 = model.AGoal1;
+                    model.AGoalDate7 = goals.AGoalDate7;
+                    model.AGoal7 = goals.AGoal7;
                     _context.SaveChanges();
                     return View(model);
                 }
                 //Dla zajętych
-                if (goals.GoalDate7 != null && goals.GoalDate7 != DateTime.Today)
+                if (goals.AGoalDate7 != null && goals.AGoalDate7 != DateTime.Today)
                 {
-                    goals.Goal1 = goals.Goal2;
-                    goals.GoalDate1 = goals.GoalDate2;
-                    goals.Goal2 = goals.Goal3;
-                    goals.GoalDate2 = goals.GoalDate3;
-                    goals.Goal3 = goals.Goal4;
-                    goals.GoalDate3 = goals.GoalDate4;
-                    goals.Goal4 = goals.Goal5;
-                    goals.GoalDate4 = goals.GoalDate5;
-                    goals.Goal5 = goals.Goal6;
-                    goals.GoalDate5 = goals.GoalDate6;
-                    goals.Goal6 = goals.Goal7;
-                    goals.GoalDate6 = goals.GoalDate7;
-                    goals.Goal7 = model.Goal1;
-                    goals.GoalDate7 = DateTime.Today;
+                    goals.AGoal1 = goals.AGoal2;
+                    goals.AGoalDate1 = goals.AGoalDate2;
+                    goals.AGoal2 = goals.AGoal3;
+                    goals.AGoalDate2 = goals.AGoalDate3;
+                    goals.AGoal3 = goals.AGoal4;
+                    goals.AGoalDate3 = goals.AGoalDate4;
+                    goals.AGoal4 = goals.AGoal5;
+                    goals.AGoalDate4 = goals.AGoalDate5;
+                    goals.AGoal5 = goals.AGoal6;
+                    goals.AGoalDate5 = goals.AGoalDate6;
+                    goals.AGoal6 = goals.AGoal7;
+                    goals.AGoalDate6 = goals.AGoalDate7;
+                    goals.AGoal7 = model.AGoal1;
+                    goals.AGoalDate7 = DateTime.Today;
                     _context.SaveChanges();
                     //model.GoalsViewModel = new GoalsViewModel(goals1);
                     return View(model);
@@ -976,10 +976,10 @@ namespace Systematycznosc.Controllers
             {
                 user.Goals = new Models.Goals
                 {
-                    GoalDate1 = DateTime.Today,
-                    Goal1 = model.Goal1
+                    AGoalDate1 = DateTime.Today,
+                    AGoal1 = model.AGoal1
                 };
-                model.GoalDate1 = DateTime.Today;
+                model.AGoalDate1 = DateTime.Today;
             }
             model = new GoalsViewModel(goals);
             _context.SaveChanges();
@@ -1016,15 +1016,15 @@ namespace Systematycznosc.Controllers
 
             if (goals != null)
             {
-                goals.GoalName = model.GoalName;
-                goals.GoalQuestion = model.GoalQuestion;
+                goals.AGoalName = model.AGoalName;
+                goals.AGoalQuestion = model.AGoalQuestion;
             }
             else
             {
                 user.Goals = new Models.Goals
                 {
-                    GoalName = model.GoalName,
-                    GoalQuestion = model.GoalQuestion,
+                    AGoalName = model.AGoalName,
+                    AGoalQuestion = model.AGoalQuestion,
 
                 };
             }

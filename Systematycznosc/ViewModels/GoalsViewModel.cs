@@ -13,24 +13,24 @@ namespace Systematycznosc.ViewModels
         [Key, ForeignKey("User")]
         public string Id { get; set; }
         public virtual ApplicationUser User { get; set; }
-        public string GoalName { get; set; }
-        public string GoalQuestion { get; set; }
-        public string GoalDays { get; set; }
-        public string Goal1 { get; set; }
-        public string Goal2 { get; set; }
-        public string Goal3 { get; set; }
-        public string Goal4 { get; set; }
-        public string Goal5 { get; set; }
-        public string Goal6 { get; set; }
-        public string Goal7 { get; set; }
+        public string AGoalName { get; set; }
+        public string AGoalQuestion { get; set; }
+        public string AGoalDays { get; set; }
+        public string AGoal1 { get; set; }
+        public string AGoal2 { get; set; }
+        public string AGoal3 { get; set; }
+        public string AGoal4 { get; set; }
+        public string AGoal5 { get; set; }
+        public string AGoal6 { get; set; }
+        public string AGoal7 { get; set; }
 
-        public DateTime? GoalDate1 { get; set; }
-        public DateTime? GoalDate2 { get; set; }
-        public DateTime? GoalDate3 { get; set; }
-        public DateTime? GoalDate4 { get; set; }
-        public DateTime? GoalDate5 { get; set; }
-        public DateTime? GoalDate6 { get; set; }
-        public DateTime? GoalDate7 { get; set; }
+        public DateTime? AGoalDate1 { get; set; }
+        public DateTime? AGoalDate2 { get; set; }
+        public DateTime? AGoalDate3 { get; set; }
+        public DateTime? AGoalDate4 { get; set; }
+        public DateTime? AGoalDate5 { get; set; }
+        public DateTime? AGoalDate6 { get; set; }
+        public DateTime? AGoalDate7 { get; set; }
 
         public UserProfileViewModel UserProfileViewModel { get; set; }
 
@@ -43,23 +43,23 @@ namespace Systematycznosc.ViewModels
         public GoalsViewModel(Goals goals)
         {
             this.Id = goals.Id;
-            this.GoalName = goals.GoalName;
-            this.GoalDays = goals.GoalDays;
-            this.GoalQuestion = goals.GoalQuestion;
-            this.Goal1 = goals.Goal1;
-            this.GoalDate1 = goals.GoalDate1;
-            this.Goal2 = goals.Goal2;
-            this.GoalDate2 = goals.GoalDate2;
-            this.Goal3 = goals.Goal3;
-            this.GoalDate3 = goals.GoalDate3;
-            this.Goal4 = goals.Goal4;
-            this.GoalDate4 = goals.GoalDate4;
-            this.Goal5 = goals.Goal5;
-            this.GoalDate5 = goals.GoalDate5;
-            this.Goal6 = goals.Goal6;
-            this.GoalDate6 = goals.GoalDate6;
-            this.Goal7 = goals.Goal7;
-            this.GoalDate7 = goals.GoalDate7;
+            this.AGoalName = goals.AGoalName;
+            this.AGoalDays = goals.AGoalDays;
+            this.AGoalQuestion = goals.AGoalQuestion;
+            this.AGoal1 = goals.AGoal1;
+            this.AGoalDate1 = goals.AGoalDate1;
+            this.AGoal2 = goals.AGoal2;
+            this.AGoalDate2 = goals.AGoalDate2;
+            this.AGoal3 = goals.AGoal3;
+            this.AGoalDate3 = goals.AGoalDate3;
+            this.AGoal4 = goals.AGoal4;
+            this.AGoalDate4 = goals.AGoalDate4;
+            this.AGoal5 = goals.AGoal5;
+            this.AGoalDate5 = goals.AGoalDate5;
+            this.AGoal6 = goals.AGoal6;
+            this.AGoalDate6 = goals.AGoalDate6;
+            this.AGoal7 = goals.AGoal7;
+            this.AGoalDate7 = goals.AGoalDate7;
         }
     }
 }

@@ -12,23 +12,23 @@ namespace Systematycznosc.Models
         [Key, ForeignKey("User")]
         public string Id { get; set; }
         public virtual ApplicationUser User { get; set; }
-        public string GoalName { get; set; }
-        public string GoalQuestion { get; set; }
-        public string GoalDays { get; set; }
-        public string Goal1 { get; set; }
-        public string Goal2 { get; set; }
-        public string Goal3 { get; set; }
-        public string Goal4 { get; set; }
-        public string Goal5 { get; set; }
-        public string Goal6 { get; set; }
-        public string Goal7 { get; set; }
+        public string AGoalName { get; set; }
+        public string AGoalQuestion { get; set; }
+        public string AGoalDays { get; set; }
+        public string AGoal1 { get; set; }
+        public string AGoal2 { get; set; }
+        public string AGoal3 { get; set; }
+        public string AGoal4 { get; set; }
+        public string AGoal5 { get; set; }
+        public string AGoal6 { get; set; }
+        public string AGoal7 { get; set; }
 
-        public DateTime? GoalDate1 { get; set; }
-        public DateTime? GoalDate2 { get; set; }
-        public DateTime? GoalDate3 { get; set; }
-        public DateTime? GoalDate4 { get; set; }
-        public DateTime? GoalDate5 { get; set; }
-        public DateTime? GoalDate6 { get; set; }
-        public DateTime? GoalDate7 { get; set; }
+        public DateTime? AGoalDate1 { get; set; }
+        public DateTime? AGoalDate2 { get; set; }
+        public DateTime? AGoalDate3 { get; set; }
+        public DateTime? AGoalDate4 { get; set; }
+        public DateTime? AGoalDate5 { get; set; }
+        public DateTime? AGoalDate6 { get; set; }
+        public DateTime? AGoalDate7 { get; set; }
     }
 }
