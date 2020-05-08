@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Systematycznosc.Models
 {
-    public class Goals1
+    public class Goals
     {
         [Key, ForeignKey("User")]
         public string Id { get; set; }

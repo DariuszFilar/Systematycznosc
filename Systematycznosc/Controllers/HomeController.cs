@@ -28,7 +28,7 @@ namespace Systematycznosc.Controllers
             var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
             var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
             var relationship = _context.Relationship.FirstOrDefault(x => x.Id == userId);
-            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
+            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
             UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
 
             if (userProfile != null)
@@ -55,8 +55,8 @@ namespace Systematycznosc.Controllers
                 else { OthersBirthdayViewModel OthersBirthday = new OthersBirthdayViewModel(othersBirthday); wrapper.OthersBirthdayViewModel = OthersBirthday; }
                 if (relationship == null) { wrapper.RelationshipViewModel = new RelationshipViewModel(); }
                 else { RelationshipViewModel Relationship = new RelationshipViewModel(relationship); wrapper.RelationshipViewModel = Relationship; }
-                if (goals1 == null) { wrapper.Goals1ViewModel = new Goals1ViewModel(); }
-                else { Goals1ViewModel Goals1 = new Goals1ViewModel(goals1); wrapper.Goals1ViewModel = Goals1; }
+                if (goals == null) { wrapper.GoalsViewModel = new GoalsViewModel(); }
+                else { GoalsViewModel Goals = new GoalsViewModel(goals); wrapper.GoalsViewModel = Goals; }
                 return View(wrapper);
 
             }
@@ -806,18 +806,16 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
-            GoalsViewModelWrapper model = new GoalsViewModelWrapper();
+            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
 
-            if (userProfile != null && goals1 != null)
+            if (userProfile != null && goals != null)
             {
-                Goals1ViewModel Goals1 = new Goals1ViewModel(goals1);
-                model.Goals1ViewModel = Goals1;
+                GoalsViewModel model = new GoalsViewModel(goals);
                 return View(model);
             }
-            if (userProfile != null && goals1 == null)
+            if (userProfile != null && goals == null)
             {
-                model.Goals1ViewModel = new Goals1ViewModel();
+                GoalsViewModel model = new GoalsViewModel();
                 return View(model);
             }
             else
@@ -826,204 +824,204 @@ namespace Systematycznosc.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Goals(GoalsViewModelWrapper model)
+        public ActionResult Goals(GoalsViewModel model)
         {
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
+            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
 
             if (user == null)
                 return View();
 
-            if (goals1 != null)
+            if (goals != null)
             {
                 //Dla tych samych dat
-                if (goals1.GoalDate1 == null)
+                if (goals.GoalDate1 == null)
                 {
-                    goals1.GoalDate1 = DateTime.Today;
-                    goals1.Goal1 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate1 = goals1.GoalDate1;
-                    model.Goals1ViewModel.Goal1 = goals1.Goal1;
+                    goals.GoalDate1 = DateTime.Today;
+                    goals.Goal1 = model.Goal1;
+                    model.GoalDate1 = goals.GoalDate1;
+                    model.Goal1 = goals.Goal1;
                 }
-                if (goals1.GoalDate1 != null && goals1.GoalDate1 == DateTime.Today)
+                if (goals.GoalDate1 != null && goals.GoalDate1 == DateTime.Today)
                 {
-                    goals1.GoalDate1 = DateTime.Today;
-                    goals1.Goal1 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate1 = goals1.GoalDate1;
-                    model.Goals1ViewModel.Goal1 = goals1.Goal1;
+                    goals.GoalDate1 = DateTime.Today;
+                    goals.Goal1 = model.Goal1;
+                    model.GoalDate1 = goals.GoalDate1;
+                    model.Goal1 = goals.Goal1;
                 }
-                if (goals1.GoalDate2 != null && goals1.GoalDate2 == DateTime.Today)
+                if (goals.GoalDate2 != null && goals.GoalDate2 == DateTime.Today)
                 {
-                    goals1.GoalDate2 = DateTime.Today;
-                    goals1.Goal2 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate2 = goals1.GoalDate2;
-                    model.Goals1ViewModel.Goal2 = goals1.Goal2;
+                    goals.GoalDate2 = DateTime.Today;
+                    goals.Goal2 = model.Goal1;
+                    model.GoalDate2 = goals.GoalDate2;
+                    model.Goal2 = goals.Goal2;
                 }
-                if (goals1.GoalDate3 != null && goals1.GoalDate3 == DateTime.Today)
+                if (goals.GoalDate3 != null && goals.GoalDate3 == DateTime.Today)
                 {
-                    goals1.GoalDate3 = DateTime.Today;
-                    goals1.Goal3 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate3 = goals1.GoalDate3;
-                    model.Goals1ViewModel.Goal3 = goals1.Goal3;
+                    goals.GoalDate3 = DateTime.Today;
+                    goals.Goal3 = model.Goal1;
+                    model.GoalDate3 = goals.GoalDate3;
+                    model.Goal3 = goals.Goal3;
                 }
-                if (goals1.GoalDate4 != null && goals1.GoalDate4 == DateTime.Today)
+                if (goals.GoalDate4 != null && goals.GoalDate4 == DateTime.Today)
                 {
-                    goals1.GoalDate4 = DateTime.Today;
-                    goals1.Goal4 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate4 = goals1.GoalDate4;
-                    model.Goals1ViewModel.Goal4 = goals1.Goal4;
+                    goals.GoalDate4 = DateTime.Today;
+                    goals.Goal4 = model.Goal1;
+                    model.GoalDate4 = goals.GoalDate4;
+                    model.Goal4 = goals.Goal4;
                 }
-                if (goals1.GoalDate5 != null && goals1.GoalDate5 == DateTime.Today)
+                if (goals.GoalDate5 != null && goals.GoalDate5 == DateTime.Today)
                 {
-                    goals1.GoalDate5 = DateTime.Today;
-                    goals1.Goal5 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate5 = goals1.GoalDate5;
-                    model.Goals1ViewModel.Goal5 = goals1.Goal5;
+                    goals.GoalDate5 = DateTime.Today;
+                    goals.Goal5 = model.Goal1;
+                    model.GoalDate5 = goals.GoalDate5;
+                    model.Goal5 = goals.Goal5;
                 }
-                if (goals1.GoalDate6 != null && goals1.GoalDate6 == DateTime.Today)
+                if (goals.GoalDate6 != null && goals.GoalDate6 == DateTime.Today)
                 {
-                    goals1.GoalDate6 = DateTime.Today;
-                    goals1.Goal6 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate6 = goals1.GoalDate6;
-                    model.Goals1ViewModel.Goal6 = goals1.Goal6;
+                    goals.GoalDate6 = DateTime.Today;
+                    goals.Goal6 = model.Goal1;
+                    model.GoalDate6 = goals.GoalDate6;
+                    model.Goal6 = goals.Goal6;
                 }
-                if (goals1.GoalDate7 != null && goals1.GoalDate7 == DateTime.Today)
+                if (goals.GoalDate7 != null && goals.GoalDate7 == DateTime.Today)
                 {
-                    goals1.GoalDate7 = DateTime.Today;
-                    goals1.Goal7 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate7 = goals1.GoalDate7;
-                    model.Goals1ViewModel.Goal7 = goals1.Goal7;
+                    goals.GoalDate7 = DateTime.Today;
+                    goals.Goal7 = model.Goal1;
+                    model.GoalDate7 = goals.GoalDate7;
+                    model.Goal7 = goals.Goal7;
                 }
                 //Dla wolnych miejsc
-                if (goals1.GoalDate1 != null && goals1.GoalDate2 == null && goals1.GoalDate1 != DateTime.Today)
+                if (goals.GoalDate1 != null && goals.GoalDate2 == null && goals.GoalDate1 != DateTime.Today)
                 {
-                    goals1.GoalDate2 = DateTime.Today;
-                    goals1.Goal2 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate2 = goals1.GoalDate2;
-                    model.Goals1ViewModel.Goal2 = goals1.Goal2;
+                    goals.GoalDate2 = DateTime.Today;
+                    goals.Goal2 = model.Goal1;
+                    model.GoalDate2 = goals.GoalDate2;
+                    model.Goal2 = goals.Goal2;
                     _context.SaveChanges();
                     return View(model);
 
                 }
-                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 == null && goals1.GoalDate2 != DateTime.Today)
+                else if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 == null && goals.GoalDate2 != DateTime.Today)
                 {
-                    goals1.GoalDate3 = DateTime.Today;
-                    goals1.Goal3 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate3 = goals1.GoalDate3;
-                    model.Goals1ViewModel.Goal3 = goals1.Goal3;
+                    goals.GoalDate3 = DateTime.Today;
+                    goals.Goal3 = model.Goal1;
+                    model.GoalDate3 = goals.GoalDate3;
+                    model.Goal3 = goals.Goal3;
                     _context.SaveChanges();
                     return View(model);
                 }
-                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 == null && goals1.GoalDate3 != DateTime.Today)
+                else if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 != null && goals.GoalDate4 == null && goals.GoalDate3 != DateTime.Today)
                 {
-                    goals1.GoalDate4 = DateTime.Today;
-                    goals1.Goal4 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate4 = goals1.GoalDate4;
-                    model.Goals1ViewModel.Goal4 = goals1.Goal4;
+                    goals.GoalDate4 = DateTime.Today;
+                    goals.Goal4 = model.Goal1;
+                    model.GoalDate4 = goals.GoalDate4;
+                    model.Goal4 = goals.Goal4;
                     _context.SaveChanges();
                     return View(model);
                 }
-                else if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 != null && goals1.GoalDate5 == null && goals1.GoalDate4 != DateTime.Today)
+                else if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 != null && goals.GoalDate4 != null && goals.GoalDate5 == null && goals.GoalDate4 != DateTime.Today)
                 {
-                    goals1.GoalDate5 = DateTime.Today;
-                    goals1.Goal5 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate5 = goals1.GoalDate5;
-                    model.Goals1ViewModel.Goal5 = goals1.Goal5;
+                    goals.GoalDate5 = DateTime.Today;
+                    goals.Goal5 = model.Goal1;
+                    model.GoalDate5 = goals.GoalDate5;
+                    model.Goal5 = goals.Goal5;
                     _context.SaveChanges();
                     return View(model);
                 }
-                if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 != null && goals1.GoalDate5 != null && goals1.GoalDate6 == null && goals1.GoalDate5 != DateTime.Today)
+                if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 != null && goals.GoalDate4 != null && goals.GoalDate5 != null && goals.GoalDate6 == null && goals.GoalDate5 != DateTime.Today)
                 {
-                    goals1.GoalDate6 = DateTime.Today;
-                    goals1.Goal6 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate6 = goals1.GoalDate6;
-                    model.Goals1ViewModel.Goal6 = goals1.Goal6;
+                    goals.GoalDate6 = DateTime.Today;
+                    goals.Goal6 = model.Goal1;
+                    model.GoalDate6 = goals.GoalDate6;
+                    model.Goal6 = goals.Goal6;
                     _context.SaveChanges();
                     return View(model);
                 }
-                if (goals1.GoalDate1 != null && goals1.GoalDate2 != null && goals1.GoalDate3 != null && goals1.GoalDate4 != null && goals1.GoalDate5 != null && goals1.GoalDate6 != null &&
-                    goals1.GoalDate6 == null && goals1.GoalDate1 != DateTime.Today)
+                if (goals.GoalDate1 != null && goals.GoalDate2 != null && goals.GoalDate3 != null && goals.GoalDate4 != null && goals.GoalDate5 != null && goals.GoalDate6 != null &&
+                    goals.GoalDate6 == null && goals.GoalDate1 != DateTime.Today)
                 {
-                    goals1.GoalDate7 = DateTime.Today;
-                    goals1.Goal7 = model.Goals1ViewModel.Goal1;
-                    model.Goals1ViewModel.GoalDate7 = goals1.GoalDate7;
-                    model.Goals1ViewModel.Goal7 = goals1.Goal7;
+                    goals.GoalDate7 = DateTime.Today;
+                    goals.Goal7 = model.Goal1;
+                    model.GoalDate7 = goals.GoalDate7;
+                    model.Goal7 = goals.Goal7;
                     _context.SaveChanges();
                     return View(model);
                 }
                 //Dla zajętych
-                if (goals1.GoalDate7 != null && goals1.GoalDate7 != DateTime.Today)
+                if (goals.GoalDate7 != null && goals.GoalDate7 != DateTime.Today)
                 {
-                    goals1.Goal1 = goals1.Goal2;
-                    goals1.GoalDate1 = goals1.GoalDate2;
-                    goals1.Goal2 = goals1.Goal3;
-                    goals1.GoalDate2 = goals1.GoalDate3;
-                    goals1.Goal3 = goals1.Goal4;
-                    goals1.GoalDate3 = goals1.GoalDate4;
-                    goals1.Goal4 = goals1.Goal5;
-                    goals1.GoalDate4 = goals1.GoalDate5;
-                    goals1.Goal5 = goals1.Goal6;
-                    goals1.GoalDate5 = goals1.GoalDate6;
-                    goals1.Goal6 = goals1.Goal7;
-                    goals1.GoalDate6 = goals1.GoalDate7;
-                    goals1.Goal7 = model.Goals1ViewModel.Goal1;
-                    goals1.GoalDate7 = DateTime.Today;
+                    goals.Goal1 = goals.Goal2;
+                    goals.GoalDate1 = goals.GoalDate2;
+                    goals.Goal2 = goals.Goal3;
+                    goals.GoalDate2 = goals.GoalDate3;
+                    goals.Goal3 = goals.Goal4;
+                    goals.GoalDate3 = goals.GoalDate4;
+                    goals.Goal4 = goals.Goal5;
+                    goals.GoalDate4 = goals.GoalDate5;
+                    goals.Goal5 = goals.Goal6;
+                    goals.GoalDate5 = goals.GoalDate6;
+                    goals.Goal6 = goals.Goal7;
+                    goals.GoalDate6 = goals.GoalDate7;
+                    goals.Goal7 = model.Goal1;
+                    goals.GoalDate7 = DateTime.Today;
                     _context.SaveChanges();
-                    model.Goals1ViewModel = new Goals1ViewModel(goals1);
+                    //model.GoalsViewModel = new GoalsViewModel(goals1);
                     return View(model);
                 }
             }
 
             else
             {
-                user.Goals1 = new Models.Goals1
+                user.Goals = new Models.Goals
                 {
                     GoalDate1 = DateTime.Today,
-                    Goal1 = model.Goals1ViewModel.Goal1
+                    Goal1 = model.Goal1
                 };
-                model.Goals1ViewModel.GoalDate1 = DateTime.Today;
+                model.GoalDate1 = DateTime.Today;
             }
-            model.Goals1ViewModel = new Goals1ViewModel(goals1);
+            model = new GoalsViewModel(goals);
             _context.SaveChanges();
             return View(model);
         }
         [HttpGet]
-        public ActionResult Goals1Edit()
+        public ActionResult GoalsEdit()
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
+            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
 
-            if (goals1 != null)
+            if (goals != null)
             {
-                Goals1ViewModel model = new Goals1ViewModel(goals1);
+                GoalsViewModel model = new GoalsViewModel(goals);
                 return View(model);
             }
             else
             {
-                Goals1ViewModel model = new Goals1ViewModel();
+                GoalsViewModel model = new GoalsViewModel();
                 return View(model);
             }
         }
         [HttpPost]
-        public ActionResult Goals1Edit(Goals1ViewModel model)
+        public ActionResult GoalsEdit(GoalsViewModel model)
         {
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var goals1 = _context.Goals1.FirstOrDefault(x => x.Id == userId);
+            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
 
             if (user == null)
                 return View();
 
-            if (goals1 != null)
+            if (goals != null)
             {
-                goals1.GoalName = model.GoalName;
-                goals1.GoalQuestion = model.GoalQuestion;
+                goals.GoalName = model.GoalName;
+                goals.GoalQuestion = model.GoalQuestion;
             }
             else
             {
-                user.Goals1 = new Models.Goals1
+                user.Goals = new Models.Goals
                 {
                     GoalName = model.GoalName,
                     GoalQuestion = model.GoalQuestion,

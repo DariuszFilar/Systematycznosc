@@ -20,7 +20,7 @@ namespace Systematycznosc.Models
         public OthersBirthday OthersBirthday { get; set; }
         public Todo Todo { get; set; }
         public Relationship Relationship { get; set; }
-        public Goals1 Goals1 { get; set; }
+        public Goals Goals { get; set; }
        
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {

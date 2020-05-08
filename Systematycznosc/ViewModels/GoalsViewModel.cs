@@ -8,7 +8,7 @@ using Systematycznosc.Models;
 
 namespace Systematycznosc.ViewModels
 {
-    public class Goals1ViewModel
+    public class GoalsViewModel
     {
         [Key, ForeignKey("User")]
         public string Id { get; set; }
@@ -34,32 +34,32 @@ namespace Systematycznosc.ViewModels
 
         public UserProfileViewModel UserProfileViewModel { get; set; }
 
-        public Goals1ViewModel(UserProfile userProfile)
+        public GoalsViewModel(UserProfile userProfile)
         {
             this.UserProfileViewModel = new UserProfileViewModel(userProfile);
         }
-        public Goals1ViewModel() { }
+        public GoalsViewModel() { }
 
-        public Goals1ViewModel(Goals1 goals1)
+        public GoalsViewModel(Goals goals)
         {
-            this.Id = goals1.Id;
-            this.GoalName = goals1.GoalName;
-            this.GoalDays = goals1.GoalDays;
-            this.GoalQuestion = goals1.GoalQuestion;
-            this.Goal1 = goals1.Goal1;
-            this.GoalDate1 = goals1.GoalDate1;
-            this.Goal2 = goals1.Goal2;
-            this.GoalDate2 = goals1.GoalDate2;
-            this.Goal3 = goals1.Goal3;
-            this.GoalDate3 = goals1.GoalDate3;
-            this.Goal4 = goals1.Goal4;
-            this.GoalDate4 = goals1.GoalDate4;
-            this.Goal5 = goals1.Goal5;
-            this.GoalDate5 = goals1.GoalDate5;
-            this.Goal6 = goals1.Goal6;
-            this.GoalDate6 = goals1.GoalDate6;
-            this.Goal7 = goals1.Goal7;
-            this.GoalDate7 = goals1.GoalDate7;
+            this.Id = goals.Id;
+            this.GoalName = goals.GoalName;
+            this.GoalDays = goals.GoalDays;
+            this.GoalQuestion = goals.GoalQuestion;
+            this.Goal1 = goals.Goal1;
+            this.GoalDate1 = goals.GoalDate1;
+            this.Goal2 = goals.Goal2;
+            this.GoalDate2 = goals.GoalDate2;
+            this.Goal3 = goals.Goal3;
+            this.GoalDate3 = goals.GoalDate3;
+            this.Goal4 = goals.Goal4;
+            this.GoalDate4 = goals.GoalDate4;
+            this.Goal5 = goals.Goal5;
+            this.GoalDate5 = goals.GoalDate5;
+            this.Goal6 = goals.Goal6;
+            this.GoalDate6 = goals.GoalDate6;
+            this.Goal7 = goals.Goal7;
+            this.GoalDate7 = goals.GoalDate7;
         }
     }
 }

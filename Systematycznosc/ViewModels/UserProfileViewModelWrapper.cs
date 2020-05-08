@@ -17,7 +17,7 @@ namespace Systematycznosc.ViewModels
         public FriendsBirthdayViewModel FriendsBirthdayViewModel { get; set; }
         public OthersBirthdayViewModel OthersBirthdayViewModel { get; set; }
         public RelationshipViewModel RelationshipViewModel { get; set; }
-        public Goals1ViewModel Goals1ViewModel { get; set; }
+        public GoalsViewModel GoalsViewModel { get; set; }
         public UserProfileViewModelWrapper(UserProfile userProfile)
         {
             this.UserProfileViewModel = new UserProfileViewModel(userProfile);
