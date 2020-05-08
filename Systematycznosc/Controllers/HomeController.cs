@@ -970,6 +970,142 @@ namespace Systematycznosc.Controllers
                     //model.GoalsViewModel = new GoalsViewModel(goals1);
                     return View(model);
                 }
+                //Dla B
+                //Dla tych samych dat
+                if (goals.BGoalDate1 == null)
+                {
+                    goals.BGoalDate1 = DateTime.Today;
+                    goals.BGoal1 = model.BGoal1;
+                    model.BGoalDate1 = goals.BGoalDate1;
+                    model.BGoal1 = goals.BGoal1;
+                }
+                if (goals.BGoalDate1 != null && goals.BGoalDate1 == DateTime.Today)
+                {
+                    goals.BGoalDate1 = DateTime.Today;
+                    goals.BGoal1 = model.BGoal1;
+                    model.BGoalDate1 = goals.BGoalDate1;
+                    model.BGoal1 = goals.BGoal1;
+                }
+                if (goals.BGoalDate2 != null && goals.BGoalDate2 == DateTime.Today)
+                {
+                    goals.BGoalDate2 = DateTime.Today;
+                    goals.BGoal2 = model.BGoal1;
+                    model.BGoalDate2 = goals.BGoalDate2;
+                    model.BGoal2 = goals.BGoal2;
+                }
+                if (goals.BGoalDate3 != null && goals.BGoalDate3 == DateTime.Today)
+                {
+                    goals.BGoalDate3 = DateTime.Today;
+                    goals.BGoal3 = model.BGoal1;
+                    model.BGoalDate3 = goals.BGoalDate3;
+                    model.BGoal3 = goals.BGoal3;
+                }
+                if (goals.BGoalDate4 != null && goals.BGoalDate4 == DateTime.Today)
+                {
+                    goals.BGoalDate4 = DateTime.Today;
+                    goals.BGoal4 = model.BGoal1;
+                    model.BGoalDate4 = goals.BGoalDate4;
+                    model.BGoal4 = goals.BGoal4;
+                }
+                if (goals.BGoalDate5 != null && goals.BGoalDate5 == DateTime.Today)
+                {
+                    goals.BGoalDate5 = DateTime.Today;
+                    goals.BGoal5 = model.BGoal1;
+                    model.BGoalDate5 = goals.BGoalDate5;
+                    model.BGoal5 = goals.BGoal5;
+                }
+                if (goals.BGoalDate6 != null && goals.BGoalDate6 == DateTime.Today)
+                {
+                    goals.BGoalDate6 = DateTime.Today;
+                    goals.BGoal6 = model.BGoal1;
+                    model.BGoalDate6 = goals.BGoalDate6;
+                    model.BGoal6 = goals.BGoal6;
+                }
+                if (goals.BGoalDate7 != null && goals.BGoalDate7 == DateTime.Today)
+                {
+                    goals.BGoalDate7 = DateTime.Today;
+                    goals.BGoal7 = model.BGoal1;
+                    model.BGoalDate7 = goals.BGoalDate7;
+                    model.BGoal7 = goals.BGoal7;
+                }
+                //Dla wolnych miejsc
+                if (goals.BGoalDate1 != null && goals.BGoalDate2 == null && goals.BGoalDate1 != DateTime.Today)
+                {
+                    goals.BGoalDate2 = DateTime.Today;
+                    goals.BGoal2 = model.BGoal1;
+                    model.BGoalDate2 = goals.BGoalDate2;
+                    model.BGoal2 = goals.BGoal2;
+                    _context.SaveChanges();
+                    return View(model);
+
+                }
+                else if (goals.BGoalDate1 != null && goals.BGoalDate2 != null && goals.BGoalDate3 == null && goals.BGoalDate2 != DateTime.Today)
+                {
+                    goals.BGoalDate3 = DateTime.Today;
+                    goals.BGoal3 = model.BGoal1;
+                    model.BGoalDate3 = goals.BGoalDate3;
+                    model.BGoal3 = goals.BGoal3;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+                else if (goals.BGoalDate1 != null && goals.BGoalDate2 != null && goals.BGoalDate3 != null && goals.BGoalDate4 == null && goals.BGoalDate3 != DateTime.Today)
+                {
+                    goals.BGoalDate4 = DateTime.Today;
+                    goals.BGoal4 = model.BGoal1;
+                    model.BGoalDate4 = goals.BGoalDate4;
+                    model.BGoal4 = goals.BGoal4;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+                else if (goals.BGoalDate1 != null && goals.BGoalDate2 != null && goals.BGoalDate3 != null && goals.BGoalDate4 != null && goals.BGoalDate5 == null && goals.BGoalDate4 != DateTime.Today)
+                {
+                    goals.BGoalDate5 = DateTime.Today;
+                    goals.BGoal5 = model.BGoal1;
+                    model.BGoalDate5 = goals.BGoalDate5;
+                    model.BGoal5 = goals.BGoal5;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+                if (goals.BGoalDate1 != null && goals.BGoalDate2 != null && goals.BGoalDate3 != null && goals.BGoalDate4 != null && goals.BGoalDate5 != null && goals.BGoalDate6 == null && goals.BGoalDate5 != DateTime.Today)
+                {
+                    goals.BGoalDate6 = DateTime.Today;
+                    goals.BGoal6 = model.BGoal1;
+                    model.BGoalDate6 = goals.BGoalDate6;
+                    model.BGoal6 = goals.BGoal6;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+                if (goals.BGoalDate1 != null && goals.BGoalDate2 != null && goals.BGoalDate3 != null && goals.BGoalDate4 != null && goals.BGoalDate5 != null && goals.BGoalDate6 != null &&
+                    goals.BGoalDate6 == null && goals.BGoalDate1 != DateTime.Today)
+                {
+                    goals.BGoalDate7 = DateTime.Today;
+                    goals.BGoal7 = model.BGoal1;
+                    model.BGoalDate7 = goals.BGoalDate7;
+                    model.BGoal7 = goals.BGoal7;
+                    _context.SaveChanges();
+                    return View(model);
+                }
+                //Dla zajętych
+                if (goals.BGoalDate7 != null && goals.BGoalDate7 != DateTime.Today)
+                {
+                    goals.BGoal1 = goals.BGoal2;
+                    goals.BGoalDate1 = goals.BGoalDate2;
+                    goals.BGoal2 = goals.BGoal3;
+                    goals.BGoalDate2 = goals.BGoalDate3;
+                    goals.BGoal3 = goals.BGoal4;
+                    goals.BGoalDate3 = goals.BGoalDate4;
+                    goals.BGoal4 = goals.BGoal5;
+                    goals.BGoalDate4 = goals.BGoalDate5;
+                    goals.BGoal5 = goals.BGoal6;
+                    goals.BGoalDate5 = goals.BGoalDate6;
+                    goals.BGoal6 = goals.BGoal7;
+                    goals.BGoalDate6 = goals.BGoalDate7;
+                    goals.BGoal7 = model.BGoal1;
+                    goals.BGoalDate7 = DateTime.Today;
+                    _context.SaveChanges();
+                    //model.GoalsViewModel = new GoalsViewModel(goals1);
+                    return View(model);
+                }
             }
 
             else
@@ -977,7 +1113,9 @@ namespace Systematycznosc.Controllers
                 user.Goals = new Models.Goals
                 {
                     AGoalDate1 = DateTime.Today,
-                    AGoal1 = model.AGoal1
+                    AGoal1 = model.AGoal1,
+                    BGoalDate1 = DateTime.Today,
+                    BGoal1 = model.BGoal1
                 };
                 model.AGoalDate1 = DateTime.Today;
             }
@@ -1018,6 +1156,8 @@ namespace Systematycznosc.Controllers
             {
                 goals.AGoalName = model.AGoalName;
                 goals.AGoalQuestion = model.AGoalQuestion;
+                goals.BGoalName = model.BGoalName;
+                goals.BGoalQuestion = model.BGoalQuestion;
             }
             else
             {
@@ -1025,10 +1165,13 @@ namespace Systematycznosc.Controllers
                 {
                     AGoalName = model.AGoalName,
                     AGoalQuestion = model.AGoalQuestion,
+                    BGoalName = model.BGoalName,
+                    BGoalQuestion = model.BGoalQuestion,
 
                 };
             }
             _context.SaveChanges();
+        
             return View(model);
         }
     }

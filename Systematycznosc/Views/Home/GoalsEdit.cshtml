@@ -36,545 +36,6 @@
             <div style="font-size:37px; text-align:center; padding-bottom:50px;">Pytanie odnośnie celu</div>
         }
     }
-
-<table id="table_id" class="table table-info table-hover" style="font-size:18px; width:auto;">
-    <thead>
-        <tr>
-            <th style="width: 300px">Data:</th>
-            <th style="width: 300px">Status:</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            @{ DateTime data1 = DateTime.Today;
-                if (Model.AGoalDate1 == data1)
-                {
-                    <td>
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data1)
-                {
-                    <td>
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data1)
-                {
-                    <td>
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data1)
-                {
-                    <td>
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data1)
-                {
-                    <td>
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data1)
-                {
-                    <td>
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data1)
-                {
-                    <td>
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td>
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>Nie</div>
-                    </td>
-                }
-
-            }
-        </tr>
-        <tr>
-            @{ DateTime data2 = DateTime.Today.AddDays(-1); ;
-                if (Model.AGoalDate1 == data2)
-                {
-                    <td>
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data2)
-                {
-                    <td>
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data2)
-                {
-                    <td>
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data2)
-                {
-                    <td>
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data2)
-                {
-                    <td>
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data2)
-                {
-                    <td>
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data2)
-                {
-                    <td>
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td>
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data3 = DateTime.Today.AddDays(-2); ;
-                if (Model.AGoalDate1 == data3)
-                {
-                    <td>
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data3)
-                {
-                    <td>
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data3)
-                {
-                    <td>
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data3)
-                {
-                    <td>
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data3)
-                {
-                    <td>
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data3)
-                {
-                    <td>
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data3)
-                {
-                    <td>
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td>
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data4 = DateTime.Today.AddDays(-3); ;
-                if (Model.AGoalDate1 == data4)
-                {
-                    <td>
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data4)
-                {
-                    <td>
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data4)
-                {
-                    <td>
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data4)
-                {
-                    <td>
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data4)
-                {
-                    <td>
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data4)
-                {
-                    <td>
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data4)
-                {
-                    <td>
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td>
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data5 = DateTime.Today.AddDays(-4); ;
-                if (Model.AGoalDate1 == data5)
-                {
-                    <td>
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data5)
-                {
-                    <td>
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data5)
-                {
-                    <td>
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data5)
-                {
-                    <td>
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data5)
-                {
-                    <td>
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data5)
-                {
-                    <td>
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data5)
-                {
-                    <td>
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td>
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data6 = DateTime.Today.AddDays(-5); ;
-                if (Model.AGoalDate1 == data6)
-                {
-                    <td>
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data6)
-                {
-                    <td>
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data6)
-                {
-                    <td>
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data6)
-                {
-                    <td>
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data6)
-                {
-                    <td>
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data6)
-                {
-                    <td>
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data6)
-                {
-                    <td>
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td>
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data7 = DateTime.Today.AddDays(-6); ;
-                if (Model.AGoalDate1 == data7)
-                {
-                    <td>
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data7)
-                {
-                    <td>
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data7)
-                {
-                    <td>
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data7)
-                {
-                    <td>
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data7)
-                {
-                    <td>
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data7)
-                {
-                    <td>
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data7)
-                {
-                    <td>
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td>
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-    </tbody>
-</table>
-
     @using (Html.BeginForm("GoalsEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
     {
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -599,6 +60,59 @@
             </div>
             <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
                 @Html.ActionLink("Powród do celów", "AGoals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+            </div>
+        </div>
+    }
+
+    <!-- Masthead Avatar Image -->
+    <!-- Masthead Heading -->
+    @{ if (Model.BGoalName != null)
+        { <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">@Model.BGoalName</h1>}
+    else
+    { <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">Twój cel nr 2</h1>}
+    }
+
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
+        </div>
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
+    </div>
+    @{ if (Model.BGoalQuestion != null)
+        {
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.BGoalQuestion</div>}
+        else
+        {
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;">Pytanie odnośnie celu</div>
+        }
+    }
+
+    @using (Html.BeginForm("GoalsEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.BGoalName, "Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.BGoalName, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                @Html.ValidationMessageFor(m => m.BGoalName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.BGoalQuestion, "Pytanie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.BGoalQuestion, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                @Html.ValidationMessageFor(m => m.BGoalQuestion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div style="padding-bottom:50px; padding-top:20px;">
+            <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
+            </div>
+            <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                @Html.ActionLink("Powród do celów", "BGoals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
             </div>
         </div>
     }

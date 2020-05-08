@@ -264,6 +264,10 @@
     <Compile Include="Migrations\202005080858466_ChangingGoals.Designer.cs">
       <DependentUpon>202005080858466_ChangingGoals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005080914243_AddedBGoal.cs" />
+    <Compile Include="Migrations\202005080914243_AddedBGoal.Designer.cs">
+      <DependentUpon>202005080914243_AddedBGoal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -517,6 +521,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005080858466_ChangingGoals.resx">
       <DependentUpon>202005080858466_ChangingGoals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005080914243_AddedBGoal.resx">
+      <DependentUpon>202005080914243_AddedBGoal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
