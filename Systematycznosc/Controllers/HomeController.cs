@@ -1152,27 +1152,66 @@ namespace Systematycznosc.Controllers
             if (user == null)
                 return View();
 
-            if (goals != null)
-            {
-                goals.AGoalName = model.AGoalName;
-                goals.AGoalQuestion = model.AGoalQuestion;
-                goals.BGoalName = model.BGoalName;
-                goals.BGoalQuestion = model.BGoalQuestion;
-            }
-            else
-            {
-                user.Goals = new Models.Goals
-                {
-                    AGoalName = model.AGoalName,
-                    AGoalQuestion = model.AGoalQuestion,
-                    BGoalName = model.BGoalName,
-                    BGoalQuestion = model.BGoalQuestion,
+            //if (goals != null)
+            //{
+            //    goals.AGoalName = model.AGoalName;
+            //    goals.AGoalQuestion = model.AGoalQuestion;
+            //    goals.BGoalName = model.BGoalName;
+            //    goals.BGoalQuestion = model.BGoalQuestion;
+            //}
+            //else
+            //{
+            //    user.Goals = new Models.Goals
+            //    {
+            //        AGoalName = model.AGoalName,
+            //        AGoalQuestion = model.AGoalQuestion,
+            //        BGoalName = model.BGoalName,
+            //        BGoalQuestion = model.BGoalQuestion,
 
-                };
+            //    };
+            //}
+            //Dla A
+            if (model.AGoalName != null)
+            {
+                if (goals != null && model.AGoalName != null && goals.AGoalName != null)
+                {
+                    goals.AGoalName = model.AGoalName;
+                    goals.AGoalQuestion = model.AGoalQuestion;
+                }
+                //if (goals != null && model.AGoalName == null && goals.AGoalName != null)
+                //{
+                //    model.AGoalName = goals.AGoalName;
+                //    model.AGoalQuestion = goals.AGoalQuestion;
+                //}
+                if (goals != null && model.AGoalName != null && goals.AGoalName == null)
+                {
+                    goals.AGoalName = model.AGoalName;
+                    goals.AGoalQuestion = model.AGoalQuestion;
+                }
+            }
+            //Dla B
+            if (model.BGoalName != null)
+            {
+                if (goals != null && model.BGoalName != null && goals.BGoalName != null)
+                {
+                    goals.BGoalName = model.BGoalName;
+                    goals.BGoalQuestion = model.BGoalQuestion;
+                }
+                if (goals != null && model.BGoalName == null && goals.BGoalName != null)
+                {
+                    model.BGoalName = goals.BGoalName;
+                    model.BGoalQuestion = goals.BGoalQuestion;
+                }
+                if (goals != null && model.BGoalName != null && goals.BGoalName == null)
+                {
+                    goals.BGoalName = model.BGoalName;
+                    goals.BGoalQuestion = model.BGoalQuestion;
+                }
             }
             _context.SaveChanges();
-        
             return View(model);
         }
+
     }
 }
+
