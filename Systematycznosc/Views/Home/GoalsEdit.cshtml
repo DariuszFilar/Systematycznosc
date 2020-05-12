@@ -15,7 +15,7 @@
     <!-- Masthead Avatar Image -->
     <!-- Masthead Heading -->
     @{ if (Model.AGoalName != null)
-        { <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">@Model.AGoalName</h1>}
+        { <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top: 150px;" id="AGoalName">@Model.AGoalName</h1>}
     else
     { <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px;" id="Opener">Twój cel nr 1</h1>}
     }
@@ -36,7 +36,9 @@
             <div style="font-size:37px; text-align:center; padding-bottom:50px;">Pytanie odnośnie celu</div>
         }
     }
-    @using (Html.BeginForm("GoalsEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
+    @*@using (Html.BeginForm("GoalsEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))*@
+
+    @using (Ajax.BeginForm("GoalsEdit", "Home", new AjaxOptions { HttpMethod = "POST" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
     {
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group" style="text-align:center;">
@@ -56,7 +58,7 @@
         </div>
         <div style="padding-bottom:50px; padding-top:20px;">
             <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                <button style="font-size:40px;" type="submit" value="AGoal" class="btn btn-success" name="submitButton">Zapisz</button>
+                <button style="font-size:40px;" type="submit" value="AGoal" class="btn btn-success" name="submitButton" id="AGoalSave">Zapisz</button>
             </div>
             <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
                 @Html.ActionLink("Powród do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
@@ -89,7 +91,7 @@
         }
     }
 
-    @using (Html.BeginForm("GoalsEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
+    @using (Ajax.BeginForm("GoalsEdit", "Home", new AjaxOptions { HttpMethod = "POST" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
     {
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group" style="text-align:center;">
@@ -109,7 +111,7 @@
         </div>
         <div style="padding-bottom:50px; padding-top:20px;">
             <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                <button style="font-size:40px;" type="submit" value="BGoal" name="submitButton" class="btn btn-success">Zapisz</button>
+                <button style="font-size:40px;" type="submit" value="BGoal" name="submitButton" class="btn btn-success" id="BGoalSave">Zapisz</button>
             </div>
             <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
                 @Html.ActionLink("Powród do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
@@ -125,6 +127,8 @@
     <script src="//cdn.datatables.net/plug-ins/1.10.11/sorting/date-eu.js" type="text/javascript"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.12/sorting/datetime-moment.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
 }
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
