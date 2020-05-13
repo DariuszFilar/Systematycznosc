@@ -440,6 +440,8 @@
     <Content Include="Views\Home\Relationship.cshtml" />
     <Content Include="Views\Home\RelationshipEdit.cshtml" />
     <Content Include="Views\Home\GoalsEdit.cshtml" />
+    <Content Include="Views\Home\_AGoalWelcome.cshtml" />
+    <Content Include="Views\Home\_BGoalWelcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

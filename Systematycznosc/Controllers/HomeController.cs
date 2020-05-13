@@ -1148,7 +1148,6 @@ namespace Systematycznosc.Controllers
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
             var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
-
             if (user == null)
                 return View();
             switch (submitButton)
@@ -1171,8 +1170,8 @@ namespace Systematycznosc.Controllers
                             goals.AGoalQuestion = model.AGoalQuestion;
                         }
                         _context.SaveChanges();
-                        GoalsViewModel model2 = new GoalsViewModel(goals);
-                        return (View(model2));
+                        return PartialView("_AGoalWelcome", model);
+
                     };
                 case "BGoal":
                     {
@@ -1192,8 +1191,7 @@ namespace Systematycznosc.Controllers
                             goals.BGoalQuestion = model.BGoalQuestion;
                         }
                         _context.SaveChanges();
-                        GoalsViewModel model2 = new GoalsViewModel(goals);
-                        return (View(model2));
+                        return PartialView("_BGoalWelcome", model);
                     };
                 default:
                     return (View());
