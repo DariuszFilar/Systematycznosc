@@ -40,15 +40,15 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.AGoalQuestion</div>
-            using (Html.BeginForm("Goals", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            using (Ajax.BeginForm("Goals", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "AGoalWelcome" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                @Html.RadioButtonFor(model => model.AGoal1, "Tak", false)@Html.Label("Tak")
-                @Html.RadioButtonFor(model => model.AGoal1, "Nie", false)@Html.Label("Nie")
+                @Html.RadioButtonFor(model => model.AGoal1, "Tak", new { name = "", id = ""})@Html.Label("Tak")
+                @Html.RadioButtonFor(model => model.AGoal1, "Nie", new { name = "", id = ""})@Html.Label("Nie")
 
                 <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
+                    <button style="font-size:40px;" type="submit" value="AGoal" class="btn btn-success" name="submitButton" id="AGoalSave">Zapisz</button>
                 </div>
             }
             <table id="table_id" class="table table-info table-hover" style="font-size:18px; width:auto;">
@@ -1191,7 +1191,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.12/sorting/datetime-moment.js"></script>
     <script src="//cdn.datatables.net/plug-ins/1.10.11/sorting/date-eu.js"></script>
-
 }
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
@@ -1205,8 +1204,6 @@
             searching: false,
             info: false,
             "order": [[1, "desc"]],
-            "columnDefs": [{ "targets": 3, "type": "date-eu" }],
-
         });
         $.fn.dataTable.moment('DD/MM/YY');
         $('#table_id2').DataTable({
@@ -1215,11 +1212,9 @@
             searching: false,
             info: false,
             "order": [[1, "desc"]],
-            "columnDefs": [{ "targets": 3, "type": "date-eu" }],
         });
         $.fn.dataTable.moment('DD/MM/YY');
         $('#table_id3').DataTable({
-
             paging: false,
             searching: false,
             info: false,
