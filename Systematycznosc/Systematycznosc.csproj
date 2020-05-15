@@ -442,6 +442,7 @@
     <Content Include="Views\Home\GoalsEdit.cshtml" />
     <Content Include="Views\Home\_AGoalWelcome.cshtml" />
     <Content Include="Views\Home\_BGoalWelcome.cshtml" />
+    <Content Include="Views\Home\_AGoalTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
