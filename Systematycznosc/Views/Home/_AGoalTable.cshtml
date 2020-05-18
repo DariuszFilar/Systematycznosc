@@ -1,6 +1,6 @@
 ﻿@model Systematycznosc.ViewModels.GoalsViewModel
 
-<table id="table_id" class="table table-info table-hover" style="font-size:18px; width:auto;">
+<table id="table_id" class="table table-info table-hover table table-info table-hover dataTable no-footer" style="font-size:18px; width:auto;">
     <thead>
         <tr>
             <th style="width: 300px">Data:</th>
@@ -550,32 +550,5 @@
 }
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
-
-    $(document).ready(function () {
-
-        $.fn.dataTable.moment('DD/MM/YY');
-        $('#table_id').DataTable({
-
-            paging: false,
-            searching: false,
-            info: false,
-            "order": [[1, "desc"]],
-        });
-        $.fn.dataTable.moment('DD/MM/YY');
-        $('#table_id2').DataTable({
-
-            paging: false,
-            searching: false,
-            info: false,
-            "order": [[1, "desc"]],
-        });
-        $.fn.dataTable.moment('DD/MM/YY');
-        $('#table_id3').DataTable({
-            paging: false,
-            searching: false,
-            info: false,
-            "order": [[1, "asc"]],
-        });
-    });
 
 </script>
