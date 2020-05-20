@@ -10796,3 +10796,7 @@ footer {
         display: block !important;
     }
 }
+.questions {
+    overflow-wrap: break-word;
+    word-break: break-all;
+}

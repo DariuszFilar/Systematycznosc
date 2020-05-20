@@ -1017,7 +1017,7 @@
             <div class="d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.AGoalName</h1>
+                <h1 class="masthead-heading text-uppercase questions" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.AGoalName</h1>
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
@@ -1026,19 +1026,21 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">@Model.GoalsViewModel.AGoalQuestion</div>
-                    @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "AGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "AGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
-                    {
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div style="color:@colordescription; font-size:37px; text-align:center;" class="questions">@Model.GoalsViewModel.AGoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "AGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "AGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                        @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                    @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                    @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
 
-                        <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                            <button style="font-size:40px;" type="submit" value="AGoal" class="btn btn-success" name="submitButton" id="AGoalSave">Zapisz</button>
-                        </div>
-                    }
-                    <div id="AGoalTable">@{Html.RenderPartial("_AGoalTable", Model.GoalsViewModel);}</div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="AGoal" class="btn btn-success" name="submitButton" id="AGoalSave">Zapisz</button>
+                    </div>
+                }
+                <div id="AGoalTable">@{Html.RenderPartial("_AGoalTable", Model.GoalsViewModel);}</div>
             </div>
         </section>
     }
@@ -1069,7 +1071,7 @@
             <div class="d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.BGoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.BGoalName</h1>
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
@@ -1078,19 +1080,21 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">@Model.GoalsViewModel.BGoalQuestion</div>
-                    @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "BGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "BGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
-                    {
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div style="color:@colordescription; font-size:37px; text-align:center;" class="questions">@Model.GoalsViewModel.BGoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "BGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "BGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                        @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                    @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Odpoczynek", false)@Html.Label("Odpoczynek")
+                    @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Nagroda", false)@Html.Label("Nagroda")
 
-                        <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                            <button style="font-size:40px;" type="submit" value="BGoal" class="btn btn-success" name="submitButton" id="BGoalSave">Zapisz</button>
-                        </div>
-                    }
-                    <div id="BGoalTable">@{Html.RenderPartial("_BGoalTable", Model.GoalsViewModel);}</div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="BGoal" class="btn btn-success" name="submitButton" id="BGoalSave">Zapisz</button>
+                    </div>
+                }
+                <div id="BGoalTable">@{Html.RenderPartial("_BGoalTable", Model.GoalsViewModel);}</div>
             </div>
         </section>
     }
@@ -1150,7 +1154,5 @@
             info: false,
             "order": [[1, "asc"]],
         });
-        $('table.display').DataTable();
-    });
     });
 </script>
