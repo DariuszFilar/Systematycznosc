@@ -1030,12 +1030,14 @@
                 @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "AGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "AGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                    @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                    @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
-                    @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
-
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.AGoal1, "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
                     <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
                         <button style="font-size:40px;" type="submit" value="AGoal" class="btn btn-success" name="submitButton" id="AGoalSave">Zapisz</button>
                     </div>
@@ -1085,10 +1087,14 @@
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                    @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                    @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Odpoczynek", false)@Html.Label("Odpoczynek")
-                    @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Nagroda", false)@Html.Label("Nagroda")
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Odpoczynek", false)@Html.Label("Odpoczynek")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.BGoal1, "Nagroda", false)@Html.Label("Nagroda")
+                    </div>
 
                     <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
                         <button style="font-size:40px;" type="submit" value="BGoal" class="btn btn-success" name="submitButton" id="BGoalSave">Zapisz</button>
