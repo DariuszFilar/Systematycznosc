@@ -268,6 +268,14 @@
     <Compile Include="Migrations\202005080914243_AddedBGoal.Designer.cs">
       <DependentUpon>202005080914243_AddedBGoal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005210538352_AddedGoalTillH.cs" />
+    <Compile Include="Migrations\202005210538352_AddedGoalTillH.Designer.cs">
+      <DependentUpon>202005210538352_AddedGoalTillH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005210546383_UpdateGoals.cs" />
+    <Compile Include="Migrations\202005210546383_UpdateGoals.Designer.cs">
+      <DependentUpon>202005210546383_UpdateGoals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -444,6 +452,18 @@
     <Content Include="Views\Home\_BGoalWelcome.cshtml" />
     <Content Include="Views\Home\_AGoalTable.cshtml" />
     <Content Include="Views\Home\_BGoalTable.cshtml" />
+    <Content Include="Views\Home\_CGoalTable.cshtml" />
+    <Content Include="Views\Home\_CGoalWelcome.cshtml" />
+    <Content Include="Views\Home\_DGoalTable.cshtml" />
+    <Content Include="Views\Home\_EGoalTable.cshtml" />
+    <Content Include="Views\Home\_FGoalTable.cshtml" />
+    <Content Include="Views\Home\_GGoalTable.cshtml" />
+    <Content Include="Views\Home\_HGoalTable.cshtml" />
+    <Content Include="Views\Home\_DGoalWelcome.cshtml" />
+    <Content Include="Views\Home\_EGoalWelcome.cshtml" />
+    <Content Include="Views\Home\_FGoalWelcome.cshtml" />
+    <Content Include="Views\Home\_GGoalWelcome.cshtml" />
+    <Content Include="Views\Home\_HGoalWelcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -530,6 +550,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005080914243_AddedBGoal.resx">
       <DependentUpon>202005080914243_AddedBGoal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005210538352_AddedGoalTillH.resx">
+      <DependentUpon>202005210538352_AddedGoalTillH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005210546383_UpdateGoals.resx">
+      <DependentUpon>202005210546383_UpdateGoals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

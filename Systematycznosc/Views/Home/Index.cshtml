@@ -1106,6 +1106,356 @@
     }
 }
 
+@{if (Model.GoalsViewModel.CGoalName != null)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
+
+
+    if (Model.GoalsViewModel.CGoalName != null)
+    {
+
+        <section class="page-section @color mb-0" id="Goals">
+            <div class="d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.CGoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="color:@colordescription; font-size:37px; text-align:center;" class="questions">@Model.GoalsViewModel.CGoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "CGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "CGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.CGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.CGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.CGoal1, "Odpoczynek", false)@Html.Label("Odpoczynek")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.CGoal1, "Nagroda", false)@Html.Label("Nagroda")
+                    </div>
+
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="CGoal" class="btn btn-success" name="submitButton" id="CGoalSave">Zapisz</button>
+                    </div>
+                }
+                <div id="CGoalTable">@{Html.RenderPartial("_CGoalTable", Model.GoalsViewModel);}</div>
+            </div>
+        </section>
+    }
+}
+
+
+@{if (Model.GoalsViewModel.DGoalName != null)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
+
+
+    if (Model.GoalsViewModel.DGoalName != null)
+    {
+
+        <section class="page-section @color mb-0" id="Goals">
+            <div class="d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.DGoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="color:@colordescription; font-size:37px; text-align:center;" class="questions">@Model.GoalsViewModel.DGoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "DGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "DGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.DGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.DGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.DGoal1, "Odpoczynek", false)@Html.Label("Odpoczynek")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.DGoal1, "Nagroda", false)@Html.Label("Nagroda")
+                    </div>
+
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="DGoal" class="btn btn-success" name="submitButton" id="DGoalSave">Zapisz</button>
+                    </div>
+                }
+                <div id="DGoalTable">@{Html.RenderPartial("_DGoalTable", Model.GoalsViewModel);}</div>
+            </div>
+        </section>
+    }
+}
+
+@{if (Model.GoalsViewModel.EGoalName != null)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
+
+
+    if (Model.GoalsViewModel.EGoalName != null)
+    {
+
+        <section class="page-section @color mb-0" id="Goals">
+            <div class="d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.EGoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="color:@colordescription; font-size:37px; text-align:center;" class="questions">@Model.GoalsViewModel.EGoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "EGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.EGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.EGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.EGoal1, "Odpoczynek", false)@Html.Label("Odpoczynek")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.EGoal1, "Nagroda", false)@Html.Label("Nagroda")
+                    </div>
+
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="EGoal" class="btn btn-success" name="submitButton" id="EGoalSave">Zapisz</button>
+                    </div>
+                }
+                <div id="EGoalTable">@{Html.RenderPartial("_EGoalTable", Model.GoalsViewModel);}</div>
+            </div>
+        </section>
+    }
+}
+
+
+@{if (Model.GoalsViewModel.FGoalName != null)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
+
+
+    if (Model.GoalsViewModel.FGoalName != null)
+    {
+
+        <section class="page-section @color mb-0" id="Goals">
+            <div class="d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.FGoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="color:@colordescription; font-size:37px; text-align:center;" class="questions">@Model.GoalsViewModel.FGoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.FGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.FGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.FGoal1, "Odpoczynek", false)@Html.Label("Odpoczynek")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.FGoal1, "Nagroda", false)@Html.Label("Nagroda")
+                    </div>
+
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="FGoal" class="btn btn-success" name="submitButton" id="FGoalSave">Zapisz</button>
+                    </div>
+                }
+                <div id="FGoalTable">@{Html.RenderPartial("_FGoalTable", Model.GoalsViewModel);}</div>
+            </div>
+        </section>
+    }
+}
+
+@{if (Model.GoalsViewModel.GGoalName != null)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
+
+
+    if (Model.GoalsViewModel.GGoalName != null)
+    {
+
+        <section class="page-section @color mb-0" id="Goals">
+            <div class="d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.GGoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="color:@colordescription; font-size:37px; text-align:center;" class="questions">@Model.GoalsViewModel.GGoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "GGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "GGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.GGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.GGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.GGoal1, "Odpoczynek", false)@Html.Label("Odpoczynek")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.GGoal1, "Nagroda", false)@Html.Label("Nagroda")
+                    </div>
+
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="GGoal" class="btn btn-success" name="submitButton" id="GGoalSave">Zapisz</button>
+                    </div>
+                }
+                <div id="GGoalTable">@{Html.RenderPartial("_GGoalTable", Model.GoalsViewModel);}</div>
+            </div>
+        </section>
+    }
+}
+
+
+@{if (Model.GoalsViewModel.HGoalName != null)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
+
+
+    if (Model.GoalsViewModel.HGoalName != null)
+    {
+
+        <section class="page-section @color mb-0" id="Goals">
+            <div class="d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center;">@Model.GoalsViewModel.HGoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="color:@colordescription; font-size:37px; text-align:center;" class="questions">@Model.GoalsViewModel.HGoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Home", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "HGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "HGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.HGoal1, "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.HGoal1, "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.HGoal1, "Odpoczynek", false)@Html.Label("Odpoczynek")
+                        @Html.RadioButtonFor(model => model.GoalsViewModel.HGoal1, "Nagroda", false)@Html.Label("Nagroda")
+                    </div>
+
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="HGoal" class="btn btn-success" name="submitButton" id="HGoalSave">Zapisz</button>
+                    </div>
+                }
+                <div id="HGoalTable">@{Html.RenderPartial("_HGoalTable", Model.GoalsViewModel);}</div>
+            </div>
+        </section>
+    }
+}
 
 @section Scripts
 {

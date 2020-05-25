@@ -1,0 +1,27 @@
+﻿
+@model Systematycznosc.ViewModels.GoalsViewModel
+
+@{ if (Model.CGoalName != null)
+    { <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top: 55px; text-align:center;">@Model.CGoalName</h1>}
+else
+{ <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top: 55px; text-align:center;">Twój cel nr 3</h1>}
+}
+
+<!-- Icon Divider -->
+<div class="divider-custom">
+    <div class="divider-custom-line" style="background-color:white!important; width:70px;"></div>
+    <div class="divider-custom-icon">
+        <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
+    </div>
+    <div class="divider-custom-line" style="background-color:white!important; width:70px;"></div>
+</div>
+@{ if (Model.CGoalQuestion != null)
+    {
+        <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.CGoalQuestion</div>}
+    else
+    {
+        <div style="        font-size: 37px;
+        text-align: center;
+        padding-bottom: 50px;">Pytanie odnośnie celu</div>
+    }
+}

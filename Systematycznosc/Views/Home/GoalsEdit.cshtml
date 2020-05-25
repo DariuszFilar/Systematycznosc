@@ -70,7 +70,199 @@
                     <button style="font-size:40px;" type="submit" value="BGoal" name="submitButton" class="btn btn-success" id="BGoalSave">Zapisz</button>
                 </div>
                 <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    @Html.ActionLink("Powrót do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+                </div>
+            </div>
+        }
+    </div>
+    <div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
+
+        <div id="CGoalWelcome">@{Html.RenderPartial("_CGoalWelcome", Model);}</div>
+
+
+        @using (Ajax.BeginForm("GoalsEdit", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "CGoalWelcome" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style="text-align:center;">
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.CGoalName, "Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.CGoalName, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.CGoalName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.CGoalQuestion, "Pytanie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.CGoalQuestion, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.CGoalQuestion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div style="padding-bottom:50px; padding-top:20px;">
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="CGoal" class="btn btn-success" name="submitButton" id="CGoalSave">Zapisz</button>
+                </div>
+                <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
                     @Html.ActionLink("Powród do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+                </div>
+            </div>
+        }
+    </div>
+    <div class=" d-flex align-items-center flex-column" style="background-color:white!important">
+        <div id="DGoalWelcome">@{Html.RenderPartial("_DGoalWelcome", Model);}</div>
+
+        @using (Ajax.BeginForm("GoalsEdit", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "DGoalWelcome" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style="text-align:center;">
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.DGoalName, "Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.DGoalName, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.DGoalName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.DGoalQuestion, "Pytanie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.DGoalQuestion, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.DGoalQuestion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div style="padding-bottom:50px; padding-top:20px;">
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="DGoal" name="submitButton" class="btn btn-success" id="DGoalSave">Zapisz</button>
+                </div>
+                <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    @Html.ActionLink("Powrót do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+                </div>
+            </div>
+        }
+    </div>
+    <div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
+
+        <div id="EGoalWelcome">@{Html.RenderPartial("_EGoalWelcome", Model);}</div>
+
+
+        @using (Ajax.BeginForm("GoalsEdit", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EGoalWelcome" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style="text-align:center;">
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.EGoalName, "Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.EGoalName, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.EGoalName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.EGoalQuestion, "Pytanie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.EGoalQuestion, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.EGoalQuestion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div style="padding-bottom:50px; padding-top:20px;">
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="EGoal" class="btn btn-success" name="submitButton" id="EGoalSave">Zapisz</button>
+                </div>
+                <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    @Html.ActionLink("Powród do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+                </div>
+            </div>
+        }
+    </div>
+    <div class=" d-flex align-items-center flex-column" style="background-color:white!important">
+        <div id="FGoalWelcome">@{Html.RenderPartial("_FGoalWelcome", Model);}</div>
+
+        @using (Ajax.BeginForm("GoalsEdit", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FGoalWelcome" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style="text-align:center;">
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.FGoalName, "Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.FGoalName, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.FGoalName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.FGoalQuestion, "Pytanie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.FGoalQuestion, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.FGoalQuestion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div style="padding-bottom:50px; padding-top:20px;">
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="FGoal" name="submitButton" class="btn btn-success" id="FGoalSave">Zapisz</button>
+                </div>
+                <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    @Html.ActionLink("Powrót do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+                </div>
+            </div>
+        }
+    </div>
+    <div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
+
+        <div id="GGoalWelcome">@{Html.RenderPartial("_GGoalWelcome", Model);}</div>
+
+
+        @using (Ajax.BeginForm("GoalsEdit", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "GGoalWelcome" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style="text-align:center;">
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.GGoalName, "Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.GGoalName, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.GGoalName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.GGoalQuestion, "Pytanie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.GGoalQuestion, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.GGoalQuestion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div style="padding-bottom:50px; padding-top:20px;">
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="GGoal" class="btn btn-success" name="submitButton" id="GGoalSave">Zapisz</button>
+                </div>
+                <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    @Html.ActionLink("Powród do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+                </div>
+            </div>
+        }
+    </div>
+    <div class=" d-flex align-items-center flex-column" style="background-color:white!important">
+        <div id="HGoalWelcome">@{Html.RenderPartial("_HGoalWelcome", Model);}</div>
+
+        @using (Ajax.BeginForm("GoalsEdit", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "HGoalWelcome" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; padding-top:45px; " }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style="text-align:center;">
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.HGoalName, "Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.HGoalName, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.HGoalName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.HGoalQuestion, "Pytanie celu:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.HGoalQuestion, new { @class = "form-control col-md-8 col-lg-7", style = "float:none!important; display:inline-block; font-size:25px; width:400px;" })
+                    @Html.ValidationMessageFor(m => m.HGoalQuestion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div style="padding-bottom:50px; padding-top:20px;">
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="HGoal" name="submitButton" class="btn btn-success" id="HGoalSave">Zapisz</button>
+                </div>
+                <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    @Html.ActionLink("Powrót do celów", "Goals", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
                 </div>
             </div>
         }
