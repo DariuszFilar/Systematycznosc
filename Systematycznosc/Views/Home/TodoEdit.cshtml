@@ -116,3 +116,112 @@
         </div>
     }
 </div>
+<div class=" d-flex align-items-center flex-column" style="background-color:white!important">
+
+    <!-- Masthead Avatar Image -->
+    <!-- Masthead Heading -->
+    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:black!important;">Ważne terminy</h1>
+
+    <!-- Icon Divider -->
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+    </div>
+    @using (Html.BeginForm("TodoEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+    {
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName1, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName1, new { @class = "", style = "  float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName1, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate1, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate1?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName2, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName2, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName2, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate2, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate2?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName3, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName3, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName3, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate3, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate3?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName4, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName4, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName4, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate4, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate4?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName5, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName5, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName5, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate5, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate5?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName6, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName6, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName6, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate6, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate6?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName7, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName7, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName7, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate7, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate7?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName8, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName8, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName8, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate8, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate8?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName9, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName9, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName9, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate9, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate9?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+        <div class="form-group" style="text-align:center;">
+            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                @Html.LabelFor(m => m.TodoDateName10, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                @Html.TextBoxFor(m => m.TodoDateName10, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.ValidationMessageFor(m => m.TodoDateName10, "", new { @class = "text-danger" })
+                @Html.TextBoxFor(model => model.TodoDate10, new { @type = "date", @class = " datepicker", @Value = Model.TodoDate10?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
+            </div>
+        </div>
+
+        <div style="padding-bottom:50px; padding-top:20px;">
+            <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
+            </div>
+            <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                @Html.ActionLink("Powrót do listy", "Todo", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+            </div>
+
+        </div>
+    }
+</div>

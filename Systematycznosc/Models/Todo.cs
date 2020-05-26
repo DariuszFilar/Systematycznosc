@@ -23,5 +23,27 @@ namespace Systematycznosc.Models
         public string Todo9 { get; set; }
         public string Todo10 { get; set; }
         public string Todo11 { get; set; }
+        public DateTime? TodoDate1 { get; set; }
+        public string TodoDateName1 { get; set; }
+        public DateTime? TodoDate2 { get; set; }
+        public string TodoDateName2 { get; set; }
+        public DateTime? TodoDate3 { get; set; }
+        public string TodoDateName3 { get; set; }
+        public DateTime? TodoDate4 { get; set; }
+        public string TodoDateName4 { get; set; }
+        public DateTime? TodoDate5 { get; set; }
+        public string TodoDateName5 { get; set; }
+        public DateTime? TodoDate6 { get; set; }
+        public string TodoDateName6 { get; set; }
+        public DateTime? TodoDate7 { get; set; }
+        public string TodoDateName7 { get; set; }
+        public DateTime? TodoDate8 { get; set; }
+        public string TodoDateName8 { get; set; }
+        public DateTime? TodoDate9 { get; set; }
+        public string TodoDateName9 { get; set; }
+        public DateTime? TodoDate10 { get; set; }
+        public string TodoDateName10 { get; set; }
+        public DateTime? TodoDate11 { get; set; }
+        public string TodoDateName11 { get; set; }
     }
 }

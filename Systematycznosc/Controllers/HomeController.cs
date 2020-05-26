@@ -1201,7 +1201,7 @@ namespace Systematycznosc.Controllers
             }
         }
 
-    
+
 
         public ActionResult Credo()
         {
@@ -1528,6 +1528,26 @@ namespace Systematycznosc.Controllers
                 todo.Todo8 = model.Todo8;
                 todo.Todo9 = model.Todo9;
                 todo.Todo10 = model.Todo10;
+                todo.TodoDate1 = model.TodoDate1;
+                todo.TodoDate2 = model.TodoDate2;
+                todo.TodoDate3 = model.TodoDate3;
+                todo.TodoDate4 = model.TodoDate4;
+                todo.TodoDate5 = model.TodoDate5;
+                todo.TodoDate6 = model.TodoDate6;
+                todo.TodoDate7 = model.TodoDate7;
+                todo.TodoDate8 = model.TodoDate8;
+                todo.TodoDate9 = model.TodoDate9;
+                todo.TodoDate10 = model.TodoDate10;
+                todo.TodoDateName1 = model.TodoDateName1;
+                todo.TodoDateName2 = model.TodoDateName2;
+                todo.TodoDateName3 = model.TodoDateName3;
+                todo.TodoDateName4 = model.TodoDateName4;
+                todo.TodoDateName5 = model.TodoDateName5;
+                todo.TodoDateName6 = model.TodoDateName6;
+                todo.TodoDateName7 = model.TodoDateName7;
+                todo.TodoDateName8 = model.TodoDateName8;
+                todo.TodoDateName9 = model.TodoDateName9;
+                todo.TodoDateName10 = model.TodoDateName10;
             }
             else
             {
@@ -1542,7 +1562,27 @@ namespace Systematycznosc.Controllers
                     Todo7 = model.Todo7,
                     Todo8 = model.Todo8,
                     Todo9 = model.Todo9,
-                    Todo10 = model.Todo10
+                    Todo10 = model.Todo10,
+                    TodoDate1 = model.TodoDate1,
+                    TodoDate2 = model.TodoDate2,
+                    TodoDate3 = model.TodoDate3,
+                    TodoDate4 = model.TodoDate4,
+                    TodoDate5 = model.TodoDate5,
+                    TodoDate6 = model.TodoDate6,
+                    TodoDate7 = model.TodoDate7,
+                    TodoDate8 = model.TodoDate8,
+                    TodoDate9 = model.TodoDate9,
+                    TodoDate10 = model.TodoDate10,
+                    TodoDateName1 = model.TodoDateName1,
+                    TodoDateName2 = model.TodoDateName2,
+                    TodoDateName3 = model.TodoDateName3,
+                    TodoDateName4 = model.TodoDateName4,
+                    TodoDateName5 = model.TodoDateName5,
+                    TodoDateName6 = model.TodoDateName6,
+                    TodoDateName7 = model.TodoDateName7,
+                    TodoDateName8 = model.TodoDateName8,
+                    TodoDateName9 = model.TodoDateName9,
+                    TodoDateName10 = model.TodoDateName10,
                 };
             }
             _context.SaveChanges();
@@ -3371,6 +3411,158 @@ namespace Systematycznosc.Controllers
                         }
                         if (goals == null && model.HGoalName == null)
                         { }
+                        _context.SaveChanges();
+                        return PartialView("_HGoalWelcome", model);
+                    };
+                case "AGoalReset":
+                    {
+                        goals.AGoal1 = null;
+                        goals.AGoal2 = null;
+                        goals.AGoal3 = null;
+                        goals.AGoal4 = null;
+                        goals.AGoal5 = null;
+                        goals.AGoal6 = null;
+                        goals.AGoal7 = null;
+                        goals.AGoalDate1 = null;
+                        goals.AGoalDate2 = null;
+                        goals.AGoalDate3 = null;
+                        goals.AGoalDate4 = null;
+                        goals.AGoalDate5 = null;
+                        goals.AGoalDate6 = null;
+                        goals.AGoalDate7 = null;
+                        _context.SaveChanges();
+                        return PartialView("_AGoalWelcome", model);
+                    };
+                case "BGoalReset":
+                    {
+                        goals.BGoal1 = null;
+                        goals.BGoal2 = null;
+                        goals.BGoal3 = null;
+                        goals.BGoal4 = null;
+                        goals.BGoal5 = null;
+                        goals.BGoal6 = null;
+                        goals.BGoal7 = null;
+                        goals.BGoalDate1 = null;
+                        goals.BGoalDate2 = null;
+                        goals.BGoalDate3 = null;
+                        goals.BGoalDate4 = null;
+                        goals.BGoalDate5 = null;
+                        goals.BGoalDate6 = null;
+                        goals.BGoalDate7 = null;
+                        _context.SaveChanges();
+                        return PartialView("_BGoalWelcome", model);
+                    };
+                case "CGoalReset":
+                    {
+                        goals.CGoal1 = null;
+                        goals.CGoal2 = null;
+                        goals.CGoal3 = null;
+                        goals.CGoal4 = null;
+                        goals.CGoal5 = null;
+                        goals.CGoal6 = null;
+                        goals.CGoal7 = null;
+                        goals.CGoalDate1 = null;
+                        goals.CGoalDate2 = null;
+                        goals.CGoalDate3 = null;
+                        goals.CGoalDate4 = null;
+                        goals.CGoalDate5 = null;
+                        goals.CGoalDate6 = null;
+                        goals.CGoalDate7 = null;
+                        _context.SaveChanges();
+                        return PartialView("_CGoalWelcome", model);
+                    };
+                case "DGoalReset":
+                    {
+                        goals.DGoal1 = null;
+                        goals.DGoal2 = null;
+                        goals.DGoal3 = null;
+                        goals.DGoal4 = null;
+                        goals.DGoal5 = null;
+                        goals.DGoal6 = null;
+                        goals.DGoal7 = null;
+                        goals.DGoalDate1 = null;
+                        goals.DGoalDate2 = null;
+                        goals.DGoalDate3 = null;
+                        goals.DGoalDate4 = null;
+                        goals.DGoalDate5 = null;
+                        goals.DGoalDate6 = null;
+                        goals.DGoalDate7 = null;
+                        _context.SaveChanges();
+                        return PartialView("_DGoalWelcome", model);
+                    };
+                case "EGoalReset":
+                    {
+                        goals.EGoal1 = null;
+                        goals.EGoal2 = null;
+                        goals.EGoal3 = null;
+                        goals.EGoal4 = null;
+                        goals.EGoal5 = null;
+                        goals.EGoal6 = null;
+                        goals.EGoal7 = null;
+                        goals.EGoalDate1 = null;
+                        goals.EGoalDate2 = null;
+                        goals.EGoalDate3 = null;
+                        goals.EGoalDate4 = null;
+                        goals.EGoalDate5 = null;
+                        goals.EGoalDate6 = null;
+                        goals.EGoalDate7 = null;
+                        _context.SaveChanges();
+                        return PartialView("_EGoalWelcome", model);
+                    };
+                case "FGoalReset":
+                    {
+                        goals.FGoal1 = null;
+                        goals.FGoal2 = null;
+                        goals.FGoal3 = null;
+                        goals.FGoal4 = null;
+                        goals.FGoal5 = null;
+                        goals.FGoal6 = null;
+                        goals.FGoal7 = null;
+                        goals.FGoalDate1 = null;
+                        goals.FGoalDate2 = null;
+                        goals.FGoalDate3 = null;
+                        goals.FGoalDate4 = null;
+                        goals.FGoalDate5 = null;
+                        goals.FGoalDate6 = null;
+                        goals.FGoalDate7 = null;
+                        _context.SaveChanges();
+                        return PartialView("_FGoalWelcome", model);
+                    };
+                case "GGoalReset":
+                    {
+                        goals.GGoal1 = null;
+                        goals.GGoal2 = null;
+                        goals.GGoal3 = null;
+                        goals.GGoal4 = null;
+                        goals.GGoal5 = null;
+                        goals.GGoal6 = null;
+                        goals.GGoal7 = null;
+                        goals.GGoalDate1 = null;
+                        goals.GGoalDate2 = null;
+                        goals.GGoalDate3 = null;
+                        goals.GGoalDate4 = null;
+                        goals.GGoalDate5 = null;
+                        goals.GGoalDate6 = null;
+                        goals.GGoalDate7 = null;
+                        _context.SaveChanges();
+                        return PartialView("_GGoalWelcome", model);
+                    };
+                case "HGoalReset":
+                    {
+                        goals.HGoal1 = null;
+                        goals.HGoal2 = null;
+                        goals.HGoal3 = null;
+                        goals.HGoal4 = null;
+                        goals.HGoal5 = null;
+                        goals.HGoal6 = null;
+                        goals.HGoal7 = null;
+                        goals.HGoalDate1 = null;
+                        goals.HGoalDate2 = null;
+                        goals.HGoalDate3 = null;
+                        goals.HGoalDate4 = null;
+                        goals.HGoalDate5 = null;
+                        goals.HGoalDate6 = null;
+                        goals.HGoalDate7 = null;
                         _context.SaveChanges();
                         return PartialView("_HGoalWelcome", model);
                     };

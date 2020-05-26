@@ -477,6 +477,181 @@
         </section>}
 }
 
+@{ if (Model.TodoViewModel.TodoDateName1 != null)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+    }
+
+
+    if (Model.TodoViewModel.TodoDateName1 != null)
+
+    { <section class="page-section portfolio mb-0 @color" id="FamilyBirthday" style="">
+            <div class=" d-flex align-items-center flex-column" style="padding-bottom:150px">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription;">Ważne terminy:</h1>
+
+
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <table id="table_id4" class="table table-info table-hover" style="font-size:18px;">
+                    <thead>
+                        <tr>
+                            <th style="width: 300px">Nazwa:</th>
+                            <th style="width: 300px">Termin (M/D/R):</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{if (Model.TodoViewModel.TodoDateName1 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName1</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate1.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate1.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        @{if (Model.TodoViewModel.TodoDateName2 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName2</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate2.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate2.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        @{if (Model.TodoViewModel.TodoDateName3 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName3</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate3.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate3.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            } }
+                        @{if (Model.TodoViewModel.TodoDateName4 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName4</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate4.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate4.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            } }
+                        @{if (Model.TodoViewModel.TodoDateName5 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName5</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate5.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate5.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            } }
+                        @{if (Model.TodoViewModel.TodoDateName6 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName6</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate6.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate6.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            } }
+                        @{if (Model.TodoViewModel.TodoDateName7 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName7</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate7.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate7.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            } }
+                        @{if (Model.TodoViewModel.TodoDateName8 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName8</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate8.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate8.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            } }
+                        @{if (Model.TodoViewModel.TodoDateName9 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName9</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate9.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate9.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            } }
+                        @{if (Model.TodoViewModel.TodoDateName10 != null)
+                            {
+                                <tr>
+                                    <td>@Model.TodoViewModel.TodoDateName10</td>
+                                    <td>
+                                        @if (Model.TodoViewModel.TodoDate10.HasValue)
+                                        {
+                                            @Model.TodoViewModel.TodoDate10.Value.ToString("MM/dd/yyyy")
+                                        }
+                                    </td>
+                                </tr>
+                            } }
+                    </tbody>
+                </table>
+            </div>
+        </section>}
+}
+
+
+
+
 @{ if (Model.FamilyBirthdayViewModel.FamilyBirthday1 != null)
     {
         colornumber++;
@@ -1504,6 +1679,14 @@
         });
         $.fn.dataTable.moment('DD/MM/YY');
         $('#table_id3').DataTable({
+
+            paging: false,
+            searching: false,
+            info: false,
+            "order": [[1, "asc"]],
+        });
+        $.fn.dataTable.moment('DD/MM/YY');
+        $('#table_id4').DataTable({
 
             paging: false,
             searching: false,

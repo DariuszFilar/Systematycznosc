@@ -276,6 +276,10 @@
     <Compile Include="Migrations\202005210546383_UpdateGoals.Designer.cs">
       <DependentUpon>202005210546383_UpdateGoals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005261016546_AddedTodoDate.cs" />
+    <Compile Include="Migrations\202005261016546_AddedTodoDate.Designer.cs">
+      <DependentUpon>202005261016546_AddedTodoDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -556,6 +560,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005210546383_UpdateGoals.resx">
       <DependentUpon>202005210546383_UpdateGoals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005261016546_AddedTodoDate.resx">
+      <DependentUpon>202005261016546_AddedTodoDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
