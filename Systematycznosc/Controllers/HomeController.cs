@@ -179,7 +179,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_AGoalTable", model);
                         }
                         if (goals.AGoalDate1 != null && goals.AGoalDate2 != null && goals.AGoalDate3 != null && goals.AGoalDate4 != null && goals.AGoalDate5 != null && goals.AGoalDate6 != null &&
-                            goals.AGoalDate6 == null && goals.AGoalDate1 != DateTime.Today)
+                           goals.AGoalDate7 == null && goals.AGoalDate6 != DateTime.Today)
                         {
                             goals.AGoalDate7 = DateTime.Today;
                             goals.AGoal7 = model.GoalsViewModel.AGoal1;
@@ -322,7 +322,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_BGoalTable", model);
                         }
                         if (goals.BGoalDate1 != null && goals.BGoalDate2 != null && goals.BGoalDate3 != null && goals.BGoalDate4 != null && goals.BGoalDate5 != null && goals.BGoalDate6 != null &&
-                            goals.BGoalDate6 == null && goals.BGoalDate1 != DateTime.Today)
+                           goals.BGoalDate7 == null && goals.BGoalDate6 != DateTime.Today)
                         {
                             goals.BGoalDate7 = DateTime.Today;
                             goals.BGoal7 = model.GoalsViewModel.BGoal1;
@@ -462,7 +462,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_CGoalTable", model);
                         }
                         if (goals.CGoalDate1 != null && goals.CGoalDate2 != null && goals.CGoalDate3 != null && goals.CGoalDate4 != null && goals.CGoalDate5 != null && goals.CGoalDate6 != null &&
-                            goals.CGoalDate6 == null && goals.CGoalDate1 != DateTime.Today)
+                           goals.CGoalDate7 == null && goals.CGoalDate6 != DateTime.Today)
                         {
                             goals.CGoalDate7 = DateTime.Today;
                             goals.CGoal7 = model.GoalsViewModel.CGoal1;
@@ -602,7 +602,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_DGoalTable", model);
                         }
                         if (goals.DGoalDate1 != null && goals.DGoalDate2 != null && goals.DGoalDate3 != null && goals.DGoalDate4 != null && goals.DGoalDate5 != null && goals.DGoalDate6 != null &&
-                            goals.DGoalDate6 == null && goals.DGoalDate1 != DateTime.Today)
+                           goals.DGoalDate7 == null && goals.DGoalDate6 != DateTime.Today)
                         {
                             goals.DGoalDate7 = DateTime.Today;
                             goals.DGoal7 = model.GoalsViewModel.DGoal1;
@@ -742,7 +742,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_EGoalTable", model);
                         }
                         if (goals.EGoalDate1 != null && goals.EGoalDate2 != null && goals.EGoalDate3 != null && goals.EGoalDate4 != null && goals.EGoalDate5 != null && goals.EGoalDate6 != null &&
-                            goals.EGoalDate6 == null && goals.EGoalDate1 != DateTime.Today)
+                           goals.EGoalDate7 == null && goals.EGoalDate6 != DateTime.Today)
                         {
                             goals.EGoalDate7 = DateTime.Today;
                             goals.EGoal7 = model.GoalsViewModel.EGoal1;
@@ -882,7 +882,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_FGoalTable", model);
                         }
                         if (goals.FGoalDate1 != null && goals.FGoalDate2 != null && goals.FGoalDate3 != null && goals.FGoalDate4 != null && goals.FGoalDate5 != null && goals.FGoalDate6 != null &&
-                            goals.FGoalDate6 == null && goals.FGoalDate1 != DateTime.Today)
+                           goals.FGoalDate7 == null && goals.FGoalDate6 != DateTime.Today)
                         {
                             goals.FGoalDate7 = DateTime.Today;
                             goals.FGoal7 = model.GoalsViewModel.FGoal1;
@@ -1022,7 +1022,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_GGoalTable", model);
                         }
                         if (goals.GGoalDate1 != null && goals.GGoalDate2 != null && goals.GGoalDate3 != null && goals.GGoalDate4 != null && goals.GGoalDate5 != null && goals.GGoalDate6 != null &&
-                            goals.GGoalDate6 == null && goals.GGoalDate1 != DateTime.Today)
+                           goals.GGoalDate7 == null && goals.GGoalDate6 != DateTime.Today)
                         {
                             goals.GGoalDate7 = DateTime.Today;
                             goals.GGoal7 = model.GoalsViewModel.GGoal1;
@@ -1162,7 +1162,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_HGoalTable", model);
                         }
                         if (goals.HGoalDate1 != null && goals.HGoalDate2 != null && goals.HGoalDate3 != null && goals.HGoalDate4 != null && goals.HGoalDate5 != null && goals.HGoalDate6 != null &&
-                            goals.HGoalDate6 == null && goals.HGoalDate1 != DateTime.Today)
+                           goals.HGoalDate7 == null && goals.HGoalDate6 != DateTime.Today)
                         {
                             goals.HGoalDate7 = DateTime.Today;
                             goals.HGoal7 = model.GoalsViewModel.HGoal1;
@@ -2121,7 +2121,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_AGoalTable", model);
                         }
                         if (goals.AGoalDate1 != null && goals.AGoalDate2 != null && goals.AGoalDate3 != null && goals.AGoalDate4 != null && goals.AGoalDate5 != null && goals.AGoalDate6 != null &&
-                            goals.AGoalDate6 == null && goals.AGoalDate1 != DateTime.Today)
+                            goals.AGoalDate7 == null && goals.AGoalDate6 != DateTime.Today)
                         {
                             goals.AGoalDate7 = DateTime.Today;
                             goals.AGoal7 = model.AGoal1;
@@ -2264,7 +2264,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_BGoalTable", model);
                         }
                         if (goals.BGoalDate1 != null && goals.BGoalDate2 != null && goals.BGoalDate3 != null && goals.BGoalDate4 != null && goals.BGoalDate5 != null && goals.BGoalDate6 != null &&
-                            goals.BGoalDate6 == null && goals.BGoalDate1 != DateTime.Today)
+                              goals.BGoalDate7 == null && goals.BGoalDate6 != DateTime.Today)
                         {
                             goals.BGoalDate7 = DateTime.Today;
                             goals.BGoal7 = model.BGoal1;
@@ -2404,7 +2404,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_CGoalTable", model);
                         }
                         if (goals.CGoalDate1 != null && goals.CGoalDate2 != null && goals.CGoalDate3 != null && goals.CGoalDate4 != null && goals.CGoalDate5 != null && goals.CGoalDate6 != null &&
-                            goals.CGoalDate6 == null && goals.CGoalDate1 != DateTime.Today)
+                            goals.CGoalDate7 == null && goals.CGoalDate6 != DateTime.Today)
                         {
                             goals.CGoalDate7 = DateTime.Today;
                             goals.CGoal7 = model.CGoal1;
@@ -2544,7 +2544,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_DGoalTable", model);
                         }
                         if (goals.DGoalDate1 != null && goals.DGoalDate2 != null && goals.DGoalDate3 != null && goals.DGoalDate4 != null && goals.DGoalDate5 != null && goals.DGoalDate6 != null &&
-                            goals.DGoalDate6 == null && goals.DGoalDate1 != DateTime.Today)
+                            goals.DGoalDate7 == null && goals.DGoalDate6 != DateTime.Today)
                         {
                             goals.DGoalDate7 = DateTime.Today;
                             goals.DGoal7 = model.DGoal1;
@@ -2684,7 +2684,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_EGoalTable", model);
                         }
                         if (goals.EGoalDate1 != null && goals.EGoalDate2 != null && goals.EGoalDate3 != null && goals.EGoalDate4 != null && goals.EGoalDate5 != null && goals.EGoalDate6 != null &&
-                            goals.EGoalDate6 == null && goals.EGoalDate1 != DateTime.Today)
+                           goals.EGoalDate7 == null && goals.EGoalDate6 != DateTime.Today)
                         {
                             goals.EGoalDate7 = DateTime.Today;
                             goals.EGoal7 = model.EGoal1;
@@ -2824,7 +2824,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_FGoalTable", model);
                         }
                         if (goals.FGoalDate1 != null && goals.FGoalDate2 != null && goals.FGoalDate3 != null && goals.FGoalDate4 != null && goals.FGoalDate5 != null && goals.FGoalDate6 != null &&
-                            goals.FGoalDate6 == null && goals.FGoalDate1 != DateTime.Today)
+                           goals.FGoalDate7 == null && goals.FGoalDate6 != DateTime.Today)
                         {
                             goals.FGoalDate7 = DateTime.Today;
                             goals.FGoal7 = model.FGoal1;
@@ -2964,7 +2964,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_GGoalTable", model);
                         }
                         if (goals.GGoalDate1 != null && goals.GGoalDate2 != null && goals.GGoalDate3 != null && goals.GGoalDate4 != null && goals.GGoalDate5 != null && goals.GGoalDate6 != null &&
-                            goals.GGoalDate6 == null && goals.GGoalDate1 != DateTime.Today)
+                           goals.GGoalDate7 == null && goals.GGoalDate6 != DateTime.Today)
                         {
                             goals.GGoalDate7 = DateTime.Today;
                             goals.GGoal7 = model.GGoal1;
@@ -3104,7 +3104,7 @@ namespace Systematycznosc.Controllers
                             return PartialView("_HGoalTable", model);
                         }
                         if (goals.HGoalDate1 != null && goals.HGoalDate2 != null && goals.HGoalDate3 != null && goals.HGoalDate4 != null && goals.HGoalDate5 != null && goals.HGoalDate6 != null &&
-                            goals.HGoalDate6 == null && goals.HGoalDate1 != DateTime.Today)
+                           goals.HGoalDate7 == null && goals.HGoalDate6 != DateTime.Today)
                         {
                             goals.HGoalDate7 = DateTime.Today;
                             goals.HGoal7 = model.HGoal1;
