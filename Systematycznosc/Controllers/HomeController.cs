@@ -15,6 +15,11 @@ namespace Systematycznosc.Controllers
 
         public HomeController() { _context = new SystematycznoscContext(); }
 
+
+        public ActionResult WelcomePage()
+        {
+            return View();
+        }
         [HttpGet]
         public ActionResult Index()
         {
