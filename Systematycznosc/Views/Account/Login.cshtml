@@ -6,26 +6,29 @@
     Layout = "~/Views/Shared/EmptyPage.cshtml";
 }
 
-@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <div id="container">
-        <form>
-            @if (!Html.ViewData.ModelState.IsValid)
-            {<div class="text-danger">
-                    Nieudana próba zalogowania.
-                </div>}
-            @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
-            @Html.ValidationMessageFor(model => model.Email)
-            @Html.PasswordFor(m => m.Password, new { id = "customerEmailId", @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
-            @Html.ValidationMessageFor(model => model.Password)
-            @Html.CheckBoxFor(m => m.RememberMe)
-            @Html.LabelFor(m => m.RememberMe)
-            @Html.ActionLink("Zarejestruj", "Register", "Account")
-            <input type="submit" value="Zaloguj się">
-        </form>
+
+<header class="masthead text-white text-center">
+    <div class=" d-flex align-items-center flex-column">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id="opener" }))
+        {
+            @Html.AntiForgeryToken()
+            <div id="container">
+                <form>
+                    @if (!Html.ViewData.ModelState.IsValid)
+                    {<div class="text-danger">
+                            Nieudana próba zalogowania.
+                        </div>}
+                    @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
+                    @Html.ValidationMessageFor(model => model.Email)
+                    @Html.PasswordFor(m => m.Password, new { id = "customerEmailId", @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
+                    @Html.ValidationMessageFor(model => model.Password)
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe,  new { @type="", style="color:black;"})
+                    @Html.ActionLink("Zarejestruj", "Register", "Account")
+                    <input type="submit" value="Zaloguj się">
+                </form>
+            </div>
+        }
     </div>
-}
-
-
+</header>
 
