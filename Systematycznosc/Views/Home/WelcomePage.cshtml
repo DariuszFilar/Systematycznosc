@@ -52,9 +52,6 @@
             </div>
             <!-- About Section Button -->
         </div>
-        <div class="text-center mt-4">
-            @Html.ActionLink("Zarejestruj się", "Register", "Account", null, new { @class = "btn btn-xl btn-outline-dark", style = "" })
-        </div>
     </div>
 </section>
 
@@ -199,12 +196,9 @@
                 <div class="col-lg-4 ml-auto mr-4">
                     <div class="numberlist">
                         <ol>
-                            <li><a>Credo</a></li>
-                            <li><a>Związek</a></li>
-                            <li><a>Pytania</a></li>
-                            <li><a>Cele</a></li>
-                            <li><a>Do zrobienia</a></li>
-                            <li><a>Urodziny</a></li>
+                            <li><a>Za co jestem wdzięczny?</a></li>
+                            <li><a>Kim chce zostać?</a></li>
+                            <li><a>Czy coś mnie powstrzymuje?</a></li>
                         </ol>
                     </div>
                 </div>
@@ -216,12 +210,9 @@
                 <div class="col-lg-4 ml-auto mr-4">
                     <div class="numberlist">
                         <ol>
-                            <li><a>Credo</a></li>
-                            <li><a>Związek</a></li>
-                            <li><a>Pytania</a></li>
-                            <li><a>Cele</a></li>
-                            <li><a>Do zrobienia</a></li>
-                            <li><a>Urodziny</a></li>
+                            <li><a>Co dziś z siebie dałem?</a></li>
+                            <li><a>Co mogłem zrobić lepiej?</a></li>
+                            <li><a>Z czego jestem zadowolony?</a></li>
                         </ol>
                     </div>
                 </div>
@@ -254,7 +245,7 @@
                     Jeżeli ustalimy sobie, że nie jemy słodyczy, warto użyć do tego postanowienia tej zakładki. Tutaj nazwyamy swój cel, np "Nie jem słodyczy" i każdego wieczoru zapisujemy status tego dnia. Jeżeli nie jedliśmy słodyczy zaznaczamy opcje "Tak", jeżeli jednak się skusiliśmy zaznaczamy opcje "Nie". Można ustalić, że po 7 dniach statusu "Tak" otrzymujemy nagrodę typu chipsy lub inne jedzenie które chcemy.
                 </p>
                 <p class="leadCenter">
-                    Są również inne cele jak "Biegam" i rónież analogicznie każdego wieczoru zaznaczamy "Tak", "Nie" lub "Odpoczynek" jeżeli jest to dzień w którym nasze mięśnie odpoczywają.
+                    Cele mogą być różnorodne np. "Biegam" i analogicznie do poprzedniego każdego wieczoru zaznaczamy "Tak", "Nie" lub "Odpoczynek" jeżeli jest to dzień w którym nasze mięśnie odpoczywają.
                 </p>
                 <p class="leadCenter">
                     Przykładowy cel:
@@ -330,15 +321,161 @@
 </section>
 
 
+<section class="page-section mb-0" id="Relationship">
+    <div class="d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center; color:black;">Do zrobienia</h1>
+        <!-- Icon Divider -->
+        <div class="divider-custom " style="">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div style="color:; font-size:37px; text-align:center; padding-bottom:30px;">Po ich wykonaniu będzie Ci lżej</div>
+
+        <div class="row col-lg-10">
+            <div class="col-lg-10 mr-auto ml-auto">
+                <p class="leadCenter">
+                    Jest to zakładka, która skłąda się z dwóch elementów:
+                </p>
+            </div>
+        </div>
+        <!-- About Section Content -->
+        <div class="row col-lg-10">
+            <div class="row col-lg-10">
+                <div class="col-lg-4 ml-auto mr-4">
+                    <div class="numberlist">
+                        <ol>
+                            <li><a>Napraw kran</a></li>
+                            <li><a>Zapisz się do lekarz?</a></li>
+                            <li><a>Kup inną żarówkę</a></li>
+                            <li><a>Podjedź do mechanika</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <p class="lead">Pierwszy z nich dotyczy ważnych rzeczy do wykonania, których nie możemy wykonać w tej chwili. Zapisanie "podjedź do mechanika" sprawi, że będziemy pamiętać o tym, że trzeba to zrobić. Dzięki temu istnieje większa szansa, że wykonamy daną czynność i nie zapomnimy o niej w natłoku dnia.</p>
+                </div>
+            </div>
+            <div class="row col-lg-10">
+                <div class="col-lg-4 ml-auto mr-4">
+                    <table id="table_id2" class="table table-info table-hover" style="font-size:18px;">
+                        <thead>
+                            <tr>
+                                <th style="width: 300px">Nazwa:</th>
+                                <th style="width: 300px">Termin (M/D/R):</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Przegląd samochodu</td>
+                                <td>05.28.2021</td>
+                            </tr>
+                            <tr>
+                                <td>Ubezpieczenie samochodu</td>
+                                <td>05.27.2020</td>
+                            </tr>
+                            <tr>
+                                <td>Umów następną wizytę u lekarza w marcu</td>
+                                <td>03.01.2021</td>
+                            </tr>
+                            <tr>
+                                <td>Zapisz się na prawojazdy w kwietniu</td>
+                                <td>04.01.2020</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-lg-4 ">
+                    <p class="lead">Drugi składnik tej zakładki to "ważne terminy". Tutaj możesz zapisać różne rzeczy, np. Dotyczące samochodu: "Przedląd techniczy ważny do 05.28.2020", "Ubezpieczenie ważne do 01.03.2020" lub aspekt zdrowotny "Umów się do lekarza w marcu". Zapisz to co Cię interesuje i uwolnij się od stresu związanego z niepewnością.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
+<section class="page-section mb-0 bg-primary" id="Relationship">
+    <div class="d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center; color:white; ">Urodziny</h1>
+        <!-- Icon Divider -->
+        <div class="divider-custom " style="">
+            <div class="divider-custom-line" style="background-color:white;"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white;"></i>
+            </div>
+            <div class="divider-custom-line" style="background-color:white;"></div>
+        </div>
+        <div style="color:; font-size:37px; text-align:center; padding-bottom:30px;">Warto pamiętać o najbliższych</div>
+        <!-- About Section Content -->
+        <div class="row col-lg-10">
+            <div class="col-lg-10 mr-auto ml-auto">
+                <p class="leadCenter">
+                    Jak sama nazwa wskazuje aspekt ten dotyczy urodzin. Jak wiadomo, trudno jest zapamiętać urodziny najbliższych, do tego łatwo je przegapić. Dzięki tej zakładce codziennie będziesz widzieć kto ma kiedy urodziny. Zostanie Ci czas na zaplanowanie niespodziewanego prezentu. Ta podstrona podzielona jest na 3 kategorie: rodzina, przyjaciele, inni.
+                </p>
+            </div>
+        </div>
+        <table id="table_id3" class="table table-info table-hover" style="font-size:18px;">
+            <thead>
+                <tr>
+                    <th style="width: 300px">Nazwa:</th>
+                    <th style="width: 300px">Termin (M/D/R):</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Mama</td>
+                    <td>05.28.1962</td>
+                </tr>
+                <tr>
+                    <td>Tata</td>
+                    <td>05.27.1960</td>
+                </tr>
+                <tr>
+                    <td>Marek</td>
+                    <td>03.01.1991</td>
+                </tr>
+                <tr>
+                    <td>Dziewczyna</td>
+                    <td>04.01.1990</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 
-
-
-
-
-
-
+<section class="page-section mb-0" id="Relationship">
+    <div class="d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image -->
+        <!-- Masthead Heading -->
+        <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; padding-top:55px; text-align:center; color:black;">Jesteś już gotów</h1>
+        <!-- Icon Divider -->
+        <div class="divider-custom " style="">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div style="color:; font-size:37px; text-align:center; padding-bottom:30px;">Zarejestruj się!</div>
+        <!-- About Section Content -->
+        <div class="row col-lg-10">
+            <div class="col-lg-10 mr-auto ml-auto">
+                <p class="leadCenter">
+                   Gratuluje za przeczytanie całego tekstu. Dzięki niemu poznałeś założenia oraz na czym polega serwis. Teraz jesteś w stanie efektywnie korzystać z asystenta. Pamiętaj by codziennie z samego rana oraz przed pójściem spać wejść na serwis. Dzięki temu wykorzystasz go w 100%!
+                </p>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            @Html.ActionLink("Zarejestruj się", "Register", "Account", null, new { @class = "btn btn-xl btn-outline-dark", style = "" })
+        </div>
+    </div>
+</section>
 
 
 
@@ -383,21 +520,21 @@
             "order": [[1, "desc"]],
 
         });
-        $.fn.dataTable.moment('DD/MM/YY');
+         $.fn.dataTable.moment('DD/MM/YY');
         $('#table_id2').DataTable({
 
             paging: false,
             searching: false,
             info: false,
-            "order": [[1, "asc"]],
+            "order": [[1, "desc"]],
+
         });
         $.fn.dataTable.moment('DD/MM/YY');
         $('#table_id3').DataTable({
-
             paging: false,
             searching: false,
             info: false,
-            "order": [[1, "asc"]],
+            "order": [[1, "desc"]],
         });
         $.fn.dataTable.moment('DD/MM/YY');
         $('#table_id4').DataTable({
