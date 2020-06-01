@@ -19,7 +19,7 @@
             <div class="divider-custom-line" style="background-color:white;"></div>
         </div>
         <div style="color:; font-size:37px; text-align:center;">W pełni darmowa</div>
-        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form", style="padding-bottom:80px;"}))
         {
             @Html.AntiForgeryToken()
             <div id="container">
@@ -30,15 +30,15 @@
                         </div>}*@
                     @Html.ValidationSummary("", new { @class = "text-danger" })
                     @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
-                    @Html.ValidationMessageFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email, null, new { style = "color:red;" })
                     @Html.PasswordFor(m => m.Password, new { @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
-                    @Html.ValidationMessageFor(model => model.Password)
+                    @Html.ValidationMessageFor(model => model.Password, null, new { style = "color:red;" })
                     @Html.PasswordFor(m => m.ConfirmPassword, new { @type = "password", placeholder = "Potwierdź hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='Potwierdź hasło'" })
-                    @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { style = "color:red;" })
                     <div class="text-center mt-4">
                         <input type="submit" value="Zarejestruj się" class="btn btn-xl btn-outline-dark">
                     </div>
-                    @Html.ActionLink("Zaloguj się", "Index", "Home", new { style="color:black"})
+                    @Html.ActionLink("Zaloguj się", "Login", "Account", new { style="color:black"})
                 </form>
             </div>
         }

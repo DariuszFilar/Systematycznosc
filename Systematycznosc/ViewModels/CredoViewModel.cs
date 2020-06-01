@@ -27,11 +27,22 @@ namespace Systematycznosc.ViewModels
 
         public UserProfileViewModel UserProfileViewModel { get; set; }
 
-        public CredoViewModel(UserProfile userProfile)
+        //public CredoViewModel(UserProfile userProfile)
+        //{
+        //    this.UserProfileViewModel = new UserProfileViewModel(userProfile);
+        //}
+        //public CredoViewModel() { }
+
+        public CredoViewModel(UserProfile userProfile = null)
         {
-            this.UserProfileViewModel = new UserProfileViewModel(userProfile);
+            if(userProfile != null)
+                this.UserProfileViewModel = new UserProfileViewModel(userProfile);
         }
-        public CredoViewModel() { }
+
+        public CredoViewModel()
+        {
+
+        }
 
         public CredoViewModel(Credo credo)
         {

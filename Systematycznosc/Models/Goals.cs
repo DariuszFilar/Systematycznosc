@@ -93,13 +93,7 @@ namespace Systematycznosc.Models
         public string HGoal6 { get; set; }
         public string HGoal7 { get; set; }
 
-        public DateTime? AGoalDate1 { get; set; }
-        public DateTime? AGoalDate2 { get; set; }
-        public DateTime? AGoalDate3 { get; set; }
-        public DateTime? AGoalDate4 { get; set; }
-        public DateTime? AGoalDate5 { get; set; }
-        public DateTime? AGoalDate6 { get; set; }
-        public DateTime? AGoalDate7 { get; set; }
+         
         public DateTime? BGoalDate1 { get; set; }
         public DateTime? BGoalDate2 { get; set; }
         public DateTime? BGoalDate3 { get; set; }

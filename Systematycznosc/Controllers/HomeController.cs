@@ -25,7 +25,7 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+            
             var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
             var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
             var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
@@ -38,34 +38,91 @@ namespace Systematycznosc.Controllers
 
             if (userProfile != null)
             {
-                if (credo == null) { wrapper.CredoViewModel = new CredoViewModel(); }
-                else { CredoViewModel Credo = new CredoViewModel(credo); wrapper.CredoViewModel = Credo; }
-                if (morningQuestions == null) { wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel(); }
-                else { MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions); wrapper.MorningQuestionsViewModel = MorningQuestions; }
-                if (eveningQuestions == null) { wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel(); }
+                UserProfileViewModel UserProfile = new UserProfileViewModel(userProfile);
+                wrapper.UserProfileViewModel = UserProfile;
+
+                var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+                wrapper.CredoViewModel = new CredoViewModel(credo);
+
+
+                //if (credo == null)
+                //{
+                //    wrapper.CredoViewModel = new CredoViewModel();
+                //}                    
+                //else 
+                //{ 
+                //    CredoViewModel Credo = new CredoViewModel(credo); 
+                //    wrapper.CredoViewModel = Credo; 
+                //}
+
+                if (morningQuestions == null) 
+                    wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel();
+                else 
+                { 
+                    MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
+                    wrapper.MorningQuestionsViewModel = MorningQuestions; 
+                }
+
+                if (eveningQuestions == null) 
+                    wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel();
                 else
                 {
                     EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
                     wrapper.EveningQuestionsViewModel = EveningQuestions;
                 }
-                if (todo == null) { wrapper.TodoViewModel = new TodoViewModel(); }
-                else { TodoViewModel Todo = new TodoViewModel(todo); wrapper.TodoViewModel = Todo; }
-                UserProfileViewModel UserProfile = new UserProfileViewModel(userProfile);
-                wrapper.UserProfileViewModel = UserProfile;
-                if (familyBirthday == null) { wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel(); }
-                else { FamilyBirthdayViewModel FamilyBirthday = new FamilyBirthdayViewModel(familyBirthday); wrapper.FamilyBirthdayViewModel = FamilyBirthday; }
-                if (friendsBirthday == null) { wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel(); }
-                else { FriendsBirthdayViewModel FriendsBirthday = new FriendsBirthdayViewModel(friendsBirthday); wrapper.FriendsBirthdayViewModel = FriendsBirthday; }
-                if (othersBirthday == null) { wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel(); }
-                else { OthersBirthdayViewModel OthersBirthday = new OthersBirthdayViewModel(othersBirthday); wrapper.OthersBirthdayViewModel = OthersBirthday; }
-                if (relationship == null) { wrapper.RelationshipViewModel = new RelationshipViewModel(); }
-                else { RelationshipViewModel Relationship = new RelationshipViewModel(relationship); wrapper.RelationshipViewModel = Relationship; }
-                if (goals == null) { wrapper.GoalsViewModel = new GoalsViewModel(); }
-                else { GoalsViewModel Goals = new GoalsViewModel(goals); wrapper.GoalsViewModel = Goals; }
-                return View(wrapper);
 
+                if (todo == null) 
+                    wrapper.TodoViewModel = new TodoViewModel();
+                else 
+                { 
+                    TodoViewModel Todo = new TodoViewModel(todo);
+                    wrapper.TodoViewModel = Todo; 
+                }
+
+                if (familyBirthday == null) 
+                    wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel(); 
+                else 
+                { 
+                    FamilyBirthdayViewModel FamilyBirthday = new FamilyBirthdayViewModel(familyBirthday);
+                    wrapper.FamilyBirthdayViewModel = FamilyBirthday; 
+                }
+
+                if (friendsBirthday == null) 
+                    wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel();
+                else 
+                { 
+                    FriendsBirthdayViewModel FriendsBirthday = new FriendsBirthdayViewModel(friendsBirthday);
+                    wrapper.FriendsBirthdayViewModel = FriendsBirthday; 
+                }
+
+                if (othersBirthday == null) 
+                    wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel();
+                else 
+                { 
+                    OthersBirthdayViewModel OthersBirthday = new OthersBirthdayViewModel(othersBirthday);
+                    wrapper.OthersBirthdayViewModel = OthersBirthday; 
+                }
+
+                if (relationship == null) 
+                    wrapper.RelationshipViewModel = new RelationshipViewModel();
+                else 
+                { 
+                    RelationshipViewModel Relationship = new RelationshipViewModel(relationship);
+                    wrapper.RelationshipViewModel = Relationship; 
+                }
+
+                if (goals == null) 
+                    wrapper.GoalsViewModel = new GoalsViewModel();
+                else 
+                { 
+                    GoalsViewModel Goals = new GoalsViewModel(goals); 
+                    wrapper.GoalsViewModel = Goals; 
+                }
+
+                return View(wrapper);
             }
-            else { return RedirectToAction("Manage", "Profile"); }
+            else 
+                return RedirectToAction("Manage", "Profile");
         }
         [HttpPost]
         public ActionResult Index(UserProfileViewModelWrapper model, string submitButton)
@@ -76,6 +133,7 @@ namespace Systematycznosc.Controllers
 
             if (user == null)
                 return View();
+
             switch (submitButton)
             {
                 case "AGoal":
@@ -88,13 +146,20 @@ namespace Systematycznosc.Controllers
                             model.GoalsViewModel.AGoalDate1 = goals.AGoalDate1;
                             model.GoalsViewModel.AGoal1 = goals.AGoal1;
                         }
-                        if (goals.AGoalDate1 != null && goals.AGoalDate1 == DateTime.Today)
+
+                        if(goals.AGoalDate1 != null)
                         {
-                            goals.AGoalDate1 = DateTime.Today;
-                            goals.AGoal1 = model.GoalsViewModel.AGoal1;
-                            model.GoalsViewModel.AGoalDate1 = goals.AGoalDate1;
-                            model.GoalsViewModel.AGoal1 = goals.AGoal1;
+                            if (goals.AGoalDate1 == DateTime.Today)
+                            {
+                                goals.AGoalDate1 = DateTime.Today;
+                                goals.AGoal1 = model.GoalsViewModel.AGoal1;
+                                model.GoalsViewModel.AGoalDate1 = goals.AGoalDate1;
+                                model.GoalsViewModel.AGoal1 = goals.AGoal1;
+                            }
                         }
+
+
+                        
                         if (goals.AGoalDate2 != null && goals.AGoalDate2 == DateTime.Today)
                         {
                             goals.AGoalDate2 = DateTime.Today;
