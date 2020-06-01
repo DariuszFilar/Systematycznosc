@@ -147,7 +147,7 @@ namespace Systematycznosc.Controllers
                             model.GoalsViewModel.AGoal1 = goals.AGoal1;
                         }
 
-                        if(goals.AGoalDate1 != null)
+                        if (goals.AGoalDate1 != null)
                         {
                             if (goals.AGoalDate1 == DateTime.Today)
                             {
@@ -159,7 +159,7 @@ namespace Systematycznosc.Controllers
                         }
 
 
-                        
+
                         if (goals.AGoalDate2 != null && goals.AGoalDate2 == DateTime.Today)
                         {
                             goals.AGoalDate2 = DateTime.Today;
