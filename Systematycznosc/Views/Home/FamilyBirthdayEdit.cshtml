@@ -29,7 +29,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName1, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName1, new { @class = "", style = "  float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName1, new { placeholder = "Wpisz imię." ,@class = "", style = "  float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName1, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday1, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday1?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>
@@ -37,7 +37,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName2, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName2, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName2, new { placeholder = "Wpisz imię.", @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName2, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday2, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday2?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>
@@ -45,7 +45,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName3, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName3, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName3, new {placeholder = "Wpisz imię.",  @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName3, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday3, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday3?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>
@@ -53,7 +53,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName4, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName4, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName4, new { placeholder = "Wpisz imię.", @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName4, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday4, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday4?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>
@@ -61,7 +61,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName5, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName5, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName5, new { placeholder = "Wpisz imię.", @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName5, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday5, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday5?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>
@@ -69,7 +69,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName6, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName6, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName6, new { placeholder = "Wpisz imię.", @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName6, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday6, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday6?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>
@@ -77,7 +77,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName7, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName7, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName7, new { placeholder = "Wpisz imię.", @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName7, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday7, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday7?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>
@@ -85,7 +85,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName8, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName8, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName8, new { placeholder = "Wpisz imię.", @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName8, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday8, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday8?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>
@@ -93,7 +93,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName9, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName9, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName9, new { placeholder = "Wpisz imię.", @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName9, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday9, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday9?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>
@@ -101,7 +101,7 @@
         <div class="form-group" style="text-align:center;">
             <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
                 @Html.LabelFor(m => m.FamilyBirthdayName10, "Imie:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.FamilyBirthdayName10, new { @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
+                @Html.TextBoxFor(m => m.FamilyBirthdayName10, new { placeholder = "Wpisz imię.", @class = "", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.FamilyBirthdayName10, "", new { @class = "text-danger" })
                 @Html.TextBoxFor(model => model.FamilyBirthday10, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthday10?.ToString("yyyy-MM-dd"), @style = "font-size:25px;" })
             </div>

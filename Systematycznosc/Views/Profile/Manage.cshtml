@@ -24,31 +24,27 @@
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
 
-    @using (Html.BeginForm("Manage", "Profile", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center;font-size:35px; " }))
+    @using (Html.BeginForm("Manage", "Profile", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal  col-s-5 col-md-11 col-lg-6", role = "form", style = " text-align: center;font-size:35px; " }))
     {
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @*@Html.LabelFor(m => m.Name, "Imię:", new { @class = "col-md-2 control-label" })*@
+        <div class="">
             <div>Imię:</div>
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+            <div>
+                @Html.TextBoxFor(m => m.Name, new { placeholder = "Tu wpisz imię", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
             </div>
-        </div>
-        <div class="form-group">
-            
-            @*@Html.LabelFor(m => m.Photo, "Adres WWW do zdjęcia na Facebooku (opcjonalne):", new { @class = "col-md-2 control-label" })*@
-            <div>Adres bezpośrednio do zdjęcia (np. na Facebook):</div>
-            <div class="col-md-10">
-                @Html.TextBoxFor(m => m.Photo, new { @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+            <div>(Opcjonalnie) Adres bezpośrednio do zdjęcia (np. na Facebook):</div>
+            <div class="">
+                @Html.TextBoxFor(m => m.Photo, new { placeholder = "Tu skopiuj adres do zdjęcia", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
                 @Html.ValidationMessageFor(m => m.Photo, "", new { @class = "text-danger" })
+            </div>
+            <div style="padding-bottom:50px; padding-top:20px;">
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
+                </div>
             </div>
         </div>
 
-        <div style="padding-bottom:50px; padding-top:20px;">
-            <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
-            </div>
-        </div>
+
     }
 </div>

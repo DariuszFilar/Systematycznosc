@@ -11,7 +11,12 @@ namespace Systematycznosc.Controllers
         // GET: Welcome
         public ActionResult Index()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else { return View(); }
+
         }
     }
 }

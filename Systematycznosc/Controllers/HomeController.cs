@@ -23,6 +23,7 @@ namespace Systematycznosc.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+           
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
             
@@ -157,9 +158,6 @@ namespace Systematycznosc.Controllers
                                 model.GoalsViewModel.AGoal1 = goals.AGoal1;
                             }
                         }
-
-
-
                         if (goals.AGoalDate2 != null && goals.AGoalDate2 == DateTime.Today)
                         {
                             goals.AGoalDate2 = DateTime.Today;
