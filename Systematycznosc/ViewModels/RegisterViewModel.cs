@@ -8,9 +8,14 @@ namespace Systematycznosc.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
+        //[Required]
+        //[EmailAddress]
+        //[Display(Name = "Email")]
+        //public string Email { get; set; }
+
+        [Display(Name = "Email address")]
+        [Required(ErrorMessage = "Wymagany jest adres Email.")]
+        [EmailAddress(ErrorMessage = "Niepoprawny format Email.")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "Musisz wpisać hasło <br/>")]

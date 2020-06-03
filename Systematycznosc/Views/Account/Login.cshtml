@@ -31,12 +31,14 @@
                             Nieudana próba zalogowania.
                         </div>}
                     @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
-                    @Html.ValidationMessageFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email, null, new { style = "color:red" })
                     @Html.PasswordFor(m => m.Password, new { id = "customerEmailId", @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
-                    @Html.ValidationMessageFor(model => model.Password)
-                    @Html.CheckBoxFor(m => m.RememberMe)
-                    @Html.LabelFor(m => m.RememberMe, new { @type = "", style = "color:black;" })
-                    @Html.ActionLink("Zarejestruj", "Register", "Account", new { style = "color:black;" })
+                    @Html.ValidationMessageFor(model => model.Password, null, new { style = "color:red" })
+                    <div>
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe, new { @type = "", style = "color:black;" })
+                        @Html.ActionLink("Zarejestruj", "Register", "Account", new { style = "color:black;" })
+                    </div>
                     <div class="text-center mt-4">
                         <input type="submit" value="Zaloguj się" class="btn btn-xl btn-outline-dark">
                     </div>

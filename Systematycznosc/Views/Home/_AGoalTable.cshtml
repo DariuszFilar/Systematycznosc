@@ -35,548 +35,549 @@
     if (Model.AGoal7 == "Odpoczynek") { AGoalColor7 = "green"; };
     if (Model.AGoal7 == "Nie") { AGoalColor7 = "#116315"; };
     if (Model.AGoal7 == "Nagroda") { AGoalColor7 = "gold"; };
-}
-<table id="table_id" class="table table-info table-hover table table-info table-hover dataTable no-footer" style="font-size:18px; width:auto;">
-    <thead>
-        <tr>
-            <th style="width: 300px">Data:</th>
-            <th style="width: 300px">Status:</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            @{ DateTime data1 = DateTime.Today;
+}<div class="mr-3 ml-3">
+    <table id="table_id" class="table table-info table-hover table table-info table-hover dataTable no-footer" style="font-size:18px; width:auto;">
+        <thead>
+            <tr>
+                <th style="width: 300px">Data:</th>
+                <th style="width: 300px">Status:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @{ DateTime data1 = DateTime.Today;
 
-                if (Model.AGoalDate1 == data1)
-                {
-                    <td style="background-color:@AGoalColor1">
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor1">
-                        <div>@Model.AGoal1</div>
-                    </td>
+                    if (Model.AGoalDate1 == data1)
+                    {
+                        <td style="background-color:@AGoalColor1">
+                            <div>@data1.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor1">
+                            <div>@Model.AGoal1</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate2 == data1)
+                    {
+                        <td style="background-color:@AGoalColor2">
+                            <div>@data1.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor2">
+                            <div>@Model.AGoal2</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate3 == data1)
+                    {
+                        if (Model.AGoal3 == "Tak")
+                        {
+                            <td style="background-color:@AGoalColor3">
+                                <div>@data1.ToShortDateString()</div>
+                            </td>
+                            <td style="background-color:@AGoalColor3">
+                                <div>@Model.AGoal3</div>
+                            </td>
+                        }
+                    }
+                    else if (Model.AGoalDate4 == data1)
+                    {
+                        <td style="background-color:@AGoalColor4">
+                            <div @AGoalColor4>@data1.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor4">
+                            <div>@Model.AGoal4</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate5 == data1)
+                    {
+                        <td style="background-color:@AGoalColor5">
+                            <div>@data1.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor5">
+                            <div>@Model.AGoal5</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate6 == data1)
+                    {
+                        <td style="background-color:@AGoalColor6">
+                            <div>@data1.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor6">
+                            <div>@Model.AGoal6</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate7 == data1)
+                    {
+                        <td style="background-color:@AGoalColor7">
+                            <div>@data1.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor7">
+                            <div>@Model.AGoal7</div>
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:@DefaultColor">
+                            <div>@data1.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@DefaultColor">
+                            <div>Nie</div>
+                        </td>
+                    }
+
                 }
-                else if (Model.AGoalDate2 == data1)
-                {
-                    <td style="background-color:@AGoalColor2">
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor2">
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data1)
-                {
-                    if (Model.AGoal3 == "Tak")
+            </tr>
+            <tr>
+                @{ DateTime data2 = DateTime.Today.AddDays(-1); ;
+                    if (Model.AGoalDate1 == data2)
+                    {
+                        <td style="background-color:@AGoalColor1">
+                            <div>@data2.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor1">
+                            <div>@Model.AGoal1</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate2 == data2)
+                    {
+                        <td style="background-color:@AGoalColor2">
+                            <div>@data2.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor2">
+                            <div>@Model.AGoal2</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate3 == data2)
                     {
                         <td style="background-color:@AGoalColor3">
-                            <div>@data1.ToShortDateString()</div>
+                            <div>@data2.ToShortDateString()</div>
                         </td>
                         <td style="background-color:@AGoalColor3">
                             <div>@Model.AGoal3</div>
                         </td>
                     }
-                }
-                else if (Model.AGoalDate4 == data1)
-                {
-                    <td style="background-color:@AGoalColor4">
-                        <div @AGoalColor4>@data1.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor4">
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data1)
-                {
-                    <td style="background-color:@AGoalColor5">
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor5">
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data1)
-                {
-                    <td style="background-color:@AGoalColor6">
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor6">
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data1)
-                {
-                    <td style="background-color:@AGoalColor7">
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor7">
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td style="background-color:@DefaultColor">
-                        <div>@data1.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@DefaultColor">
-                        <div>Nie</div>
-                    </td>
-                }
-
-            }
-        </tr>
-        <tr>
-            @{ DateTime data2 = DateTime.Today.AddDays(-1); ;
-                if (Model.AGoalDate1 == data2)
-                {
-                    <td style="background-color:@AGoalColor1">
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor1">
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data2)
-                {
-                    <td style="background-color:@AGoalColor2">
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor2">
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data2)
-                {
-                    <td style="background-color:@AGoalColor3">
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor3">
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data2)
-                {
-                    <td style="background-color:@AGoalColor4">
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor4">
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data2)
-                {
-                    <td style="background-color:@AGoalColor5">
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor5">
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data2)
-                {
-                    <td style="background-color:@AGoalColor6">
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor6">
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data2)
-                {
-                    <td style="background-color:@AGoalColor7">
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor7">
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td style="background-color:@DefaultColor">
-                        <div>@data2.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@DefaultColor">
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data3 = DateTime.Today.AddDays(-2); ;
-                if (Model.AGoalDate1 == data3)
-                {
-                    <td style="background-color:@AGoalColor1">
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor1">
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data3)
-                {
-                    <td style="background-color:@AGoalColor2">
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor2">
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data3)
-                {
-                    <td style="background-color:@AGoalColor3">
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor3">
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data3)
-                {
-                    <td style="background-color:@AGoalColor4">
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor4">
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data3)
-                {
-                    <td style="background-color:@AGoalColor5">
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor5">
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data3)
-                {
-                    <td style="background-color:@AGoalColor6">
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor6">
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data3)
-                {
-                    <td style="background-color:@AGoalColor7">
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor7">
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td style="background-color:@DefaultColor">
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@DefaultColor">
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data4 = DateTime.Today.AddDays(-3); ;
-                if (Model.AGoalDate1 == data4)
-                {
-                    <td style="background-color:@AGoalColor1">
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor1">
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data4)
-                {
-                    <td style="background-color:@AGoalColor2">
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor2">
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data4)
-                {
-                    <td style="background-color:@AGoalColor3">
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor3">
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data4)
-                {
-                    <td style="background-color:@AGoalColor4">
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor4">
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data4)
-                {
-                    <td style="background-color:@AGoalColor5">
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor5">
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data4)
-                {
-                    <td style="background-color:@AGoalColor6">
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor6">
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data4)
-                {
-                    <td style="background-color:@AGoalColor7">
-                        <div>@data4.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor7">
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td style="background-color:@DefaultColor">
-                        <div>@data3.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@DefaultColor">
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data5 = DateTime.Today.AddDays(-4); ;
-                if (Model.AGoalDate1 == data5)
-                {
-                    <td style="background-color:@AGoalColor1">
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor1">
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data5)
-                {
-                    <td style="background-color:@AGoalColor2">
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor2">
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data5)
-                {
-                    <td style="background-color:@AGoalColor3">
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor3">
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data5)
-                {
-                    <td style="background-color:@AGoalColor4">
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor4">
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data5)
-                {
-                    <td style="background-color:@AGoalColor5">
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor5">
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data5)
-                {
-                    <td style="background-color:@AGoalColor6">
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor6">
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data5)
-                {
-                    <td style="background-color:@AGoalColor7">
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor7">
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td style="background-color:@DefaultColor">
-                        <div>@data5.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@DefaultColor">
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data6 = DateTime.Today.AddDays(-5); ;
-                if (Model.AGoalDate1 == data6)
-                {
-                    <td style="background-color:@AGoalColor1">
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor1">
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data6)
-                {
-                    <td style="background-color:@AGoalColor2">
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor2">
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data6)
-                {
-                    <td style="background-color:@AGoalColor3">
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor3">
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data6)
-                {
-                    <td style="background-color:@AGoalColor4">
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor4">
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data6)
-                {
-                    <td style="background-color:@AGoalColor5">
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor5">
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data6)
-                {
-                    <td style="background-color:@AGoalColor6">
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor6">
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data6)
-                {
-                    <td style="background-color:@AGoalColor7">
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor7">
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td style="background-color:@DefaultColor">
-                        <div>@data6.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@DefaultColor">
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-        <tr>
-            @{ DateTime data7 = DateTime.Today.AddDays(-6); ;
-                if (Model.AGoalDate1 == data7)
-                {
-                    <td style="background-color:@AGoalColor1">
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor1">
-                        <div>@Model.AGoal1</div>
-                    </td>
-                }
-                else if (Model.AGoalDate2 == data7)
-                {
-                    <td style="background-color:@AGoalColor2">
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor2">
-                        <div>@Model.AGoal2</div>
-                    </td>
-                }
-                else if (Model.AGoalDate3 == data7)
-                {
-                    <td style="background-color:@AGoalColor3">
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor3">
-                        <div>@Model.AGoal3</div>
-                    </td>
-                }
-                else if (Model.AGoalDate4 == data7)
-                {
-                    <td style="background-color:@AGoalColor4">
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor4">
-                        <div>@Model.AGoal4</div>
-                    </td>
-                }
-                else if (Model.AGoalDate5 == data7)
-                {
-                    <td style="background-color:@AGoalColor5">
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor5">
-                        <div>@Model.AGoal5</div>
-                    </td>
-                }
-                else if (Model.AGoalDate6 == data7)
-                {
-                    <td style="background-color:@AGoalColor6">
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@AGoalColor6">
-                        <div>@Model.AGoal6</div>
-                    </td>
-                }
-                else if (Model.AGoalDate7 == data7)
-                {
-                    <td style="background-color:@AGoalColor7">
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td>
-                        <div>@Model.AGoal7</div>
-                    </td>
-                }
-                else
-                {
-                    <td style="background-color:@DefaultColor">
-                        <div>@data7.ToShortDateString()</div>
-                    </td>
-                    <td style="background-color:@DefaultColor">
-                        <div>Nie</div>
-                    </td>
-                } }
-        </tr>
-    </tbody>
-</table>
+                    else if (Model.AGoalDate4 == data2)
+                    {
+                        <td style="background-color:@AGoalColor4">
+                            <div>@data2.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor4">
+                            <div>@Model.AGoal4</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate5 == data2)
+                    {
+                        <td style="background-color:@AGoalColor5">
+                            <div>@data2.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor5">
+                            <div>@Model.AGoal5</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate6 == data2)
+                    {
+                        <td style="background-color:@AGoalColor6">
+                            <div>@data2.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor6">
+                            <div>@Model.AGoal6</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate7 == data2)
+                    {
+                        <td style="background-color:@AGoalColor7">
+                            <div>@data2.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor7">
+                            <div>@Model.AGoal7</div>
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:@DefaultColor">
+                            <div>@data2.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@DefaultColor">
+                            <div>Nie</div>
+                        </td>
+                    } }
+            </tr>
+            <tr>
+                @{ DateTime data3 = DateTime.Today.AddDays(-2); ;
+                    if (Model.AGoalDate1 == data3)
+                    {
+                        <td style="background-color:@AGoalColor1">
+                            <div>@data3.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor1">
+                            <div>@Model.AGoal1</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate2 == data3)
+                    {
+                        <td style="background-color:@AGoalColor2">
+                            <div>@data3.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor2">
+                            <div>@Model.AGoal2</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate3 == data3)
+                    {
+                        <td style="background-color:@AGoalColor3">
+                            <div>@data3.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor3">
+                            <div>@Model.AGoal3</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate4 == data3)
+                    {
+                        <td style="background-color:@AGoalColor4">
+                            <div>@data3.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor4">
+                            <div>@Model.AGoal4</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate5 == data3)
+                    {
+                        <td style="background-color:@AGoalColor5">
+                            <div>@data3.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor5">
+                            <div>@Model.AGoal5</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate6 == data3)
+                    {
+                        <td style="background-color:@AGoalColor6">
+                            <div>@data3.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor6">
+                            <div>@Model.AGoal6</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate7 == data3)
+                    {
+                        <td style="background-color:@AGoalColor7">
+                            <div>@data3.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor7">
+                            <div>@Model.AGoal7</div>
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:@DefaultColor">
+                            <div>@data3.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@DefaultColor">
+                            <div>Nie</div>
+                        </td>
+                    } }
+            </tr>
+            <tr>
+                @{ DateTime data4 = DateTime.Today.AddDays(-3); ;
+                    if (Model.AGoalDate1 == data4)
+                    {
+                        <td style="background-color:@AGoalColor1">
+                            <div>@data4.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor1">
+                            <div>@Model.AGoal1</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate2 == data4)
+                    {
+                        <td style="background-color:@AGoalColor2">
+                            <div>@data4.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor2">
+                            <div>@Model.AGoal2</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate3 == data4)
+                    {
+                        <td style="background-color:@AGoalColor3">
+                            <div>@data4.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor3">
+                            <div>@Model.AGoal3</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate4 == data4)
+                    {
+                        <td style="background-color:@AGoalColor4">
+                            <div>@data4.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor4">
+                            <div>@Model.AGoal4</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate5 == data4)
+                    {
+                        <td style="background-color:@AGoalColor5">
+                            <div>@data4.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor5">
+                            <div>@Model.AGoal5</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate6 == data4)
+                    {
+                        <td style="background-color:@AGoalColor6">
+                            <div>@data4.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor6">
+                            <div>@Model.AGoal6</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate7 == data4)
+                    {
+                        <td style="background-color:@AGoalColor7">
+                            <div>@data4.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor7">
+                            <div>@Model.AGoal7</div>
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:@DefaultColor">
+                            <div>@data3.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@DefaultColor">
+                            <div>Nie</div>
+                        </td>
+                    } }
+            </tr>
+            <tr>
+                @{ DateTime data5 = DateTime.Today.AddDays(-4); ;
+                    if (Model.AGoalDate1 == data5)
+                    {
+                        <td style="background-color:@AGoalColor1">
+                            <div>@data5.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor1">
+                            <div>@Model.AGoal1</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate2 == data5)
+                    {
+                        <td style="background-color:@AGoalColor2">
+                            <div>@data5.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor2">
+                            <div>@Model.AGoal2</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate3 == data5)
+                    {
+                        <td style="background-color:@AGoalColor3">
+                            <div>@data5.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor3">
+                            <div>@Model.AGoal3</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate4 == data5)
+                    {
+                        <td style="background-color:@AGoalColor4">
+                            <div>@data5.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor4">
+                            <div>@Model.AGoal4</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate5 == data5)
+                    {
+                        <td style="background-color:@AGoalColor5">
+                            <div>@data5.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor5">
+                            <div>@Model.AGoal5</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate6 == data5)
+                    {
+                        <td style="background-color:@AGoalColor6">
+                            <div>@data5.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor6">
+                            <div>@Model.AGoal6</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate7 == data5)
+                    {
+                        <td style="background-color:@AGoalColor7">
+                            <div>@data5.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor7">
+                            <div>@Model.AGoal7</div>
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:@DefaultColor">
+                            <div>@data5.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@DefaultColor">
+                            <div>Nie</div>
+                        </td>
+                    } }
+            </tr>
+            <tr>
+                @{ DateTime data6 = DateTime.Today.AddDays(-5); ;
+                    if (Model.AGoalDate1 == data6)
+                    {
+                        <td style="background-color:@AGoalColor1">
+                            <div>@data6.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor1">
+                            <div>@Model.AGoal1</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate2 == data6)
+                    {
+                        <td style="background-color:@AGoalColor2">
+                            <div>@data6.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor2">
+                            <div>@Model.AGoal2</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate3 == data6)
+                    {
+                        <td style="background-color:@AGoalColor3">
+                            <div>@data6.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor3">
+                            <div>@Model.AGoal3</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate4 == data6)
+                    {
+                        <td style="background-color:@AGoalColor4">
+                            <div>@data6.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor4">
+                            <div>@Model.AGoal4</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate5 == data6)
+                    {
+                        <td style="background-color:@AGoalColor5">
+                            <div>@data6.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor5">
+                            <div>@Model.AGoal5</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate6 == data6)
+                    {
+                        <td style="background-color:@AGoalColor6">
+                            <div>@data6.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor6">
+                            <div>@Model.AGoal6</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate7 == data6)
+                    {
+                        <td style="background-color:@AGoalColor7">
+                            <div>@data6.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor7">
+                            <div>@Model.AGoal7</div>
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:@DefaultColor">
+                            <div>@data6.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@DefaultColor">
+                            <div>Nie</div>
+                        </td>
+                    } }
+            </tr>
+            <tr>
+                @{ DateTime data7 = DateTime.Today.AddDays(-6); ;
+                    if (Model.AGoalDate1 == data7)
+                    {
+                        <td style="background-color:@AGoalColor1">
+                            <div>@data7.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor1">
+                            <div>@Model.AGoal1</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate2 == data7)
+                    {
+                        <td style="background-color:@AGoalColor2">
+                            <div>@data7.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor2">
+                            <div>@Model.AGoal2</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate3 == data7)
+                    {
+                        <td style="background-color:@AGoalColor3">
+                            <div>@data7.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor3">
+                            <div>@Model.AGoal3</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate4 == data7)
+                    {
+                        <td style="background-color:@AGoalColor4">
+                            <div>@data7.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor4">
+                            <div>@Model.AGoal4</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate5 == data7)
+                    {
+                        <td style="background-color:@AGoalColor5">
+                            <div>@data7.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor5">
+                            <div>@Model.AGoal5</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate6 == data7)
+                    {
+                        <td style="background-color:@AGoalColor6">
+                            <div>@data7.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@AGoalColor6">
+                            <div>@Model.AGoal6</div>
+                        </td>
+                    }
+                    else if (Model.AGoalDate7 == data7)
+                    {
+                        <td style="background-color:@AGoalColor7">
+                            <div>@data7.ToShortDateString()</div>
+                        </td>
+                        <td>
+                            <div>@Model.AGoal7</div>
+                        </td>
+                    }
+                    else
+                    {
+                        <td style="background-color:@DefaultColor">
+                            <div>@data7.ToShortDateString()</div>
+                        </td>
+                        <td style="background-color:@DefaultColor">
+                            <div>Nie</div>
+                        </td>
+                    } }
+            </tr>
+        </tbody>
+    </table>
+</div>
 @section Scripts
 {
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
