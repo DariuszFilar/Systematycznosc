@@ -35,17 +35,21 @@ namespace Systematycznosc.ViewModels
 
         public EveningQuestionsViewModel(EveningQuestions eveningQuestions)
         {
-            this.Id = eveningQuestions.Id;
-            this.EveningQuestion1 = eveningQuestions.EveningQuestions1;
-            this.EveningQuestion2 = eveningQuestions.EveningQuestions2;
-            this.EveningQuestion3 = eveningQuestions.EveningQuestions3;
-            this.EveningQuestion4 = eveningQuestions.EveningQuestions4;
-            this.EveningQuestion5 = eveningQuestions.EveningQuestions5;
-            this.EveningQuestion6 = eveningQuestions.EveningQuestions6;
-            this.EveningQuestion7 = eveningQuestions.EveningQuestions7;
-            this.EveningQuestion8 = eveningQuestions.EveningQuestions8;
-            this.EveningQuestion9 = eveningQuestions.EveningQuestions9;
-            this.EveningQuestion10 = eveningQuestions.EveningQuestions10;
+            if (eveningQuestions != null)
+            {
+                this.Id = eveningQuestions.Id;
+                this.EveningQuestion1 = eveningQuestions.EveningQuestions1;
+                this.EveningQuestion2 = eveningQuestions.EveningQuestions2;
+                this.EveningQuestion3 = eveningQuestions.EveningQuestions3;
+                this.EveningQuestion4 = eveningQuestions.EveningQuestions4;
+                this.EveningQuestion5 = eveningQuestions.EveningQuestions5;
+                this.EveningQuestion6 = eveningQuestions.EveningQuestions6;
+                this.EveningQuestion7 = eveningQuestions.EveningQuestions7;
+                this.EveningQuestion8 = eveningQuestions.EveningQuestions8;
+                this.EveningQuestion9 = eveningQuestions.EveningQuestions9;
+                this.EveningQuestion10 = eveningQuestions.EveningQuestions10;
+            }
+            else { }
         }
     }
 }

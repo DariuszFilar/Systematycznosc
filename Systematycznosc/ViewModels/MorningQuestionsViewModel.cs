@@ -24,28 +24,34 @@ namespace Systematycznosc.ViewModels
         public string MorningQuestions9 { get; set; }
         public string MorningQuestions10 { get; set; }
         public string MorningQuestions11 { get; set; }
-    
+
         public UserProfileViewModel UserProfileViewModel { get; set; }
 
-        public MorningQuestionsViewModel(UserProfile userProfile)
+        public MorningQuestionsViewModel(UserProfile userProfile = null)
         {
-            this.UserProfileViewModel = new UserProfileViewModel(userProfile);
+            if (userProfile != null)
+                this.UserProfileViewModel = new UserProfileViewModel(userProfile);
         }
         public MorningQuestionsViewModel() { }
 
+
         public MorningQuestionsViewModel(MorningQuestions morningQuestions)
         {
-            this.Id = morningQuestions.Id;
-            this.MorningQuestions1 = morningQuestions.MorningQuestions1;
-            this.MorningQuestions2 = morningQuestions.MorningQuestions2;
-            this.MorningQuestions3 = morningQuestions.MorningQuestions3;
-            this.MorningQuestions4 = morningQuestions.MorningQuestions4;
-            this.MorningQuestions5 = morningQuestions.MorningQuestions5;
-            this.MorningQuestions6 = morningQuestions.MorningQuestions6;
-            this.MorningQuestions7 = morningQuestions.MorningQuestions7;
-            this.MorningQuestions8 = morningQuestions.MorningQuestions8;
-            this.MorningQuestions9 = morningQuestions.MorningQuestions9;
-            this.MorningQuestions10 = morningQuestions.MorningQuestions10;
+            if (morningQuestions != null)
+            {
+                this.Id = morningQuestions.Id;
+                this.MorningQuestions1 = morningQuestions.MorningQuestions1;
+                this.MorningQuestions2 = morningQuestions.MorningQuestions2;
+                this.MorningQuestions3 = morningQuestions.MorningQuestions3;
+                this.MorningQuestions4 = morningQuestions.MorningQuestions4;
+                this.MorningQuestions5 = morningQuestions.MorningQuestions5;
+                this.MorningQuestions6 = morningQuestions.MorningQuestions6;
+                this.MorningQuestions7 = morningQuestions.MorningQuestions7;
+                this.MorningQuestions8 = morningQuestions.MorningQuestions8;
+                this.MorningQuestions9 = morningQuestions.MorningQuestions9;
+                this.MorningQuestions10 = morningQuestions.MorningQuestions10;
+            }
+            else { }
         }
     }
 }

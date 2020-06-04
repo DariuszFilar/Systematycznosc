@@ -46,17 +46,21 @@ namespace Systematycznosc.ViewModels
 
         public CredoViewModel(Credo credo)
         {
-            this.Id = credo.Id;
-            this.Credo1 = credo.Credo1;
-            this.Credo2 = credo.Credo2;
-            this.Credo3 = credo.Credo3;
-            this.Credo4 = credo.Credo4;
-            this.Credo5 = credo.Credo5;
-            this.Credo6 = credo.Credo6;
-            this.Credo7 = credo.Credo7;
-            this.Credo8 = credo.Credo8;
-            this.Credo9 = credo.Credo9;
-            this.Credo10 = credo.Credo10;
+            if (credo != null)
+            {
+                this.Id = credo.Id;
+                this.Credo1 = credo.Credo1;
+                this.Credo2 = credo.Credo2;
+                this.Credo3 = credo.Credo3;
+                this.Credo4 = credo.Credo4;
+                this.Credo5 = credo.Credo5;
+                this.Credo6 = credo.Credo6;
+                this.Credo7 = credo.Credo7;
+                this.Credo8 = credo.Credo8;
+                this.Credo9 = credo.Credo9;
+                this.Credo10 = credo.Credo10;
+            }
+            else { };
         }
     }
 }

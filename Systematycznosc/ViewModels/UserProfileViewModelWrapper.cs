@@ -22,6 +22,8 @@ namespace Systematycznosc.ViewModels
         {
             this.UserProfileViewModel = new UserProfileViewModel(userProfile);
             this.CredoViewModel = new CredoViewModel();
+
         }
+
     }
 }

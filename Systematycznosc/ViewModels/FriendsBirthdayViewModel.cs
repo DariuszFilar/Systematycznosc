@@ -46,27 +46,31 @@ namespace Systematycznosc.ViewModels
 
         public FriendsBirthdayViewModel(FriendsBirthday friendsBirthday)
         {
-            this.Id = friendsBirthday.Id;
-            this.FriendsBirthday1 = friendsBirthday.FriendsBirthday1;
-            this.FriendsBirthdayName1 = friendsBirthday.FriendsBirthdayName1;
-            this.FriendsBirthday2 = friendsBirthday.FriendsBirthday2;
-            this.FriendsBirthdayName2 = friendsBirthday.FriendsBirthdayName2;
-            this.FriendsBirthday3 = friendsBirthday.FriendsBirthday3;
-            this.FriendsBirthdayName3 = friendsBirthday.FriendsBirthdayName3;
-            this.FriendsBirthday4 = friendsBirthday.FriendsBirthday4;
-            this.FriendsBirthdayName4 = friendsBirthday.FriendsBirthdayName4;
-            this.FriendsBirthday5 = friendsBirthday.FriendsBirthday5;
-            this.FriendsBirthdayName5 = friendsBirthday.FriendsBirthdayName5;
-            this.FriendsBirthday6 = friendsBirthday.FriendsBirthday6;
-            this.FriendsBirthdayName6 = friendsBirthday.FriendsBirthdayName6;
-            this.FriendsBirthday7 = friendsBirthday.FriendsBirthday7;
-            this.FriendsBirthdayName7 = friendsBirthday.FriendsBirthdayName7;
-            this.FriendsBirthday8 = friendsBirthday.FriendsBirthday8;
-            this.FriendsBirthdayName8 = friendsBirthday.FriendsBirthdayName8;
-            this.FriendsBirthday9 = friendsBirthday.FriendsBirthday9;
-            this.FriendsBirthdayName9 = friendsBirthday.FriendsBirthdayName9;
-            this.FriendsBirthday10 = friendsBirthday.FriendsBirthday10;
-            this.FriendsBirthdayName10 = friendsBirthday.FriendsBirthdayName10;
+            if (friendsBirthday != null)
+            {
+                this.Id = friendsBirthday.Id;
+                this.FriendsBirthday1 = friendsBirthday.FriendsBirthday1;
+                this.FriendsBirthdayName1 = friendsBirthday.FriendsBirthdayName1;
+                this.FriendsBirthday2 = friendsBirthday.FriendsBirthday2;
+                this.FriendsBirthdayName2 = friendsBirthday.FriendsBirthdayName2;
+                this.FriendsBirthday3 = friendsBirthday.FriendsBirthday3;
+                this.FriendsBirthdayName3 = friendsBirthday.FriendsBirthdayName3;
+                this.FriendsBirthday4 = friendsBirthday.FriendsBirthday4;
+                this.FriendsBirthdayName4 = friendsBirthday.FriendsBirthdayName4;
+                this.FriendsBirthday5 = friendsBirthday.FriendsBirthday5;
+                this.FriendsBirthdayName5 = friendsBirthday.FriendsBirthdayName5;
+                this.FriendsBirthday6 = friendsBirthday.FriendsBirthday6;
+                this.FriendsBirthdayName6 = friendsBirthday.FriendsBirthdayName6;
+                this.FriendsBirthday7 = friendsBirthday.FriendsBirthday7;
+                this.FriendsBirthdayName7 = friendsBirthday.FriendsBirthdayName7;
+                this.FriendsBirthday8 = friendsBirthday.FriendsBirthday8;
+                this.FriendsBirthdayName8 = friendsBirthday.FriendsBirthdayName8;
+                this.FriendsBirthday9 = friendsBirthday.FriendsBirthday9;
+                this.FriendsBirthdayName9 = friendsBirthday.FriendsBirthdayName9;
+                this.FriendsBirthday10 = friendsBirthday.FriendsBirthday10;
+                this.FriendsBirthdayName10 = friendsBirthday.FriendsBirthdayName10;
+            }
+            else { }
         }
     }
 }

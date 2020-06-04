@@ -23,18 +23,10 @@ namespace Systematycznosc.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-           
+
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            
-            var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
-            var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
-            var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
-            var familyBirthday = _context.FamilyBirthday.FirstOrDefault(x => x.Id == userId);
-            var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
-            var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
-            var relationship = _context.Relationship.FirstOrDefault(x => x.Id == userId);
-            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
+
             UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
 
             if (userProfile != null)
@@ -42,87 +34,44 @@ namespace Systematycznosc.Controllers
                 UserProfileViewModel UserProfile = new UserProfileViewModel(userProfile);
                 wrapper.UserProfileViewModel = UserProfile;
 
-                var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
-                wrapper.CredoViewModel = new CredoViewModel(credo);
 
 
-                //if (credo == null)
-                //{
-                //    wrapper.CredoViewModel = new CredoViewModel();
-                //}                    
-                //else 
-                //{ 
-                //    CredoViewModel Credo = new CredoViewModel(credo); 
-                //    wrapper.CredoViewModel = Credo; 
-                //}
-
-                if (morningQuestions == null) 
-                    wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel();
-                else 
-                { 
-                    MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
-                    wrapper.MorningQuestionsViewModel = MorningQuestions; 
-                }
-
-                if (eveningQuestions == null) 
-                    wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel();
-                else
+                if (_context.Credo.Any())
                 {
-                    EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
-                    wrapper.EveningQuestionsViewModel = EveningQuestions;
+                    var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+                    wrapper.CredoViewModel = new CredoViewModel(credo);
                 }
+                else { wrapper.CredoViewModel = new CredoViewModel(); }
 
-                if (todo == null) 
-                    wrapper.TodoViewModel = new TodoViewModel();
-                else 
-                { 
-                    TodoViewModel Todo = new TodoViewModel(todo);
-                    wrapper.TodoViewModel = Todo; 
-                }
 
-                if (familyBirthday == null) 
-                    wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel(); 
-                else 
-                { 
-                    FamilyBirthdayViewModel FamilyBirthday = new FamilyBirthdayViewModel(familyBirthday);
-                    wrapper.FamilyBirthdayViewModel = FamilyBirthday; 
-                }
+                var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
+                wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel(morningQuestions);
 
-                if (friendsBirthday == null) 
-                    wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel();
-                else 
-                { 
-                    FriendsBirthdayViewModel FriendsBirthday = new FriendsBirthdayViewModel(friendsBirthday);
-                    wrapper.FriendsBirthdayViewModel = FriendsBirthday; 
-                }
+                var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
+                wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel(eveningQuestions);
 
-                if (othersBirthday == null) 
-                    wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel();
-                else 
-                { 
-                    OthersBirthdayViewModel OthersBirthday = new OthersBirthdayViewModel(othersBirthday);
-                    wrapper.OthersBirthdayViewModel = OthersBirthday; 
-                }
+                var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
+                wrapper.TodoViewModel = new TodoViewModel(todo);
 
-                if (relationship == null) 
-                    wrapper.RelationshipViewModel = new RelationshipViewModel();
-                else 
-                { 
-                    RelationshipViewModel Relationship = new RelationshipViewModel(relationship);
-                    wrapper.RelationshipViewModel = Relationship; 
-                }
+                var familyBirthday = _context.FamilyBirthday.FirstOrDefault(x => x.Id == userId);
+                wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel(familyBirthday);
 
-                if (goals == null) 
-                    wrapper.GoalsViewModel = new GoalsViewModel();
-                else 
-                { 
-                    GoalsViewModel Goals = new GoalsViewModel(goals); 
-                    wrapper.GoalsViewModel = Goals; 
-                }
+                var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
+                wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel(friendsBirthday);
+
+                var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
+                wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel(othersBirthday);
+
+                var relationship = _context.Relationship.FirstOrDefault(x => x.Id == userId);
+                wrapper.RelationshipViewModel = new RelationshipViewModel(relationship);
+
+                var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
+                wrapper.GoalsViewModel = new GoalsViewModel(goals);
+
 
                 return View(wrapper);
             }
-            else 
+            else
                 return RedirectToAction("Manage", "Profile");
         }
         [HttpPost]
