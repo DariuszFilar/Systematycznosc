@@ -10,8 +10,6 @@ namespace Systematycznosc.ViewModels
 {
     public class GoalsViewModel
     {
-        [Key, ForeignKey("User")]
-        public string Id { get; set; }
         public virtual ApplicationUser User { get; set; }
         public string AGoalName { get; set; }
         public string BGoalName { get; set; }
@@ -152,19 +150,12 @@ namespace Systematycznosc.ViewModels
         public DateTime? HGoalDate6 { get; set; }
         public DateTime? HGoalDate7 { get; set; }
 
-        public UserProfileViewModel UserProfileViewModel { get; set; }
-
-        public GoalsViewModel(UserProfile userProfile)
-        {
-            this.UserProfileViewModel = new UserProfileViewModel(userProfile);
-        }
         public GoalsViewModel() { }
 
         public GoalsViewModel(Goals goals)
         {
             if (goals != null)
             {
-                this.Id = goals.Id;
                 this.AGoalName = goals.AGoalName;
                 this.AGoalDays = goals.AGoalDays;
                 this.AGoalQuestion = goals.AGoalQuestion;
@@ -302,7 +293,6 @@ namespace Systematycznosc.ViewModels
                 this.HGoal7 = goals.HGoal7;
                 this.HGoalDate7 = goals.HGoalDate7;
             }
-            else { }
         }
     }
 }

@@ -10,8 +10,6 @@ namespace Systematycznosc.ViewModels
 {
     public class MorningQuestionsViewModel
     {
-        [Key, ForeignKey("User")]
-        public string Id { get; set; }
         public virtual ApplicationUser User { get; set; }
         public string MorningQuestions1 { get; set; }
         public string MorningQuestions2 { get; set; }
@@ -25,21 +23,11 @@ namespace Systematycznosc.ViewModels
         public string MorningQuestions10 { get; set; }
         public string MorningQuestions11 { get; set; }
 
-        public UserProfileViewModel UserProfileViewModel { get; set; }
-
-        public MorningQuestionsViewModel(UserProfile userProfile = null)
-        {
-            if (userProfile != null)
-                this.UserProfileViewModel = new UserProfileViewModel(userProfile);
-        }
         public MorningQuestionsViewModel() { }
-
-
         public MorningQuestionsViewModel(MorningQuestions morningQuestions)
         {
             if (morningQuestions != null)
             {
-                this.Id = morningQuestions.Id;
                 this.MorningQuestions1 = morningQuestions.MorningQuestions1;
                 this.MorningQuestions2 = morningQuestions.MorningQuestions2;
                 this.MorningQuestions3 = morningQuestions.MorningQuestions3;
@@ -51,7 +39,6 @@ namespace Systematycznosc.ViewModels
                 this.MorningQuestions9 = morningQuestions.MorningQuestions9;
                 this.MorningQuestions10 = morningQuestions.MorningQuestions10;
             }
-            else { }
         }
     }
 }

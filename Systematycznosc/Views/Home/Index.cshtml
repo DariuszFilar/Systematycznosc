@@ -16,7 +16,7 @@
             {<img src="@Model.UserProfileViewModel.Photo" class="img-circle" style="max-width:305px; padding-top:85px;">}
             else
             {
-                <img src="https://blackrockdigital.github.io/startbootstrap-freelancer/assets/img/avataaars.svg" class="img-circle" style="max-width:305px; padding-top:85px;">}
+                <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/avataaars.svg" class="img-circle" style="max-width:305px; padding-top:85px;">}
         }
         <!-- Masthead Heading -->
         @if (Model.UserProfileViewModel.Name != null)
@@ -38,20 +38,23 @@
 
     </div>
     @{
-        if (Model.CredoViewModel.Credo1 == null && Model.EveningQuestionsViewModel.EveningQuestion1 == null && Model.FamilyBirthdayViewModel.FamilyBirthday1 == null && Model.FriendsBirthdayViewModel.FriendsBirthday1 == null
-        && Model.MorningQuestionsViewModel.MorningQuestions1 == null && Model.OthersBirthdayViewModel.OthersBirthday1 == null && Model.RelationshipViewModel.Relationship1 == null && Model.TodoViewModel.Todo1 == null && Model.GoalsViewModel.AGoalName == null && Model.GoalsViewModel.BGoalName == null)
+        if (Model.IsInitialized)
         {
             <style>
                 body {
                     background-color: #1abc9c
                 }
             </style>
-            <h1 class="masthead-heading text-uppercase mb-0" style="color: white; font-size:55px; padding-top:55px; line-height: 88px;">By spersonalizować pomocnika wejdź w zakładki u góry i dodaj interesujące Cię rzeczy</h1>}
+            <h1 class="masthead-heading text-uppercase mb-0" style="color: white; font-size: 55px; padding-top: 55px; line-height: 88px;">
+                By spersonalizować pomocnika wejdź w zakładki u góry i dodaj interesujące Cię rzeczy
+            </h1>
+        }
     }
 
 </header>
 
-@{ if (Model.CredoViewModel.Credo1 != null)
+@{
+    if (Model.CredoViewModel.Credos != null && Model.CredoViewModel.Credos.Any())
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -66,11 +69,8 @@
             icon = "";
             colordescription = "black";
         };
-    }
 
 
-    if (Model.CredoViewModel.Credo1 != null)
-    {
         <section class="page-section portfolio @color" id="credo">
             <div class=" d-flex align-items-center flex-column">
 
@@ -89,7 +89,19 @@
                 <div class="numberlist">
                     <div style="color:@colordescription; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
                     <ol>
-                        @if (Model.CredoViewModel.Credo1 != null)
+                        
+                        @{
+                            for (int i = 0; i <= 10; i++)
+                            {
+                                <li>
+                                    <a>
+                                        @Model.CredoViewModel.Credos[i];
+                                    </a>
+                                </li>    
+                            }
+                        }
+
+                        @*@if (Model.CredoViewModel.Credo1 != null)
                         {
                             <li><a>@Model.CredoViewModel.Credo1</a></li>
                         }
@@ -128,7 +140,7 @@
                         @if (Model.CredoViewModel.Credo10 != null)
                         {
                             <li><a>@Model.CredoViewModel.Credo10</a></li>
-                        }
+                        }*@
 
                     </ol>
                 </div>

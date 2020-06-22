@@ -10,8 +10,6 @@ namespace Systematycznosc.ViewModels
 {
     public class RelationshipViewModel
     {
-        [Key, ForeignKey("User")]
-        public string Id { get; set; }
         public virtual ApplicationUser User { get; set; }
         public string Relationship1 { get; set; }
         public string Relationship2 { get; set; }
@@ -24,20 +22,12 @@ namespace Systematycznosc.ViewModels
         public string Relationship9 { get; set; }
         public string Relationship10 { get; set; }
         public string Relationship11 { get; set; }
-
-        public UserProfileViewModel UserProfileViewModel { get; set; }
-
-        public RelationshipViewModel(UserProfile userProfile)
-        {
-            this.UserProfileViewModel = new UserProfileViewModel(userProfile);
-        }
         public RelationshipViewModel() { }
 
         public RelationshipViewModel(Relationship relationship)
         {
             if (relationship != null)
             {
-                this.Id = relationship.Id;
                 this.Relationship1 = relationship.Relationship1;
                 this.Relationship2 = relationship.Relationship2;
                 this.Relationship3 = relationship.Relationship3;
@@ -49,7 +39,6 @@ namespace Systematycznosc.ViewModels
                 this.Relationship9 = relationship.Relationship9;
                 this.Relationship10 = relationship.Relationship10;
             }
-            else { }
         }
     }
 }

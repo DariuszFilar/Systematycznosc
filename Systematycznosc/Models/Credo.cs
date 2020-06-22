@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Systematycznosc.ViewModels;
 
 namespace Systematycznosc.Models
 {
@@ -12,6 +13,9 @@ namespace Systematycznosc.Models
         [Key, ForeignKey("User")]
         public string Id { get; set; }
         public virtual ApplicationUser User { get; set; }
+
+        public List<string> Credos { get; set; }
+
         public string Credo1 { get; set; }
         public string Credo2 { get; set; }
         public string Credo3 { get; set; }

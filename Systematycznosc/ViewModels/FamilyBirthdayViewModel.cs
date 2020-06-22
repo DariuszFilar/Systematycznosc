@@ -10,8 +10,6 @@ namespace Systematycznosc.ViewModels
 {
     public class FamilyBirthdayViewModel
     {
-        [Key, ForeignKey("User")]
-        public string Id { get; set; }
         public virtual ApplicationUser User { get; set; }
         public DateTime? FamilyBirthday1 { get; set; }
         public string FamilyBirthdayName1 { get; set; }
@@ -35,20 +33,12 @@ namespace Systematycznosc.ViewModels
         public string FamilyBirthdayName10 { get; set; }
         public DateTime? FamilyBirthday11 { get; set; }
         public string FamilyBirthdayName11 { get; set; }
-
-        public UserProfileViewModel UserProfileViewModel { get; set; }
-
-        public FamilyBirthdayViewModel(UserProfile userProfile)
-        {
-            this.UserProfileViewModel = new UserProfileViewModel(userProfile);
-        }
         public FamilyBirthdayViewModel() { }
 
         public FamilyBirthdayViewModel(FamilyBirthday familyBirthday)
         {
             if (familyBirthday != null)
             {
-                this.Id = familyBirthday.Id;
                 this.FamilyBirthday1 = familyBirthday.FamilyBirthday1;
                 this.FamilyBirthdayName1 = familyBirthday.FamilyBirthdayName1;
                 this.FamilyBirthday2 = familyBirthday.FamilyBirthday2;
@@ -70,7 +60,6 @@ namespace Systematycznosc.ViewModels
                 this.FamilyBirthday10 = familyBirthday.FamilyBirthday10;
                 this.FamilyBirthdayName10 = familyBirthday.FamilyBirthdayName10;
             }
-            else { }
         }
     }
 }

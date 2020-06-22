@@ -10,8 +10,6 @@ namespace Systematycznosc.ViewModels
 {
     public class TodoViewModel
     {
-        [Key, ForeignKey("User")]
-        public string Id { get; set; }
         public virtual ApplicationUser User { get; set; }
         public string Todo1 { get; set; }
         public string Todo2 { get; set; }
@@ -46,19 +44,12 @@ namespace Systematycznosc.ViewModels
         public string TodoDateName10 { get; set; }
         public DateTime? TodoDate11 { get; set; }
         public string TodoDateName11 { get; set; }
-
-        public UserProfileViewModel UserProfileViewModel { get; set; }
-        public TodoViewModel(UserProfile userProfile)
-        {
-            this.UserProfileViewModel = new UserProfileViewModel(userProfile);
-        }
         public TodoViewModel() { }
 
         public TodoViewModel(Todo todo)
         {
             if (todo != null)
             {
-                this.Id = todo.Id;
                 this.Todo1 = todo.Todo1;
                 this.Todo2 = todo.Todo2;
                 this.Todo3 = todo.Todo3;
@@ -91,7 +82,6 @@ namespace Systematycznosc.ViewModels
                 this.TodoDate10 = todo.TodoDate10;
                 this.TodoDate11 = todo.TodoDate11;
             }
-            else { }
         }
     }
 }
