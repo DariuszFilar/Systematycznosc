@@ -1,4 +1,5 @@
-﻿@model Systematycznosc.ViewModels.CredoViewModel
+﻿@using Systematycznosc.Models
+@model Systematycznosc.ViewModels.CredoViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     <style>
@@ -23,52 +24,73 @@
         </div>
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
-    @*<div class="numberlist">
+    <div class="numberlist">
         <div style="font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
         <ol>
-            @if (Model.Credo1 != null)
-            {
-                <li><a>@Model.Credo1</a></li>
-            }
-            @if (Model.Credo2 != null)
-            {
-                <li><a>@Model.Credo2</a></li>
-            }
-            @if (Model.Credo3 != null)
-            {
-                <li><a>@Model.Credo3</a></li>
-            }
-            @if (Model.Credo4 != null)
-            {
-                <li><a>@Model.Credo4</a></li>
-            }
-            @if (Model.Credo5 != null)
-            {
-                <li><a>@Model.Credo5</a></li>
-            }
-            @if (Model.Credo6 != null)
-            {
-                <li><a>@Model.Credo6</a></li>
-            }
-            @if (Model.Credo7 != null)
-            {
-                <li><a>@Model.Credo7</a></li>
-            }
-            @if (Model.Credo8 != null)
-            {
-                <li><a>@Model.Credo8</a></li>
-            }
-            @if (Model.Credo9 != null)
-            {
-                <li><a>@Model.Credo9</a></li>
-            }
-            @if (Model.Credo10 != null)
-            {
-                <li><a>@Model.Credo10</a></li>
+            @{
+                if (Model.Credos != null)
+                {
+                    foreach (var credo in Model.Credos)
+                    {
+                        if (credo != null)
+                        {
+                            <li><a>@credo</a></li>
+                        }
+                    }
+                }
             }
         </ol>
     </div>
-</div>*@
+</div>
+
+
+
+@*<div class="numberlist">
+            <div style="font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
+            <ol>
+                @if (Model.Credo1 != null)
+                {
+                    <li><a>@Model.Credo1</a></li>
+                }
+                @if (Model.Credo2 != null)
+                {
+                    <li><a>@Model.Credo2</a></li>
+                }
+                @if (Model.Credo3 != null)
+                {
+                    <li><a>@Model.Credo3</a></li>
+                }
+                @if (Model.Credo4 != null)
+                {
+                    <li><a>@Model.Credo4</a></li>
+                }
+                @if (Model.Credo5 != null)
+                {
+                    <li><a>@Model.Credo5</a></li>
+                }
+                @if (Model.Credo6 != null)
+                {
+                    <li><a>@Model.Credo6</a></li>
+                }
+                @if (Model.Credo7 != null)
+                {
+                    <li><a>@Model.Credo7</a></li>
+                }
+                @if (Model.Credo8 != null)
+                {
+                    <li><a>@Model.Credo8</a></li>
+                }
+                @if (Model.Credo9 != null)
+                {
+                    <li><a>@Model.Credo9</a></li>
+                }
+                @if (Model.Credo10 != null)
+                {
+                    <li><a>@Model.Credo10</a></li>
+                }
+            </ol>
+        </div>
+    </div>*@
 <div style="max-width: 150px; margin-left:auto; margin-right:auto; padding-top: 50px; padding-bottom:50px;">
     <a href="@Url.Action("CredoEdit", "Home")" id="HoverNone">
         <div class="glyphicon glyphicon-plus-sign" style="font-size: 150px; display:block; text-align:center; color: lightcoral; max-width: 150px; margin-left:auto; margin-right:auto"></div>

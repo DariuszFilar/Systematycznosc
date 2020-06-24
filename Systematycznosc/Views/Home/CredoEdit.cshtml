@@ -21,96 +21,131 @@
         </div>
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
-    @using (Html.BeginForm("CredoEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-s-5 col-md-11 col-lg-6", role = "form", style = " text-align: center;font-size:35px; " }))
-    {
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo1, "Credo nr 1:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.Credo1, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo1, "", new { @class = "text-danger" })
+    @{using (Html.BeginForm("CredoEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-s-5 col-md-11 col-lg-6", role = "form", style = " text-align: center;font-size:35px; " }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            for (int i=0;i<9; i++)
+            //foreach (var credo in Model.Credos)
+            {
+                <div class="form-group" style="text-align: center;">
+                    <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none !important;">
+                        @Html.LabelFor(m => m.Credos[i], "Credo nr:" +[i] + ":", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                        @Html.TextBoxFor(m => m.Credos[i], new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                        @Html.ValidationMessageFor(m => m.Credos[i], "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            }
+            <div style="padding-bottom:50px; padding-top:20px;">
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
+                </div>
+                <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    @Html.ActionLink("Powrót do Credo", "Credo", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+                </div>
             </div>
-        </div>
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo2, "Credo nr 2:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.Credo2, new { placeholder = "Tu wpisz zasadę",@class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo2, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo3, "Credo nr 3:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.Credo3, new {placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo3, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo4, "Credo nr 4:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.Credo4, new {placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo4, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo5, "Credo nr 5:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.Credo5, new {placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo5, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo6, "Credo nr 6:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.Credo6, new {placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo6, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo1, "Credo nr 7:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.Credo7, new {placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo7, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo8, "Credo nr 8:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.Credo8, new {placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo8, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo9, "Credo nr 9:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                @Html.TextBoxFor(m => m.Credo9, new {placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo9, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div class="form-group" style="text-align:center;">
-
-            <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
-                @Html.LabelFor(m => m.Credo10, "Credo nr 10:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; padding-left:0px;" })
-                @Html.TextBoxFor(m => m.Credo10, new {placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                @Html.ValidationMessageFor(m => m.Credo10, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <div style="padding-bottom:50px; padding-top:20px;">
-            <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
-            </div>
-            <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                @Html.ActionLink("Powrót do Credo", "Credo", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
-            </div>
-        </div>
+            @*foreach (var credo in Model.Credos)
+                {
+                    <div class="form-group" style="text-align: center;">
+                        <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none !important;">
+                            @Html.LabelFor(m => m.Credos, "Credo nr 1:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.TextBoxFor(m => m.Credos, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                            @Html.ValidationMessageFor(m => m.Credos, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                }*@
+        }
     }
+
+    @*@using (Html.BeginForm("CredoEdit", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-s-5 col-md-11 col-lg-6", role = "form", style = " text-align: center;font-size:35px; " }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo1, "Credo nr 1:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.Credo1, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo2, "Credo nr 2:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.Credo2, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo3, "Credo nr 3:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.Credo3, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo4, "Credo nr 4:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.Credo4, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo4, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo5, "Credo nr 5:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.Credo5, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo5, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo6, "Credo nr 6:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.Credo6, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo6, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo1, "Credo nr 7:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.Credo7, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo7, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo8, "Credo nr 8:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.Credo8, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo8, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo9, "Credo nr 9:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                    @Html.TextBoxFor(m => m.Credo9, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo9, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group" style="text-align:center;">
+
+                <div class="col-md-10" style="margin-left:auto; margin-right:auto; float:none!important;">
+                    @Html.LabelFor(m => m.Credo10, "Credo nr 10:", new { @class = " control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; padding-left:0px;" })
+                    @Html.TextBoxFor(m => m.Credo10, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
+                    @Html.ValidationMessageFor(m => m.Credo10, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div style="padding-bottom:50px; padding-top:20px;">
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="Log in" class="btn btn-success">Zapisz</button>
+                </div>
+                <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    @Html.ActionLink("Powrót do Credo", "Credo", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
+                </div>
+            </div>
+        }*@
 </div>

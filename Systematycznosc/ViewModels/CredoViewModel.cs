@@ -13,7 +13,8 @@ namespace Systematycznosc.ViewModels
         public virtual ApplicationUser User { get; set; }
 
         public List<string> Credos { get; set; }
-        
+
+
         public CredoViewModel(Credo credo)
         {
             if (credo != null)
@@ -32,6 +33,16 @@ namespace Systematycznosc.ViewModels
                     credo.Credo10
                 };
             }
+            else
+            {
+                //this.Credos = new List<string>();
+              
+
+            }
+        }
+
+        public CredoViewModel()
+        {
         }
     }
 }

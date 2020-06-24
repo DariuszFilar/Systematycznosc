@@ -15,7 +15,7 @@ namespace Systematycznosc.Controllers
         private readonly SystematycznoscContext _context;
 
         public HomeController() { _context = new SystematycznoscContext(); }
-        
+
         [HttpGet]
         public ActionResult Index()
         {
@@ -1244,36 +1244,20 @@ namespace Systematycznosc.Controllers
 
             if (credo != null)
             {
-                //credo.Credo1 = model.Credo1;
-                //credo.Credo2 = model.Credo2;
-                //credo.Credo3 = model.Credo3;
-                //credo.Credo4 = model.Credo4;
-                //credo.Credo5 = model.Credo5;
-                //credo.Credo6 = model.Credo6;
-                //credo.Credo7 = model.Credo7;
-                //credo.Credo8 = model.Credo8;
-                //credo.Credo9 = model.Credo9;
-                //credo.Credo10 = model.Credo10;
+                credo.Credos = model.Credos;
             }
             else
             {
-                user.Credo = new Credo
+                user.Credo = new Models.Credo
                 {
-                    //Credo1 = model.Credo1,
-                    //Credo2 = model.Credo2,
-                    //Credo3 = model.Credo3,
-                    //Credo4 = model.Credo4,
-                    //Credo5 = model.Credo5,
-                    //Credo6 = model.Credo6,
-                    //Credo7 = model.Credo7,
-                    //Credo8 = model.Credo8,
-                    //Credo9 = model.Credo9,
-                    //Credo10 = model.Credo10
+                    Credos = model.Credos
                 };
             }
             _context.SaveChanges();
             return View(model);
         }
+
+
         public ActionResult About()
         {
             return View();
