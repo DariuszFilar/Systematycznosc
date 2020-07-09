@@ -1,4 +1,6 @@
-﻿@model Systematycznosc.ViewModels.CredoViewModel
+﻿@using Systematycznosc.Migrations
+@using Systematycznosc.Models
+@model Systematycznosc.ViewModels.CredoViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     <style>
@@ -29,9 +31,10 @@
             {
                 <div class="form-group" style="text-align: center;">
                     <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none !important;">
-                        @Html.LabelFor(m => credo.CredoId, "Credoes nr:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.TextBoxFor(m => credo.CredoId, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" })
-                        @Html.ValidationMessageFor(m => credo.CredoId, "", new { @class = "text-danger" })
+                        @Html.LabelFor(m => credo.CredoValue, "Credoes nr:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                        @Html.TextBox("credoId",credo.CredoValue ,new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;" , name = "credoID" })
+                        @Html.ValidationMessageFor(m => credo.CredoValue, "", new { @class = "text-danger"})
+                        @Html.Hidden("credoId", credo.CredoId)
                     </div>
                 </div>
             }
@@ -43,7 +46,7 @@
                     @Html.ActionLink("Powrót do Credoes", "Credo", "Home", null, new { @class = "btn bg-success icon-user nav_bar_first_small_screen", style = "color:white; font-size:40px;" })
                 </div>
             </div>
-            @*foreach (var credo in Model.Credoess)
+           @*foreach (var credo in Model.Credoess)
                 {
                     <div class="form-group" style="text-align: center;">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none !important;">

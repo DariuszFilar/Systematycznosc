@@ -1259,10 +1259,10 @@ namespace Systematycznosc.Controllers
 
 
         [HttpPost]
-        public ActionResult CredoEdit(int credoId)
+        public ActionResult CredoEdit(string credoId)
         {
             var userId = User.Identity.GetUserId();
-            //var credo = _context.Credoes.Where(x => x.UserProfileId == CredoId);
+            //var credo = _context.Credoes.Where(x => x.UserProfileId == credoId);
 
             //if (credo == null)
             //    return View();
