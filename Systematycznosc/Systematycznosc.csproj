@@ -281,6 +281,38 @@
     <Compile Include="Migrations\202005261016546_AddedTodoDate.Designer.cs">
       <DependentUpon>202005261016546_AddedTodoDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006301401142_AddedCredosTable.cs" />
+    <Compile Include="Migrations\202006301401142_AddedCredosTable.Designer.cs">
+      <DependentUpon>202006301401142_AddedCredosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006301438234_EditedCredosTable.cs" />
+    <Compile Include="Migrations\202006301438234_EditedCredosTable.Designer.cs">
+      <DependentUpon>202006301438234_EditedCredosTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006301502521_FixedCredoTable.cs" />
+    <Compile Include="Migrations\202006301502521_FixedCredoTable.Designer.cs">
+      <DependentUpon>202006301502521_FixedCredoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006301533299_ChangedCredoes.cs" />
+    <Compile Include="Migrations\202006301533299_ChangedCredoes.Designer.cs">
+      <DependentUpon>202006301533299_ChangedCredoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006301536172_ChangedCredos.cs" />
+    <Compile Include="Migrations\202006301536172_ChangedCredos.Designer.cs">
+      <DependentUpon>202006301536172_ChangedCredos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007071345045_EditedCredosTable1.cs" />
+    <Compile Include="Migrations\202007071345045_EditedCredosTable1.Designer.cs">
+      <DependentUpon>202007071345045_EditedCredosTable1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007080823257_DeletedCredoTable.cs" />
+    <Compile Include="Migrations\202007080823257_DeletedCredoTable.Designer.cs">
+      <DependentUpon>202007080823257_DeletedCredoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007080850085_AddedCredoTable.cs" />
+    <Compile Include="Migrations\202007080850085_AddedCredoTable.Designer.cs">
+      <DependentUpon>202007080850085_AddedCredoTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -565,6 +597,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005261016546_AddedTodoDate.resx">
       <DependentUpon>202005261016546_AddedTodoDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006301401142_AddedCredosTable.resx">
+      <DependentUpon>202006301401142_AddedCredosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006301438234_EditedCredosTable.resx">
+      <DependentUpon>202006301438234_EditedCredosTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006301502521_FixedCredoTable.resx">
+      <DependentUpon>202006301502521_FixedCredoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006301533299_ChangedCredoes.resx">
+      <DependentUpon>202006301533299_ChangedCredoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006301536172_ChangedCredos.resx">
+      <DependentUpon>202006301536172_ChangedCredos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007071345045_EditedCredosTable1.resx">
+      <DependentUpon>202007071345045_EditedCredosTable1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007080823257_DeletedCredoTable.resx">
+      <DependentUpon>202007080823257_DeletedCredoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007080850085_AddedCredoTable.resx">
+      <DependentUpon>202007080850085_AddedCredoTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

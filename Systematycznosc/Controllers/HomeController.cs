@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using Systematycznosc.Migrations;
 using Systematycznosc.Models;
 using Systematycznosc.ViewModels;
 
@@ -13,7 +16,6 @@ namespace Systematycznosc.Controllers
     public class HomeController : Controller
     {
         private readonly SystematycznoscContext _context;
-
         public HomeController() { _context = new SystematycznoscContext(); }
 
         [HttpGet]
@@ -28,7 +30,7 @@ namespace Systematycznosc.Controllers
                 UserProfileViewModel UserProfile = new UserProfileViewModel(userProfile);
                 wrapper.UserProfileViewModel = UserProfile;
 
-                var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+                var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
                 var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
                 var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
                 var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
@@ -38,7 +40,7 @@ namespace Systematycznosc.Controllers
                 var relationship = _context.Relationship.FirstOrDefault(x => x.Id == userId);
                 var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
 
-                wrapper.CredoViewModel = new CredoViewModel(credo);
+                wrapper.CredoViewModel = new CredoViewModel(credos);
                 wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel(morningQuestions);
                 wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel(eveningQuestions);
                 wrapper.TodoViewModel = new TodoViewModel(todo);
@@ -52,6 +54,7 @@ namespace Systematycznosc.Controllers
 
             return RedirectToAction("Manage", "Profile");
         }
+
         [HttpPost]
         public ActionResult Index(UserProfileViewModelWrapper model, string submitButton)
         {
@@ -1197,16 +1200,16 @@ namespace Systematycznosc.Controllers
         }
 
 
-
         public ActionResult Credo()
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+            var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
 
             if (userProfile != null)
             {
-                CredoViewModel model = new CredoViewModel(credo);
+                CredoViewModel model = new CredoViewModel(credos);
+
                 return View(model);
             }
             else
@@ -1219,11 +1222,12 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
+            var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
+            //var credos = _context.
 
             if (userProfile != null)
             {
-                CredoViewModel model = new CredoViewModel(credo);
+                CredoViewModel model = new CredoViewModel(credos);
                 return View(model);
             }
             else
@@ -1232,30 +1236,48 @@ namespace Systematycznosc.Controllers
             }
 
         }
+
         [HttpPost]
-        public ActionResult CredoEdit(CredoViewModel model)
+        public ActionResult AddCredo(string credoValue)//credo value podane od uzytkownika z textboxa
         {
             var userId = User.Identity.GetUserId();
-            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var credo = _context.Credo.FirstOrDefault(x => x.Id == userId);
-
-            if (user == null)
-                return View();
-
-            if (credo != null)
+            var credo = new Credo
             {
-                credo.Credos = model.Credos;
-            }
-            else
-            {
-                user.Credo = new Models.Credo
-                {
-                    Credos = model.Credos
-                };
-            }
-            _context.SaveChanges();
-            return View(model);
+                UserProfileId = userId,
+                CredoValue = credoValue
+            };
+            // to ponizej w try catch
+            UserProfile userProfile = _context.UserProfiles.Single(x => x.Id == userId);
+
+            if (userProfile.Credos == null)
+                userProfile.Credos = new List<Credo>();
+
+            userProfile.Credos.Add(credo);
+
+            return View();
         }
+
+
+        [HttpPost]
+        public ActionResult CredoEdit(int credoId)
+        {
+            var userId = User.Identity.GetUserId();
+            //var credo = _context.Credoes.Where(x => x.UserProfileId == CredoId);
+
+            //if (credo == null)
+            //    return View();
+
+            UserProfile userProfile = _context.UserProfiles.Single(x => x.Id == userId);
+
+            if (userProfile.Credos == null)
+                userProfile.Credos = new List<Credo>();
+
+            //userProfile.Credos
+
+            return View();
+        }
+
+        // TODO stworzyc nowa metode wywolywana na plusiku ktora ma cos takiego mniej wiecej:
 
 
         public ActionResult About()
@@ -1302,9 +1324,11 @@ namespace Systematycznosc.Controllers
             }
             else if (userProfile != null && eveningQuestions == null && morningQuestions == null)
             {
-                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
-                wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel();
-                wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel();
+                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper
+                {
+                    MorningQuestionsViewModel = new MorningQuestionsViewModel(),
+                    EveningQuestionsViewModel = new EveningQuestionsViewModel()
+                };
                 return View(wrapper);
             }
             else
@@ -1356,7 +1380,7 @@ namespace Systematycznosc.Controllers
             }
             else
             {
-                user.MorningQuestions = new Models.MorningQuestions
+                user.MorningQuestions = new MorningQuestions
                 {
                     MorningQuestions1 = model.MorningQuestions1,
                     MorningQuestions2 = model.MorningQuestions2,

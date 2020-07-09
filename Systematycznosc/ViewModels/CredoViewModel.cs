@@ -12,37 +12,12 @@ namespace Systematycznosc.ViewModels
     {
         public virtual ApplicationUser User { get; set; }
 
-        public List<string> Credos { get; set; }
+        public List<Credo> Credos { get; set; }
 
-
-        public CredoViewModel(Credo credo)
+        public CredoViewModel(IEnumerable<Credo> credos)
         {
-            if (credo != null)
-            {
-                Credos = new List<string>()
-                {
-                    credo.Credo1,
-                    credo.Credo2,
-                    credo.Credo3,
-                    credo.Credo4,
-                    credo.Credo5,
-                    credo.Credo6,
-                    credo.Credo7,
-                    credo.Credo8,
-                    credo.Credo9,
-                    credo.Credo10
-                };
-            }
-            else
-            {
-                //this.Credos = new List<string>();
-              
-
-            }
+            Credos = credos.ToList();
         }
 
-        public CredoViewModel()
-        {
-        }
     }
 }

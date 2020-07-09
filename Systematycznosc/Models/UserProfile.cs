@@ -25,6 +25,8 @@ namespace Systematycznosc
         public string Gender { get; set; }
 
         public string Photo { get; set; }
-        
+
+        public ICollection<Credo> Credos { get; set; }
+
     }
 }

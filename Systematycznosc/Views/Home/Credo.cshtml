@@ -14,7 +14,7 @@
 
     <!-- Masthead Avatar Image -->
     <!-- Masthead Heading -->
-    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; text-align:center;" id="Opener">Credo</h1>
+    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; text-align:center;" id="Opener">Credoes</h1>
 
     <!-- Icon Divider -->
     <div class="divider-custom">
@@ -34,7 +34,11 @@
                     {
                         if (credo != null)
                         {
-                            <li><a>@credo</a></li>
+                            string s = $"{credo.CredoValue}";
+                            <li>
+                                <a>@s</a>
+                            </li>
+                            
                         }
                     }
                 }
@@ -48,45 +52,45 @@
 @*<div class="numberlist">
             <div style="font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
             <ol>
-                @if (Model.Credo1 != null)
+                @if (Model.Credoes1 != null)
                 {
-                    <li><a>@Model.Credo1</a></li>
+                    <li><a>@Model.Credoes1</a></li>
                 }
-                @if (Model.Credo2 != null)
+                @if (Model.Credoes2 != null)
                 {
-                    <li><a>@Model.Credo2</a></li>
+                    <li><a>@Model.Credoes2</a></li>
                 }
-                @if (Model.Credo3 != null)
+                @if (Model.Credoes3 != null)
                 {
-                    <li><a>@Model.Credo3</a></li>
+                    <li><a>@Model.Credoes3</a></li>
                 }
-                @if (Model.Credo4 != null)
+                @if (Model.Credoes4 != null)
                 {
-                    <li><a>@Model.Credo4</a></li>
+                    <li><a>@Model.Credoes4</a></li>
                 }
-                @if (Model.Credo5 != null)
+                @if (Model.Credoes5 != null)
                 {
-                    <li><a>@Model.Credo5</a></li>
+                    <li><a>@Model.Credoes5</a></li>
                 }
-                @if (Model.Credo6 != null)
+                @if (Model.Credoes6 != null)
                 {
-                    <li><a>@Model.Credo6</a></li>
+                    <li><a>@Model.Credoes6</a></li>
                 }
-                @if (Model.Credo7 != null)
+                @if (Model.Credoes7 != null)
                 {
-                    <li><a>@Model.Credo7</a></li>
+                    <li><a>@Model.Credoes7</a></li>
                 }
-                @if (Model.Credo8 != null)
+                @if (Model.Credoes8 != null)
                 {
-                    <li><a>@Model.Credo8</a></li>
+                    <li><a>@Model.Credoes8</a></li>
                 }
-                @if (Model.Credo9 != null)
+                @if (Model.Credoes9 != null)
                 {
-                    <li><a>@Model.Credo9</a></li>
+                    <li><a>@Model.Credoes9</a></li>
                 }
-                @if (Model.Credo10 != null)
+                @if (Model.Credoes10 != null)
                 {
-                    <li><a>@Model.Credo10</a></li>
+                    <li><a>@Model.Credoes10</a></li>
                 }
             </ol>
         </div>

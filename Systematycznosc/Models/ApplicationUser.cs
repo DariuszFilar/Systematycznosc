@@ -12,7 +12,6 @@ namespace Systematycznosc.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual UserProfile UserProfile { get; set; }
-        public Credo Credo { get; set; }
         public MorningQuestions MorningQuestions { get; set; }
         public EveningQuestions EveningQuestions { get; set; }
         public FamilyBirthday FamilyBirthday { get; set; }
