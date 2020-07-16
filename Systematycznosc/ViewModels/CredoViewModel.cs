@@ -19,5 +19,8 @@ namespace Systematycznosc.ViewModels
             Credos = credos.ToList();
         }
 
+        public CredoViewModel()
+        {
+        }
     }
 }
