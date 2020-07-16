@@ -1330,10 +1330,10 @@ namespace Systematycznosc.Controllers
             {
                 var credo = _context.Credoes.SingleOrDefault(x => x.CredoId == credoId);
                 credo.CredoValue = credoValue;
-                //userProfile.Credos.Add(credo);
             }
             _context.SaveChanges();
 
+            ModelState.Clear();
             var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
             CredoViewModel model = new CredoViewModel(credos);
 
