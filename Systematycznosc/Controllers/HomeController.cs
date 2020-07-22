@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -1237,81 +1239,37 @@ namespace Systematycznosc.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddCredo(string credoValue)//credo value podane od uzytkownika z textboxa
+        public ActionResult CredoEdit(CredoViewModel model)
         {
             var userId = User.Identity.GetUserId();
-            var credo = new Credo
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            //var credos = _context.Credoes.Where(x => x.UserProfileId == userId).ToList();
+            var credos = _context.Credoes.AsNoTracking().Where(x => x.UserProfileId == userId).ToList();
+
+            if (model.Credos == null)
             {
-                UserProfileId = userId,
-                CredoValue = credoValue
-            };
-            // to ponizej w try catch
-            UserProfile userProfile = _context.UserProfiles.Single(x => x.Id == userId);
+                return RedirectToAction("Credo", "Home");
+            }
+            else
+            {
+                {
+                    credos = model.Credos;
 
-            if (userProfile.Credos == null)
-                userProfile.Credos = new List<Credo>();
+                    foreach (var credo in credos)
+                    {
+                        _context.Entry(credo).State = EntityState.Modified;
 
-            userProfile.Credos.Add(credo);
+                        _context.SaveChanges();
+                    }
 
-            return View();
+                }
+                _context.SaveChanges();
+                return View(model);
+
+            }
         }
-
-
-        //[HttpPost]
-        //public ActionResult CredoEdit(string credoId)
-        //{
-        //    var userId = User.Identity.GetUserId();
-        //    //var credo = _context.Credoes.Where(x => x.UserProfileId == credoId);
-
-        //    //if (credo == null)
-        //    //    return View();
-
-        //    UserProfile userProfile = _context.UserProfiles.Single(x => x.Id == userId);
-
-        //    if (userProfile.Credos == null)
-        //        userProfile.Credos = new List<Credo>();
-
-        //    //userProfile.Credos
-
-        //    return View();
-        //}
-
-        //// TODO stworzyc nowa metode wywolywana na plusiku ktora ma cos takiego mniej wiecej:
-
-        //[HttpPost]
-        //public ActionResult CredoEdit(int credoId, string credoValue)
-        //{
-        //    var userId = User.Identity.GetUserId();
-        //    UserProfile userProfile = _context.UserProfiles.Single(x => x.Id == userId);
-        //    userProfile.Credos = _context.Credoes.Where(x => x.CredoId == credoId).ToList();
-
-
-        //    if (userProfile.Credos == null)
-        //    {
-        //        var credo = new Credo
-        //        {
-        //            CredoValue = credoValue,
-        //            UserProfileId = userId
-        //        };
-        //    }
-        //    else
-        //    {
-        //        var credo = _context.Credoes.SingleOrDefault(x => x.CredoId == credoId);
-        //        credo.CredoValue = credoValue;
-        //        //userProfile.Credos.Add(credo);
-        //    }
-        //    _context.SaveChanges();
-
-        //    var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
-        //    CredoViewModel model = new CredoViewModel(credos);
-
-        //    return View(model);
-        //}
-
-        //// TODO stworzyc nowa metode wywolywana na plusiku ktora ma cos takiego mniej wiecej:
-
         [HttpPost]
-        public ActionResult CredoEdit(int credoId, string credoValue)
+        public ActionResult AddCredoPoprawne(int credoId, string credoValue)
         {
             var userId = User.Identity.GetUserId();
             UserProfile userProfile = _context.UserProfiles.Single(x => x.Id == userId);
@@ -1334,6 +1292,7 @@ namespace Systematycznosc.Controllers
             _context.SaveChanges();
 
             ModelState.Clear();
+
             var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
             CredoViewModel model = new CredoViewModel(credos);
 
