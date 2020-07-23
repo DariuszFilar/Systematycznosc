@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CredoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -472,9 +473,9 @@
     <Content Include="Views\Home\Goals.cshtml" />
     <Content Include="Views\Home\Todo.cshtml" />
     <Content Include="Views\Profile\Manage.cshtml" />
-    <Content Include="Views\Home\Credo.cshtml" />
+    <Content Include="Views\Credo\Index.cshtml" />
     <Content Include="Views\Home\Questions.cshtml" />
-    <Content Include="Views\Home\CredoEdit.cshtml" />
+    <Content Include="Views\Credo\CredoEdit.cshtml" />
     <Content Include="Views\Home\MorningQuestionsEdit.cshtml" />
     <Content Include="Views\Home\EveningQuestionsEdit.cshtml" />
     <Content Include="Views\Home\TodoEdit.cshtml" />

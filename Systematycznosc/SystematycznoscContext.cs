@@ -7,7 +7,7 @@ namespace Systematycznosc
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
     using Systematycznosc.Models;
-    
+
 
     public partial class SystematycznoscContext : IdentityDbContext<ApplicationUser>
     {
