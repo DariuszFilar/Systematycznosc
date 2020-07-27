@@ -67,12 +67,14 @@ namespace Systematycznosc.Controllers
                 credos = model.Credos;
                 foreach (var credo in credos.Where(x => x.CredoValue != null))
                 {
-                    _context.Entry(credo).State = EntityState.Modified;                                  
+                    _context.Entry(credo).State = EntityState.Modified;
                 }
+
                 foreach (var credo in credos.Where(x => x.CredoValue == null))
                 {
                     _context.Entry(credo).State = EntityState.Deleted;
                 }
+                ModelState.Clear();
                 _context.SaveChanges();
                 model.Credos = credos.Where(x => x.CredoValue != null).ToList();
                 return View(model);
@@ -80,26 +82,17 @@ namespace Systematycznosc.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddCredoPoprawne(int credoId, string credoValue)
+        public ActionResult AddCredo(string credoValue)
         {
             var userId = User.Identity.GetUserId();
-            UserProfile userProfile = _context.UserProfiles.Single(x => x.Id == userId);
-            userProfile.Credos = _context.Credoes.Where(x => x.CredoId == credoId).ToList();
 
+            var credo = new Credo
+            {
+                CredoValue = credoValue,
+                UserProfileId = userId
+            };
 
-            if (userProfile.Credos == null)
-            {
-                var credo = new Credo
-                {
-                    CredoValue = credoValue,
-                    UserProfileId = userId
-                };
-            }
-            else
-            {
-                var credo = _context.Credoes.SingleOrDefault(x => x.CredoId == credoId);
-                credo.CredoValue = credoValue;
-            }
+            _context.Credoes.Add(credo);
             _context.SaveChanges();
 
             ModelState.Clear();
@@ -107,7 +100,8 @@ namespace Systematycznosc.Controllers
             var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
             CredoViewModel model = new CredoViewModel(credos);
 
-            return View(model);
+            return PartialView("_AddCredo", model);
+            //return View(model);
         }
 
         // TODO stworzyc nowa metode wywolywana na plusiku ktora ma cos takiego mniej wiecej:

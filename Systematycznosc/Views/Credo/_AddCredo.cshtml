@@ -1,0 +1,23 @@
+﻿@model Systematycznosc.ViewModels.CredoViewModel
+
+<div class="numberlist">
+    <div style="font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia:</div>
+    <ol>
+        @{
+            if (Model.Credos != null)
+            {
+                foreach (var credo in Model.Credos)
+                {
+                    if (credo != null)
+                    {
+                        string s = $"{credo.CredoValue}";
+                        <li>
+                            <a>@s</a>
+                        </li>
+
+                    }
+                }
+            }
+        }
+    </ol>
+</div>

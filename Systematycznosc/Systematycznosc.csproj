@@ -503,6 +503,7 @@
     <Content Include="Views\Home\_GGoalWelcome.cshtml" />
     <Content Include="Views\Home\_HGoalWelcome.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Credo\_AddCredo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
