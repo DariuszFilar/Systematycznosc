@@ -90,14 +90,13 @@
                     <div style="color:@colordescription; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
                     <ol>
 
-                        @{foreach (var credo in Model.CredoViewModel.Credos)
-
+                        @{foreach (var credo in Model.CredoViewModel.Credos.Where(x => x.CredoValue != null))
                             {
                                 if (credo != null)
                                 {
                                     <li>
                                         <a>
-                                            @credo
+                                            @credo.CredoValue
                                         </a>
                                     </li>
                                 }

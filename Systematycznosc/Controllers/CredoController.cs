@@ -31,13 +31,42 @@ namespace Systematycznosc.Controllers
                 return RedirectToAction("Manage", "Profile");
             }
         }
+        [HttpPost]
+        public ActionResult Index(string credoValue)
+        {
+            var userId = User.Identity.GetUserId();
+            var credosAmmount = _context.Credoes.Where(x => x.UserProfileId == userId).Count();
+            if (credosAmmount < 12)
+            {
+                var credo = new Credo
+                {
+                    CredoId = _context.Credoes.Count() + 1,
+                    CredoValue = credoValue,
+                    UserProfileId = userId
+                };
+                _context.Credoes.Add(credo);
+                _context.SaveChanges();
+
+                ModelState.Clear();
+                var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
+                CredoViewModel model = new CredoViewModel(credos);
+                return PartialView("_AddCredo", model);
+            }
+
+            else
+            {
+                ModelState.Clear();
+                var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
+                CredoViewModel model = new CredoViewModel(credos);
+                return View(model);
+            }
+        }
         [HttpGet]
         public ActionResult CredoEdit()
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
             var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
-
 
             if (userProfile != null)
             {
@@ -65,46 +94,17 @@ namespace Systematycznosc.Controllers
             else
             {
                 credos = model.Credos;
-                foreach (var credo in credos.Where(x => x.CredoValue != null))
+                foreach (var credo in credos)
                 {
                     _context.Entry(credo).State = EntityState.Modified;
                 }
 
-                foreach (var credo in credos.Where(x => x.CredoValue == null))
-                {
-                    _context.Entry(credo).State = EntityState.Deleted;
-                }
-                ModelState.Clear();
                 _context.SaveChanges();
-                model.Credos = credos.Where(x => x.CredoValue != null).ToList();
+                ModelState.Clear();
+
+                model.Credos = credos.ToList();
                 return View(model);
             }
         }
-
-        [HttpPost]
-        public ActionResult AddCredo(string credoValue)
-        {
-            var userId = User.Identity.GetUserId();
-
-            var credo = new Credo
-            {
-                CredoValue = credoValue,
-                UserProfileId = userId
-            };
-
-            _context.Credoes.Add(credo);
-            _context.SaveChanges();
-
-            ModelState.Clear();
-
-            var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
-            CredoViewModel model = new CredoViewModel(credos);
-
-            return PartialView("_AddCredo", model);
-            //return View(model);
-        }
-
-        // TODO stworzyc nowa metode wywolywana na plusiku ktora ma cos takiego mniej wiecej:
-
     }
 }

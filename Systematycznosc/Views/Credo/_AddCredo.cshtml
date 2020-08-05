@@ -6,15 +6,12 @@
         @{
             if (Model.Credos != null)
             {
-                foreach (var credo in Model.Credos)
+                foreach (var credo in Model.Credos.Where(x => x.CredoValue != null))
                 {
-                    if (credo != null)
                     {
-                        string s = $"{credo.CredoValue}";
                         <li>
-                            <a>@s</a>
+                            <a>@credo.CredoValue</a>
                         </li>
-
                     }
                 }
             }

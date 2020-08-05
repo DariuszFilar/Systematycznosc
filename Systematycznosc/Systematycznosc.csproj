@@ -314,6 +314,14 @@
     <Compile Include="Migrations\202007080850085_AddedCredoTable.Designer.cs">
       <DependentUpon>202007080850085_AddedCredoTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007281022004_AddedAutoIncrement.cs" />
+    <Compile Include="Migrations\202007281022004_AddedAutoIncrement.Designer.cs">
+      <DependentUpon>202007281022004_AddedAutoIncrement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007290712013_DeletedAutoincrementationofId.cs" />
+    <Compile Include="Migrations\202007290712013_DeletedAutoincrementationofId.Designer.cs">
+      <DependentUpon>202007290712013_DeletedAutoincrementationofId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -623,6 +631,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007080850085_AddedCredoTable.resx">
       <DependentUpon>202007080850085_AddedCredoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007281022004_AddedAutoIncrement.resx">
+      <DependentUpon>202007281022004_AddedAutoIncrement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007290712013_DeletedAutoincrementationofId.resx">
+      <DependentUpon>202007290712013_DeletedAutoincrementationofId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
