@@ -31,12 +31,13 @@ namespace Systematycznosc.Controllers
                 return RedirectToAction("Manage", "Profile");
             }
         }
+
         [HttpPost]
         public ActionResult Index(string credoValue)
         {
             var userId = User.Identity.GetUserId();
-            var credosAmmount = _context.Credoes.Where(x => x.UserProfileId == userId).Count();
-            if (credosAmmount < 12)
+            var credosAmount = _context.Credoes.Where(x => x.UserProfileId == userId).Count();
+            if (credosAmount < 12)
             {
                 var credo = new Credo
                 {
@@ -61,6 +62,7 @@ namespace Systematycznosc.Controllers
                 return View(model);
             }
         }
+
         [HttpGet]
         public ActionResult CredoEdit()
         {
@@ -77,7 +79,6 @@ namespace Systematycznosc.Controllers
             {
                 return RedirectToAction("Manage", "Profile");
             }
-
         }
 
         [HttpPost]

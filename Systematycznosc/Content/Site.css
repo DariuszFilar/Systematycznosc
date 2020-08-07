@@ -10778,11 +10778,13 @@ footer {
 @media (max-width: 768px) {
     #Opener {
         padding-top: 100px !important;
+        font-size: 55px;
     }
 }
 @media (min-width: 768px) {
     #Opener {
         padding-top: 200px !important;
+        font-size: 55px;
     }
 }
 

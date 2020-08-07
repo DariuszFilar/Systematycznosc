@@ -39,7 +39,7 @@ namespace Systematycznosc.Controllers
                 var familyBirthday = _context.FamilyBirthday.FirstOrDefault(x => x.Id == userId);
                 var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
                 var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
-                var relationship = _context.Relationship.FirstOrDefault(x => x.Id == userId);
+                var relationships = _context.Relationships.Where(x => x.UserProfileId == userId);
                 var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
 
                 wrapper.CredoViewModel = new CredoViewModel(credos);
@@ -49,7 +49,7 @@ namespace Systematycznosc.Controllers
                 wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel(familyBirthday);
                 wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel(friendsBirthday);
                 wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel(othersBirthday);
-                wrapper.RelationshipViewModel = new RelationshipViewModel(relationship);
+                wrapper.RelationshipViewModel = new RelationshipViewModel(relationships);
                 wrapper.GoalsViewModel = new GoalsViewModel(goals);
                 return View(wrapper);
             }
@@ -1200,7 +1200,7 @@ namespace Systematycznosc.Controllers
                     return PartialView("_BGoalTable", model);
             }
         }
-           
+
         public ActionResult About()
         {
             return View();
@@ -1812,91 +1812,6 @@ namespace Systematycznosc.Controllers
             return View(model);
         }
 
-        public ActionResult Relationship()
-        {
-            var userId = User.Identity.GetUserId();
-            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var relationship = _context.Relationship.FirstOrDefault(x => x.Id == userId);
-
-            if (userProfile != null && relationship != null)
-            {
-                RelationshipViewModel model = new RelationshipViewModel(relationship);
-                return View(model);
-            }
-            else if (userProfile != null && relationship == null)
-            {
-                RelationshipViewModel model = new RelationshipViewModel();
-                return View(model);
-            }
-            else
-            {
-                return RedirectToAction("Manage", "Profile");
-            }
-        }
-        [HttpGet]
-        public ActionResult RelationshipEdit()
-        {
-            var userId = User.Identity.GetUserId();
-            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var relationship = _context.Relationship.FirstOrDefault(x => x.Id == userId);
-
-            if (relationship != null)
-            {
-                RelationshipViewModel model = new RelationshipViewModel(relationship);
-                return View(model);
-
-            }
-            else
-            {
-                RelationshipViewModel model = new RelationshipViewModel();
-                return View(model);
-
-            }
-
-        }
-        [HttpPost]
-        public ActionResult RelationshipEdit(RelationshipViewModel model)
-        {
-            var userId = User.Identity.GetUserId();
-            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var relationship = _context.Relationship.FirstOrDefault(x => x.Id == userId);
-
-            if (user == null)
-                return View();
-
-            if (relationship != null)
-            {
-                relationship.Relationship1 = model.Relationship1;
-                relationship.Relationship2 = model.Relationship2;
-                relationship.Relationship3 = model.Relationship3;
-                relationship.Relationship4 = model.Relationship4;
-                relationship.Relationship5 = model.Relationship5;
-                relationship.Relationship6 = model.Relationship6;
-                relationship.Relationship7 = model.Relationship7;
-                relationship.Relationship8 = model.Relationship8;
-                relationship.Relationship9 = model.Relationship9;
-                relationship.Relationship10 = model.Relationship10;
-            }
-            else
-            {
-                user.Relationship = new Models.Relationship
-                {
-                    Relationship1 = model.Relationship1,
-                    Relationship2 = model.Relationship2,
-                    Relationship3 = model.Relationship3,
-                    Relationship4 = model.Relationship4,
-                    Relationship5 = model.Relationship5,
-                    Relationship6 = model.Relationship6,
-                    Relationship7 = model.Relationship7,
-                    Relationship8 = model.Relationship8,
-                    Relationship9 = model.Relationship9,
-                    Relationship10 = model.Relationship10
-                };
-            }
-            _context.SaveChanges();
-            return View(model);
-        }
         [HttpGet]
         public ActionResult Goals()
         {

@@ -102,48 +102,6 @@
                                 }
                             }
                         }
-
-                        @*@if (Model.CredoesViewModel.Credoes1 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes1</a></li>
-                            }
-                            @if (Model.CredoesViewModel.Credoes2 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes2</a></li>
-                            }
-                            @if (Model.CredoesViewModel.Credoes3 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes3</a></li>
-                            }
-                            @if (Model.CredoesViewModel.Credoes4 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes4</a></li>
-                            }
-                            @if (Model.CredoesViewModel.Credoes5 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes5</a></li>
-                            }
-                            @if (Model.CredoesViewModel.Credoes6 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes6</a></li>
-                            }
-                            @if (Model.CredoesViewModel.Credoes7 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes7</a></li>
-                            }
-                            @if (Model.CredoesViewModel.Credoes8 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes8</a></li>
-                            }
-                            @if (Model.CredoesViewModel.Credoes9 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes9</a></li>
-                            }
-                            @if (Model.CredoesViewModel.Credoes10 != null)
-                            {
-                                <li><a>@Model.CredoesViewModel.Credoes10</a></li>
-                            }*@
-
                     </ol>
                 </div>
             </div>
@@ -152,7 +110,7 @@
 }
 
 @{
-    if (Model.RelationshipViewModel.Relationship1 != null)
+    if (Model.RelationshipViewModel.Relationships != null && Model.RelationshipViewModel.Relationships.Any())
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -167,19 +125,17 @@
             icon = "";
             colordescription = "black";
         };
-    }
 
 
-    if (Model.RelationshipViewModel.Relationship1 != null)
-    {
+        <section class="page-section portfolio @color" id="credo">
+            <div class=" d-flex align-items-center flex-column">
 
-        <section class="page-section @color mb-0" id="Relationship">
-            <div class="d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; text-align:center;">Związek</h1>
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Związek</h1>
+
                 <!-- Icon Divider -->
-                <div class="divider-custom @icon" style="">
+                <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
                         <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
@@ -187,49 +143,21 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@color; font-size:37px; text-align:center;">Rzeczy o których warto pamiętać byś był szczęśliwy</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Rzeczy o których warto pamiętać byś był szczęśliwy</div>
                     <ol>
-                        @if (Model.RelationshipViewModel.Relationship1 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship1</a></li>
-                        }
-                        @if (Model.RelationshipViewModel.Relationship2 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship2</a></li>
-                        }
-                        @if (Model.RelationshipViewModel.Relationship3 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship3</a></li>
-                        }
-                        @if (Model.RelationshipViewModel.Relationship4 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship4</a></li>
-                        }
-                        @if (Model.RelationshipViewModel.Relationship5 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship5</a></li>
-                        }
-                        @if (Model.RelationshipViewModel.Relationship6 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship6</a></li>
-                        }
-                        @if (Model.RelationshipViewModel.Relationship7 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship7</a></li>
-                        }
-                        @if (Model.RelationshipViewModel.Relationship8 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship8</a></li>
-                        }
-                        @if (Model.RelationshipViewModel.Relationship9 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship9</a></li>
-                        }
-                        @if (Model.RelationshipViewModel.Relationship10 != null)
-                        {
-                            <li><a>@Model.RelationshipViewModel.Relationship10</a></li>
-                        }
 
+                        @{foreach (var relationship in Model.RelationshipViewModel.Relationships.Where(x => x.RelationshipValue != null))
+                            {
+                                if (relationship != null)
+                                {
+                                    <li>
+                                        <a>
+                                            @relationship.RelationshipValue
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
                     </ol>
                 </div>
             </div>

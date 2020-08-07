@@ -28,5 +28,6 @@ namespace Systematycznosc
 
         public ICollection<Credo> Credos { get; set; }
 
+        public ICollection<Relationship> Relationships { get; set; }
     }
 }

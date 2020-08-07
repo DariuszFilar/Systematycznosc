@@ -21,7 +21,7 @@ namespace Systematycznosc.ViewModels
                                      && FriendsBirthdayViewModel.FriendsBirthday1 == null
                                      && MorningQuestionsViewModel.MorningQuestions1 == null &&
                                      OthersBirthdayViewModel.OthersBirthday1 == null &&
-                                     RelationshipViewModel.Relationship1 == null
+                                     RelationshipViewModel.Relationships == null
                                      && TodoViewModel.Todo1 == null && GoalsViewModel.AGoalName == null &&
                                      GoalsViewModel.BGoalName == null;
     }

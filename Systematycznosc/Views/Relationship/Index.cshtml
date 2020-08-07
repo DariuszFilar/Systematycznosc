@@ -1,12 +1,12 @@
 ﻿@using Systematycznosc.Models
-@model Systematycznosc.ViewModels.CredoViewModel
+@model Systematycznosc.ViewModels.RelationshipViewModel
 @{
     Layout = "~/Views/Shared/_SubPageLayout.cshtml";
 }
 
 <div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
 
-    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Credoes</h1>
+    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Związek</h1>
 
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
@@ -16,18 +16,18 @@
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
 
-    <div id="addCredo">@{Html.RenderPartial("_AddCredo", Model);}</div>
+    <div id="addRelationship">@{Html.RenderPartial("_AddRelationship", Model);}</div>
 
-    @{ if (Model.Credos.Count() < 12)
+    @{ if (Model.Relationships.Count() < 12)
         {
-            using (Ajax.BeginForm("Index", "Credo", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addCredo" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addCredo" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addform" }))
+            using (Ajax.BeginForm("Index", "Relationship", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addRelationship" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addRelationship" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addform" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
-                            @Html.Label("Zasada credo:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBox("credoValue", null, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
+                            @Html.Label("Zasada związku:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.TextBox("relationshipValue", null, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "relationshipValue", required = string.Empty })
                         </div>
                     </div>
                 }
@@ -36,7 +36,7 @@
                         <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButton">Zapisz</button>
                     </div>
                     <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panel2">
-                        @Html.ActionLink("Panel edycyjny", "CredoEdit", "Credo", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+                        @Html.ActionLink("Panel edycyjny", "RelationshipEdit", "Relationship", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
             }
@@ -47,7 +47,7 @@
         }
     }
     <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panel">
-        @Html.ActionLink("Panel edycyjny", "CredoEdit", "Credo", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+        @Html.ActionLink("Panel edycyjny", "RelationshipEdit", "Relationship", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
     </div>
 </div>
 
@@ -58,26 +58,26 @@
 
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
-    var amountOfCredo = @Model.Credos.Count();
+    var amountOfRelationship = @Model.Relationships.Count();
 
     $(document).ready(function () {
-        if (@Model.Credos.Count() <= 11) {
+        if (@Model.Relationships.Count() <= 11) {
             $("#panel").hide();
         }
-         if (@Model.Credos.Count() == 0) {
+         if (@Model.Relationships.Count() == 0) {
             $("#panel2").hide();
         }
     });
 
-  $('#saveButton').click(function (e) {
+    $('#saveButton').click(function (e) {
         $.ajax({
             success: function (data) {
-                amountOfCredo++;
-                if (amountOfCredo > 11) {
-                    $("#addform").html("Osiągnięto maksymalną ilość Credo, wejdź w opcje by edytować");
+                amountOfRelationship++;
+                if (amountOfRelationship > 11) {
+                    $("#addform").html("Osiągnięto maksymalną ilość zasad związkowych, wejdź w opcje by edytować");
                     $("#panel").show();
                 }
-                if (amountOfCredo > 0) {
+                if (amountOfRelationship > 0) {
                     $("#panel2").show();
                 }
             },

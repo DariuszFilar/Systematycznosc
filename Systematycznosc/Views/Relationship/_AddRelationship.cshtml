@@ -1,16 +1,16 @@
-﻿@model Systematycznosc.ViewModels.CredoViewModel
+﻿@model Systematycznosc.ViewModels.RelationshipViewModel
 
 <div class="numberlist">
     <div style="font-size:37px; text-align:center;">Najważniejsze rzeczy, którymi kierujesz się każdego dnia:</div>
     <ol>
         @{
-            if (Model.Credos != null)
+            if (Model.Relationships != null)
             {
-                foreach (var credo in Model.Credos.Where(x => x.CredoValue != null && x.CredoValue != ""))
+                foreach (var relationship in Model.Relationships.Where(x => x.RelationshipValue != null && x.RelationshipValue != ""))
                 {
                     {
                         <li style="text-align:left;">
-                            <a>@credo.CredoValue</a>
+                            <a>@relationship.RelationshipValue</a>
                         </li>
                     }
                 }

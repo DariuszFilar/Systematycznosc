@@ -11,34 +11,16 @@ namespace Systematycznosc.ViewModels
     public class RelationshipViewModel
     {
         public virtual ApplicationUser User { get; set; }
-        public string Relationship1 { get; set; }
-        public string Relationship2 { get; set; }
-        public string Relationship3 { get; set; }
-        public string Relationship4 { get; set; }
-        public string Relationship5 { get; set; }
-        public string Relationship6 { get; set; }
-        public string Relationship7 { get; set; }
-        public string Relationship8 { get; set; }
-        public string Relationship9 { get; set; }
-        public string Relationship10 { get; set; }
-        public string Relationship11 { get; set; }
-        public RelationshipViewModel() { }
 
-        public RelationshipViewModel(Relationship relationship)
+        public List<Relationship> Relationships { get; set; }
+
+        public RelationshipViewModel(IEnumerable<Relationship> relationships)
         {
-            if (relationship != null)
-            {
-                this.Relationship1 = relationship.Relationship1;
-                this.Relationship2 = relationship.Relationship2;
-                this.Relationship3 = relationship.Relationship3;
-                this.Relationship4 = relationship.Relationship4;
-                this.Relationship5 = relationship.Relationship5;
-                this.Relationship6 = relationship.Relationship6;
-                this.Relationship7 = relationship.Relationship7;
-                this.Relationship8 = relationship.Relationship8;
-                this.Relationship9 = relationship.Relationship9;
-                this.Relationship10 = relationship.Relationship10;
-            }
+            Relationships = relationships.ToList();
+        }
+
+        public RelationshipViewModel()
+        {
         }
     }
 }

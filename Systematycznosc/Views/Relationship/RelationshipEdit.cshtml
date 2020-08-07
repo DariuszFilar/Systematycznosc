@@ -1,6 +1,6 @@
 ﻿@using Systematycznosc.Migrations
 @using Systematycznosc.Models
-@model Systematycznosc.ViewModels.CredoViewModel
+@model Systematycznosc.ViewModels.RelationshipViewModel
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     <style>
@@ -11,7 +11,7 @@
 }
 <div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
 
-    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Credoes</h1>
+    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Związek</h1>
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
         <div class="divider-custom-icon">
@@ -20,18 +20,18 @@
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
 
-    @{using (Html.BeginForm("CredoEdit", "Credo", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-s-5 col-md-11 col-lg-6", role = "form", style = " text-align: center;font-size:35px; " }))
+    @{using (Html.BeginForm("RelationshipEdit", "Relationship", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-s-5 col-md-11 col-lg-6", role = "form", style = " text-align: center;font-size:35px; " }))
         {
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            for (int i = 0; i < Model.Credos.Count; i++)
+            for (int i = 0; i < Model.Relationships.Count; i++)
             {
                 <div class="form-group" style="text-align: center;">
                     <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none !important;">
-                        @Html.Label("Zasada credo:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                        @Html.HiddenFor(m => m.Credos[i].CredoId)
-                        @Html.TextBoxFor(m => m.Credos[i].CredoValue, null, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue" })
-                        @Html.HiddenFor(m => m.Credos[i].UserProfile)
-                        @Html.HiddenFor(m => m.Credos[i].UserProfileId)
+                        @Html.Label("Zasada związku:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                        @Html.HiddenFor(m => m.Relationships[i].RelationshipId)
+                        @Html.TextBoxFor(m => m.Relationships[i].RelationshipValue, null, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue" })
+                        @Html.HiddenFor(m => m.Relationships[i].UserProfile)
+                        @Html.HiddenFor(m => m.Relationships[i].UserProfileId)
                     </div>
                 </div>
             }
@@ -42,10 +42,9 @@
                     </button>
                 </div>
                 <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    @Html.ActionLink("Powrót do Credo", "Index", "Credo", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+                    @Html.ActionLink("Powrót do Związku", "Index", "Relationship", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                 </div>
             </div>
-
         }
     }
 </div>
