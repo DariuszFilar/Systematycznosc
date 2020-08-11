@@ -1,0 +1,20 @@
+﻿@model Systematycznosc.ViewModels.QuestionViewModel
+
+<div class="numberlist">
+    <div style="font-size:37px; text-align:center;">Najważniejsze rzeczy, którymi kierujesz się każdego dnia:</div>
+    <ol>
+        @{
+            if (Model.MorningQuestions != null)
+            {
+                foreach (var morningQuestion in Model.MorningQuestions.Where(x => x.MorningQuestionValue != null && x.MorningQuestionValue != ""))
+                {
+                    {
+                        <li style="text-align:left;">
+                            <a>@morningQuestion.MorningQuestionValue</a>
+                        </li>
+                    }
+                }
+            }
+        }
+    </ol>
+</div>

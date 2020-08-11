@@ -174,6 +174,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\RelationshipController.cs" />
     <Compile Include="Controllers\WelcomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -327,15 +328,19 @@
     <Compile Include="Migrations\202008070958390_ChangedRelationshipTable.Designer.cs">
       <DependentUpon>202008070958390_ChangedRelationshipTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008110819032_FixedDB.cs" />
+    <Compile Include="Migrations\202008110819032_FixedDB.Designer.cs">
+      <DependentUpon>202008110819032_FixedDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Credo.cs" />
-    <Compile Include="Models\EveningQuestions.cs" />
+    <Compile Include="Models\EveningQuestion.cs" />
     <Compile Include="Models\FamilyBirthday.cs" />
     <Compile Include="Models\FriendsBirthday.cs" />
     <Compile Include="Models\Goals.cs" />
-    <Compile Include="Models\MorningQuestions.cs" />
+    <Compile Include="Models\MorningQuestion.cs" />
     <Compile Include="Models\OthersBirthday.cs" />
     <Compile Include="Models\Relationship.cs" />
     <Compile Include="Models\Todo.cs" />
@@ -354,7 +359,6 @@
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\ConfigureTwoFactorViewModel.cs" />
     <Compile Include="ViewModels\CredoViewModel.cs" />
-    <Compile Include="ViewModels\EveningQuestionsViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginListViewModel.cs" />
     <Compile Include="ViewModels\FactorViewModel.cs" />
@@ -366,9 +370,9 @@
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
-    <Compile Include="ViewModels\MorningQuestionsViewModel.cs" />
     <Compile Include="ViewModels\OthersBirthdayViewModel.cs" />
     <Compile Include="ViewModels\QuestionsViewModelWrapper.cs" />
+    <Compile Include="ViewModels\QuestionViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\RelationshipViewModel.cs" />
     <Compile Include="ViewModels\ResetPasswordViewModel.cs" />
@@ -519,6 +523,8 @@
     <Content Include="Views\Credo\_AddCredo.cshtml" />
     <Content Include="Views\Shared\_SubPageLayout.cshtml" />
     <Content Include="Views\Relationship\_AddRelationship.cshtml" />
+    <Content Include="Views\Question\Index.cshtml" />
+    <Content Include="Views\Question\_AddMorningQuestion.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -647,6 +653,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008070958390_ChangedRelationshipTable.resx">
       <DependentUpon>202008070958390_ChangedRelationshipTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008110819032_FixedDB.resx">
+      <DependentUpon>202008110819032_FixedDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

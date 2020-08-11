@@ -27,7 +27,8 @@ namespace Systematycznosc
         public string Photo { get; set; }
 
         public ICollection<Credo> Credos { get; set; }
-
         public ICollection<Relationship> Relationships { get; set; }
+        public ICollection<MorningQuestion> MorningQuestions { get; set; }
+        public ICollection<EveningQuestion> EveningQuestions { get; set; }
     }
 }

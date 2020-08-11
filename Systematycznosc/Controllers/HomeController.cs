@@ -33,8 +33,8 @@ namespace Systematycznosc.Controllers
                 wrapper.UserProfileViewModel = UserProfile;
 
                 var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
-                var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
-                var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
+                var morningQuestions = _context.MorningQuestions.Where(x => x.UserProfileId == userId);
+                var eveningQuestions = _context.EveningQuestions.Where(x => x.UserProfileId == userId);
                 var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
                 var familyBirthday = _context.FamilyBirthday.FirstOrDefault(x => x.Id == userId);
                 var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
@@ -43,8 +43,6 @@ namespace Systematycznosc.Controllers
                 var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
 
                 wrapper.CredoViewModel = new CredoViewModel(credos);
-                wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel(morningQuestions);
-                wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel(eveningQuestions);
                 wrapper.TodoViewModel = new TodoViewModel(todo);
                 wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel(familyBirthday);
                 wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel(friendsBirthday);
@@ -1199,185 +1197,6 @@ namespace Systematycznosc.Controllers
                 default:
                     return PartialView("_BGoalTable", model);
             }
-        }
-
-        public ActionResult About()
-        {
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            return View();
-        }
-        public ActionResult Questions()
-        {
-            var userId = User.Identity.GetUserId();
-            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
-            var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
-
-            if (userProfile != null && morningQuestions != null && eveningQuestions != null)
-            {
-                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
-                MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
-                EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
-                wrapper.MorningQuestionsViewModel = MorningQuestions;
-                wrapper.EveningQuestionsViewModel = EveningQuestions;
-                return View(wrapper);
-            }
-
-            if (userProfile != null && morningQuestions != null && eveningQuestions == null)
-            {
-                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
-                MorningQuestionsViewModel MorningQuestions = new MorningQuestionsViewModel(morningQuestions);
-                wrapper.MorningQuestionsViewModel = MorningQuestions;
-                wrapper.EveningQuestionsViewModel = new EveningQuestionsViewModel();
-                return View(wrapper);
-            }
-            else if (userProfile != null && eveningQuestions != null && morningQuestions == null)
-            {
-                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper();
-                EveningQuestionsViewModel EveningQuestions = new EveningQuestionsViewModel(eveningQuestions);
-                wrapper.EveningQuestionsViewModel = EveningQuestions;
-                wrapper.MorningQuestionsViewModel = new MorningQuestionsViewModel();
-                return View(wrapper);
-            }
-            else if (userProfile != null && eveningQuestions == null && morningQuestions == null)
-            {
-                QuestionsViewModelWrapper wrapper = new QuestionsViewModelWrapper
-                {
-                    MorningQuestionsViewModel = new MorningQuestionsViewModel(),
-                    EveningQuestionsViewModel = new EveningQuestionsViewModel()
-                };
-                return View(wrapper);
-            }
-            else
-            {
-                return RedirectToAction("Manage", "Profile");
-            }
-        }
-        [HttpGet]
-        public ActionResult MorningQuestionsEdit()
-        {
-            var userId = User.Identity.GetUserId();
-            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
-
-            if (morningQuestions != null)
-            {
-                MorningQuestionsViewModel model = new MorningQuestionsViewModel(morningQuestions);
-                return View(model);
-            }
-            else
-            {
-                MorningQuestionsViewModel model = new MorningQuestionsViewModel();
-                return View(model);
-            }
-        }
-        [HttpPost]
-        public ActionResult MorningQuestionsEdit(MorningQuestionsViewModel model)
-        {
-            var userId = User.Identity.GetUserId();
-            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var morningQuestions = _context.MorningQuestions.FirstOrDefault(x => x.Id == userId);
-
-            if (user == null)
-                return View();
-
-            if (morningQuestions != null)
-            {
-                morningQuestions.MorningQuestions1 = model.MorningQuestions1;
-                morningQuestions.MorningQuestions2 = model.MorningQuestions2;
-                morningQuestions.MorningQuestions3 = model.MorningQuestions3;
-                morningQuestions.MorningQuestions4 = model.MorningQuestions4;
-                morningQuestions.MorningQuestions5 = model.MorningQuestions5;
-                morningQuestions.MorningQuestions6 = model.MorningQuestions6;
-                morningQuestions.MorningQuestions7 = model.MorningQuestions7;
-                morningQuestions.MorningQuestions8 = model.MorningQuestions8;
-                morningQuestions.MorningQuestions9 = model.MorningQuestions9;
-                morningQuestions.MorningQuestions10 = model.MorningQuestions10;
-            }
-            else
-            {
-                user.MorningQuestions = new MorningQuestions
-                {
-                    MorningQuestions1 = model.MorningQuestions1,
-                    MorningQuestions2 = model.MorningQuestions2,
-                    MorningQuestions3 = model.MorningQuestions3,
-                    MorningQuestions4 = model.MorningQuestions4,
-                    MorningQuestions5 = model.MorningQuestions5,
-                    MorningQuestions6 = model.MorningQuestions6,
-                    MorningQuestions7 = model.MorningQuestions7,
-                    MorningQuestions8 = model.MorningQuestions8,
-                    MorningQuestions9 = model.MorningQuestions9,
-                    MorningQuestions10 = model.MorningQuestions10
-                };
-            }
-            _context.SaveChanges();
-            return View(model);
-        }
-        [HttpGet]
-        public ActionResult EveningQuestionsEdit()
-        {
-            var userId = User.Identity.GetUserId();
-            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
-
-            if (eveningQuestions != null)
-            {
-                EveningQuestionsViewModel model = new EveningQuestionsViewModel(eveningQuestions);
-                return View(model);
-            }
-            else
-            {
-                EveningQuestionsViewModel model = new EveningQuestionsViewModel();
-                return View(model);
-            }
-        }
-        [HttpPost]
-        public ActionResult EveningQuestionsEdit(EveningQuestionsViewModel model)
-        {
-            var userId = User.Identity.GetUserId();
-            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var eveningQuestions = _context.EveningQuestions.FirstOrDefault(x => x.Id == userId);
-
-            if (user == null)
-                return View();
-
-            if (eveningQuestions != null)
-            {
-                eveningQuestions.EveningQuestions1 = model.EveningQuestion1;
-                eveningQuestions.EveningQuestions2 = model.EveningQuestion2;
-                eveningQuestions.EveningQuestions3 = model.EveningQuestion3;
-                eveningQuestions.EveningQuestions4 = model.EveningQuestion4;
-                eveningQuestions.EveningQuestions5 = model.EveningQuestion5;
-                eveningQuestions.EveningQuestions6 = model.EveningQuestion6;
-                eveningQuestions.EveningQuestions7 = model.EveningQuestion7;
-                eveningQuestions.EveningQuestions8 = model.EveningQuestion8;
-                eveningQuestions.EveningQuestions9 = model.EveningQuestion9;
-                eveningQuestions.EveningQuestions10 = model.EveningQuestion10;
-            }
-            else
-            {
-                user.EveningQuestions = new Models.EveningQuestions
-                {
-                    EveningQuestions1 = model.EveningQuestion1,
-                    EveningQuestions2 = model.EveningQuestion2,
-                    EveningQuestions3 = model.EveningQuestion3,
-                    EveningQuestions4 = model.EveningQuestion4,
-                    EveningQuestions5 = model.EveningQuestion5,
-                    EveningQuestions6 = model.EveningQuestion6,
-                    EveningQuestions7 = model.EveningQuestion7,
-                    EveningQuestions8 = model.EveningQuestion8,
-                    EveningQuestions9 = model.EveningQuestion9,
-                    EveningQuestions10 = model.EveningQuestion10
-                };
-            }
-            _context.SaveChanges();
-            return View(model);
         }
 
         [HttpGet]

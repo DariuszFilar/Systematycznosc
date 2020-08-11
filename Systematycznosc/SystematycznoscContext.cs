@@ -25,8 +25,8 @@ namespace Systematycznosc
         public virtual DbSet<spt_values> spt_values { get; set; }
         public virtual DbSet<UserProfile> UserProfiles { get; set; }
         public virtual DbSet<Credo> Credoes { get; set; }
-        public virtual DbSet<EveningQuestions> EveningQuestions { get; set; }
-        public virtual DbSet<MorningQuestions> MorningQuestions { get; set; }
+        public virtual DbSet<EveningQuestion> EveningQuestions { get; set; }
+        public virtual DbSet<MorningQuestion> MorningQuestions { get; set; }
         public virtual DbSet<Todo> Todo { get; set; }
         public virtual DbSet<FamilyBirthday> FamilyBirthday { get; set; }
         public virtual DbSet<FriendsBirthday> FriendsBirthday { get; set; }

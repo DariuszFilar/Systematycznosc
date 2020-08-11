@@ -12,9 +12,10 @@ namespace Systematycznosc.Controllers
 {
     public class CredoController : Controller
     {
+        // GET: Credo
         private readonly SystematycznoscContext _context;
         public CredoController() { _context = new SystematycznoscContext(); }
-        // GET: Credo
+
         public ActionResult Index()
         {
             var userId = User.Identity.GetUserId();
