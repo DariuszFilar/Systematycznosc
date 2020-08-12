@@ -332,6 +332,10 @@
     <Compile Include="Migrations\202008110819032_FixedDB.Designer.cs">
       <DependentUpon>202008110819032_FixedDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008121037532_RenamedEveninTableToEvening.cs" />
+    <Compile Include="Migrations\202008121037532_RenamedEveninTableToEvening.Designer.cs">
+      <DependentUpon>202008121037532_RenamedEveninTableToEvening.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -525,6 +529,9 @@
     <Content Include="Views\Relationship\_AddRelationship.cshtml" />
     <Content Include="Views\Question\Index.cshtml" />
     <Content Include="Views\Question\_AddMorningQuestion.cshtml" />
+    <Content Include="Views\Question\_AddEveningQuestion.cshtml" />
+    <Content Include="Views\Question\MorningQuestionEdit.cshtml" />
+    <Content Include="Views\Question\EveningQuestionEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -656,6 +663,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008110819032_FixedDB.resx">
       <DependentUpon>202008110819032_FixedDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008121037532_RenamedEveninTableToEvening.resx">
+      <DependentUpon>202008121037532_RenamedEveninTableToEvening.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

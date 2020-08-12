@@ -36,8 +36,8 @@ namespace Systematycznosc.Controllers
         public ActionResult Index(string relationshipValue)
         {
             var userId = User.Identity.GetUserId();
-            var relationshipsAmount = _context.Relationships.Where(x => x.UserProfileId == userId).Count();
-            if (relationshipsAmount < 12 && relationshipValue != "")
+           
+            if (_context.Relationships.Where(x => x.UserProfileId == userId).Count() < 12)
             {
                 var relationship = new Relationship
                 {

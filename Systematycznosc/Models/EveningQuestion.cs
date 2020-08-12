@@ -19,6 +19,6 @@ namespace Systematycznosc.Models
 
         public virtual UserProfile UserProfile { get; set; }
 
-        public string EveninQuestionValue { get; set; }
+        public string EveningQuestionValue { get; set; }
     }
 }

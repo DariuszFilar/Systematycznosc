@@ -20,22 +20,22 @@
 
     @{ if (Model.MorningQuestions.Count() < 12)
         {
-            using (Ajax.BeginForm("Index", "Question", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addMorningQuestion" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addMorningQuestion" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addform" }))
+            using (Ajax.BeginForm("Index", "Question", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addMorningQuestion" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addMorningQuestion" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformMorning" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
                             @Html.Label("Zasada credo:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBox("morningQuestionValue", null, new { placeholder = "Tu wpisz zasadę", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
+                            @Html.TextBox("morningQuestionValue", null, new { placeholder = "Tu wpisz pytanie poranne", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
                         </div>
                     </div>
                 }
                 <div style="padding-bottom:50px; padding-top:20px;">
                     <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButton">Zapisz</button>
+                        <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButtonMorning">Zapisz</button>
                     </div>
-                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panel2">
+                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelMorning">
                         @Html.ActionLink("Panel edycyjny", "MorningQuestionEdit", "Question", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
@@ -43,11 +43,58 @@
         }
         else
         {
-            <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość Credo, wejdź w opcje by edytować</div>
+            <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość pytań porannych, wejdź w opcje by edytować</div>
         }
     }
-    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panel">
+    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelMorning2">
         @Html.ActionLink("Panel edycyjny", "MorningQuestionEdit", "Question", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+    </div>
+</div>
+
+<div class="d-flex align-items-center flex-column portfolio mb-0 bg-white">
+
+    <h1 class="masthead-heading text-uppercase mb-0" style="color:black;" id="Opener">Pytania Wieczorne</h1>
+
+    <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+        </div>
+        <div class="divider-custom-line"></div>
+    </div>
+
+    <div id="addEveningQuestion">@{Html.RenderPartial("_AddEveningQuestion", Model);}</div>
+
+    @{ if (Model.EveningQuestions.Count() < 12)
+        {
+            using (Ajax.BeginForm("Index", "Question", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addEveningQuestion" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addEveningQuestion" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformEvening" }))
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                {
+                    <div class="form-group">
+                        <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
+                            @Html.Label("Zasada credo:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.TextBox("eveningQuestionValue", null, new { placeholder = "Tu wpisz pytanie wieczorne", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
+                        </div>
+                    </div>
+                }
+                <div style="padding-bottom:50px; padding-top:20px;">
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButtonEvening">Zapisz</button>
+                    </div>
+                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelEvening">
+                        @Html.ActionLink("Panel edycyjny", "EveningQuestionEdit", "Question", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość pytań wieczornych, wejdź w opcje by edytować</div>
+        }
+    }
+    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelEvening2">
+        @Html.ActionLink("Panel edycyjny", "EveningQuestionEdit", "Question", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
     </div>
 </div>
 
@@ -58,27 +105,51 @@
 
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
-    var amountOfCredo = @Model.MorningQuestions.Count();
+    var amountOfMorningQuestions = @Model.MorningQuestions.Count();
+    var amountOfEveningQuestions = @Model.EveningQuestions.Count();
 
     $(document).ready(function () {
         if (@Model.MorningQuestions.Count() <= 11) {
-            $("#panel").hide();
+            $("#panelMorning2").hide();
         }
          if (@Model.MorningQuestions.Count() == 0) {
-            $("#panel2").hide();
+            $("#panelMorning").hide();
+        }
+
+        if (@Model.EveningQuestions.Count() <= 11) {
+            $("#panelEvening2").hide();
+        }
+         if (@Model.EveningQuestions.Count() == 0) {
+            $("#panelEvening").hide();
         }
     });
 
-  $('#saveButton').click(function (e) {
+  $('#saveButtonMorning').click(function (e) {
         $.ajax({
             success: function (data) {
-                amountOfMorningQuestion++;
-                if (amountOfMorningQuestion > 11) {
-                    $("#addform").html("Osiągnięto maksymalną ilość Credo, wejdź w opcje by edytować");
-                    $("#panel").show();
+                amountOfMorningQuestions++;
+                if (amountOfMorningQuestions > 11) {
+                    $("#addformMorning").html("Osiągnięto maksymalną ilość pytań porannych, wejdź w opcje by edytować");
+                    $("#panelMorning2").show();
                 }
-                if (amountOfMorningQuestion > 0) {
-                    $("#panel2").show();
+                if (amountOfMorningQuestions > 0) {
+                    $("#panelMorning").show();
+                }
+            },
+        });
+  });
+
+      $('#saveButtonEvening').click(function (e) {
+        $.ajax({
+            success: function (data) {
+                amountOfEveningQuestions++;
+
+                if (amountOfEveningQuestions > 11) {
+                    $("#addformEvening").html("Osiągnięto maksymalną ilość pytań wieczornych, wejdź w opcje by edytować");
+                    $("#panelEvening2").show();
+                }
+                if (amountOfEveningQuestions > 0) {
+                    $("#panelEvening").show();
                 }
             },
         });
