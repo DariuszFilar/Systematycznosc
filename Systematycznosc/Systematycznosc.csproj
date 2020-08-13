@@ -176,6 +176,7 @@
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\QuestionController.cs" />
     <Compile Include="Controllers\RelationshipController.cs" />
+    <Compile Include="Controllers\TodoController.cs" />
     <Compile Include="Controllers\WelcomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -336,6 +337,18 @@
     <Compile Include="Migrations\202008121037532_RenamedEveninTableToEvening.Designer.cs">
       <DependentUpon>202008121037532_RenamedEveninTableToEvening.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008130915239_ChangedTodoTable.cs" />
+    <Compile Include="Migrations\202008130915239_ChangedTodoTable.Designer.cs">
+      <DependentUpon>202008130915239_ChangedTodoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008131038295_ChangedTodoTableAndAddedImporantEventTable.cs" />
+    <Compile Include="Migrations\202008131038295_ChangedTodoTableAndAddedImporantEventTable.Designer.cs">
+      <DependentUpon>202008131038295_ChangedTodoTableAndAddedImporantEventTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008131039348_ChangedImporantDateStringToDateTime.cs" />
+    <Compile Include="Migrations\202008131039348_ChangedImporantDateStringToDateTime.Designer.cs">
+      <DependentUpon>202008131039348_ChangedImporantDateStringToDateTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -344,6 +357,7 @@
     <Compile Include="Models\FamilyBirthday.cs" />
     <Compile Include="Models\FriendsBirthday.cs" />
     <Compile Include="Models\Goals.cs" />
+    <Compile Include="Models\ImportantEvent.cs" />
     <Compile Include="Models\MorningQuestion.cs" />
     <Compile Include="Models\OthersBirthday.cs" />
     <Compile Include="Models\Relationship.cs" />
@@ -532,6 +546,10 @@
     <Content Include="Views\Question\_AddEveningQuestion.cshtml" />
     <Content Include="Views\Question\MorningQuestionEdit.cshtml" />
     <Content Include="Views\Question\EveningQuestionEdit.cshtml" />
+    <Content Include="Views\Todo\Index.cshtml" />
+    <Content Include="Views\Todo\_AddTodo.cshtml" />
+    <Content Include="Views\Todo\TodoEdit.cshtml" />
+    <Content Include="Views\Todo\_AddImportantDate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -666,6 +684,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008121037532_RenamedEveninTableToEvening.resx">
       <DependentUpon>202008121037532_RenamedEveninTableToEvening.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008130915239_ChangedTodoTable.resx">
+      <DependentUpon>202008130915239_ChangedTodoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008131038295_ChangedTodoTableAndAddedImporantEventTable.resx">
+      <DependentUpon>202008131038295_ChangedTodoTableAndAddedImporantEventTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008131039348_ChangedImporantDateStringToDateTime.resx">
+      <DependentUpon>202008131039348_ChangedImporantDateStringToDateTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -19,7 +19,7 @@ namespace Systematycznosc.ViewModels
             && FriendsBirthdayViewModel.FriendsBirthday1 == null
             && OthersBirthdayViewModel.OthersBirthday1 == null
             && RelationshipViewModel.Relationships == null
-            && TodoViewModel.Todo1 == null && GoalsViewModel.AGoalName == null
+            && TodoViewModel.Todoes != null && TodoViewModel.Todoes.Any() && GoalsViewModel.AGoalName == null
             && GoalsViewModel.BGoalName == null;
     }
 }

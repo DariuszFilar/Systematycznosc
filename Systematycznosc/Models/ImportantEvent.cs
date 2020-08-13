@@ -7,11 +7,11 @@ using System.Web;
 
 namespace Systematycznosc.Models
 {
-    public class Todo
+    public class ImportantEvent
     {
         [Key]
         [Column(Order = 1)]
-        public int TodoId { get; set; }
+        public int ImportantEventId { get; set; }
 
         [Key, ForeignKey("UserProfile")]
         [Column(Order = 2)]
@@ -19,6 +19,8 @@ namespace Systematycznosc.Models
 
         public virtual UserProfile UserProfile { get; set; }
 
-        public string TodoValue { get; set; }
+        public string ImportantEventName { get; set; }
+
+        public DateTime? ImportantEventDate { get; set; }
     }
 }

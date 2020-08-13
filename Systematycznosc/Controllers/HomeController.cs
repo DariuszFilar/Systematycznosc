@@ -35,7 +35,7 @@ namespace Systematycznosc.Controllers
                 var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
                 var morningQuestions = _context.MorningQuestions.Where(x => x.UserProfileId == userId);
                 var eveningQuestions = _context.EveningQuestions.Where(x => x.UserProfileId == userId);
-                var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
+                var todoes = _context.Todoes.Where(x => x.UserProfileId == userId);
                 var familyBirthday = _context.FamilyBirthday.FirstOrDefault(x => x.Id == userId);
                 var friendsBirthday = _context.FriendsBirthday.FirstOrDefault(x => x.Id == userId);
                 var othersBirthday = _context.OthersBirthday.FirstOrDefault(x => x.Id == userId);
@@ -43,7 +43,7 @@ namespace Systematycznosc.Controllers
                 var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
 
                 wrapper.CredoViewModel = new CredoViewModel(credos);
-                wrapper.TodoViewModel = new TodoViewModel(todo);
+                wrapper.TodoViewModel = new TodoViewModel(todoes);
                 wrapper.FamilyBirthdayViewModel = new FamilyBirthdayViewModel(familyBirthday);
                 wrapper.FriendsBirthdayViewModel = new FriendsBirthdayViewModel(friendsBirthday);
                 wrapper.OthersBirthdayViewModel = new OthersBirthdayViewModel(othersBirthday);
@@ -1198,131 +1198,7 @@ namespace Systematycznosc.Controllers
                     return PartialView("_BGoalTable", model);
             }
         }
-
-        [HttpGet]
-        public ActionResult Todo()
-        {
-            var userId = User.Identity.GetUserId();
-            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
-
-            if (userProfile != null && todo != null)
-            {
-                TodoViewModel model = new TodoViewModel(todo);
-                return View(model);
-            }
-            else if (userProfile != null && todo == null)
-            {
-                TodoViewModel model = new TodoViewModel();
-                return View(model);
-            }
-            else
-            {
-                return RedirectToAction("Manage", "Profile");
-            }
-        }
-        [HttpGet]
-        public ActionResult TodoEdit()
-        {
-            var userId = User.Identity.GetUserId();
-            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
-
-            if (todo != null)
-            {
-                TodoViewModel model = new TodoViewModel(todo);
-                return View(model);
-            }
-            else
-            {
-                TodoViewModel model = new TodoViewModel();
-                return View(model);
-            }
-        }
-        [HttpPost]
-        public ActionResult TodoEdit(TodoViewModel model)
-        {
-            var userId = User.Identity.GetUserId();
-            var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var todo = _context.Todo.FirstOrDefault(x => x.Id == userId);
-
-            if (user == null)
-                return View();
-
-            if (todo != null)
-            {
-                todo.Todo1 = model.Todo1;
-                todo.Todo2 = model.Todo2;
-                todo.Todo3 = model.Todo3;
-                todo.Todo4 = model.Todo4;
-                todo.Todo5 = model.Todo5;
-                todo.Todo6 = model.Todo6;
-                todo.Todo7 = model.Todo7;
-                todo.Todo8 = model.Todo8;
-                todo.Todo9 = model.Todo9;
-                todo.Todo10 = model.Todo10;
-                todo.TodoDate1 = model.TodoDate1;
-                todo.TodoDate2 = model.TodoDate2;
-                todo.TodoDate3 = model.TodoDate3;
-                todo.TodoDate4 = model.TodoDate4;
-                todo.TodoDate5 = model.TodoDate5;
-                todo.TodoDate6 = model.TodoDate6;
-                todo.TodoDate7 = model.TodoDate7;
-                todo.TodoDate8 = model.TodoDate8;
-                todo.TodoDate9 = model.TodoDate9;
-                todo.TodoDate10 = model.TodoDate10;
-                todo.TodoDateName1 = model.TodoDateName1;
-                todo.TodoDateName2 = model.TodoDateName2;
-                todo.TodoDateName3 = model.TodoDateName3;
-                todo.TodoDateName4 = model.TodoDateName4;
-                todo.TodoDateName5 = model.TodoDateName5;
-                todo.TodoDateName6 = model.TodoDateName6;
-                todo.TodoDateName7 = model.TodoDateName7;
-                todo.TodoDateName8 = model.TodoDateName8;
-                todo.TodoDateName9 = model.TodoDateName9;
-                todo.TodoDateName10 = model.TodoDateName10;
-            }
-            else
-            {
-                user.Todo = new Models.Todo
-                {
-                    Todo1 = model.Todo1,
-                    Todo2 = model.Todo2,
-                    Todo3 = model.Todo3,
-                    Todo4 = model.Todo4,
-                    Todo5 = model.Todo5,
-                    Todo6 = model.Todo6,
-                    Todo7 = model.Todo7,
-                    Todo8 = model.Todo8,
-                    Todo9 = model.Todo9,
-                    Todo10 = model.Todo10,
-                    TodoDate1 = model.TodoDate1,
-                    TodoDate2 = model.TodoDate2,
-                    TodoDate3 = model.TodoDate3,
-                    TodoDate4 = model.TodoDate4,
-                    TodoDate5 = model.TodoDate5,
-                    TodoDate6 = model.TodoDate6,
-                    TodoDate7 = model.TodoDate7,
-                    TodoDate8 = model.TodoDate8,
-                    TodoDate9 = model.TodoDate9,
-                    TodoDate10 = model.TodoDate10,
-                    TodoDateName1 = model.TodoDateName1,
-                    TodoDateName2 = model.TodoDateName2,
-                    TodoDateName3 = model.TodoDateName3,
-                    TodoDateName4 = model.TodoDateName4,
-                    TodoDateName5 = model.TodoDateName5,
-                    TodoDateName6 = model.TodoDateName6,
-                    TodoDateName7 = model.TodoDateName7,
-                    TodoDateName8 = model.TodoDateName8,
-                    TodoDateName9 = model.TodoDateName9,
-                    TodoDateName10 = model.TodoDateName10,
-                };
-            }
-            _context.SaveChanges();
-            return View(model);
-        }
-
+             
         public ActionResult Birthday()
         {
             var userId = User.Identity.GetUserId();

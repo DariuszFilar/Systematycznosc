@@ -27,14 +27,14 @@ namespace Systematycznosc
         public virtual DbSet<Credo> Credoes { get; set; }
         public virtual DbSet<EveningQuestion> EveningQuestions { get; set; }
         public virtual DbSet<MorningQuestion> MorningQuestions { get; set; }
-        public virtual DbSet<Todo> Todo { get; set; }
+        public virtual DbSet<Todo> Todoes { get; set; }
         public virtual DbSet<FamilyBirthday> FamilyBirthday { get; set; }
         public virtual DbSet<FriendsBirthday> FriendsBirthday { get; set; }
         public virtual DbSet<OthersBirthday> OthersBirthday { get; set; }
         public virtual DbSet<Relationship> Relationships { get; set; }
         public virtual DbSet<Goals> Goals { get; set; }
 
-
+        public virtual DbSet<ImportantEvent> ImportantEvents { get; set; }
 
 
         public static SystematycznoscContext Create()

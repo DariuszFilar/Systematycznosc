@@ -1,0 +1,22 @@
+﻿@model Systematycznosc.ViewModels.TodoViewModel
+
+<div class="numberlist">
+    <div style="font-size:37px; text-align:center; color:black;">Ważne wydarzenia:</div>
+    <ol>
+        @{
+            if (Model.ImportantEvents != null)
+            {
+                foreach (var importantEvent in Model.ImportantEvents.Where(x => x.ImportantEventName != null && x.ImportantEventDate != null))
+                {
+                    {
+                        <li style="text-align:left;">
+                            <a>@importantEvent.ImportantEventName</a>
+                            <a>@importantEvent.ImportantEventDate</a>
+                        </li>
+                    }
+                }
+            }
+        }
+    </ol>
+</div>
+

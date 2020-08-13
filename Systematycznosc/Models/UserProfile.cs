@@ -30,5 +30,8 @@ namespace Systematycznosc
         public ICollection<Relationship> Relationships { get; set; }
         public ICollection<MorningQuestion> MorningQuestions { get; set; }
         public ICollection<EveningQuestion> EveningQuestions { get; set; }
+        public ICollection<Todo> Todoes { get; set; }
+
+        public ICollection<ImportantEvent> ImportantEvents { get; set; }
     }
 }

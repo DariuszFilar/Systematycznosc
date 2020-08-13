@@ -82,6 +82,7 @@ namespace Systematycznosc.Controllers
             else
                 return View();
         }
+
         [HttpGet]
         public ActionResult MorningQuestionEdit()
         {
