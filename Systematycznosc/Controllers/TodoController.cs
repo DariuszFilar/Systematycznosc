@@ -77,11 +77,11 @@ namespace Systematycznosc.Controllers
                 Todoes = _context.Todoes.Where(x => x.UserProfileId == userId).ToList(),
                 ImportantEvents = _context.ImportantEvents.Where(x => x.UserProfileId == userId).ToList()
             };
+
             if (todoValue != null)
                 return PartialView("_AddTodo", model);
             if (importantEventName != null && importantEventDate != null)
-                return PartialView("_AddImportantEvent", model);
-
+                return PartialView("_AddImportantEvent", model.ImportantEvents;
             else
                 return View();
         }
@@ -127,6 +127,51 @@ namespace Systematycznosc.Controllers
                 ModelState.Clear();
 
                 model.Todoes = todoes.ToList();
+                return View(model);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult ImportantEventEdit()
+        {
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+            var importantEvents = _context.ImportantEvents.Where(x => x.UserProfileId == userId);
+
+            if (userProfile != null)
+            {
+                TodoViewModel model = new TodoViewModel(importantEvents);
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Manage", "Profile");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult ImportantEventEdit(TodoViewModel model)
+        {
+            var userId = User.Identity.GetUserId();
+            var imporantEvents = _context.ImportantEvents.AsNoTracking().Where(x => x.UserProfileId == userId).ToList();
+
+            if (model.ImportantEvents == null)
+            {
+                return RedirectToAction("Index", "Todo");
+            }
+
+            else
+            {
+                imporantEvents = model.ImportantEvents;
+                foreach (var imporantEvent in imporantEvents)
+                {
+                    _context.Entry(imporantEvent).State = EntityState.Modified;
+                }
+
+                _context.SaveChanges();
+                ModelState.Clear();
+
+                model.ImportantEvents = imporantEvents.ToList();
                 return View(model);
             }
         }
