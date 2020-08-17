@@ -81,7 +81,7 @@ namespace Systematycznosc.Controllers
             if (todoValue != null)
                 return PartialView("_AddTodo", model);
             if (importantEventName != null && importantEventDate != null)
-                return PartialView("_AddImportantEvent", model.ImportantEvents;
+                return PartialView("_AddImportantEvent", model);
             else
                 return View();
         }
@@ -165,6 +165,10 @@ namespace Systematycznosc.Controllers
                 imporantEvents = model.ImportantEvents;
                 foreach (var imporantEvent in imporantEvents)
                 {
+                    if (imporantEvent.ImportantEventName == null)
+                    {
+                        imporantEvent.ImportantEventDate = null;
+                    }
                     _context.Entry(imporantEvent).State = EntityState.Modified;
                 }
 
