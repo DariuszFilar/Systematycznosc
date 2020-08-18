@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BirthdayController.cs" />
     <Compile Include="Controllers\CredoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -349,17 +350,21 @@
     <Compile Include="Migrations\202008131039348_ChangedImporantDateStringToDateTime.Designer.cs">
       <DependentUpon>202008131039348_ChangedImporantDateStringToDateTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008181217090_ChangedBirthdayTables.cs" />
+    <Compile Include="Migrations\202008181217090_ChangedBirthdayTables.Designer.cs">
+      <DependentUpon>202008181217090_ChangedBirthdayTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Credo.cs" />
     <Compile Include="Models\EveningQuestion.cs" />
     <Compile Include="Models\FamilyBirthday.cs" />
-    <Compile Include="Models\FriendsBirthday.cs" />
+    <Compile Include="Models\FriendBirthday.cs" />
     <Compile Include="Models\Goals.cs" />
     <Compile Include="Models\ImportantEvent.cs" />
     <Compile Include="Models\MorningQuestion.cs" />
-    <Compile Include="Models\OthersBirthday.cs" />
+    <Compile Include="Models\OtherBirthday.cs" />
     <Compile Include="Models\Relationship.cs" />
     <Compile Include="Models\Todo.cs" />
     <Compile Include="Models\UserProfile.cs" />
@@ -373,22 +378,19 @@
     <Compile Include="Startup.cs" />
     <Compile Include="SystematycznoscContext.cs" />
     <Compile Include="ViewModels\AddPhoneNumberViewModel.cs" />
-    <Compile Include="ViewModels\BirthdayViewModelWrapper.cs" />
+    <Compile Include="ViewModels\BirthdayViewModel.cs" />
     <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\ConfigureTwoFactorViewModel.cs" />
     <Compile Include="ViewModels\CredoViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\ExternalLoginListViewModel.cs" />
     <Compile Include="ViewModels\FactorViewModel.cs" />
-    <Compile Include="ViewModels\FamilyBirthdayViewModel.cs" />
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\ForgotViewModel.cs" />
-    <Compile Include="ViewModels\FriendsBirthdayViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
-    <Compile Include="ViewModels\OthersBirthdayViewModel.cs" />
     <Compile Include="ViewModels\QuestionsViewModelWrapper.cs" />
     <Compile Include="ViewModels\QuestionViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
@@ -481,8 +483,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -506,18 +506,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\EmptyPage.cshtml" />
     <Content Include="Views\Home\Goals.cshtml" />
-    <Content Include="Views\Home\Todo.cshtml" />
     <Content Include="Views\Profile\Manage.cshtml" />
     <Content Include="Views\Credo\Index.cshtml" />
-    <Content Include="Views\Home\Questions.cshtml" />
     <Content Include="Views\Credo\CredoEdit.cshtml" />
-    <Content Include="Views\Home\MorningQuestionsEdit.cshtml" />
-    <Content Include="Views\Home\EveningQuestionsEdit.cshtml" />
-    <Content Include="Views\Home\TodoEdit.cshtml" />
-    <Content Include="Views\Home\Birthday.cshtml" />
-    <Content Include="Views\Home\FamilyBirthdayEdit.cshtml" />
-    <Content Include="Views\Home\FriendsBirthdayEdit.cshtml" />
-    <Content Include="Views\Home\OthersBirthdayEdit.cshtml" />
     <Content Include="Views\Relationship\Index.cshtml" />
     <Content Include="Views\Relationship\RelationshipEdit.cshtml" />
     <Content Include="Views\Home\GoalsEdit.cshtml" />
@@ -551,6 +542,7 @@
     <Content Include="Views\Todo\TodoEdit.cshtml" />
     <Content Include="Views\Todo\_AddImportantEvent.cshtml" />
     <Content Include="Views\Todo\ImportantEventEdit.cshtml" />
+    <Content Include="Views\Birthday\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -694,6 +686,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008131039348_ChangedImporantDateStringToDateTime.resx">
       <DependentUpon>202008131039348_ChangedImporantDateStringToDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008181217090_ChangedBirthdayTables.resx">
+      <DependentUpon>202008181217090_ChangedBirthdayTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,11 +7,11 @@ using System.Web;
 
 namespace Systematycznosc.Models
 {
-    public class FamilyBirthday
+    public class FriendBirthday
     {
         [Key]
         [Column(Order = 1)]
-        public int FamilyBirthdayEventId { get; set; }
+        public int FriendBirthdayEventId { get; set; }
 
         [Key, ForeignKey("UserProfile")]
         [Column(Order = 2)]
@@ -19,8 +19,8 @@ namespace Systematycznosc.Models
 
         public virtual UserProfile UserProfile { get; set; }
 
-        public string FamilyBirthdayName { get; set; }
+        public string FriendBirthdayName { get; set; }
 
-        public DateTime? FamilyBirthdayDate { get; set; }
+        public DateTime? FriendBirthdayDate { get; set; }
     }
 }

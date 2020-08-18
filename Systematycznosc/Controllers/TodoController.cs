@@ -98,6 +98,7 @@ namespace Systematycznosc.Controllers
                 TodoViewModel model = new TodoViewModel(todoes);
                 return View(model);
             }
+
             else
             {
                 return RedirectToAction("Manage", "Profile");
@@ -143,6 +144,7 @@ namespace Systematycznosc.Controllers
                 TodoViewModel model = new TodoViewModel(importantEvents);
                 return View(model);
             }
+
             else
             {
                 return RedirectToAction("Manage", "Profile");
@@ -175,7 +177,6 @@ namespace Systematycznosc.Controllers
                 _context.SaveChanges();
                 ModelState.Clear();
 
-                model.ImportantEvents = imporantEvents.ToList();
                 return View(model);
             }
         }

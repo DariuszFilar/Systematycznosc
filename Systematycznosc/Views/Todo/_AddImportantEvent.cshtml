@@ -2,29 +2,33 @@
 
 <div style="font-size:37px; text-align:center; color:black;">Warto o nich pamiętać:</div>
 @{
-    if (Model.ImportantEvents != null)
+    for (int i = 0; i < Model.ImportantEvents.Count(); i++) 
     {
-        <div class="mr-3 ml-3">
-            <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
-                <thead class="thead-dark">
-                    <tr>
-                        <th style="width: 300px">Nazwa:</th>
-                        <th style="width: 300px">Data: (M/D/R):</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var importantEvent in Model.ImportantEvents.Where(x => x.ImportantEventName != null && x.ImportantEventDate != null).OrderBy(x => x.ImportantEventDate))
-                    {
+        if (Model.ImportantEvents[i].ImportantEventName != null) 
+        {
+            <div class="mr-3 ml-3">
+                <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
+                    <thead class="thead-dark">
                         <tr>
-
-                            <td>@importantEvent.ImportantEventName</td>
-                            <td>
-                                @importantEvent.ImportantEventDate.Value.ToString("MM/dd/yyyy")
-                            </td>
+                            <th style="width: 300px">Nazwa:</th>
+                            <th style="width: 300px">Data: (M/D/R):</th>
                         </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                        @foreach (var importantEvent in Model.ImportantEvents.Where(x => x.ImportantEventName != null && x.ImportantEventDate != null).OrderBy(x => x.ImportantEventDate))
+                        {
+                            <tr>
+
+                                <td>@importantEvent.ImportantEventName</td>
+                                <td>
+                                    @importantEvent.ImportantEventDate.Value.ToString("MM/dd/yyyy")
+                                </td>
+                            </tr>
+                        }                        
+                    </tbody>
+                </table>
+            </div>
+            break;
+        }
     }
 }

@@ -12,9 +12,6 @@ namespace Systematycznosc.Models
     public class ApplicationUser : IdentityUser
     {
         public virtual UserProfile UserProfile { get; set; }
-        public FamilyBirthday FamilyBirthday { get; set; }
-        public FriendsBirthday FriendsBirthday { get; set; }
-        public OthersBirthday OthersBirthday { get; set; }
         public Todo Todo { get; set; }
         public Goals Goals { get; set; }
 
