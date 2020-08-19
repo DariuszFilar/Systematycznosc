@@ -11,7 +11,7 @@ namespace Systematycznosc.Models
     {
         [Key]
         [Column(Order = 1)]
-        public int FamilyBirthdayEventId { get; set; }
+        public int FamilyBirthdayId { get; set; }
 
         [Key, ForeignKey("UserProfile")]
         [Column(Order = 2)]

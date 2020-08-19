@@ -1,12 +1,12 @@
 ﻿@using Systematycznosc.Models
-@model Systematycznosc.ViewModels.
+@model Systematycznosc.ViewModels.BirthdayViewModel
 @{
     Layout = "~/Views/Shared/_SubPageLayout.cshtml";
 }
 
 <div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
 
-    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Do zrobienia</h1>
+    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Urodziny rodziny</h1>
 
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
@@ -16,44 +16,46 @@
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
 
-    <div id="addTodo">@{Html.RenderPartial("_AddTodo", Model);}</div>
+    <div id="addFamilyBirthday">@{Html.RenderPartial("_AddFamilyBirthday", Model);}</div>
 
-    @{ if (Model.Todoes.Count() < 12)
+    @{ if (Model.FamilyBirthdays.Count() < 12)
         {
-            using (Ajax.BeginForm("Index", "Todo", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addTodo" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addTodo" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformTodo" }))
+            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addFamilyBirthday" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addFamilyBirthday" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFamilyBirthday" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
-                            @Html.Label("Rzecz do zrobienia:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBox("todoValue", null, new { placeholder = "Tu wpisz rzecz do zrobienia", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "todoValue", required = string.Empty })
+                            @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.TextBox("familyBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
+                            @Html.TextBox("familyBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
                     </div>
                 }
                 <div style="padding-bottom:50px; padding-top:20px;">
                     <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButton">Zapisz</button>
+                        <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButtonFamilyBirthday">Zapisz</button>
                     </div>
-                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelTodo2">
-                        @Html.ActionLink("Panel edycyjny", "TodoEdit", "Todo", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelFamilyBirthay">
+                        @Html.ActionLink("Panel edycyjny", "FamilyBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
             }
         }
         else
         {
-            <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną rzeczy do zrobienia, wejdź w opcje by edytować</div>
+<div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować</div>
         }
     }
-    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelTodo">
-        @Html.ActionLink("Panel edycyjny", "TodoEdit", "Todo", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelFamilyBirthay2">
+        @Html.ActionLink("Panel edycyjny", "FamilyBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
     </div>
+
 </div>
 
 <div class="d-flex align-items-center flex-column portfolio mb-0 bg-white">
 
-    <h1 class="masthead-heading text-uppercase mb-0" style="color:black;" id="Opener">Ważne wydarzenia</h1>
+    <h1 class="masthead-heading text-uppercase mb-0" style="color:black;" id="Opener">Urodziny przyjaciół</h1>
 
     <div class="divider-custom">
         <div class="divider-custom-line"></div>
@@ -63,40 +65,90 @@
         <div class="divider-custom-line"></div>
     </div>
 
-    <div id="addImportantEvent">@{Html.RenderPartial("_AddImportantEvent", Model);}</div>
+    <div id="addFriendBirthday">@{Html.RenderPartial("_AddFriendBirthday", Model);}</div>
 
-    @{ if (Model.ImportantEvents.Count() < 12)
+    @{ if (Model.FriendsBirthdays.Count() < 12)
         {
-            using (Ajax.BeginForm("Index", "Todo", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addImportantEvent" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addImportantEvent" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformImportantEvent" }))
+            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "_AddFriendBirthday" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addFriendBirthday" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFriendBirthday" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
-                            @Html.Label("Nazwa wydarzenia:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBox("importantEventName", null, new { placeholder = "Tu wpisz nazwę ważnego wydarzenia", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
-                            @Html.TextBox("importantEventDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
+                            @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.TextBox("friendBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
+                            @Html.TextBox("friendBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
                     </div>
                 }
                 <div style="padding-bottom:50px; padding-top:20px;">
                     <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButtonImportantEvent">Zapisz</button>
+                        <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButtonFriendBirthday">Zapisz</button>
                     </div>
-                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelImportantEvent">
-                        @Html.ActionLink("Panel edycyjny", "ImportantEventEdit", "Todo", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelFamilyBirthay">
+                        @Html.ActionLink("Panel edycyjny", "friendBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
             }
         }
         else
         {
-            <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość ważnych wydarzeń, wejdź w opcje by edytować</div>
+<div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować</div>
         }
     }
-    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelImportantEvent2">
-        @Html.ActionLink("Panel edycyjny", "ImportantEventEdit", "Todo", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelFriendBirthay2">
+        @Html.ActionLink("Panel edycyjny", "friendBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
     </div>
+
+</div>
+
+<div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
+
+    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Urodziny innych</h1>
+
+    <div class="divider-custom">
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
+        </div>
+        <div class="divider-custom-line" style="background-color:white!important;"></div>
+    </div>
+
+    <div id="addOtherBirthday">@{Html.RenderPartial("_AddOtherBirthday", Model);}</div>
+
+    @{ if (Model.OthersBirthdays.Count() < 12)
+        {
+            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addOtherBirthday" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addOtherBirthday" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformOtherBirthday" }))
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                {
+                    <div class="form-group">
+                        <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
+                            @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.TextBox("otherBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
+                            @Html.TextBox("otherBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
+                        </div>
+                    </div>
+                }
+                <div style="padding-bottom:50px; padding-top:20px;">
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButtonOtherBirthday">Zapisz</button>
+                    </div>
+                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelOtherBirthay">
+                        @Html.ActionLink("Panel edycyjny", "OtherBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+<div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować</div>
+        }
+    }
+    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelOtherBirthay2">
+        @Html.ActionLink("Panel edycyjny", "OtherBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+    </div>
+
 </div>
 
 @section Scripts
@@ -105,51 +157,76 @@
 }
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
-    var amountOfTodo = @Model.Todoes.Count();
-    var amountOfImportantEvent = @Model.ImportantEvents.Count();
+    var amountOfFamilyBirthday = @Model.FamilyBirthdays.Count();
+    var amountOfFriendBirthday = @Model.FriendsBirthdays.Count();
+    var amountOfOtherBirthday = @Model.OthersBirthdays.Count();
 
     $(document).ready(function () {
-        if (@Model.Todoes.Count() <= 11) {
-            $("#panelTodo").hide();
+        if (@Model.FamilyBirthdays.Count() <= 11) {
+            $("#panelFamilyBirthay2").hide();
         }
-        if (@Model.Todoes.Count() == 0) {
-            $("#panelTodo2").hide();
+        if (@Model.FamilyBirthdays.Count() == 0) {
+            $("#panelFamilyBirthay").hide();
         }
 
-        if (@Model.ImportantEvents.Count() <= 11) {
-            $("#panelImportantEvent2").hide();
+         if (@Model.FriendsBirthdays.Count() <= 11) {
+            $("#panelFriendBirthay2").hide();
         }
-        if (@Model.ImportantEvents.Count() == 0) {
-            $("#panelImportantEvent").hide();
+        if (@Model.FriendsBirthdays.Count() == 0) {
+            $("#panelFriendBirthay").hide();
+        }
+
+        if (@Model.OthersBirthdays.Count() <= 11) {
+            $("#panelOtherBirthay2").hide();
+        }
+        if (@Model.OthersBirthdays.Count() == 0) {
+            $("#panelOtherBirthay").hide();
         }
     });
 
-    $('#saveButton').click(function (e) {
+      $('#saveButtonFamilyBirthday').click(function (e) {
         $.ajax({
             success: function (data) {
-                amountOfTodo++;
-                if (amountOfTodo > 11) {
-                    $("#addformTodo").html("Osiągnięto maksymalną ilość rzeczy do zrobienia, wejdź w opcje by edytować");
-                    $("#panelTodo").show();
+                amountOfFamilyBirthday++;
+
+                if (amountOfFamilyBirthday > 11) {
+                    $("#addformFamilyBirthday").html("Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować");
+                    $("#panelFamilyBirthay2").show();
                 }
-                if (amountOfTodo > 0) {
-                    $("#panel2Todo").show();
+                if (amountOfFamilyBirthday > 0) {
+                    $("#panelFamilyBirthay").show();
                 }
             },
         });
-  });
+      });
 
-      $('#saveButtonImportantEvent').click(function (e) {
+     $('#saveButtonFriendBirthday').click(function (e) {
         $.ajax({
             success: function (data) {
-                amountOfImportantEvent++;
+                amountOfFriendBirthday++;
 
-                if (amountOfImportantEvent > 11) {
-                    $("#addformImportantEvent").html("Osiągnięto maksymalną ilość ważnych wydarzeń, wejdź w opcje by edytować");
-                    $("#panelImportantEvent2").show();
+                if (amountOfFriendBirthday > 11) {
+                    $("#addformFriendBirthday").html("Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować");
+                    $("#panelFriendBirthay2").show();
                 }
-                if (amountOfImportantEvent > 0) {
-                    $("#panelImportantEvent").show();
+                if (amountOfFriendBirthday > 0) {
+                    $("#panelFriendBirthay").show();
+                }
+            },
+        });
+     });
+
+      $('#saveButtonOtherBirthday').click(function (e) {
+        $.ajax({
+            success: function (data) {
+                amountOfOtherBirthday++;
+
+                if (amountOfOtherBirthday > 11) {
+                    $("#addformOtherBirthday").html("Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować");
+                    $("#panelOtherBirthay2").show();
+                }
+                if (amountOfOtherBirthday > 0) {
+                    $("#panelOtherBirthay").show();
                 }
             },
         });

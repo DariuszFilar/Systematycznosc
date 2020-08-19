@@ -1,0 +1,36 @@
+﻿@model Systematycznosc.ViewModels.BirthdayViewModel
+
+<div style="font-size:37px; text-align:center; color:black;">Warto o nich pamiętać:</div>
+@{
+    for (int i = 0; i < Model.OthersBirthdays.Count(); i++)
+    {
+        if (Model.OthersBirthdays[i].OtherBirthdayName != null)
+        {
+            <div class="mr-3 ml-3">
+                <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th style="width: 300px">Nazwa:</th>
+                            <th style="width: 300px">Data: (M/D/R):</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var otherBirthday in Model.OthersBirthdays.Where(x => x.OtherBirthdayName != null && x.OtherBirthdayDate != null).OrderBy(x => x.OtherBirthdayDate))
+                        {
+                            <tr>
+
+                                <td>@otherBirthday.OtherBirthdayName</td>
+                                <td>
+                                    @otherBirthday.OtherBirthdayDate.Value.ToString("MM/dd/yyyy")
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            break;
+        }
+    }
+}
+
+

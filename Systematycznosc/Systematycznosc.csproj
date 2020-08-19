@@ -354,6 +354,10 @@
     <Compile Include="Migrations\202008181217090_ChangedBirthdayTables.Designer.cs">
       <DependentUpon>202008181217090_ChangedBirthdayTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008191024229_ChangedBirthdayEventIdToBirthdayId.cs" />
+    <Compile Include="Migrations\202008191024229_ChangedBirthdayEventIdToBirthdayId.Designer.cs">
+      <DependentUpon>202008191024229_ChangedBirthdayEventIdToBirthdayId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -543,6 +547,12 @@
     <Content Include="Views\Todo\_AddImportantEvent.cshtml" />
     <Content Include="Views\Todo\ImportantEventEdit.cshtml" />
     <Content Include="Views\Birthday\Index.cshtml" />
+    <Content Include="Views\Birthday\_AddFamilyBirthday.cshtml" />
+    <Content Include="Views\Birthday\_AddFriendBirthday.cshtml" />
+    <Content Include="Views\Birthday\_AddOtherBirthday.cshtml" />
+    <Content Include="Views\Birthday\FamilyBirthdayEdit.cshtml" />
+    <Content Include="Views\Birthday\FriendBirthdayEdit.cshtml" />
+    <Content Include="Views\Birthday\OtherBirthdayEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -689,6 +699,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008181217090_ChangedBirthdayTables.resx">
       <DependentUpon>202008181217090_ChangedBirthdayTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008191024229_ChangedBirthdayEventIdToBirthdayId.resx">
+      <DependentUpon>202008191024229_ChangedBirthdayEventIdToBirthdayId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
