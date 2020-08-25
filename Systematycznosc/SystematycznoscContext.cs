@@ -32,7 +32,11 @@ namespace Systematycznosc
         public virtual DbSet<FriendBirthday> FriendsBirthdays { get; set; }
         public virtual DbSet<OtherBirthday> OthersBirthdays { get; set; }
         public virtual DbSet<Relationship> Relationships { get; set; }
-        public virtual DbSet<Goals> Goals { get; set; }
+        public virtual DbSet<Goals2> Goals2 { get; set; }
+
+        public virtual DbSet<FirstGoal> FirstGoals { get; set; }
+
+        public virtual DbSet<SecondGoal> SecondGoals { get; set; }
 
         public virtual DbSet<ImportantEvent> ImportantEvents { get; set; }
 

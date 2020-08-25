@@ -10,7 +10,7 @@ using Systematycznosc.Models;
 namespace Systematycznosc.ViewModels
 {
     public class BirthdayViewModel
-  {
+    {
         public virtual ApplicationUser User { get; set; }
 
         public List<FamilyBirthday> FamilyBirthdays { get; set; }

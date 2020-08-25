@@ -152,7 +152,7 @@ namespace Systematycznosc.ViewModels
 
         public GoalsViewModel() { }
 
-        public GoalsViewModel(Goals goals)
+        public GoalsViewModel(Goals2 goals)
         {
             if (goals != null)
             {

@@ -40,7 +40,7 @@ namespace Systematycznosc.Controllers
                 var friendsBirthdays = _context.FriendsBirthdays.Where(x => x.UserProfileId == userId);
                 var othersBirthdays = _context.OthersBirthdays.Where(x => x.UserProfileId == userId);
                 var relationships = _context.Relationships.Where(x => x.UserProfileId == userId);
-                var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
+                var goals = _context.Goals2.FirstOrDefault(x => x.Id == userId);
 
                 wrapper.CredoViewModel = new CredoViewModel(credos);
                 wrapper.TodoViewModel = new TodoViewModel(todoes);
@@ -57,7 +57,7 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
+            var goals = _context.Goals2.FirstOrDefault(x => x.Id == userId);
 
             if (user == null)
                 return View();
@@ -1201,7 +1201,7 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
+            var goals = _context.Goals2.FirstOrDefault(x => x.Id == userId);
 
             if (userProfile != null && goals != null)
             {
@@ -1223,7 +1223,7 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
+            var goals = _context.Goals2.FirstOrDefault(x => x.Id == userId);
 
             if (user == null)
                 return View();
@@ -2364,7 +2364,7 @@ namespace Systematycznosc.Controllers
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
+            var goals = _context.Goals2.FirstOrDefault(x => x.Id == userId);
 
             if (goals != null)
             {
@@ -2382,7 +2382,7 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
-            var goals = _context.Goals.FirstOrDefault(x => x.Id == userId);
+            var goals = _context.Goals2.FirstOrDefault(x => x.Id == userId);
             if (user == null)
                 return View();
             switch (submitButton)
@@ -2406,7 +2406,7 @@ namespace Systematycznosc.Controllers
                         }
                         if (goals == null && model.AGoalName != null)
                         {
-                            user.Goals = new Models.Goals
+                            user.Goals = new Models.Goals2
                             {
                                 AGoalName = model.AGoalName,
                                 AGoalQuestion = model.AGoalQuestion,
@@ -2437,7 +2437,7 @@ namespace Systematycznosc.Controllers
                         }
                         if (goals == null && model.BGoalName != null)
                         {
-                            user.Goals = new Models.Goals
+                            user.Goals = new Models.Goals2
                             {
                                 BGoalName = model.BGoalName,
                                 BGoalQuestion = model.BGoalQuestion,
@@ -2467,7 +2467,7 @@ namespace Systematycznosc.Controllers
                         }
                         if (goals == null && model.CGoalName != null)
                         {
-                            user.Goals = new Models.Goals
+                            user.Goals = new Models.Goals2
                             {
                                 CGoalName = model.CGoalName,
                                 CGoalQuestion = model.CGoalQuestion,
@@ -2497,7 +2497,7 @@ namespace Systematycznosc.Controllers
                         }
                         if (goals == null && model.DGoalName != null)
                         {
-                            user.Goals = new Models.Goals
+                            user.Goals = new Models.Goals2
                             {
                                 DGoalName = model.DGoalName,
                                 DGoalQuestion = model.DGoalQuestion,
@@ -2527,7 +2527,7 @@ namespace Systematycznosc.Controllers
                         }
                         if (goals == null && model.EGoalName != null)
                         {
-                            user.Goals = new Goals
+                            user.Goals = new Goals2
                             {
                                 EGoalName = model.EGoalName,
                                 EGoalQuestion = model.EGoalQuestion,
@@ -2557,7 +2557,7 @@ namespace Systematycznosc.Controllers
                         }
                         if (goals == null && model.FGoalName != null)
                         {
-                            user.Goals = new Goals
+                            user.Goals = new Goals2
                             {
                                 FGoalName = model.FGoalName,
                                 FGoalQuestion = model.FGoalQuestion,
@@ -2587,7 +2587,7 @@ namespace Systematycznosc.Controllers
                         }
                         if (goals == null && model.GGoalName != null)
                         {
-                            user.Goals = new Models.Goals
+                            user.Goals = new Models.Goals2
                             {
                                 GGoalName = model.GGoalName,
                                 GGoalQuestion = model.GGoalQuestion,
@@ -2617,7 +2617,7 @@ namespace Systematycznosc.Controllers
                         }
                         if (goals == null && model.HGoalName != null)
                         {
-                            user.Goals = new Models.Goals
+                            user.Goals = new Models.Goals2
                             {
                                 HGoalName = model.HGoalName,
                                 HGoalQuestion = model.HGoalQuestion,

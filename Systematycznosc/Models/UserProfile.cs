@@ -35,5 +35,7 @@ namespace Systematycznosc
         public ICollection<FamilyBirthday> FamilyBirthdays { get; set; }
         public ICollection<FriendBirthday> FriendsBirthdays { get; set; }
         public ICollection<OtherBirthday> OthersBirthdays { get; set; }
+        public ICollection<FirstGoal> Goals { get; set; }
+    
     }
 }

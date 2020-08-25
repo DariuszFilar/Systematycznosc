@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BirthdayController.cs" />
     <Compile Include="Controllers\CredoController.cs" />
+    <Compile Include="Controllers\GoalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
@@ -358,6 +359,10 @@
     <Compile Include="Migrations\202008191024229_ChangedBirthdayEventIdToBirthdayId.Designer.cs">
       <DependentUpon>202008191024229_ChangedBirthdayEventIdToBirthdayId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008241202247_AddedGoalTable.cs" />
+    <Compile Include="Migrations\202008241202247_AddedGoalTable.Designer.cs">
+      <DependentUpon>202008241202247_AddedGoalTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -365,11 +370,13 @@
     <Compile Include="Models\EveningQuestion.cs" />
     <Compile Include="Models\FamilyBirthday.cs" />
     <Compile Include="Models\FriendBirthday.cs" />
-    <Compile Include="Models\Goals.cs" />
+    <Compile Include="Models\Goals2.cs" />
+    <Compile Include="Models\FirstGoal.cs" />
     <Compile Include="Models\ImportantEvent.cs" />
     <Compile Include="Models\MorningQuestion.cs" />
     <Compile Include="Models\OtherBirthday.cs" />
     <Compile Include="Models\Relationship.cs" />
+    <Compile Include="Models\SecondGoal.cs" />
     <Compile Include="Models\Todo.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="MSreplication_options.cs" />
@@ -392,6 +399,7 @@
     <Compile Include="ViewModels\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\ForgotViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
+    <Compile Include="ViewModels\GoalViewModel.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
@@ -556,6 +564,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Goal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -702,6 +711,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008191024229_ChangedBirthdayEventIdToBirthdayId.resx">
       <DependentUpon>202008191024229_ChangedBirthdayEventIdToBirthdayId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008241202247_AddedGoalTable.resx">
+      <DependentUpon>202008241202247_AddedGoalTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

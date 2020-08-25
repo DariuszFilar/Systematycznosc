@@ -13,7 +13,7 @@ namespace Systematycznosc.Models
     {
         public virtual UserProfile UserProfile { get; set; }
         public Todo Todo { get; set; }
-        public Goals Goals { get; set; }
+        public Goals2 Goals { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
