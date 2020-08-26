@@ -34,9 +34,9 @@ namespace Systematycznosc.Controllers
                 return RedirectToAction("Manage", "Profile");
             }
         }
-         
+
         [HttpPost]
-        public ActionResult Goals(GoalViewModel model, string submitButton, string status)
+        public ActionResult Index(GoalViewModel model, string submitButton, string status)
         {
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
@@ -44,113 +44,109 @@ namespace Systematycznosc.Controllers
             if (user == null)
                 return View();
 
-           var goals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToArray();
-                                        
-            for (int i = 0; i < goals.Count(); i++)
+            var goals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToArray();
+
+            //Dla tych samych dat
+            if (goals[0].GoalDate == null)
             {
-                //Dla tych samych dat
-                if (goals[0].GoalStatus == null)
-                {
-                    goals[0].GoalDate = DateTime.Today;
-                    goals[0].GoalStatus = status;
-                }
-                if (goals[0].GoalDate != null && goals[0].GoalDate == DateTime.Today)
-                {
-                    goals[0].GoalDate = DateTime.Today;
-                    goals[0].GoalStatus = status;
-                }
-                if (goals[1].GoalDate != null && goals[1].GoalDate == DateTime.Today)
-                {
-                    goals[1].GoalDate = DateTime.Today;
-                    goals[1].GoalStatus = status;
-                }
-                if (goals[2].GoalDate != null && goals[2].GoalDate == DateTime.Today)
-                {
-                    goals[2].GoalDate = DateTime.Today;
-                    goals[2].GoalStatus = status;
-                }
-                if (goals[3].GoalDate != null && goals[3].GoalDate == DateTime.Today)
-                {
-                    goals[3].GoalDate = DateTime.Today;
-                    goals[3].GoalStatus = status;
-                }
-                if (goals[4].GoalDate != null && goals[4].GoalDate == DateTime.Today)
-                {
-                    goals[4].GoalDate = DateTime.Today;
-                    goals[4].GoalStatus = status;
-                }
-                if (goals[5].GoalDate != null && goals[5].GoalDate == DateTime.Today)
-                {
-                    goals[5].GoalDate = DateTime.Today;
-                    goals[5].GoalStatus = status;
-                }
-                if (goals[6].GoalDate != null && goals[6].GoalDate == DateTime.Today)
-                {
-                    goals[6].GoalDate = DateTime.Today;
-                    goals[6].GoalStatus = status;
-                }
-                //Dla wolnych miejsc
+                goals[0].GoalDate = DateTime.Today;
+                goals[0].GoalStatus = status;
+            }
+            if (goals[0].GoalDate != null && goals[0].GoalDate == DateTime.Today)
+            {
+                goals[0].GoalDate = DateTime.Today;
+                goals[0].GoalStatus = status;
+            }
+            if (goals[1].GoalDate != null && goals[1].GoalDate == DateTime.Today)
+            {
+                goals[1].GoalDate = DateTime.Today;
+                goals[1].GoalStatus = status;
+            }
+            if (goals[2].GoalDate != null && goals[2].GoalDate == DateTime.Today)
+            {
+                goals[2].GoalDate = DateTime.Today;
+                goals[2].GoalStatus = status;
+            }
+            if (goals[3].GoalDate != null && goals[3].GoalDate == DateTime.Today)
+            {
+                goals[3].GoalDate = DateTime.Today;
+                goals[3].GoalStatus = status;
+            }
+            if (goals[4].GoalDate != null && goals[4].GoalDate == DateTime.Today)
+            {
+                goals[4].GoalDate = DateTime.Today;
+                goals[4].GoalStatus = status;
+            }
+            if (goals[5].GoalDate != null && goals[5].GoalDate == DateTime.Today)
+            {
+                goals[5].GoalDate = DateTime.Today;
+                goals[5].GoalStatus = status;
+            }
+            if (goals[6].GoalDate != null && goals[6].GoalDate == DateTime.Today)
+            {
+                goals[6].GoalDate = DateTime.Today;
+                goals[6].GoalStatus = status;
+            }
+            //Dla wolnych miejsc
 
-                if (goals[0].GoalDate != null && goals[1].GoalDate == null && goals[0].GoalDate != DateTime.Today)
-                {
-                    goals[1].GoalDate = DateTime.Today;
-                    goals[1].GoalStatus = status;
-                }
+            if (goals[0].GoalDate != null && goals[1].GoalDate == null && goals[0].GoalDate != DateTime.Today)
+            {
+                goals[1].GoalDate = DateTime.Today;
+                goals[1].GoalStatus = status;
+            }
 
-                else if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate == null && goals[1].GoalDate != DateTime.Today)
-                {
-                    goals[2].GoalDate = DateTime.Today;
-                    goals[2].GoalStatus = status;
-                }
-                else if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate != null && goals[3].GoalDate == null && goals[2].GoalDate != DateTime.Today)
-                {
-                    goals[3].GoalDate = DateTime.Today;
-                    goals[3].GoalStatus = status;
-                }
-                else if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate != null && goals[3].GoalDate != null && goals[4].GoalDate == null && goals[3].GoalDate != DateTime.Today)
-                {
-                    goals[4].GoalDate = DateTime.Today;
-                    goals[4].GoalStatus = status;
-                }
+            else if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate == null && goals[1].GoalDate != DateTime.Today)
+            {
+                goals[2].GoalDate = DateTime.Today;
+                goals[2].GoalStatus = status;
+            }
+            else if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate != null && goals[3].GoalDate == null && goals[2].GoalDate != DateTime.Today)
+            {
+                goals[3].GoalDate = DateTime.Today;
+                goals[3].GoalStatus = status;
+            }
+            else if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate != null && goals[3].GoalDate != null && goals[4].GoalDate == null && goals[3].GoalDate != DateTime.Today)
+            {
+                goals[4].GoalDate = DateTime.Today;
+                goals[4].GoalStatus = status;
+            }
 
-                if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate != null && goals[3].GoalDate != null && goals[4].GoalDate != null && goals[5].GoalDate == null && goals[4].GoalDate != DateTime.Today)
-                {
-                    goals[5].GoalDate = DateTime.Today;
-                    goals[5].GoalStatus = status;
-                }
+            if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate != null && goals[3].GoalDate != null && goals[4].GoalDate != null && goals[5].GoalDate == null && goals[4].GoalDate != DateTime.Today)
+            {
+                goals[5].GoalDate = DateTime.Today;
+                goals[5].GoalStatus = status;
+            }
 
-                if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate != null && goals[3].GoalDate != null && goals[4].GoalDate != null && goals[5].GoalDate != null &&
-               goals[6].GoalDate == null && goals[5].GoalDate != DateTime.Today)
-                {
-                    goals[5].GoalDate = DateTime.Today;
-                    goals[5].GoalStatus = status;
-                }
+            if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate != null && goals[3].GoalDate != null && goals[4].GoalDate != null && goals[5].GoalDate != null &&
+           goals[6].GoalDate == null && goals[5].GoalDate != DateTime.Today)
+            {
+                goals[5].GoalDate = DateTime.Today;
+                goals[5].GoalStatus = status;
+            }
 
-                //Dla zajętych
-                if (goals[6].GoalDate != null && goals[6].GoalDate != DateTime.Today)
-                {
-                    goals[0].GoalStatus = goals[1].GoalStatus;
-                    goals[0].GoalDate = goals[1].GoalDate;
-                    goals[1].GoalStatus = goals[2].GoalStatus;
-                    goals[1].GoalDate = goals[2].GoalDate;
-                    goals[2].GoalStatus = goals[3].GoalStatus;
-                    goals[2].GoalDate = goals[3].GoalDate;
-                    goals[3].GoalStatus = goals[4].GoalStatus;
-                    goals[3].GoalDate = goals[4].GoalDate;
-                    goals[4].GoalStatus = goals[5].GoalStatus;
-                    goals[4].GoalDate = goals[5].GoalDate;
-                    goals[5].GoalStatus = goals[6].GoalStatus;
-                    goals[5].GoalDate = goals[6].GoalDate;
-                    goals[6].GoalStatus = status;
-                    goals[6].GoalDate = DateTime.Today;
-                }
+            //Dla zajętych
+            if (goals[6].GoalDate != null && goals[6].GoalDate != DateTime.Today)
+            {
+                goals[0].GoalStatus = goals[1].GoalStatus;
+                goals[0].GoalDate = goals[1].GoalDate;
+                goals[1].GoalStatus = goals[2].GoalStatus;
+                goals[1].GoalDate = goals[2].GoalDate;
+                goals[2].GoalStatus = goals[3].GoalStatus;
+                goals[2].GoalDate = goals[3].GoalDate;
+                goals[3].GoalStatus = goals[4].GoalStatus;
+                goals[3].GoalDate = goals[4].GoalDate;
+                goals[4].GoalStatus = goals[5].GoalStatus;
+                goals[4].GoalDate = goals[5].GoalDate;
+                goals[5].GoalStatus = goals[6].GoalStatus;
+                goals[5].GoalDate = goals[6].GoalDate;
+                goals[6].GoalStatus = status;
+                goals[6].GoalDate = DateTime.Today;
             }
 
             model = new GoalViewModel(goals);
             _context.SaveChanges();
-            return View();
+            return PartialView("_FirstGoalTable", model);
         }
-        
     }
 
 }

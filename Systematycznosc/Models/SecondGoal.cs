@@ -18,7 +18,8 @@ namespace Systematycznosc.Models
         public string UserProfileId { get; set; }
 
         public virtual UserProfile UserProfile { get; set; }
-
+        public string GoalName { get; set; }
+        public string GoalQuestion { get; set; }
         public string GoalStatus { get; set; }
 
         public DateTime? GoalDate { get; set; }

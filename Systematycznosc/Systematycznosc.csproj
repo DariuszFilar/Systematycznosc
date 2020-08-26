@@ -363,6 +363,10 @@
     <Compile Include="Migrations\202008241202247_AddedGoalTable.Designer.cs">
       <DependentUpon>202008241202247_AddedGoalTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008261000361_AddedNameAndQuestionInGoalTable.cs" />
+    <Compile Include="Migrations\202008261000361_AddedNameAndQuestionInGoalTable.Designer.cs">
+      <DependentUpon>202008261000361_AddedNameAndQuestionInGoalTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -561,10 +565,12 @@
     <Content Include="Views\Birthday\FamilyBirthdayEdit.cshtml" />
     <Content Include="Views\Birthday\FriendBirthdayEdit.cshtml" />
     <Content Include="Views\Birthday\OtherBirthdayEdit.cshtml" />
+    <Content Include="Views\Goal\Index.cshtml" />
+    <Content Include="Views\Goal\_FirstGoalTable.cshtml" />
+    <Content Include="Views\Goal\_FirstGoalWelcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Goal\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -714,6 +720,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008241202247_AddedGoalTable.resx">
       <DependentUpon>202008241202247_AddedGoalTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008261000361_AddedNameAndQuestionInGoalTable.resx">
+      <DependentUpon>202008261000361_AddedNameAndQuestionInGoalTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
