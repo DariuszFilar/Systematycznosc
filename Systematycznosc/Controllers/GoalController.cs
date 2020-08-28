@@ -36,15 +36,25 @@ namespace Systematycznosc.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(GoalViewModel model, string submitButton, string status)
+        public ActionResult Index(GoalViewModel model, string saveButton, string status)
         {
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
 
+            dynamic goals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToArray();
+
             if (user == null)
                 return View();
-
-            var goals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToArray();
+                       
+            switch(saveButton)
+            {
+                case "firstGoal":
+                     goals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToArray();
+                    break;
+                case "secondGoal":
+                     goals = _context.SecondGoals.Where(x => x.UserProfileId == userId).ToArray();
+                    break;                    
+            }
 
             //Dla tych samych dat
             if (goals[0].GoalDate == null)
@@ -148,6 +158,5 @@ namespace Systematycznosc.Controllers
             return PartialView("_FirstGoalTable", model);
         }
     }
-
 }
 

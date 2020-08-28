@@ -54,7 +54,7 @@
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
                     <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="AGoal" class="btn btn-success" name="submitButton" id="FirstGoalSave">Zapisz</button>
+                        <button style="font-size:40px;" type="submit" value="firstGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="FirstGoalTable">@{Html.RenderPartial("_FirstGoalTable", Model);}</div>

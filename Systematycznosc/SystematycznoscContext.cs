@@ -12,9 +12,7 @@ namespace Systematycznosc
     public partial class SystematycznoscContext : IdentityDbContext<ApplicationUser>
     {
         public SystematycznoscContext()
-            : base("name=SystematycznoscContext")
-        {
-        }
+            : base("name=SystematycznoscContext") { }
 
 
         public virtual DbSet<MSreplication_options> MSreplication_options { get; set; }
