@@ -568,6 +568,8 @@
     <Content Include="Views\Goal\Index.cshtml" />
     <Content Include="Views\Goal\_FirstGoalTable.cshtml" />
     <Content Include="Views\Goal\_FirstGoalWelcome.cshtml" />
+    <Content Include="Views\Goal\_SecondGoalTable.cshtml" />
+    <Content Include="Views\Goal\_SecondGoalWelcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

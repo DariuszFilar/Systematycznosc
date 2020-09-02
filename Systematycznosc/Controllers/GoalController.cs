@@ -40,16 +40,58 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
+            int newGoal = 1;
+
 
             if (saveButton == "newGoal")
             {
-                // TODO: Make logic for "New Goal"
-                return View();
+                if (_context.FirstGoals.Where(x => x.UserProfileId == userId).ToList().Count() == 0) { newGoal = 1; }
+                if (_context.SecondGoals.Where(x => x.UserProfileId == userId).ToList().Count() == 0) { newGoal = 2; }
+
+                if (newGoal == 1)
+                {
+                    for (int i = 1; i < 8; i++)
+                    {
+                        var firstGoal = new FirstGoal
+                        {
+                            GoalId = i,
+                            GoalName = goalName,
+                            GoalQuestion = goalQuestion,
+                            UserProfileId = userId
+                        };
+
+                        _context.FirstGoals.Add(firstGoal);
+                        _context.SaveChanges();
+                    }
+                }
+
+                if (newGoal == 2)
+                {
+                    for (int i = 1; i < 8; i++)
+                    {
+                        var secondGoal = new SecondGoal
+                        {
+                            GoalId = i,
+                            GoalName = goalName,
+                            GoalQuestion = goalQuestion,
+                            UserProfileId = userId
+                        };
+
+                        _context.SecondGoals.Add(secondGoal);
+                        _context.SaveChanges();
+                    }
+                }
+
+
+                model.FirstGoals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToList();
+                model.SecondGoals = _context.SecondGoals.Where(x => x.UserProfileId == userId).ToList();
+
+                return View(model);
             }
             else
             {
                 dynamic goals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToArray();
-
+                string renderPartial = "";
                 if (user == null)
                     return View();
 
@@ -57,9 +99,11 @@ namespace Systematycznosc.Controllers
                 {
                     case "firstGoal":
                         goals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToArray();
+                        renderPartial = "_FirstGoalTable";
                         break;
                     case "secondGoal":
                         goals = _context.SecondGoals.Where(x => x.UserProfileId == userId).ToArray();
+                        renderPartial = "_SecondGoalTable";
                         break;
                 }
 
@@ -162,7 +206,7 @@ namespace Systematycznosc.Controllers
 
                 model = new GoalViewModel(goals);
                 _context.SaveChanges();
-                return PartialView("_FirstGoalTable", model);
+                return PartialView(renderPartial, model);
             }
         }
     }
