@@ -14,6 +14,12 @@ namespace Systematycznosc.ViewModels
 
         public List<FirstGoal> FirstGoals { get; set; }
         public List<SecondGoal> SecondGoals { get; set; }
+        public List<ThirdGoal> ThirdGoals { get; set; }
+        public List<FourthGoal> FourthGoals { get; set; }
+        public List<FifthGoal> FifthGoals { get; set; }
+        public List<SixthGoal> SixthGoals { get; set; }
+        public List<SeventhGoal> SeventhGoals { get; set; }
+        public List<EightGoal> EightGoals { get; set; }
 
         public GoalViewModel(IEnumerable<FirstGoal> firstGoals)
         {
@@ -23,6 +29,31 @@ namespace Systematycznosc.ViewModels
         public GoalViewModel(IEnumerable<SecondGoal> secondGoals)
         {
             SecondGoals = secondGoals.ToList();
+        }
+
+        public GoalViewModel(IEnumerable<ThirdGoal> thirdGoals)
+        {
+            ThirdGoals = thirdGoals.ToList();
+        }
+        public GoalViewModel(IEnumerable<FourthGoal> fourthGoals)
+        {
+            FourthGoals = fourthGoals.ToList();
+        }
+        public GoalViewModel(IEnumerable<FifthGoal> fifthGoals)
+        {
+            FifthGoals = fifthGoals.ToList();
+        }
+        public GoalViewModel(IEnumerable<SixthGoal> sixthGoals)
+        {
+            SixthGoals = sixthGoals.ToList();
+        }
+        public GoalViewModel(IEnumerable<SeventhGoal> seventhGoals)
+        {
+            SeventhGoals = seventhGoals.ToList();
+        }
+        public GoalViewModel(IEnumerable<EightGoal> eightGoals)
+        {
+            EightGoals = eightGoals.ToList();
         }
 
         public GoalViewModel()

@@ -367,12 +367,19 @@
     <Compile Include="Migrations\202008261000361_AddedNameAndQuestionInGoalTable.Designer.cs">
       <DependentUpon>202008261000361_AddedNameAndQuestionInGoalTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009091212458_AddedAnotherGoals.cs" />
+    <Compile Include="Migrations\202009091212458_AddedAnotherGoals.Designer.cs">
+      <DependentUpon>202009091212458_AddedAnotherGoals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Credo.cs" />
+    <Compile Include="Models\EightGoal.cs" />
     <Compile Include="Models\EveningQuestion.cs" />
     <Compile Include="Models\FamilyBirthday.cs" />
+    <Compile Include="Models\FifthGoal.cs" />
+    <Compile Include="Models\FourthGoal.cs" />
     <Compile Include="Models\FriendBirthday.cs" />
     <Compile Include="Models\Goals2.cs" />
     <Compile Include="Models\FirstGoal.cs" />
@@ -381,6 +388,9 @@
     <Compile Include="Models\OtherBirthday.cs" />
     <Compile Include="Models\Relationship.cs" />
     <Compile Include="Models\SecondGoal.cs" />
+    <Compile Include="Models\SeventhGoal.cs" />
+    <Compile Include="Models\SixthGoal.cs" />
+    <Compile Include="Models\ThirdGoal.cs" />
     <Compile Include="Models\Todo.cs" />
     <Compile Include="Models\UserProfile.cs" />
     <Compile Include="MSreplication_options.cs" />
@@ -570,6 +580,8 @@
     <Content Include="Views\Goal\_FirstGoalWelcome.cshtml" />
     <Content Include="Views\Goal\_SecondGoalTable.cshtml" />
     <Content Include="Views\Goal\_SecondGoalWelcome.cshtml" />
+    <Content Include="Views\Goal\_ThirdGoalTable.cshtml" />
+    <Content Include="Views\Goal\_ThirdGoalWelcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -725,6 +737,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008261000361_AddedNameAndQuestionInGoalTable.resx">
       <DependentUpon>202008261000361_AddedNameAndQuestionInGoalTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009091212458_AddedAnotherGoals.resx">
+      <DependentUpon>202009091212458_AddedAnotherGoals.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

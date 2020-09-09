@@ -33,11 +33,14 @@ namespace Systematycznosc
         public virtual DbSet<Goals2> Goals2 { get; set; }
 
         public virtual DbSet<FirstGoal> FirstGoals { get; set; }
-
         public virtual DbSet<SecondGoal> SecondGoals { get; set; }
-
+        public virtual DbSet<ThirdGoal> ThirdGoals { get; set; }
+        public virtual DbSet<FourthGoal> FourthGoals { get; set; }
+        public virtual DbSet<FifthGoal> FifthGoals { get; set; }
+        public virtual DbSet<SixthGoal> SixthGoals { get; set; }
+        public virtual DbSet<SeventhGoal> SeventhGoals { get; set; }
+        public virtual DbSet<EightGoal> EighthGoals { get; set; }
         public virtual DbSet<ImportantEvent> ImportantEvents { get; set; }
-
 
         public static SystematycznoscContext Create()
         {
