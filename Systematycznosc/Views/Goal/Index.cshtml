@@ -2,13 +2,14 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    <style>
-        body {
-            background-color: #1abc9c
-        }
-    </style>
 }
 
+@{
+    string icon = "";
+    string color = "";
+    int colornumber = 1;
+    string colordescription = "";
+}
 
 <div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
 
@@ -27,7 +28,8 @@
     </div>
     <div style="font-size:37px; text-align:center; padding-bottom:50px;">Warto je spełniać</div>
 
-    @{ // TODO: Make validation if can go forward
+    @{
+        if (Model.EightGoals.Count < 2)
         {
             using (Html.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
@@ -52,21 +54,21 @@
                 </div>
             }
         }
-        //else
-        //{
-        //    <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość Credo, wejdź w opcje by edytować</div>
-        //}
-    }
-    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panel">
-        @Html.ActionLink("Panel edycyjny", "RelationshipEdit", "Relationship", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
-    </div>
-</div>
-<div class=" d-flex align-items-center flex-column" style="background-color:white!important;">
-    @{
-        if (Model.FirstGoals.Count > 2)
+        else
         {
-            if (Model.FirstGoals[0].GoalName != null)
-            {
+            <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panel">
+                @Html.ActionLink("Panel edycyjny", "RelationshipEdit", "Relationship", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+            </div>
+        }
+    }
+</div>
+
+@{
+    if (Model.FirstGoals.Count > 2)
+    {
+        if (Model.FirstGoals[0].GoalName != null)
+        {
+            <div class=" d-flex align-items-center flex-column" style="background-color:white!important; padding-bottom:40px;">
                 <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:black!important;">@Model.FirstGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
                 <div class="divider-custom">
@@ -77,7 +79,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.FirstGoals[0].GoalQuestion</div>
-                using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -93,19 +95,34 @@
                     </div>
                 }
                 <div id="FirstGoalTable">@{Html.RenderPartial("_FirstGoalTable", Model);}</div>
-            }
+            </div>
         }
     }
-</div>
-<div class=" d-flex align-items-center flex-column">
-    @{
-        if (Model.SecondGoals.Count > 2)
+}
+
+
+@{
+    if (Model.SecondGoals.Count > 2)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
         {
-            if (Model.SecondGoals[0].GoalName != null)
-            {
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:black!important;">@Model.SecondGoals[0].GoalName</h1>
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+        if (Model.SecondGoals[0].GoalName != null)
+        {
+            <div class=" d-flex align-items-center flex-column @color pb-5">
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.SecondGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
-                <div class="divider-custom">
+                <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
                         <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
@@ -113,7 +130,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.SecondGoals[0].GoalQuestion</div>
-                using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -129,20 +146,35 @@
                     </div>
                 }
                 <div id="SecondGoalTable">@{Html.RenderPartial("_SecondGoalTable", Model);}</div>
-            }
+            </div>
         }
     }
-</div>
+}
 
-<div class=" d-flex align-items-center flex-column">
-    @{
-        if (Model.ThirdGoals.Count > 2)
+
+
+@{
+    if (Model.ThirdGoals.Count > 2)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
         {
-            if (Model.ThirdGoals[0].GoalName != null)
-            {
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:black!important;">@Model.ThirdGoals[0].GoalName</h1>
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+        if (Model.ThirdGoals[0].GoalName != null)
+        {
+            <div class=" d-flex align-items-center flex-column @color pb-5">
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.ThirdGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
-                <div class="divider-custom">
+                <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
                         <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
@@ -150,7 +182,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.ThirdGoals[0].GoalQuestion</div>
-                using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "ThirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "ThirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ThirdGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -162,14 +194,264 @@
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
                     <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="secondGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                        <button style="font-size:40px;" type="submit" value="thirdGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="ThirdGoalTable">@{Html.RenderPartial("_ThirdGoalTable", Model);}</div>
-            }
+            </div>
         }
     }
-</div>
+}
+
+@{
+    if (Model.FourthGoals.Count > 2)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+        if (Model.FourthGoals[0].GoalName != null)
+        {
+            <div class=" d-flex align-items-center flex-column @color pb-5">
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.FourthGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.FourthGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FourthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FourthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="fourthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="FourthGoalTable">@{Html.RenderPartial("_FourthGoalTable", Model);}</div>
+            </div>
+        }
+    }
+}
+
+@{
+    if (Model.FifthGoals.Count > 2)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+        if (Model.FifthGoals[0].GoalName != null)
+        {
+            <div class=" d-flex align-items-center flex-column @color pb-5">
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.FifthGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.FifthGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FifthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FifthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="fifthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="FifthGoalTable">@{Html.RenderPartial("_FifthGoalTable", Model);}</div>
+            </div>
+        }
+    }
+}
+@{
+    if (Model.SixthGoals.Count > 2)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+        if (Model.SixthGoals[0].GoalName != null)
+        {
+            <div class=" d-flex align-items-center flex-column @color pb-5">
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.SixthGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.SixthGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SixthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SixthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="sixthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="SixthGoalTable">@{Html.RenderPartial("_SixthGoalTable", Model);}</div>
+            </div>
+        }
+    }
+}
+
+@{
+    if (Model.SeventhGoals.Count > 2)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+        if (Model.SeventhGoals[0].GoalName != null)
+        {
+            <div class=" d-flex align-items-center flex-column @color pb-5">
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.SeventhGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.SeventhGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SeventhGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SeventhGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="seventhGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="SeventhGoalTable">@{Html.RenderPartial("_SeventhGoalTable", Model);}</div>
+            </div>
+        }
+    }
+}
+
+
+@{
+    if (Model.EightGoals.Count > 2)
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+        if (Model.EightGoals[0].GoalName != null)
+        {
+            <div class=" d-flex align-items-center flex-column @color pb-5">
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.EightGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon" style="">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.EightGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "EightGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EightGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="eightGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="EightGoalTable">@{Html.RenderPartial("_EightGoalTable", Model);}</div>
+            </div>
+        }
+    }
+}
 
 @section Scripts
 {
@@ -182,36 +464,8 @@
     <script src="~/scripts/jquery-1.10.2.js"></script>
     <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
 }
-@section Scripts
-{
-    <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
-}
 
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
-    var amountOfCredo = @Model.Credos.Count();
 
-    $(document).ready(function () {
-        if (@Model.Credos.Count() <= 11) {
-            $("#panel").hide();
-        }
-         if (@Model.Credos.Count() == 0) {
-            $("#panel2").hide();
-        }
-    });
-
-  $('#saveButton').click(function (e) {
-        $.ajax({
-            success: function (data) {
-                amountOfCredo++;
-                if (amountOfCredo > 11) {
-                    $("#addform").html("Osiągnięto maksymalną ilość Credo, wejdź w opcje by edytować");
-                    $("#panel").show();
-                }
-                if (amountOfCredo > 0) {
-                    $("#panel2").show();
-                }
-            },
-        });
-    });
 </script>

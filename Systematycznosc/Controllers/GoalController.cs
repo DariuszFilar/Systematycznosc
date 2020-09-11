@@ -159,7 +159,7 @@ namespace Systematycznosc.Controllers
                     }
                 }
 
-                if (newGoal == "seventhdGoal")
+                if (newGoal == "seventhGoal")
                 {
                     for (int i = 1; i < 8; i++)
                     {
@@ -219,6 +219,30 @@ namespace Systematycznosc.Controllers
                     case "secondGoal":
                         goals = _context.SecondGoals.Where(x => x.UserProfileId == userId).ToArray();
                         renderPartial = "_SecondGoalTable";
+                        break;
+                    case "thirdGoal":
+                        goals = _context.ThirdGoals.Where(x => x.UserProfileId == userId).ToArray();
+                        renderPartial = "_ThirdGoalTable";
+                        break;
+                    case "fourthGoal":
+                        goals = _context.FourthGoals.Where(x => x.UserProfileId == userId).ToArray();
+                        renderPartial = "_FourthGoalTable";
+                        break;
+                    case "fifthGoal":
+                        goals = _context.FifthGoals.Where(x => x.UserProfileId == userId).ToArray();
+                        renderPartial = "_FifthGoalTable";
+                        break;
+                    case "sixthGoal":
+                        goals = _context.SixthGoals.Where(x => x.UserProfileId == userId).ToArray();
+                        renderPartial = "_SixthGoalTable";
+                        break;
+                    case "seventhGoal":
+                        goals = _context.SeventhGoals.Where(x => x.UserProfileId == userId).ToArray();
+                        renderPartial = "_SeventhGoalTable";
+                        break;
+                    case "eightGoal":
+                        goals = _context.EighthGoals.Where(x => x.UserProfileId == userId).ToArray();
+                        renderPartial = "_EightGoalTable";
                         break;
                 }
 

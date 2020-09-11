@@ -582,6 +582,16 @@
     <Content Include="Views\Goal\_SecondGoalWelcome.cshtml" />
     <Content Include="Views\Goal\_ThirdGoalTable.cshtml" />
     <Content Include="Views\Goal\_ThirdGoalWelcome.cshtml" />
+    <Content Include="Views\Goal\_FourthGoalTable.cshtml" />
+    <Content Include="Views\Goal\_FifthGoalTable.cshtml" />
+    <Content Include="Views\Goal\_SixthGoalTable.cshtml" />
+    <Content Include="Views\Goal\_SeventhGoalTable.cshtml" />
+    <Content Include="Views\Goal\_EightGoalTable.cshtml" />
+    <Content Include="Views\Goal\_FourthGoalWelcome.cshtml" />
+    <Content Include="Views\Goal\_FifthGoalWelcome.cshtml" />
+    <Content Include="Views\Goal\_SixthGoalWelcome.cshtml" />
+    <Content Include="Views\Goal\_SeventhGoalWelcome.cshtml" />
+    <Content Include="Views\Goal\_EightGoalWelcome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
