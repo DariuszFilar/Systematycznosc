@@ -414,6 +414,7 @@
     <Compile Include="ViewModels\ForgotViewModel.cs" />
     <Compile Include="ViewModels\GoalsViewModel.cs" />
     <Compile Include="ViewModels\GoalViewModel.cs" />
+    <Compile Include="ViewModels\HomeViewModelWrapper.cs" />
     <Compile Include="ViewModels\IndexViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ManageLoginsViewModel.cs" />
@@ -592,6 +593,7 @@
     <Content Include="Views\Goal\_SixthGoalWelcome.cshtml" />
     <Content Include="Views\Goal\_SeventhGoalWelcome.cshtml" />
     <Content Include="Views\Goal\_EightGoalWelcome.cshtml" />
+    <Content Include="Views\Home\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -25,7 +26,7 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
             var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
-            UserProfileViewModelWrapper wrapper = new UserProfileViewModelWrapper();
+            HomeViewModelWrapper wrapper = new HomeViewModelWrapper();
 
             if (userProfile != null)
             {
@@ -40,12 +41,41 @@ namespace Systematycznosc.Controllers
                 var friendsBirthdays = _context.FriendsBirthdays.Where(x => x.UserProfileId == userId);
                 var othersBirthdays = _context.OthersBirthdays.Where(x => x.UserProfileId == userId);
                 var relationships = _context.Relationships.Where(x => x.UserProfileId == userId);
-                var goals = _context.Goals2.FirstOrDefault(x => x.Id == userId);
+                var firstGoals = _context.FirstGoals.Where(x => x.UserProfileId == userId);
+                var secondGoals = _context.SecondGoals.Where(x => x.UserProfileId == userId);
+                var thirdGoals = _context.ThirdGoals.Where(x => x.UserProfileId == userId);
+                var fourthGoals = _context.FourthGoals.Where(x => x.UserProfileId == userId);
+                var fifthGoals = _context.FifthGoals.Where(x => x.UserProfileId == userId);
+                var sixthGoals = _context.SixthGoals.Where(x => x.UserProfileId == userId);
+                var seventhGoals = _context.SeventhGoals.Where(x => x.UserProfileId == userId);
+                var eightGoals = _context.EighthGoals.Where(x => x.UserProfileId == userId);
 
                 wrapper.CredoViewModel = new CredoViewModel(credos);
                 wrapper.TodoViewModel = new TodoViewModel(todoes);
                 wrapper.RelationshipViewModel = new RelationshipViewModel(relationships);
-                wrapper.GoalsViewModel = new GoalsViewModel(goals);
+                wrapper.QuestionViewModel = new QuestionViewModel()
+                {
+                    MorningQuestions = morningQuestions.ToList(),
+                    EveningQuestions = eveningQuestions.ToList()
+                };
+                wrapper.BirthdayViewModel = new BirthdayViewModel()
+                {
+                    FamilyBirthdays = familyBirthdays.ToList(),
+                    FriendsBirthdays = friendsBirthdays.ToList(),
+                    OthersBirthdays = othersBirthdays.ToList()
+                };
+                wrapper.GoalViewModel = new GoalViewModel()
+                {
+                    FirstGoals = firstGoals.ToList(),
+                    SecondGoals = secondGoals.ToList(),
+                    ThirdGoals = thirdGoals.ToList(),
+                    FourthGoals = fourthGoals.ToList(),
+                    FifthGoals = fifthGoals.ToList(),
+                    SixthGoals = sixthGoals.ToList(),
+                    SeventhGoals = seventhGoals.ToList(),
+                    EightGoals = eightGoals.ToList()
+                };
+
                 return View(wrapper);
             }
 
