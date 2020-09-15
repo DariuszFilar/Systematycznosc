@@ -37,6 +37,7 @@ namespace Systematycznosc.Controllers
                 var morningQuestions = _context.MorningQuestions.Where(x => x.UserProfileId == userId);
                 var eveningQuestions = _context.EveningQuestions.Where(x => x.UserProfileId == userId);
                 var todoes = _context.Todoes.Where(x => x.UserProfileId == userId);
+                var imporantEvents = _context.ImportantEvents.Where(x => x.UserProfileId == userId);
                 var familyBirthdays = _context.FamilyBirthdays.Where(x => x.UserProfileId == userId);
                 var friendsBirthdays = _context.FriendsBirthdays.Where(x => x.UserProfileId == userId);
                 var othersBirthdays = _context.OthersBirthdays.Where(x => x.UserProfileId == userId);
@@ -51,7 +52,11 @@ namespace Systematycznosc.Controllers
                 var eightGoals = _context.EighthGoals.Where(x => x.UserProfileId == userId);
 
                 wrapper.CredoViewModel = new CredoViewModel(credos);
-                wrapper.TodoViewModel = new TodoViewModel(todoes);
+                wrapper.TodoViewModel = new TodoViewModel()
+                {
+                    Todoes = todoes.ToList(),
+                    ImportantEvents = imporantEvents.ToList()
+                };
                 wrapper.RelationshipViewModel = new RelationshipViewModel(relationships);
                 wrapper.QuestionViewModel = new QuestionViewModel()
                 {

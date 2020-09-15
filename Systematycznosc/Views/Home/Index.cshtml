@@ -54,7 +54,7 @@
 </header>
 
 @{
-    if (Model.CredoViewModel.Credos != null && Model.CredoViewModel.Credos.Any())
+    if (Model.CredoViewModel.Credos.Any(x => x.CredoValue != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
