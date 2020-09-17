@@ -110,7 +110,7 @@
 }
 
 @{
-    if (Model.RelationshipViewModel.Relationships != null && Model.RelationshipViewModel.Relationships.Any())
+    if (Model.RelationshipViewModel.Relationships.Any(x => x.RelationshipValue != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -135,7 +135,7 @@
                 <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Związek</h1>
 
                 <!-- Icon Divider -->
-                <div class="divider-custom">
+                <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
                         <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
@@ -165,7 +165,8 @@
     }
 }
 
-@{ if (Model.TodoViewModel != null && Model.TodoViewModel.Todoes.Any() || Model.TodoViewModel.ImportantEvents != null && Model.TodoViewModel.ImportantEvents.Any())
+@{
+    if (Model.QuestionViewModel.MorningQuestions.Any(x => x.MorningQuestionValue != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -180,29 +181,497 @@
             icon = "";
             colordescription = "black";
         };
+
+
+        <section class="page-section portfolio @color" id="credo">
+            <div class=" d-flex align-items-center flex-column">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Pytanie poranne:</h1>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto je zadać każdego poranka:</div>
+                    <ol>
+
+                        @{foreach (var morningQuestion in Model.QuestionViewModel.MorningQuestions.Where(x => x.MorningQuestionValue != null))
+                            {
+                                if (morningQuestion != null)
+                                {
+                                    <li>
+                                        <a>
+                                            @morningQuestion.MorningQuestionValue
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
+                    </ol>
+                </div>
+            </div>
+        </section>
     }
-
-    if (Model.TodoViewModel.Todoes != null && Model.TodoViewModel.Todoes.Any())
-    {
-        colornumber++;
-        if ((colornumber % 2) == 0)
-        {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "";
-            icon = "";
-            colordescription = "black";
-        };
-    }
-
-
 }
 
+@{
+    if (Model.QuestionViewModel.EveningQuestions.Any(x => x.EveningQuestionValue != null))
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
 
+
+        <section class="page-section portfolio @color" id="credo">
+            <div class=" d-flex align-items-center flex-column">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Pytanie wieczorne:</h1>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto je zadać każdego wieczoru:</div>
+                    <ol>
+
+                        @{foreach (var eveningQuestion in Model.QuestionViewModel.EveningQuestions.Where(x => x.EveningQuestionValue != null))
+                            {
+                                if (eveningQuestion != null)
+                                {
+                                    <li>
+                                        <a>
+                                            @eveningQuestion.EveningQuestionValue
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
+                    </ol>
+                </div>
+            </div>
+        </section>
+    }
+}
+
+@{ if (Model.GoalViewModel.FirstGoals.Any(x => x.GoalName != null))
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+
+
+
+        <div class=" d-flex align-items-center flex-column" style="background-color:white!important; padding-bottom:40px;">
+            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:black!important;">@Model.GoalViewModel.FirstGoals[0].GoalName</h1>
+            <!-- Icon Divider -->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.FirstGoals[0].GoalQuestion</div>
+            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div>
+                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                </div>
+                <div>
+                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                </div>
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="firstGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                </div>
+            }
+            <div id="FirstGoalTable">@{Html.RenderPartial("~/Views/Goal/_FirstGoalTable.cshtml", Model.GoalViewModel);} </div>
+        </div>
+    }
+}
+
+@{ if (Model.GoalViewModel.SecondGoals.Any(x => x.GoalName != null))
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+
+
+
+        <div class=" d-flex align-items-center flex-column" style="background-color:white!important; padding-bottom:40px;">
+            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:black!important;">@Model.GoalViewModel.SecondGoals[0].GoalName</h1>
+            <!-- Icon Divider -->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                </div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.SecondGoals[0].GoalQuestion</div>
+            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            {
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div>
+                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                </div>
+                <div>
+                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                </div>
+                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <button style="font-size:40px;" type="submit" value="SecondGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                </div>
+            }
+            <div id="SecondGoalTable">@{Html.RenderPartial("~/Views/Goal/_SecondGoalTable.cshtml", Model.GoalViewModel);} </div>
+        </div>
+    }
+}
+
+@{ if (Model.TodoViewModel.Todoes.Any(x => x.TodoValue != null))
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+
+        <section class="page-section portfolio @color" id="credo">
+            <div class=" d-flex align-items-center flex-column">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Do zrobienia</h1>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Po ich wykonaniu poczujesz się lepiej</div>
+                    <ol>
+
+                        @{foreach (var todo in Model.TodoViewModel.Todoes.Where(x => x.TodoValue != null))
+                            {
+                                if (todo != null)
+                                {
+                                    <li>
+                                        <a>
+                                            @todo.TodoValue
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        }
+                    </ol>
+                </div>
+            </div>
+        </section>
+    }
+}
+
+@{ if (Model.TodoViewModel.ImportantEvents.Any(x => x.ImportantEventName != null))
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+
+        <section class="page-section portfolio @color" id="credo">
+            <div class=" d-flex align-items-center flex-column">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Ważne wydarzenia</h1>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto o nich pamiętać</div>
+                    <div class="mr-3 ml-3">
+                        <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="width: 300px">Nazwa:</th>
+                                    <th style="width: 300px">Data: (M/D/R):</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var importantEvent in Model.TodoViewModel.ImportantEvents.Where(x => x.ImportantEventName != null && x.ImportantEventDate != null).OrderBy(x => x.ImportantEventDate))
+                                {
+                                    <tr>
+
+                                        <td>@importantEvent.ImportantEventName</td>
+                                        <td>
+                                            @importantEvent.ImportantEventDate.Value.ToString("MM/dd/yyyy")
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}
+
+@{ if (Model.BirthdayViewModel.FamilyBirthdays.Any(x => x.FamilyBirthdayName != null))
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+
+        <section class="page-section portfolio @color" id="credo">
+            <div class=" d-flex align-items-center flex-column">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Urodziny rodziny</h1>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto o nich pamiętać</div>
+                    <div class="mr-3 ml-3">
+                        <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="width: 300px">Nazwa:</th>
+                                    <th style="width: 300px">Data: (M/D/R):</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var familyBirthday in Model.BirthdayViewModel.FamilyBirthdays.Where(x => x.FamilyBirthdayName != null && x.FamilyBirthdayDate != null).OrderBy(x => x.FamilyBirthdayDate))
+                                {
+                                    <tr>
+
+                                        <td>@familyBirthday.FamilyBirthdayName</td>
+                                        <td>
+                                            @familyBirthday.FamilyBirthdayDate.Value.ToString("MM/dd/yyyy")
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}
+
+@{ if (Model.BirthdayViewModel.FriendsBirthdays.Any(x => x.FriendBirthdayName != null))
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+
+        <section class="page-section portfolio @color" id="credo">
+            <div class=" d-flex align-items-center flex-column">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Urodziny przyjaciół</h1>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto o nich pamiętać</div>
+                    <div class="mr-3 ml-3">
+                        <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="width: 300px">Nazwa:</th>
+                                    <th style="width: 300px">Data: (M/D/R):</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var friendBirthday in Model.BirthdayViewModel.FriendsBirthdays.Where(x => x.FriendBirthdayName != null && x.FriendBirthdayDate != null).OrderBy(x => x.FriendBirthdayDate))
+                                {
+                                    <tr>
+
+                                        <td>@friendBirthday.FriendBirthdayName</td>
+                                        <td>
+                                            @friendBirthday.FriendBirthdayDate.Value.ToString("MM/dd/yyyy")
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}
+
+@{ if (Model.BirthdayViewModel.OthersBirthdays.Any(x => x.OtherBirthdayName != null))
+    {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
+
+        <section class="page-section portfolio @color" id="credo">
+            <div class=" d-flex align-items-center flex-column">
+
+                <!-- Masthead Avatar Image -->
+                <!-- Masthead Heading -->
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Urodziny innych:</h1>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="numberlist">
+                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto o nich pamiętać</div>
+                    <div class="mr-3 ml-3">
+                        <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="width: 300px">Nazwa:</th>
+                                    <th style="width: 300px">Data: (M/D/R):</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var otherBirthday in Model.BirthdayViewModel.OthersBirthdays.Where(x => x.OtherBirthdayName != null && x.OtherBirthdayDate != null).OrderBy(x => x.OtherBirthdayDate))
+                                {
+                                    <tr>
+
+                                        <td>@otherBirthday.OtherBirthdayName</td>
+                                        <td>
+                                            @otherBirthday.OtherBirthdayDate.Value.ToString("MM/dd/yyyy")
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}
 @section Scripts
 {
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
