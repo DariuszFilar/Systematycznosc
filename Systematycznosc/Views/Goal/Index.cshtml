@@ -29,7 +29,7 @@
     <div style="font-size:37px; text-align:center; padding-bottom:50px;">Warto je spełniać</div>
 
     @{
-        if (Model.EightGoals.Count < 2)
+        if (Model.EightGoals == null)
         {
             using (Html.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
@@ -64,7 +64,7 @@
 </div>
 
 @{
-    if (Model.FirstGoals.Count > 2)
+    if (Model.FirstGoals.Any(x => x.GoalName != null))
     {
         if (Model.FirstGoals[0].GoalName != null)
         {
@@ -102,7 +102,7 @@
 
 
 @{
-    if (Model.SecondGoals.Count > 2)
+    if (Model.SecondGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -154,7 +154,7 @@
 
 
 @{
-    if (Model.ThirdGoals.Count > 2)
+    if (Model.ThirdGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -204,7 +204,7 @@
 }
 
 @{
-    if (Model.FourthGoals.Count > 2)
+    if (Model.FourthGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -254,7 +254,7 @@
 }
 
 @{
-    if (Model.FifthGoals.Count > 2)
+    if (Model.FifthGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -303,7 +303,7 @@
     }
 }
 @{
-    if (Model.SixthGoals.Count > 2)
+    if (Model.SixthGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -353,7 +353,7 @@
 }
 
 @{
-    if (Model.SeventhGoals.Count > 2)
+    if (Model.SeventhGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -404,7 +404,7 @@
 
 
 @{
-    if (Model.EightGoals.Count > 2)
+    if (Model.EightGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
