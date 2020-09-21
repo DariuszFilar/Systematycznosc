@@ -19,7 +19,7 @@
             <div class="divider-custom-line" style="background-color:white;"></div>
         </div>
         <div style="color:; font-size:37px; text-align:center;">W pełni darmowa</div>
-        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal pb-5", role = "form" }))
         {
             @Html.AntiForgeryToken()
             <div id="container">

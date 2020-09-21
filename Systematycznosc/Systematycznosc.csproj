@@ -484,6 +484,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -575,7 +576,6 @@
     <Content Include="Views\Goal\_SixthGoalWelcome.cshtml" />
     <Content Include="Views\Goal\_SeventhGoalWelcome.cshtml" />
     <Content Include="Views\Goal\_EightGoalWelcome.cshtml" />
-    <Content Include="Views\Home\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

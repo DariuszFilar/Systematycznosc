@@ -1,7 +1,8 @@
 ﻿@model Systematycznosc.ViewModels.GoalViewModel
 
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        
 }
 
 @{
@@ -29,7 +30,7 @@
     <div style="font-size:37px; text-align:center; padding-bottom:50px;">Warto je spełniać</div>
 
     @{
-        if (Model.EightGoals == null)
+        if (Model.EightGoals.Count() == 0)
         {
             using (Html.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
@@ -49,7 +50,7 @@
                         <button style="font-size:20px; color:white;" type="submit" value="newGoal" class="btn btn-xl btn-outline-info btn-secondary" id="saveButton" name="savebutton">Zapisz</button>
                     </div>
                     <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panel2">
-                        @Html.ActionLink("Panel edycyjny", "RelationshipEdit", "Relationship", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+                        @Html.ActionLink("Panel edycyjny", "Goaledit", "Goal", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
             }
@@ -57,7 +58,7 @@
         else
         {
             <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panel">
-                @Html.ActionLink("Panel edycyjny", "RelationshipEdit", "Relationship", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
+                @Html.ActionLink("Panel edycyjny", "GoalEdit", "Goal", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
             </div>
         }
     }
