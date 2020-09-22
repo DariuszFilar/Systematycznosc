@@ -10807,7 +10807,11 @@ footer {
         display: block !important;
     }
 }
-.questions {
+.theard {
+    overflow-wrap: break-word;
+    text-align:center;
+}
+.subtheard {
     overflow-wrap: break-word;
     word-break: break-all;
 }

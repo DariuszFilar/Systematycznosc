@@ -21,7 +21,7 @@
         <!-- Masthead Heading -->
         @if (Model.UserProfileViewModel.Name != null)
         {
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px; line-height: 50px;">Witaj @Model.UserProfileViewModel.Name</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px; line-height: 50px;">Witaj @Model.UserProfileViewModel.Name</h1>
         }
 
         <!-- Icon Divider -->
@@ -76,7 +76,7 @@
 
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Credoes</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Credoes</h1>
 
                 <!-- Icon Divider -->
                 <div class="divider-custom">
@@ -87,7 +87,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
                     <ol>
 
                         @{foreach (var credo in Model.CredoViewModel.Credos.Where(x => x.CredoValue != null))
@@ -132,7 +132,7 @@
 
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Związek</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Związek</h1>
 
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon">
@@ -143,7 +143,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">Rzeczy o których warto pamiętać byś był szczęśliwy</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Rzeczy o których warto pamiętać byś był szczęśliwy</div>
                     <ol>
 
                         @{foreach (var relationship in Model.RelationshipViewModel.Relationships.Where(x => x.RelationshipValue != null))
@@ -188,7 +188,7 @@
 
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Pytanie poranne:</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Pytanie poranne:</h1>
 
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon">
@@ -199,7 +199,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto je zadać każdego poranka:</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto je zadać każdego poranka:</div>
                     <ol>
 
                         @{foreach (var morningQuestion in Model.QuestionViewModel.MorningQuestions.Where(x => x.MorningQuestionValue != null))
@@ -244,7 +244,7 @@
 
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Pytanie wieczorne:</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Pytanie wieczorne:</h1>
 
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon">
@@ -255,7 +255,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto je zadać każdego wieczoru:</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto je zadać każdego wieczoru:</div>
                     <ol>
 
                         @{foreach (var eveningQuestion in Model.QuestionViewModel.EveningQuestions.Where(x => x.EveningQuestionValue != null))
@@ -296,7 +296,7 @@
 
 
         <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FirstGoals[0].GoalName</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FirstGoals[0].GoalName</h1>
             <!-- Icon Divider -->
             <div class="divider-custom @icon">
                 <div class="divider-custom-line"></div>
@@ -305,7 +305,7 @@
                 </div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.FirstGoals[0].GoalQuestion</div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FirstGoals[0].GoalQuestion</div>
             @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -345,7 +345,7 @@
 
 
         <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SecondGoals[0].GoalName</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SecondGoals[0].GoalName</h1>
             <!-- Icon Divider -->
             <div class="divider-custom @icon">
                 <div class="divider-custom-line"></div>
@@ -354,7 +354,7 @@
                 </div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.SecondGoals[0].GoalQuestion</div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SecondGoals[0].GoalQuestion</div>
             @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -367,7 +367,7 @@
                     @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                 </div>
                 <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="SecondGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <button style="font-size:40px;" type="submit" value="secondGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                 </div>
             }
             <div id="SecondGoalTable">@{Html.RenderPartial("~/Views/Goal/_SecondGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -394,7 +394,7 @@
 
 
         <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.ThirdGoals[0].GoalName</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.ThirdGoals[0].GoalName</h1>
             <!-- Icon Divider -->
             <div class="divider-custom @icon">
                 <div class="divider-custom-line"></div>
@@ -403,7 +403,7 @@
                 </div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.ThirdGoals[0].GoalQuestion</div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.ThirdGoals[0].GoalQuestion</div>
             @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "ThirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ThirdGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -416,7 +416,7 @@
                     @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                 </div>
                 <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="ThirdGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <button style="font-size:40px;" type="submit" value="thirdGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                 </div>
             }
             <div id="ThirdGoalTable">@{Html.RenderPartial("~/Views/Goal/_ThirdGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -443,7 +443,7 @@
 
 
         <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FourthGoals[0].GoalName</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FourthGoals[0].GoalName</h1>
             <!-- Icon Divider -->
             <div class="divider-custom @icon">
                 <div class="divider-custom-line"></div>
@@ -452,7 +452,7 @@
                 </div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.FourthGoals[0].GoalQuestion</div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FourthGoals[0].GoalQuestion</div>
             @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FourthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FourthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -465,7 +465,7 @@
                     @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                 </div>
                 <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="FourthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <button style="font-size:40px;" type="submit" value="fourthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                 </div>
             }
             <div id="FourthGoalTable">@{Html.RenderPartial("~/Views/Goal/_FourthGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -492,7 +492,7 @@
 
 
         <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FifthGoals[0].GoalName</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FifthGoals[0].GoalName</h1>
             <!-- Icon Divider -->
             <div class="divider-custom @icon">
                 <div class="divider-custom-line"></div>
@@ -501,7 +501,7 @@
                 </div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.FifthGoals[0].GoalQuestion</div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FifthGoals[0].GoalQuestion</div>
             @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FifthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FifthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -514,7 +514,7 @@
                     @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                 </div>
                 <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="FifthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <button style="font-size:40px;" type="submit" value="fifthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                 </div>
             }
             <div id="FifthGoalTable">@{Html.RenderPartial("~/Views/Goal/_FifthGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -541,7 +541,7 @@
 
 
         <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SixthGoals[0].GoalName</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SixthGoals[0].GoalName</h1>
             <!-- Icon Divider -->
             <div class="divider-custom @icon">
                 <div class="divider-custom-line"></div>
@@ -550,7 +550,7 @@
                 </div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.SixthGoals[0].GoalQuestion</div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SixthGoals[0].GoalQuestion</div>
             @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SixthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SixthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -563,7 +563,7 @@
                     @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                 </div>
                 <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="SixthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <button style="font-size:40px;" type="submit" value="sixthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                 </div>
             }
             <div id="SixthGoalTable">@{Html.RenderPartial("~/Views/Goal/_SixthGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -590,7 +590,7 @@
 
 
         <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SeventhGoals[0].GoalName</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SeventhGoals[0].GoalName</h1>
             <!-- Icon Divider -->
             <div class="divider-custom @icon">
                 <div class="divider-custom-line"></div>
@@ -599,7 +599,7 @@
                 </div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.SeventhGoals[0].GoalQuestion</div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SeventhGoals[0].GoalQuestion</div>
             @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SeventhGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SeventhGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -612,7 +612,7 @@
                     @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                 </div>
                 <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="SeventhGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <button style="font-size:40px;" type="submit" value="seventhGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                 </div>
             }
             <div id="SeventhGoalTable">@{Html.RenderPartial("~/Views/Goal/_SeventhGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -639,7 +639,7 @@
 
 
         <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.EightGoals[0].GoalName</h1>
+            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.EightGoals[0].GoalName</h1>
             <!-- Icon Divider -->
             <div class="divider-custom @icon">
                 <div class="divider-custom-line"></div>
@@ -648,7 +648,7 @@
                 </div>
                 <div class="divider-custom-line"></div>
             </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;">@Model.GoalViewModel.EightGoals[0].GoalQuestion</div>
+            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.EightGoals[0].GoalQuestion</div>
             @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "EighthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EightGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -661,7 +661,7 @@
                     @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                 </div>
                 <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="EightGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <button style="font-size:40px;" type="submit" value="eightGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                 </div>
             }
             <div id="EightGoalTable">@{Html.RenderPartial("~/Views/Goal/_EightGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -690,7 +690,7 @@
 
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Do zrobienia</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Do zrobienia</h1>
 
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon">
@@ -701,7 +701,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">Po ich wykonaniu poczujesz się lepiej</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Po ich wykonaniu poczujesz się lepiej</div>
                     <ol>
 
                         @{foreach (var todo in Model.TodoViewModel.Todoes.Where(x => x.TodoValue != null))
@@ -740,7 +740,7 @@
         };
 
         <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column">
+            <div class=" d-flex align-items-center flex-column theard">
 
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
@@ -755,7 +755,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto o nich pamiętać</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto o nich pamiętać</div>
                     <div class="mr-3 ml-3">
                         <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
                             <thead class="thead-dark">
@@ -805,7 +805,7 @@
 
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Urodziny rodziny</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Urodziny rodziny</h1>
 
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon">
@@ -816,7 +816,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto o nich pamiętać</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto o nich pamiętać</div>
                     <div class="mr-3 ml-3">
                         <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
                             <thead class="thead-dark">
@@ -866,7 +866,7 @@
 
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Urodziny przyjaciół</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Urodziny przyjaciół</h1>
 
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon">
@@ -877,7 +877,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto o nich pamiętać</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto o nich pamiętać</div>
                     <div class="mr-3 ml-3">
                         <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
                             <thead class="thead-dark">
@@ -927,7 +927,7 @@
 
                 <!-- Masthead Avatar Image -->
                 <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Urodziny innych:</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Urodziny innych:</h1>
 
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon">
@@ -938,7 +938,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;">Warto o nich pamiętać</div>
+                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto o nich pamiętać</div>
                     <div class="mr-3 ml-3">
                         <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
                             <thead class="thead-dark">
