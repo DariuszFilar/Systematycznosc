@@ -47,7 +47,7 @@ namespace Systematycznosc.Controllers
             var userId = User.Identity.GetUserId();
             var user = _context.Users.FirstOrDefault(x => x.Id == userId);
             string newGoal = "";
-            
+
 
             if (saveButton == "newGoal")
             {
@@ -346,6 +346,62 @@ namespace Systematycznosc.Controllers
                 model = new GoalViewModel(goals);
                 _context.SaveChanges();
                 return PartialView(renderPartial, model);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult GoalEdit()
+        {
+            var userId = User.Identity.GetUserId();
+            var userProfile = _context.UserProfiles.FirstOrDefault(x => x.Id == userId);
+
+            if (userProfile != null)
+            {
+                GoalViewModel model = new GoalViewModel
+                {
+                    FirstGoals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToList(),
+                    SecondGoals = _context.SecondGoals.Where(x => x.UserProfileId == userId).ToList(),
+                    ThirdGoals = _context.ThirdGoals.Where(x => x.UserProfileId == userId).ToList(),
+                    FourthGoals = _context.FourthGoals.Where(x => x.UserProfileId == userId).ToList(),
+                    FifthGoals = _context.FifthGoals.Where(x => x.UserProfileId == userId).ToList(),
+                    SixthGoals = _context.SixthGoals.Where(x => x.UserProfileId == userId).ToList(),
+                    SeventhGoals = _context.SeventhGoals.Where(x => x.UserProfileId == userId).ToList(),
+                    EightGoals = _context.EighthGoals.Where(x => x.UserProfileId == userId).ToList()
+                };
+                return View(model);
+            }
+            else
+            {
+                return RedirectToAction("Manage", "Profile");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult GoalEdit(GoalViewModel model)
+        {
+            var userId = User.Identity.GetUserId();
+
+            if (model.FirstGoals == null)
+            {
+                return RedirectToAction("Index", "Goal");
+            }
+
+            else
+            {
+                imporantEvents = model.ImportantEvents;
+                foreach (var imporantEvent in imporantEvents)
+                {
+                    if (imporantEvent.ImportantEventName == null)
+                    {
+                        imporantEvent.ImportantEventDate = null;
+                    }
+                    _context.Entry(imporantEvent).State = EntityState.Modified;
+                }
+
+                _context.SaveChanges();
+                ModelState.Clear();
+
+                return View(model);
             }
         }
     }

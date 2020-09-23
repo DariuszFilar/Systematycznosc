@@ -576,6 +576,7 @@
     <Content Include="Views\Goal\_SixthGoalWelcome.cshtml" />
     <Content Include="Views\Goal\_SeventhGoalWelcome.cshtml" />
     <Content Include="Views\Goal\_EightGoalWelcome.cshtml" />
+    <Content Include="Views\Goal\GoalEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
