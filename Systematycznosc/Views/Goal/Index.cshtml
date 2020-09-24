@@ -1,14 +1,14 @@
 ﻿@model Systematycznosc.ViewModels.GoalViewModel
 
 @{
-        Layout = "~/Views/Shared/_Layout.cshtml";
-        
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 
 @{
     string icon = "";
     string color = "";
-    int colornumber = 1;
+    int colornumber = 0;
     string colordescription = "";
 }
 
@@ -65,14 +65,27 @@
 </div>
 
 @{
-    if (Model.FirstGoals.Any(x => x.GoalName != null))
+    if (Model.FirstGoals[0].GoalName != null)
     {
+        colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "";
+            icon = "";
+            colordescription = "black";
+        };
         if (Model.FirstGoals[0].GoalName != null)
         {
-            <div class=" d-flex align-items-center flex-column" style="background-color:white!important; padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:black!important;">@Model.FirstGoals[0].GoalName</h1>
+            <div class=" d-flex align-items-center flex-column @color pb-5">
+                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.FirstGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
-                <div class="divider-custom">
+                <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
                         <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
@@ -103,7 +116,7 @@
 
 
 @{
-    if (Model.SecondGoals.Any(x => x.GoalName != null))
+    if (Model.SecondGoals[0].GoalName != null)
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -155,7 +168,7 @@
 
 
 @{
-    if (Model.ThirdGoals.Any(x => x.GoalName != null))
+    if (Model.ThirdGoals[0].GoalName != null)
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -205,7 +218,7 @@
 }
 
 @{
-    if (Model.FourthGoals.Any(x => x.GoalName != null))
+    if (Model.FourthGoals[0].GoalName != null)
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -255,7 +268,7 @@
 }
 
 @{
-    if (Model.FifthGoals.Any(x => x.GoalName != null))
+    if (Model.FifthGoals[0].GoalName != null)
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -304,7 +317,7 @@
     }
 }
 @{
-    if (Model.SixthGoals.Any(x => x.GoalName != null))
+    if (Model.SixthGoals[0].GoalName != null)
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -354,7 +367,7 @@
 }
 
 @{
-    if (Model.SeventhGoals.Any(x => x.GoalName != null))
+    if (Model.SeventhGoals[0].GoalName != null)
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -405,7 +418,7 @@
 
 
 @{
-    if (Model.EightGoals.Any(x => x.GoalName != null))
+    if (Model.EightGoals[0].GoalName != null)
     {
         colornumber++;
         if ((colornumber % 2) == 0)

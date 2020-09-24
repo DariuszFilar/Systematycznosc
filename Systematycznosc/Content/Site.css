@@ -10780,6 +10780,16 @@ footer {
         padding-top: 100px !important;
         font-size: 55px;
     }
+    .theard {
+        overflow-wrap: break-word;
+        text-align: center;
+    }
+
+    .subtheard {
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+
 }
 @media (min-width: 768px) {
     #Opener {
@@ -10807,11 +10817,12 @@ footer {
         display: block !important;
     }
 }
+
 .theard {
-    overflow-wrap: break-word;
+    /*overflow-wrap: break-word;*/
     text-align:center;
 }
 .subtheard {
-    overflow-wrap: break-word;
+    /*overflow-wrap: break-word;*/
     word-break: break-all;
 }
