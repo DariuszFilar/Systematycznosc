@@ -65,7 +65,7 @@
 </div>
 
 @{
-    if (Model.FirstGoals[0].GoalName != null)
+    if (Model.FirstGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -116,7 +116,7 @@
 
 
 @{
-    if (Model.SecondGoals[0].GoalName != null)
+    if (Model.SecondGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -168,7 +168,7 @@
 
 
 @{
-    if (Model.ThirdGoals[0].GoalName != null)
+    if (Model.ThirdGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -218,7 +218,7 @@
 }
 
 @{
-    if (Model.FourthGoals[0].GoalName != null)
+    if (Model.FourthGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -268,7 +268,7 @@
 }
 
 @{
-    if (Model.FifthGoals[0].GoalName != null)
+    if (Model.FifthGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -317,7 +317,7 @@
     }
 }
 @{
-    if (Model.SixthGoals[0].GoalName != null)
+    if (Model.SixthGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -367,7 +367,7 @@
 }
 
 @{
-    if (Model.SeventhGoals[0].GoalName != null)
+    if (Model.SeventhGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)
@@ -418,7 +418,7 @@
 
 
 @{
-    if (Model.EightGoals[0].GoalName != null)
+    if (Model.EightGoals.Any(x => x.GoalName != null))
     {
         colornumber++;
         if ((colornumber % 2) == 0)

@@ -418,13 +418,13 @@ namespace Systematycznosc.Controllers
                 goal[0].GoalName = model.SixthGoals[0].GoalName;
                 goal[0].GoalQuestion = model.SixthGoals[0].GoalName;
             }
-            if (saveButton == "seventGoal")
+            if (saveButton == "seventhGoal")
             {
                 var goal = _context.SeventhGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.SeventhGoals[0].GoalName;
                 goal[0].GoalQuestion = model.SeventhGoals[0].GoalName;
             }
-            if (saveButton == "eightGoal")
+            if (saveButton == "eighthGoal")
             {
                 var goal = _context.EighthGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.EightGoals[0].GoalName;
