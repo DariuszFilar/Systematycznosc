@@ -27,37 +27,33 @@
         </div>
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
-
     @{if (Model.FirstGoals.Any(x => x.GoalName != null))
         {
-            using (Html.BeginForm("GoalEdit", "Goal", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-s-5 col-md-11 col-lg-6", role = "form", style = " text-align: center;font-size:35px; " }))
+            using (Html.BeginForm("GoalEdit", "Goal", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "bg-white w-100", role = "form", style = " text-align: center;font-size:35px;"  }))
             {
-                <div class=" d-flex align-items-center flex-column @color pb-5">
-                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                    <div class="form-group" style="text-align: center;">
-                        <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none !important;">
-                            @Html.Label("Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.FirstGoals[0].GoalName, null, new { placeholder = "Tu wpisz nazwę celu", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue" })
-                            @Html.Label("Pytanie do celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBoxFor(m => m.FirstGoals[0].GoalQuestion, null, new { placeholder = "Tu wpisz pytanie do celu", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue" })
-                            @Html.HiddenFor(m => m.FirstGoals[0].UserProfile)
-                            @Html.HiddenFor(m => m.FirstGoals[0].UserProfileId)
-                            @Html.Hidden("firstGoal", null)
-                        </div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group" style="text-align: center; display:block!important">
+                    <div class="col-md-10" style="margin-left: auto; margin-right: auto;">
+                        @Html.Label("Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:block!important; color: black;" })
+                        @Html.TextBoxFor(m => m.FirstGoals[0].GoalName, null, new { placeholder = "Tu wpisz nazwę celu", @class = "form-control col-s-5 col-md-11 col-lg-6", style = " display:block!important; font-size:25px;", name = "credoValue" })
+                        @Html.Label("Pytanie do celu:", new { @class = "", style = "margin-left:auto; margin-right:auto; display:block; color: black" })
+                        @Html.TextBoxFor(m => m.FirstGoals[0].GoalQuestion, null, new { placeholder = "Tu wpisz pytanie do celu", @class = "form-control col-s-5 col-md-11 col-lg-6", style = "display:block; font-size:25px;", name = "credoValue" })
+                        @Html.HiddenFor(m => m.FirstGoals[0].UserProfile)
+                        @Html.HiddenFor(m => m.FirstGoals[0].UserProfileId)
+                        @Html.Hidden("firstGoal", null)
                     </div>
-                    <div style="padding-bottom:50px; padding-top:20px;">
-                        <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                            <button style="font-size:20px; color:white;" type="submit" value="firstGoal" class="btn btn-xl btn-outline-info btn-secondary" name="saveButton">
-                                Zapisz
-                            </button>
-                        </div>
-                        <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                            @Html.ActionLink("Powrót do celów", "Index", "Goal", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
-                        </div>
+                </div>
+                <div style="padding-bottom:50px; padding-top:20px; display:block!important">
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:20px; color:white;" type="submit" value="firstGoal" class="btn btn-xl btn-outline-info btn-secondary" name="saveButton">
+                            Zapisz
+                        </button>
+                    </div>
+                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        @Html.ActionLink("Powrót do celów", "Index", "Goal", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
             }
-
         }
     }
 
@@ -179,7 +175,7 @@
 
     @{if (Model.SixthGoals.Any(x => x.GoalName != null))
         {
-            using (Html.BeginForm("GoalEdit", "Goal", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-s-5 col-md-11 col-lg-6", role = "form", style = " text-align: center;font-size:35px; " }))
+            using (Html.BeginForm("GoalEdit", "Goal", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal col-s-5 col-md-11 col-lg-6 ", role = "form", style = " text-align: center; font-size:35px" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group" style="text-align: center;">
