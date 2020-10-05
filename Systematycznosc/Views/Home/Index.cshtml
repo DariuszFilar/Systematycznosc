@@ -279,393 +279,417 @@
 
 @{ if (Model.GoalViewModel.FirstGoals.Any(x => x.GoalName != null))
     {
-        colornumber++;
-        if ((colornumber % 2) == 0)
+        if (@Model.GoalViewModel.FirstGoals[0].GoalName != null)
         {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "";
-            icon = "";
-            colordescription = "black";
-        };
-
-
-
-        <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FirstGoals[0].GoalName</h1>
-            <!-- Icon Divider -->
-            <div class="divider-custom @icon">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FirstGoals[0].GoalQuestion</div>
-            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            colornumber++;
+            if ((colornumber % 2) == 0)
             {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div>
-                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                </div>
-                <div>
-                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
-                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
-                </div>
-                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="firstGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
-                </div>
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
             }
-            <div id="FirstGoalTable">@{Html.RenderPartial("~/Views/Goal/_FirstGoalTable.cshtml", Model.GoalViewModel);} </div>
-        </div>
+            else
+            {
+                color = "";
+                icon = "";
+                colordescription = "black";
+            };
+
+
+
+            <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FirstGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FirstGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="firstGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="FirstGoalTable">@{Html.RenderPartial("~/Views/Goal/_FirstGoalTable.cshtml", Model.GoalViewModel);} </div>
+            </div>
+        }
     }
 }
 
 @{ if (Model.GoalViewModel.SecondGoals.Any(x => x.GoalName != null))
     {
-        colornumber++;
-        if ((colornumber % 2) == 0)
+        if (@Model.GoalViewModel.SecondGoals[0].GoalName != null)
         {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "";
-            icon = "";
-            colordescription = "black";
-        };
-
-
-
-        <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SecondGoals[0].GoalName</h1>
-            <!-- Icon Divider -->
-            <div class="divider-custom @icon">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SecondGoals[0].GoalQuestion</div>
-            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            colornumber++;
+            if ((colornumber % 2) == 0)
             {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div>
-                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                </div>
-                <div>
-                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
-                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
-                </div>
-                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="secondGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
-                </div>
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
             }
-            <div id="SecondGoalTable">@{Html.RenderPartial("~/Views/Goal/_SecondGoalTable.cshtml", Model.GoalViewModel);} </div>
-        </div>
+            else
+            {
+                color = "";
+                icon = "";
+                colordescription = "black";
+            };
+
+
+
+            <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SecondGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SecondGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="secondGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="SecondGoalTable">@{Html.RenderPartial("~/Views/Goal/_SecondGoalTable.cshtml", Model.GoalViewModel);} </div>
+            </div>
+        }
     }
 }
 
-@{ if (Model.GoalViewModel.ThirdGoals.Any(x => x.GoalName != null))
+@{if (Model.GoalViewModel.ThirdGoals.Any(x => x.GoalName != null))
     {
-        colornumber++;
-        if ((colornumber % 2) == 0)
+        if (@Model.GoalViewModel.ThirdGoals[0].GoalName != null)
         {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "";
-            icon = "";
-            colordescription = "black";
-        };
-
-
-
-        <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.ThirdGoals[0].GoalName</h1>
-            <!-- Icon Divider -->
-            <div class="divider-custom @icon">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.ThirdGoals[0].GoalQuestion</div>
-            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "ThirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ThirdGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            colornumber++;
+            if ((colornumber % 2) == 0)
             {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div>
-                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                </div>
-                <div>
-                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
-                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
-                </div>
-                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="thirdGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
-                </div>
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
             }
-            <div id="ThirdGoalTable">@{Html.RenderPartial("~/Views/Goal/_ThirdGoalTable.cshtml", Model.GoalViewModel);} </div>
-        </div>
+            else
+            {
+                color = "";
+                icon = "";
+                colordescription = "black";
+            };
+
+
+
+            <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.ThirdGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.ThirdGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "ThirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ThirdGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="thirdGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="ThirdGoalTable">@{Html.RenderPartial("~/Views/Goal/_ThirdGoalTable.cshtml", Model.GoalViewModel);} </div>
+            </div>
+        }
     }
 }
 
 @{ if (Model.GoalViewModel.FourthGoals.Any(x => x.GoalName != null))
     {
-        colornumber++;
-        if ((colornumber % 2) == 0)
+        if (@Model.GoalViewModel.FourthGoals[0].GoalName != null)
         {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "";
-            icon = "";
-            colordescription = "black";
-        };
-
-
-
-        <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FourthGoals[0].GoalName</h1>
-            <!-- Icon Divider -->
-            <div class="divider-custom @icon">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FourthGoals[0].GoalQuestion</div>
-            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FourthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FourthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            colornumber++;
+            if ((colornumber % 2) == 0)
             {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div>
-                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                </div>
-                <div>
-                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
-                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
-                </div>
-                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="fourthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
-                </div>
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
             }
-            <div id="FourthGoalTable">@{Html.RenderPartial("~/Views/Goal/_FourthGoalTable.cshtml", Model.GoalViewModel);} </div>
-        </div>
+            else
+            {
+                color = "";
+                icon = "";
+                colordescription = "black";
+            };
+
+
+
+            <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FourthGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FourthGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FourthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FourthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="fourthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="FourthGoalTable">@{Html.RenderPartial("~/Views/Goal/_FourthGoalTable.cshtml", Model.GoalViewModel);} </div>
+            </div>
+        }
     }
 }
 
 @{ if (Model.GoalViewModel.FifthGoals.Any(x => x.GoalName != null))
     {
-        colornumber++;
-        if ((colornumber % 2) == 0)
+        if (@Model.GoalViewModel.FifthGoals[0].GoalName != null)
         {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "";
-            icon = "";
-            colordescription = "black";
-        };
-
-
-
-        <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FifthGoals[0].GoalName</h1>
-            <!-- Icon Divider -->
-            <div class="divider-custom @icon">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FifthGoals[0].GoalQuestion</div>
-            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FifthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FifthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            colornumber++;
+            if ((colornumber % 2) == 0)
             {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div>
-                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                </div>
-                <div>
-                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
-                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
-                </div>
-                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="fifthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
-                </div>
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
             }
-            <div id="FifthGoalTable">@{Html.RenderPartial("~/Views/Goal/_FifthGoalTable.cshtml", Model.GoalViewModel);} </div>
-        </div>
+            else
+            {
+                color = "";
+                icon = "";
+                colordescription = "black";
+            };
+
+
+
+            <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FifthGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FifthGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FifthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FifthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="fifthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="FifthGoalTable">@{Html.RenderPartial("~/Views/Goal/_FifthGoalTable.cshtml", Model.GoalViewModel);} </div>
+            </div>
+        }
     }
 }
 
 @{ if (Model.GoalViewModel.SixthGoals.Any(x => x.GoalName != null))
     {
-        colornumber++;
-        if ((colornumber % 2) == 0)
+        if (@Model.GoalViewModel.SixthGoals[0].GoalName != null)
         {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "";
-            icon = "";
-            colordescription = "black";
-        };
-
-
-
-        <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SixthGoals[0].GoalName</h1>
-            <!-- Icon Divider -->
-            <div class="divider-custom @icon">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SixthGoals[0].GoalQuestion</div>
-            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SixthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SixthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            colornumber++;
+            if ((colornumber % 2) == 0)
             {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div>
-                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                </div>
-                <div>
-                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
-                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
-                </div>
-                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="sixthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
-                </div>
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
             }
-            <div id="SixthGoalTable">@{Html.RenderPartial("~/Views/Goal/_SixthGoalTable.cshtml", Model.GoalViewModel);} </div>
-        </div>
+            else
+            {
+                color = "";
+                icon = "";
+                colordescription = "black";
+            };
+
+
+
+            <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SixthGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SixthGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SixthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SixthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="sixthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="SixthGoalTable">@{Html.RenderPartial("~/Views/Goal/_SixthGoalTable.cshtml", Model.GoalViewModel);} </div>
+            </div>
+        }
     }
 }
 
 @{ if (Model.GoalViewModel.SeventhGoals.Any(x => x.GoalName != null))
     {
-        colornumber++;
-        if ((colornumber % 2) == 0)
+        if (@Model.GoalViewModel.SeventhGoals[0].GoalName != null)
         {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "";
-            icon = "";
-            colordescription = "black";
-        };
-
-
-
-        <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SeventhGoals[0].GoalName</h1>
-            <!-- Icon Divider -->
-            <div class="divider-custom @icon">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SeventhGoals[0].GoalQuestion</div>
-            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SeventhGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SeventhGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            colornumber++;
+            if ((colornumber % 2) == 0)
             {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div>
-                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                </div>
-                <div>
-                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
-                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
-                </div>
-                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="seventhGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
-                </div>
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
             }
-            <div id="SeventhGoalTable">@{Html.RenderPartial("~/Views/Goal/_SeventhGoalTable.cshtml", Model.GoalViewModel);} </div>
-        </div>
+            else
+            {
+                color = "";
+                icon = "";
+                colordescription = "black";
+            };
+
+
+
+            <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SeventhGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SeventhGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SeventhGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SeventhGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="seventhGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="SeventhGoalTable">@{Html.RenderPartial("~/Views/Goal/_SeventhGoalTable.cshtml", Model.GoalViewModel);} </div>
+            </div>
+        }
     }
 }
 
 @{ if (Model.GoalViewModel.EightGoals.Any(x => x.GoalName != null))
     {
-        colornumber++;
-        if ((colornumber % 2) == 0)
+        if (@Model.GoalViewModel.EightGoals[0].GoalName != null)
         {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "";
-            icon = "";
-            colordescription = "black";
-        };
-
-
-
-        <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.EightGoals[0].GoalName</h1>
-            <!-- Icon Divider -->
-            <div class="divider-custom @icon">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon">
-                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                </div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.EightGoals[0].GoalQuestion</div>
-            @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "EighthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EightGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+            colornumber++;
+            if ((colornumber % 2) == 0)
             {
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div>
-                    @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
-                    @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
-                </div>
-                <div>
-                    @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
-                    @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
-                </div>
-                <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                    <button style="font-size:40px;" type="submit" value="eightGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
-                </div>
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
             }
-            <div id="EightGoalTable">@{Html.RenderPartial("~/Views/Goal/_EightGoalTable.cshtml", Model.GoalViewModel);} </div>
-        </div>
+            else
+            {
+                color = "";
+                icon = "";
+                colordescription = "black";
+            };
+
+
+
+            <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
+                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.EightGoals[0].GoalName</h1>
+                <!-- Icon Divider -->
+                <div class="divider-custom @icon">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.EightGoals[0].GoalQuestion</div>
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "EighthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EightGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                {
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div>
+                        @Html.RadioButton("status", "Tak", new { name = "", id = "" })@Html.Label("Tak")
+                        @Html.RadioButton("status", "Nie", new { name = "", id = "" })@Html.Label("Nie")
+                    </div>
+                    <div>
+                        @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
+                        @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
+                    </div>
+                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                        <button style="font-size:40px;" type="submit" value="eightGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    </div>
+                }
+                <div id="EightGoalTable">@{Html.RenderPartial("~/Views/Goal/_EightGoalTable.cshtml", Model.GoalViewModel);} </div>
+            </div>
+        }
     }
 }
 
@@ -992,40 +1016,40 @@
 @Scripts.Render("~/bundles/jquery")
 <script type="text/javascript">
 
-    //$(document).ready(function () {
+                                                //$(document).ready(function () {
 
-    //    $.fn.dataTable.moment('DD/MM/YY');
-    //    $('#table_id').DataTable({
+                                                //    $.fn.dataTable.moment('DD/MM/YY');
+                                                //    $('#table_id').DataTable({
 
-    //        paging: false,
-    //        searching: false,
-    //        info: false,
-    //        "order": [[1, "asc"]],
+                                                //        paging: false,
+                                                //        searching: false,
+                                                //        info: false,
+                                                //        "order": [[1, "asc"]],
 
-    //    });
-    //    $.fn.dataTable.moment('DD/MM/YY');
-    //    $('#table_id2').DataTable({
+                                                //    });
+                                                //    $.fn.dataTable.moment('DD/MM/YY');
+                                                //    $('#table_id2').DataTable({
 
-    //        paging: false,
-    //        searching: false,
-    //        info: false,
-    //        "order": [[1, "asc"]],
-    //    });
-    //    $.fn.dataTable.moment('DD/MM/YY');
-    //    $('#table_id3').DataTable({
+                                                //        paging: false,
+                                                //        searching: false,
+                                                //        info: false,
+                                                //        "order": [[1, "asc"]],
+                                                //    });
+                                                //    $.fn.dataTable.moment('DD/MM/YY');
+                                                //    $('#table_id3').DataTable({
 
-    //        paging: false,
-    //        searching: false,
-    //        info: false,
-    //        "order": [[1, "asc"]],
-    //    });
-    //    $.fn.dataTable.moment('DD/MM/YY');
-    //    $('#table_id4').DataTable({
+                                                //        paging: false,
+                                                //        searching: false,
+                                                //        info: false,
+                                                //        "order": [[1, "asc"]],
+                                                //    });
+                                                //    $.fn.dataTable.moment('DD/MM/YY');
+                                                //    $('#table_id4').DataTable({
 
-    //        paging: false,
-    //        searching: false,
-    //        info: false,
-    //        "order": [[1, "asc"]],
-    //    });
-    //});
+                                                //        paging: false,
+                                                //        searching: false,
+                                                //        info: false,
+                                                //        "order": [[1, "asc"]],
+                                                //    });
+                                                //});
 </script>
