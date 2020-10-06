@@ -9,22 +9,20 @@
 }
 
 <header class="masthead bg-primary text-white text-center">
-    <div class=" d-flex align-items-center flex-column">
-
-        <!-- Masthead Avatar Image -->
+    <div class="align-items-center">
+        
         @{if (Model.UserProfileViewModel.Photo != null)
             {<img src="@Model.UserProfileViewModel.Photo" class="img-circle" style="max-width:305px; padding-top:85px;">}
             else
             {
                 <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/avataaars.svg" class="img-circle" style="max-width:305px; padding-top:85px;">}
         }
-        <!-- Masthead Heading -->
+
         @if (Model.UserProfileViewModel.Name != null)
         {
             <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px; line-height: 50px;">Witaj @Model.UserProfileViewModel.Name</h1>
         }
 
-        <!-- Icon Divider -->
         <div class="divider-custom divider-light" style="padding-top:20px;">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon">
@@ -33,7 +31,6 @@
             <div class="divider-custom-line"></div>
         </div>
 
-        <!-- Masthead Subheading -->
         <p class="masthead-subheading font-weight-light mb-0">W pomocniku systematyczności</p>
 
     </div>
@@ -65,8 +62,8 @@
         }
         else
         {
-            color = "";
-            icon = "";
+            color = "bg-white";
+            icon = "divider-dark";
             colordescription = "black";
         };
 
@@ -121,8 +118,8 @@
         }
         else
         {
-            color = "";
-            icon = "";
+            color = "bg-white";
+            icon = "divider-dark";
             colordescription = "black";
         };
 
@@ -177,8 +174,8 @@
         }
         else
         {
-            color = "";
-            icon = "";
+            color = "bg-white";
+            icon = "divider-dark";
             colordescription = "black";
         };
 
@@ -233,8 +230,8 @@
         }
         else
         {
-            color = "";
-            icon = "";
+            color = "bg-white";
+            icon = "divider-dark";
             colordescription = "black";
         };
 
@@ -281,19 +278,19 @@
     {
         if (@Model.GoalViewModel.FirstGoals[0].GoalName != null)
         {
-            colornumber++;
-            if ((colornumber % 2) == 0)
-            {
-                color = "bg-primary";
-                icon = "divider-light";
-                colordescription = "white";
-            }
-            else
-            {
-                color = "";
-                icon = "";
-                colordescription = "black";
-            };
+          colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "bg-white";
+            icon = "divider-dark";
+            colordescription = "black";
+        };
 
 
 
@@ -334,18 +331,18 @@
         if (@Model.GoalViewModel.SecondGoals[0].GoalName != null)
         {
             colornumber++;
-            if ((colornumber % 2) == 0)
-            {
-                color = "bg-primary";
-                icon = "divider-light";
-                colordescription = "white";
-            }
-            else
-            {
-                color = "";
-                icon = "";
-                colordescription = "black";
-            };
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "bg-white";
+            icon = "divider-dark";
+            colordescription = "black";
+        };
 
 
 
@@ -386,18 +383,18 @@
         if (@Model.GoalViewModel.ThirdGoals[0].GoalName != null)
         {
             colornumber++;
-            if ((colornumber % 2) == 0)
-            {
-                color = "bg-primary";
-                icon = "divider-light";
-                colordescription = "white";
-            }
-            else
-            {
-                color = "";
-                icon = "";
-                colordescription = "black";
-            };
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "bg-white";
+            icon = "divider-dark";
+            colordescription = "black";
+        };
 
 
 
@@ -438,18 +435,18 @@
         if (@Model.GoalViewModel.FourthGoals[0].GoalName != null)
         {
             colornumber++;
-            if ((colornumber % 2) == 0)
-            {
-                color = "bg-primary";
-                icon = "divider-light";
-                colordescription = "white";
-            }
-            else
-            {
-                color = "";
-                icon = "";
-                colordescription = "black";
-            };
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "bg-white";
+            icon = "divider-dark";
+            colordescription = "black";
+        };
 
 
 
@@ -489,19 +486,19 @@
     {
         if (@Model.GoalViewModel.FifthGoals[0].GoalName != null)
         {
-            colornumber++;
-            if ((colornumber % 2) == 0)
-            {
-                color = "bg-primary";
-                icon = "divider-light";
-                colordescription = "white";
-            }
-            else
-            {
-                color = "";
-                icon = "";
-                colordescription = "black";
-            };
+           colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "bg-white";
+            icon = "divider-dark";
+            colordescription = "black";
+        };
 
 
 
@@ -542,18 +539,18 @@
         if (@Model.GoalViewModel.SixthGoals[0].GoalName != null)
         {
             colornumber++;
-            if ((colornumber % 2) == 0)
-            {
-                color = "bg-primary";
-                icon = "divider-light";
-                colordescription = "white";
-            }
-            else
-            {
-                color = "";
-                icon = "";
-                colordescription = "black";
-            };
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "bg-white";
+            icon = "divider-dark";
+            colordescription = "black";
+        };
 
 
 
@@ -593,19 +590,19 @@
     {
         if (@Model.GoalViewModel.SeventhGoals[0].GoalName != null)
         {
-            colornumber++;
-            if ((colornumber % 2) == 0)
-            {
-                color = "bg-primary";
-                icon = "divider-light";
-                colordescription = "white";
-            }
-            else
-            {
-                color = "";
-                icon = "";
-                colordescription = "black";
-            };
+             colornumber++;
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "bg-white";
+            icon = "divider-dark";
+            colordescription = "black";
+        };
 
 
 
@@ -646,18 +643,18 @@
         if (@Model.GoalViewModel.EightGoals[0].GoalName != null)
         {
             colornumber++;
-            if ((colornumber % 2) == 0)
-            {
-                color = "bg-primary";
-                icon = "divider-light";
-                colordescription = "white";
-            }
-            else
-            {
-                color = "";
-                icon = "";
-                colordescription = "black";
-            };
+        if ((colornumber % 2) == 0)
+        {
+            color = "bg-primary";
+            icon = "divider-light";
+            colordescription = "white";
+        }
+        else
+        {
+            color = "bg-white";
+            icon = "divider-dark";
+            colordescription = "black";
+        };
 
 
 
@@ -704,8 +701,8 @@
         }
         else
         {
-            color = "";
-            icon = "";
+            color = "bg-white";
+            icon = "divider-dark";
             colordescription = "black";
         };
 
@@ -758,8 +755,8 @@
         }
         else
         {
-            color = "";
-            icon = "";
+            color = "bg-white";
+            icon = "divider-dark";
             colordescription = "black";
         };
 
@@ -819,8 +816,8 @@
         }
         else
         {
-            color = "";
-            icon = "";
+            color = "bg-white";
+            icon = "divider-dark";
             colordescription = "black";
         };
 
@@ -880,8 +877,8 @@
         }
         else
         {
-            color = "";
-            icon = "";
+            color = "bg-white";
+            icon = "divider-dark";
             colordescription = "black";
         };
 
@@ -941,8 +938,8 @@
         }
         else
         {
-            color = "";
-            icon = "";
+            color = "bg-white";
+            icon = "divider-dark";
             colordescription = "black";
         };
 
