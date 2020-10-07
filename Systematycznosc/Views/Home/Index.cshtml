@@ -8,32 +8,28 @@
     string colordescription = "";
 }
 
-<header class="masthead bg-primary text-white text-center">
-    <div class="align-items-center">
-        
-        @{if (Model.UserProfileViewModel.Photo != null)
-            {<img src="@Model.UserProfileViewModel.Photo" class="img-circle" style="max-width:305px; padding-top:85px;">}
-            else
-            {
-                <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/avataaars.svg" class="img-circle" style="max-width:305px; padding-top:85px;">}
-        }
-
-        @if (Model.UserProfileViewModel.Name != null)
+<header class="masthead bg-primary text-white text-center align-items-center pl-5 pr-5">
+    @{if (Model.UserProfileViewModel.Photo != null)
         {
-            <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px; line-height: 50px;">Witaj @Model.UserProfileViewModel.Name</h1>
+            <img src="@Model.UserProfileViewModel.Photo" class="img-circle" style="max-width:305px; padding-top:85px;">
         }
-
-        <div class="divider-custom divider-light" style="padding-top:20px;">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-            </div>
-            <div class="divider-custom-line"></div>
+        else
+        {
+            <img src="https://startbootstrap.github.io/startbootstrap-freelancer/assets/img/avataaars.svg" class="img-circle" style="max-width:305px; padding-top:85px;">
+        }
+    }
+    @if (Model.UserProfileViewModel.Name != null)
+    {
+        <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px; line-height: 50px;">Witaj @Model.UserProfileViewModel.Name</h1>
+    }
+    <div class="divider-custom divider-light" style="padding-top:20px;">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon">
+            <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
         </div>
-
-        <p class="masthead-subheading font-weight-light mb-0">W pomocniku systematyczności</p>
-
+        <div class="divider-custom-line"></div>
     </div>
+    <p class="masthead-subheading font-weight-light mb-0">W pomocniku systematyczności</p>
     @{
         if (Model.IsInitialized == false)
         {
@@ -47,7 +43,6 @@
             </h1>
         }
     }
-
 </header>
 
 @{
@@ -66,41 +61,31 @@
             icon = "divider-dark";
             colordescription = "black";
         };
-
-
-        <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column">
-
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Credoes</h1>
-
-                <!-- Icon Divider -->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
+        <section class="@color d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0 theard">Credoes</h1>
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
                 </div>
-                <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
-                    <ol>
-
-                        @{foreach (var credo in Model.CredoViewModel.Credos.Where(x => x.CredoValue != null))
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="numberlist">
+                <div style="color:@colordescription;" class="subtheard">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
+                <ol>
+                    @{foreach (var credo in Model.CredoViewModel.Credos.Where(x => x.CredoValue != null))
+                        {
+                            if (credo != null)
                             {
-                                if (credo != null)
-                                {
-                                    <li>
-                                        <a>
-                                            @credo.CredoValue
-                                        </a>
-                                    </li>
-                                }
+                                <li>
+                                    <a>
+                                        @credo.CredoValue
+                                    </a>
+                                </li>
                             }
                         }
-                    </ol>
-                </div>
+                    }
+                </ol>
             </div>
         </section>
     }
@@ -122,41 +107,31 @@
             icon = "divider-dark";
             colordescription = "black";
         };
-
-
-        <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column">
-
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Związek</h1>
-
-                <!-- Icon Divider -->
-                <div class="divider-custom @icon">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
+        <section class="page-section @color d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0 theard">Związek</h1>
+            <div class="divider-custom @icon">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
                 </div>
-                <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Rzeczy o których warto pamiętać byś był szczęśliwy</div>
-                    <ol>
-
-                        @{foreach (var relationship in Model.RelationshipViewModel.Relationships.Where(x => x.RelationshipValue != null))
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="numberlist">
+                <div style="color:@colordescription;" class="subtheard">Rzeczy o których warto pamiętać byś był szczęśliwy</div>
+                <ol>
+                    @{foreach (var relationship in Model.RelationshipViewModel.Relationships.Where(x => x.RelationshipValue != null))
+                        {
+                            if (relationship != null)
                             {
-                                if (relationship != null)
-                                {
-                                    <li>
-                                        <a>
-                                            @relationship.RelationshipValue
-                                        </a>
-                                    </li>
-                                }
+                                <li>
+                                    <a>
+                                        @relationship.RelationshipValue
+                                    </a>
+                                </li>
                             }
                         }
-                    </ol>
-                </div>
+                    }
+                </ol>
             </div>
         </section>
     }
@@ -178,41 +153,31 @@
             icon = "divider-dark";
             colordescription = "black";
         };
-
-
-        <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column">
-
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Pytanie poranne:</h1>
-
-                <!-- Icon Divider -->
-                <div class="divider-custom @icon">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
+        <section class="page-section portfolio @color d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0 theard">Pytanie poranne:</h1>
+            <div class="divider-custom @icon">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
                 </div>
-                <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto je zadać każdego poranka:</div>
-                    <ol>
-
-                        @{foreach (var morningQuestion in Model.QuestionViewModel.MorningQuestions.Where(x => x.MorningQuestionValue != null))
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="numberlist">
+                <div style="color:@colordescription;" class="subtheard">Warto je zadać każdego poranka:</div>
+                <ol>
+                    @{foreach (var morningQuestion in Model.QuestionViewModel.MorningQuestions.Where(x => x.MorningQuestionValue != null))
+                        {
+                            if (morningQuestion != null)
                             {
-                                if (morningQuestion != null)
-                                {
-                                    <li>
-                                        <a>
-                                            @morningQuestion.MorningQuestionValue
-                                        </a>
-                                    </li>
-                                }
+                                <li>
+                                    <a>
+                                        @morningQuestion.MorningQuestionValue
+                                    </a>
+                                </li>
                             }
                         }
-                    </ol>
-                </div>
+                    }
+                </ol>
             </div>
         </section>
     }
@@ -234,41 +199,31 @@
             icon = "divider-dark";
             colordescription = "black";
         };
-
-
-        <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column">
-
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Pytanie wieczorne:</h1>
-
-                <!-- Icon Divider -->
-                <div class="divider-custom @icon">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon">
-                        <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
-                    </div>
-                    <div class="divider-custom-line"></div>
+        <section class="page-section portfolio @color d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0 theard">Pytanie wieczorne:</h1>
+            <div class="divider-custom @icon">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon">
+                    <i class="glyphicon glyphicon-star" style="font-size: 55px;"></i>
                 </div>
-                <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto je zadać każdego wieczoru:</div>
-                    <ol>
-
-                        @{foreach (var eveningQuestion in Model.QuestionViewModel.EveningQuestions.Where(x => x.EveningQuestionValue != null))
+                <div class="divider-custom-line"></div>
+            </div>
+            <div class="numberlist">
+                <div style="color:@colordescription;" class="subtheard">Warto je zadać każdego wieczoru:</div>
+                <ol>
+                    @{foreach (var eveningQuestion in Model.QuestionViewModel.EveningQuestions.Where(x => x.EveningQuestionValue != null))
+                        {
+                            if (eveningQuestion != null)
                             {
-                                if (eveningQuestion != null)
-                                {
-                                    <li>
-                                        <a>
-                                            @eveningQuestion.EveningQuestionValue
-                                        </a>
-                                    </li>
-                                }
+                                <li>
+                                    <a>
+                                        @eveningQuestion.EveningQuestionValue
+                                    </a>
+                                </li>
                             }
                         }
-                    </ol>
-                </div>
+                    }
+                </ol>
             </div>
         </section>
     }
@@ -278,25 +233,21 @@
     {
         if (@Model.GoalViewModel.FirstGoals[0].GoalName != null)
         {
-          colornumber++;
-        if ((colornumber % 2) == 0)
-        {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "bg-white";
-            icon = "divider-dark";
-            colordescription = "black";
-        };
-
-
-
+            colornumber++;
+            if ((colornumber % 2) == 0)
+            {
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
+            }
+            else
+            {
+                color = "bg-white";
+                icon = "divider-dark";
+                colordescription = "black";
+            };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FirstGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
+                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.FirstGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -304,7 +255,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FirstGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FirstGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -331,24 +282,20 @@
         if (@Model.GoalViewModel.SecondGoals[0].GoalName != null)
         {
             colornumber++;
-        if ((colornumber % 2) == 0)
-        {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "bg-white";
-            icon = "divider-dark";
-            colordescription = "black";
-        };
-
-
-
+            if ((colornumber % 2) == 0)
+            {
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
+            }
+            else
+            {
+                color = "bg-white";
+                icon = "divider-dark";
+                colordescription = "black";
+            };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SecondGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
+                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.SecondGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -356,7 +303,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SecondGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SecondGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -383,24 +330,20 @@
         if (@Model.GoalViewModel.ThirdGoals[0].GoalName != null)
         {
             colornumber++;
-        if ((colornumber % 2) == 0)
-        {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "bg-white";
-            icon = "divider-dark";
-            colordescription = "black";
-        };
-
-
-
+            if ((colornumber % 2) == 0)
+            {
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
+            }
+            else
+            {
+                color = "bg-white";
+                icon = "divider-dark";
+                colordescription = "black";
+            };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.ThirdGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
+                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.ThirdGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -408,7 +351,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.ThirdGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.ThirdGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "ThirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ThirdGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -435,24 +378,20 @@
         if (@Model.GoalViewModel.FourthGoals[0].GoalName != null)
         {
             colornumber++;
-        if ((colornumber % 2) == 0)
-        {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "bg-white";
-            icon = "divider-dark";
-            colordescription = "black";
-        };
-
-
-
+            if ((colornumber % 2) == 0)
+            {
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
+            }
+            else
+            {
+                color = "bg-white";
+                icon = "divider-dark";
+                colordescription = "black";
+            };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FourthGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
+                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.FourthGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -460,7 +399,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FourthGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FourthGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FourthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FourthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -486,25 +425,21 @@
     {
         if (@Model.GoalViewModel.FifthGoals[0].GoalName != null)
         {
-           colornumber++;
-        if ((colornumber % 2) == 0)
-        {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "bg-white";
-            icon = "divider-dark";
-            colordescription = "black";
-        };
-
-
-
+            colornumber++;
+            if ((colornumber % 2) == 0)
+            {
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
+            }
+            else
+            {
+                color = "bg-white";
+                icon = "divider-dark";
+                colordescription = "black";
+            };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.FifthGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
+                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.FifthGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -512,7 +447,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FifthGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FifthGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FifthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FifthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -539,24 +474,20 @@
         if (@Model.GoalViewModel.SixthGoals[0].GoalName != null)
         {
             colornumber++;
-        if ((colornumber % 2) == 0)
-        {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "bg-white";
-            icon = "divider-dark";
-            colordescription = "black";
-        };
-
-
-
+            if ((colornumber % 2) == 0)
+            {
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
+            }
+            else
+            {
+                color = "bg-white";
+                icon = "divider-dark";
+                colordescription = "black";
+            };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SixthGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
+                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.SixthGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -564,7 +495,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SixthGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SixthGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SixthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SixthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -590,25 +521,21 @@
     {
         if (@Model.GoalViewModel.SeventhGoals[0].GoalName != null)
         {
-             colornumber++;
-        if ((colornumber % 2) == 0)
-        {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "bg-white";
-            icon = "divider-dark";
-            colordescription = "black";
-        };
-
-
-
+            colornumber++;
+            if ((colornumber % 2) == 0)
+            {
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
+            }
+            else
+            {
+                color = "bg-white";
+                icon = "divider-dark";
+                colordescription = "black";
+            };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.SeventhGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
+                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.SeventhGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -616,7 +543,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SeventhGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SeventhGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SeventhGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SeventhGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -643,24 +570,20 @@
         if (@Model.GoalViewModel.EightGoals[0].GoalName != null)
         {
             colornumber++;
-        if ((colornumber % 2) == 0)
-        {
-            color = "bg-primary";
-            icon = "divider-light";
-            colordescription = "white";
-        }
-        else
-        {
-            color = "bg-white";
-            icon = "divider-dark";
-            colordescription = "black";
-        };
-
-
-
+            if ((colornumber % 2) == 0)
+            {
+                color = "bg-primary";
+                icon = "divider-light";
+                colordescription = "white";
+            }
+            else
+            {
+                color = "bg-white";
+                icon = "divider-dark";
+                colordescription = "black";
+            };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;text-align:center;">@Model.GoalViewModel.EightGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
+                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.EightGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -668,7 +591,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.EightGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.EightGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "EighthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EightGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -705,15 +628,8 @@
             icon = "divider-dark";
             colordescription = "black";
         };
-
-        <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column">
-
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Do zrobienia</h1>
-
-                <!-- Icon Divider -->
+        <section class="page-section portfolio @color d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-0 theard">Do zrobienia</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -722,7 +638,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Po ich wykonaniu poczujesz się lepiej</div>
+                    <div style="color:@colordescription;" class="subtheard">Po ich wykonaniu poczujesz się lepiej</div>
                     <ol>
 
                         @{foreach (var todo in Model.TodoViewModel.Todoes.Where(x => x.TodoValue != null))
@@ -738,7 +654,6 @@
                             }
                         }
                     </ol>
-                </div>
             </div>
         </section>
     }
@@ -759,15 +674,8 @@
             icon = "divider-dark";
             colordescription = "black";
         };
-
-        <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column theard">
-
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;">Ważne wydarzenia</h1>
-
-                <!-- Icon Divider -->
+        <section class="page-section @color d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-0 theard">Ważne wydarzenia</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -776,7 +684,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto o nich pamiętać</div>
+                    <div style="color:@colordescription;" class="subtheard">Warto o nich pamiętać</div>
                     <div class="mr-3 ml-3">
                         <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
                             <thead class="thead-dark">
@@ -789,7 +697,6 @@
                                 @foreach (var importantEvent in Model.TodoViewModel.ImportantEvents.Where(x => x.ImportantEventName != null && x.ImportantEventDate != null).OrderBy(x => x.ImportantEventDate))
                                 {
                                     <tr>
-
                                         <td>@importantEvent.ImportantEventName</td>
                                         <td>
                                             @importantEvent.ImportantEventDate.Value.ToString("MM/dd/yyyy")
@@ -800,7 +707,6 @@
                         </table>
                     </div>
                 </div>
-            </div>
         </section>
     }
 }
@@ -820,15 +726,8 @@
             icon = "divider-dark";
             colordescription = "black";
         };
-
-        <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column">
-
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Urodziny rodziny</h1>
-
-                <!-- Icon Divider -->
+        <section class="page-section portfolio @color d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-0 theard">Urodziny rodziny</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -837,7 +736,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto o nich pamiętać</div>
+                    <div style="color:@colordescription;" class="subtheard">Warto o nich pamiętać</div>
                     <div class="mr-3 ml-3">
                         <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
                             <thead class="thead-dark">
@@ -850,7 +749,6 @@
                                 @foreach (var familyBirthday in Model.BirthdayViewModel.FamilyBirthdays.Where(x => x.FamilyBirthdayName != null && x.FamilyBirthdayDate != null).OrderBy(x => x.FamilyBirthdayDate))
                                 {
                                     <tr>
-
                                         <td>@familyBirthday.FamilyBirthdayName</td>
                                         <td>
                                             @familyBirthday.FamilyBirthdayDate.Value.ToString("MM/dd/yyyy")
@@ -859,7 +757,6 @@
                                 }
                             </tbody>
                         </table>
-                    </div>
                 </div>
             </div>
         </section>
@@ -881,15 +778,8 @@
             icon = "divider-dark";
             colordescription = "black";
         };
-
-        <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column">
-
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Urodziny przyjaciół</h1>
-
-                <!-- Icon Divider -->
+        <section class="page-section portfolio @color d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-0 theard">Urodziny przyjaciół</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -898,7 +788,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto o nich pamiętać</div>
+                    <div style="color:@colordescription;" class="subtheard">Warto o nich pamiętać</div>
                     <div class="mr-3 ml-3">
                         <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
                             <thead class="thead-dark">
@@ -911,7 +801,6 @@
                                 @foreach (var friendBirthday in Model.BirthdayViewModel.FriendsBirthdays.Where(x => x.FriendBirthdayName != null && x.FriendBirthdayDate != null).OrderBy(x => x.FriendBirthdayDate))
                                 {
                                     <tr>
-
                                         <td>@friendBirthday.FriendBirthdayName</td>
                                         <td>
                                             @friendBirthday.FriendBirthdayDate.Value.ToString("MM/dd/yyyy")
@@ -922,7 +811,6 @@
                         </table>
                     </div>
                 </div>
-            </div>
         </section>
     }
 }
@@ -942,15 +830,8 @@
             icon = "divider-dark";
             colordescription = "black";
         };
-
-        <section class="page-section portfolio @color" id="credo">
-            <div class=" d-flex align-items-center flex-column">
-
-                <!-- Masthead Avatar Image -->
-                <!-- Masthead Heading -->
-                <h1 class="masthead-heading text-uppercase mb-0 theard" style="font-size:55px; padding-top:55px;">Urodziny innych:</h1>
-
-                <!-- Icon Divider -->
+        <section class="page-section portfolio @color d-flex align-items-center flex-column">
+                <h1 class="masthead-heading text-uppercase mb-0 theard">Urodziny innych:</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -959,7 +840,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="numberlist">
-                    <div style="color:@colordescription; font-size:37px; text-align:center;" class="subtheard">Warto o nich pamiętać</div>
+                    <div style="color:@colordescription;" class="subtheard">Warto o nich pamiętać</div>
                     <div class="mr-3 ml-3">
                         <table id="table_id" class="table table-info table-hover table-striped" style="font-size:18px;">
                             <thead class="thead-dark">
@@ -972,7 +853,6 @@
                                 @foreach (var otherBirthday in Model.BirthdayViewModel.OthersBirthdays.Where(x => x.OtherBirthdayName != null && x.OtherBirthdayDate != null).OrderBy(x => x.OtherBirthdayDate))
                                 {
                                     <tr>
-
                                         <td>@otherBirthday.OtherBirthdayName</td>
                                         <td>
                                             @otherBirthday.OtherBirthdayDate.Value.ToString("MM/dd/yyyy")
@@ -983,10 +863,10 @@
                         </table>
                     </div>
                 </div>
-            </div>
         </section>
     }
 }
+
 @section Scripts
 {
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
@@ -1011,42 +891,3 @@
     <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
 }
 @Scripts.Render("~/bundles/jquery")
-<script type="text/javascript">
-
-                                                //$(document).ready(function () {
-
-                                                //    $.fn.dataTable.moment('DD/MM/YY');
-                                                //    $('#table_id').DataTable({
-
-                                                //        paging: false,
-                                                //        searching: false,
-                                                //        info: false,
-                                                //        "order": [[1, "asc"]],
-
-                                                //    });
-                                                //    $.fn.dataTable.moment('DD/MM/YY');
-                                                //    $('#table_id2').DataTable({
-
-                                                //        paging: false,
-                                                //        searching: false,
-                                                //        info: false,
-                                                //        "order": [[1, "asc"]],
-                                                //    });
-                                                //    $.fn.dataTable.moment('DD/MM/YY');
-                                                //    $('#table_id3').DataTable({
-
-                                                //        paging: false,
-                                                //        searching: false,
-                                                //        info: false,
-                                                //        "order": [[1, "asc"]],
-                                                //    });
-                                                //    $.fn.dataTable.moment('DD/MM/YY');
-                                                //    $('#table_id4').DataTable({
-
-                                                //        paging: false,
-                                                //        searching: false,
-                                                //        info: false,
-                                                //        "order": [[1, "asc"]],
-                                                //    });
-                                                //});
-</script>

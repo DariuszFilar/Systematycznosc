@@ -40,6 +40,7 @@
     --font-family-sans-serif: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+
 *,
 *::before,
 *::after {
@@ -50,7 +51,7 @@ html {
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);    
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
@@ -66,7 +67,7 @@ body {
     color: #212529;
     text-align: left;
     background-color: #fff;
-    height:100%;
+    height: 100%;
 }
 
 [tabindex="-1"]:focus {
@@ -162,6 +163,7 @@ a {
     color: #1abc9c;
     text-decoration: none;
     background-color: transparent;
+    text-align: left;
 }
 
     a:hover {
@@ -407,7 +409,7 @@ h6, .h6 {
     font-size: 1.25rem;
     font-weight: 300;
     font-size: 18px;
-    text-align:center;
+    text-align: center;
 }
 
 
@@ -4160,7 +4162,7 @@ input[type="button"].btn-block {
     padding-top: 0.3125rem;
     padding-bottom: 0.3125rem;
     margin-right: auto;
-    margin-left:auto;
+    margin-left: auto;
     font-size: 1.25rem;
     line-height: inherit;
     white-space: nowrap;
@@ -4168,7 +4170,7 @@ input[type="button"].btn-block {
 
     .navbar-brand:hover, .navbar-brand:focus {
         text-decoration: none;
-        color: #1abc9c!important;
+        color: #1abc9c !important;
     }
 
 .navbar-nav {
@@ -4250,7 +4252,7 @@ input[type="button"].btn-block {
                 padding-right: 0.5rem;
                 padding-left: 0.5rem;
             }
-   
+
 
         .navbar-expand-sm > .container,
         .navbar-expand-sm > .container-fluid {
@@ -4297,13 +4299,11 @@ input[type="button"].btn-block {
         .navbar-expand-md > .container,
         .navbar-expand-md > .container-fluid {
             flex-wrap: nowrap;
-
         }
 
         .navbar-expand-md .navbar-collapse {
-
             flex-basis: auto;
-            display:none!important;
+            display: none !important;
         }
 
         .navbar-expand-md .navbar-toggler {
@@ -10665,7 +10665,7 @@ form .row:first-child .floating-label-form-group {
 }
 
 .numberlist {
-    color:white;
+    color: white;
     width: auto;
     margin-left: 30px;
     margin-right: 30px;
@@ -10780,21 +10780,23 @@ footer {
         padding-top: 100px !important;
         font-size: 55px;
     }
+
     .theard {
         overflow-wrap: break-word;
         text-align: center;
+        font-size: 45px;
     }
-
-    .subtheard {
-        overflow-wrap: break-word;
-        word-break: break-all;
-    }
-
 }
+
 @media (min-width: 768px) {
     #Opener {
         padding-top: 200px !important;
         font-size: 55px;
+    }
+    .theard {
+        overflow-wrap: break-word;
+        text-align: center;
+        font-size: 45px!important;
     }
 }
 
@@ -10816,13 +10818,22 @@ footer {
     .collapse.in {
         display: block !important;
     }
+
+    .theard {
+        overflow-wrap: break-word;
+        text-align: center;
+        font-size: 45px !important;
+    }
+
 }
 
 .theard {
-    /*overflow-wrap: break-word;*/
-    text-align:center;
+    text-align: center;
+    font-size: 45px !important;
+    padding-top: 55px;
 }
+
 .subtheard {
-    /*overflow-wrap: break-word;*/
-    word-break: break-all;
+    font-size: 37px;
+    text-align: center;
 }
