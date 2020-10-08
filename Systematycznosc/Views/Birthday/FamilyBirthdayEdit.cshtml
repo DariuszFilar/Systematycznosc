@@ -27,7 +27,7 @@
             {
                 <div class="form-group" style="text-align: center;">
                     <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none !important;">
-                        @Html.Label("Imię i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                        @Html.Label("Imię i nazwisko", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
                         @Html.HiddenFor(m => m.FamilyBirthdays[i].FamilyBirthdayId)
                         @Html.TextBoxFor(m => m.FamilyBirthdays[i].FamilyBirthdayName, null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue" })
                         @Html.TextBoxFor(m => m.FamilyBirthdays[i].FamilyBirthdayDate, new { @type = "date", @class = " datepicker", @Value = Model.FamilyBirthdays[i].FamilyBirthdayDate?.ToString("yyyy-MM-dd"), @style = "font-size:25px; color:black;" })

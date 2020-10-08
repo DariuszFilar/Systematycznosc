@@ -10793,10 +10793,11 @@ footer {
         padding-top: 200px !important;
         font-size: 55px;
     }
+
     .theard {
         overflow-wrap: break-word;
         text-align: center;
-        font-size: 45px!important;
+        font-size: 45px !important;
     }
 }
 
@@ -10824,7 +10825,6 @@ footer {
         text-align: center;
         font-size: 45px !important;
     }
-
 }
 
 .theard {
@@ -10836,4 +10836,13 @@ footer {
 .subtheard {
     font-size: 37px;
     text-align: center;
+}
+
+.saveButtonDiv {
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    display: inline-block;
+    margin-bottom: 10px
 }

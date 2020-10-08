@@ -12,7 +12,7 @@
 }
 <div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
 
-    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">EveningQuestiones</h1>
+    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Pytania Wieczorne</h1>
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
         <div class="divider-custom-icon">
@@ -28,7 +28,7 @@
             {
                 <div class="form-group" style="text-align: center;">
                     <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none !important;">
-                        @Html.Label("Pytanie wieczorne:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                        @Html.Label("Warto je zadać każdego wieczoru", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
                         @Html.HiddenFor(m => m.EveningQuestions[i].EveningQuestionId)
                         @Html.TextBoxFor(m => m.EveningQuestions[i].EveningQuestionValue, null, new { placeholder = "Tu wpisz pytanie wieczorne", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue" })
                         @Html.HiddenFor(m => m.EveningQuestions[i].UserProfile)

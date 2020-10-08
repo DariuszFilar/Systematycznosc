@@ -9,13 +9,7 @@
 }
 
 <div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
-
-    <!-- Masthead Avatar Image -->
-    <!-- Masthead Heading -->
     <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; text-align:center;" id="Opener">Cele dzienne</h1>
-
-
-    <!-- Icon Divider -->
     <div class="divider-custom divider-light" style="">
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon">
@@ -42,10 +36,10 @@
                     </div>
                 }
                 <div style="padding-bottom:50px; padding-top:20px;">
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:20px; color:white;" type="submit" value="newGoal" class="btn btn-xl btn-outline-info btn-secondary" id="saveButton" name="savebutton">Zapisz</button>
                     </div>
-                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panel2">
+                    <div class="saveButtonDiv" id="panel2">
                         @Html.ActionLink("Panel edycyjny", "Goaledit", "Goal", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
@@ -53,7 +47,7 @@
         }
         else
         {
-            <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panel">
+            <div class="saveButtonDiv" id="panel">
                 @Html.ActionLink("Panel edycyjny", "GoalEdit", "Goal", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
             </div>
         }
@@ -100,7 +94,7 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:40px;" type="submit" value="firstGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
@@ -109,7 +103,6 @@
         }
     }
 }
-
 
 @{
     if (Model.SecondGoals.Any(x => x.GoalName != null))
@@ -152,7 +145,7 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:40px;" type="submit" value="secondGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
@@ -161,8 +154,6 @@
         }
     }
 }
-
-
 
 @{
     if (Model.ThirdGoals.Any(x => x.GoalName != null))
@@ -204,7 +195,7 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:40px;" type="submit" value="thirdGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
@@ -254,7 +245,7 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:40px;" type="submit" value="fourthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
@@ -304,7 +295,7 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:40px;" type="submit" value="fifthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
@@ -313,6 +304,7 @@
         }
     }
 }
+
 @{
     if (Model.SixthGoals.Any(x => x.GoalName != null))
     {
@@ -353,7 +345,7 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:40px;" type="submit" value="sixthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
@@ -403,7 +395,7 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:40px;" type="submit" value="seventhGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
@@ -412,7 +404,6 @@
         }
     }
 }
-
 
 @{
     if (Model.EightGoals.Any(x => x.GoalName != null))
@@ -454,7 +445,7 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:40px;" type="submit" value="eightGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
@@ -477,6 +468,3 @@
 }
 
 @Scripts.Render("~/bundles/jquery")
-<script type="text/javascript">
-
-</script>

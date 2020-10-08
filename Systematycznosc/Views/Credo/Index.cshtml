@@ -29,10 +29,10 @@
                     </div>
                 }
                 <div style="padding-bottom:50px; padding-top:20px;">
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButton">Zapisz</button>
                     </div>
-                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panel2">
+                    <div class="saveButtonDiv" id="panel2">
                         @Html.ActionLink("Panel edycyjny", "CredoEdit", "Credo", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
@@ -43,7 +43,7 @@
             <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość Credo, wejdź w opcje by edytować</div>
         }
     }
-    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panel">
+    <div class="saveButtonDiv" id="panel">
         @Html.ActionLink("Panel edycyjny", "CredoEdit", "Credo", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
     </div>
 </div>

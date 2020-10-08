@@ -2,9 +2,7 @@
 @model Systematycznosc.ViewModels.BirthdayViewModel
 
 <div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
-
     <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Urodziny rodziny</h1>
-
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
         <div class="divider-custom-icon">
@@ -24,16 +22,16 @@
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
                             @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBox("familyBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
+                            @Html.TextBox("familyBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", required = string.Empty })
                             @Html.TextBox("familyBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
                     </div>
                 }
                 <div style="padding-bottom:50px; padding-top:20px;">
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButtonFamilyBirthday">Zapisz</button>
                     </div>
-                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelFamilyBirthay">
+                    <div class="saveButtonDiv" id="panelFamilyBirthay">
                         @Html.ActionLink("Panel edycyjny", "FamilyBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
@@ -41,19 +39,16 @@
         }
         else
         {
-<div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować</div>
+            <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować</div>
         }
     }
-    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelFamilyBirthay2">
+    <div class="saveButtonDiv" id="panelFamilyBirthay2">
         @Html.ActionLink("Panel edycyjny", "FamilyBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
     </div>
-
 </div>
 
 <div class="d-flex align-items-center flex-column portfolio mb-0 bg-white">
-
     <h1 class="masthead-heading text-uppercase mb-0" style="color:black;" id="Opener">Urodziny przyjaciół</h1>
-
     <div class="divider-custom">
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon">
@@ -73,16 +68,16 @@
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
                             @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBox("friendBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
+                            @Html.TextBox("friendBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", required = string.Empty })
                             @Html.TextBox("friendBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
                     </div>
                 }
                 <div style="padding-bottom:50px; padding-top:20px;">
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButtonFriendBirthday">Zapisz</button>
                     </div>
-                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelFamilyBirthay">
+                    <div class="saveButtonDiv" id="panelFamilyBirthay">
                         @Html.ActionLink("Panel edycyjny", "friendBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
@@ -90,23 +85,21 @@
         }
         else
         {
-<div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować</div>
+            <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować</div>
         }
     }
-    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelFriendBirthay2">
+    <div class="saveButtonDiv" id="panelFriendBirthay2">
         @Html.ActionLink("Panel edycyjny", "friendBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
     </div>
-
 </div>
 
 <div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
-
     <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Urodziny innych</h1>
-
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
         <div class="divider-custom-icon">
-            <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white!important;"></i>
+            <i class="glyphicon glyphicon-star" style="        font-size: 55px;
+        color: white !important;"></i>
         </div>
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
@@ -122,16 +115,16 @@
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
                             @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
-                            @Html.TextBox("otherBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue", required = string.Empty })
+                            @Html.TextBox("otherBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", required = string.Empty })
                             @Html.TextBox("otherBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
                     </div>
                 }
                 <div style="padding-bottom:50px; padding-top:20px;">
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
+                    <div class="saveButtonDiv">
                         <button style="font-size:20px; color:white;" type="submit" class="btn btn-xl btn-outline-info btn-secondary" id="saveButtonOtherBirthday">Zapisz</button>
                     </div>
-                    <div style="padding-bottom:3px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px;" id="panelOtherBirthay">
+                    <div class="saveButtonDiv" id="panelOtherBirthay">
                         @Html.ActionLink("Panel edycyjny", "OtherBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
                 </div>
@@ -139,13 +132,12 @@
         }
         else
         {
-<div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować</div>
+            <div style="font-size:25px; color:black;" class="mr-1">Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować</div>
         }
     }
-    <div style="padding-bottom:25px; padding-left:3px; padding-right:3px; display:inline-block; margin-bottom:10px; padding-top:10px;" id="panelOtherBirthay2">
+    <div class="saveButtonDiv" id="panelOtherBirthay2">
         @Html.ActionLink("Panel edycyjny", "OtherBirthdayEdit", "Birthday", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
     </div>
-
 </div>
 
 @section Scripts

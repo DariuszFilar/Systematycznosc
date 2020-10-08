@@ -71,7 +71,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div class="numberlist">
-                <div style="color:@colordescription;" class="subtheard">Najważniejszy rzeczy którymi kierujesz się każdego dnia</div>
+                <div style="color:@colordescription;" class="subtheard">Najważniejsze rzeczy, którymi kierujesz się każdego dnia</div>
                 <ol>
                     @{foreach (var credo in Model.CredoViewModel.Credos.Where(x => x.CredoValue != null))
                         {
@@ -163,7 +163,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div class="numberlist">
-                <div style="color:@colordescription;" class="subtheard">Warto je zadać każdego poranka:</div>
+                <div style="color:@colordescription;" class="subtheard">Warto je zadać każdego poranka</div>
                 <ol>
                     @{foreach (var morningQuestion in Model.QuestionViewModel.MorningQuestions.Where(x => x.MorningQuestionValue != null))
                         {
@@ -209,7 +209,7 @@
                 <div class="divider-custom-line"></div>
             </div>
             <div class="numberlist">
-                <div style="color:@colordescription;" class="subtheard">Warto je zadać każdego wieczoru:</div>
+                <div style="color:@colordescription;" class="subtheard">Warto je zadać każdego wieczoru</div>
                 <ol>
                     @{foreach (var eveningQuestion in Model.QuestionViewModel.EveningQuestions.Where(x => x.EveningQuestionValue != null))
                         {
@@ -267,8 +267,8 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="firstGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <div class="saveButtonDiv">
+                        <button style="font-size:40px;" type="submit" value="firstGoal" class="btn btn-success" name="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="FirstGoalTable">@{Html.RenderPartial("~/Views/Goal/_FirstGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -315,8 +315,8 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="secondGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <div class="saveButtonDiv">
+                        <button style="font-size:40px;" type="submit" value="secondGoal" class="btn btn-success" name="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="SecondGoalTable">@{Html.RenderPartial("~/Views/Goal/_SecondGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -363,8 +363,8 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="thirdGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <div class="saveButtonDiv">
+                        <button style="font-size:40px;" type="submit" value="thirdGoal" class="btn btn-success" name="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="ThirdGoalTable">@{Html.RenderPartial("~/Views/Goal/_ThirdGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -411,8 +411,8 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="fourthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <div class="saveButtonDiv">
+                        <button style="font-size:40px;" type="submit" value="fourthGoal" class="btn btn-success" name="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="FourthGoalTable">@{Html.RenderPartial("~/Views/Goal/_FourthGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -459,8 +459,8 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="fifthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <div class="saveButtonDiv">
+                        <button style="font-size:40px;" type="submit" value="fifthGoal" class="btn btn-success" name="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="FifthGoalTable">@{Html.RenderPartial("~/Views/Goal/_FifthGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -507,8 +507,8 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="sixthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <div class="saveButtonDiv">
+                        <button style="font-size:40px;" type="submit" value="sixthGoal" class="btn btn-success" name="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="SixthGoalTable">@{Html.RenderPartial("~/Views/Goal/_SixthGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -555,8 +555,8 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="seventhGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <div class="saveButtonDiv">
+                        <button style="font-size:40px;" type="submit" value="seventhGoal" class="btn btn-success" name="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="SeventhGoalTable">@{Html.RenderPartial("~/Views/Goal/_SeventhGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -603,8 +603,8 @@
                         @Html.RadioButton("status", "Odpoczynek", new { name = "", id = "" })@Html.Label("Odpoczynek")
                         @Html.RadioButton("status", "Nagroda", new { name = "", id = "" })@Html.Label("Nagroda")
                     </div>
-                    <div style=" padding-bottom:3px; padding-left:3px; padding-right:3px; padding-top:3px; display:inline-block; margin-bottom:10px;">
-                        <button style="font-size:40px;" type="submit" value="eightGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
+                    <div class="saveButtonDiv">
+                        <button style="font-size:40px;" type="submit" value="eightGoal" class="btn btn-success" name="saveButton">Zapisz</button>
                     </div>
                 }
                 <div id="EightGoalTable">@{Html.RenderPartial("~/Views/Goal/_EightGoalTable.cshtml", Model.GoalViewModel);} </div>
@@ -629,7 +629,7 @@
             colordescription = "black";
         };
         <section class="page-section portfolio @color d-flex align-items-center flex-column">
-                <h1 class="masthead-heading text-uppercase mb-0 theard">Do zrobienia</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 theard">Rzeczy do zrobienia</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">

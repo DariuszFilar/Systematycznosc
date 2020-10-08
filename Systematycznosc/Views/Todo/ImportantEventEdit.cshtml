@@ -27,7 +27,7 @@
             {
                 <div class="form-group" style="text-align: center;">
                     <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none !important;">
-                        @Html.Label("Ważne wydarzenie:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                        @Html.Label("Ważne wydarzenie", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
                         @Html.HiddenFor(m => m.ImportantEvents[i].ImportantEventId)
                         @Html.TextBoxFor(m => m.ImportantEvents[i].ImportantEventName, null, new { placeholder = "Tu wpisz nazwę wydarzenia", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "credoValue" })
                         @Html.TextBoxFor(m => m.ImportantEvents[i].ImportantEventDate, new { @type = "date", @class = " datepicker", @Value = Model.ImportantEvents[i].ImportantEventDate?.ToString("yyyy-MM-dd"), @style = "font-size:25px; color:black;" })
