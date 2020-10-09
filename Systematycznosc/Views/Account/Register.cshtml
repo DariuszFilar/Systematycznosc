@@ -7,10 +7,7 @@
 }
 <header class="text-white text-center">
     <div class=" d-flex align-items-center flex-column">
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; text-align:center;" id="Opener">Rejestracja</h1>
-        <!-- Icon Divider -->
+        <h1 class="masthead-heading text-uppercase mb-0 openTheard">Rejestracja</h1>
         <div class="divider-custom " style="">
             <div class="divider-custom-line" style="background-color:white;"></div>
             <div class="divider-custom-icon">
@@ -18,7 +15,7 @@
             </div>
             <div class="divider-custom-line" style="background-color:white;"></div>
         </div>
-        <div style="color:; font-size:37px; text-align:center;">W pełni darmowa</div>
+        <div class="subtheard">W pełni darmowa</div>
         @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal pb-5", role = "form" }))
         {
             @Html.AntiForgeryToken()

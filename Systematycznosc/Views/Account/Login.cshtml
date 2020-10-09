@@ -9,10 +9,7 @@
 
 <header class=" text-white text-center">
     <div class=" d-flex align-items-center flex-column">
-        <!-- Masthead Avatar Image -->
-        <!-- Masthead Heading -->
-        <h1 class="masthead-heading text-uppercase mb-0 questions" style="font-size:55px; text-align:center;" id="Opener">Logowanie</h1>
-        <!-- Icon Divider -->
+        <h1 class="masthead-heading text-uppercase mb-0 openTheard">Logowanie</h1>
         <div class="divider-custom " style="">
             <div class="divider-custom-line" style="background-color:white;"></div>
             <div class="divider-custom-icon">
@@ -20,16 +17,18 @@
             </div>
             <div class="divider-custom-line" style="background-color:white;"></div>
         </div>
-        <div style="color:; font-size:37px; text-align:center;">Witaj na stronie</div>
+        <div class="subtheard">Witaj na stronie</div>
         @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal pb-5", role = "form", id = "", style = "padding-top:5px;" }))
         {
             @Html.AntiForgeryToken()
             <div id="container">
                 <form>
                     @if (!Html.ViewData.ModelState.IsValid)
-                    {<div class="text-danger">
+                    {
+                        <div class="text-danger">
                             Nieudana próba zalogowania.
-                        </div>}
+                        </div>
+                    }
                     @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
                     @Html.ValidationMessageFor(model => model.Email, null, new { style = "color:red" })
                     @Html.PasswordFor(m => m.Password, new { id = "customerEmailId", @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })

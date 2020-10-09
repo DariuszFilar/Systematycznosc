@@ -2,7 +2,7 @@
 @model Systematycznosc.ViewModels.BirthdayViewModel
 
 <div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
-    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Urodziny rodziny</h1>
+    <h1 class="masthead-heading text-uppercase mb-0 openTheard">Urodziny rodziny</h1>
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
         <div class="divider-custom-icon">
@@ -21,7 +21,7 @@
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
-                            @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; color:white; padding-top:55px;" })
                             @Html.TextBox("familyBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", required = string.Empty })
                             @Html.TextBox("familyBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
@@ -48,7 +48,7 @@
 </div>
 
 <div class="d-flex align-items-center flex-column portfolio mb-0 bg-white">
-    <h1 class="masthead-heading text-uppercase mb-0" style="color:black;" id="Opener">Urodziny przyjaciół</h1>
+    <h1 class="masthead-heading text-uppercase mb-0 openTheard" style="color:black;">Urodziny przyjaciół</h1>
     <div class="divider-custom">
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon">
@@ -67,7 +67,7 @@
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
-                            @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; padding-top:55px;" })
                             @Html.TextBox("friendBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", required = string.Empty })
                             @Html.TextBox("friendBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
@@ -94,7 +94,7 @@
 </div>
 
 <div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
-    <h1 class="masthead-heading text-uppercase mb-0" id="Opener">Urodziny innych</h1>
+    <h1 class="masthead-heading text-uppercase mb-0 openTheard">Urodziny innych</h1>
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
         <div class="divider-custom-icon">
@@ -114,7 +114,7 @@
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
-                            @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; color:white; padding-top:55px;" })
                             @Html.TextBox("otherBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", required = string.Empty })
                             @Html.TextBox("otherBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>

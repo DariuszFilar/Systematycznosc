@@ -247,7 +247,7 @@
                 colordescription = "black";
             };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.FirstGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard">@Model.GoalViewModel.FirstGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -255,7 +255,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FirstGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="goalSubTheard">@Model.GoalViewModel.FirstGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -295,7 +295,7 @@
                 colordescription = "black";
             };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.SecondGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard">@Model.GoalViewModel.SecondGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -303,7 +303,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SecondGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="goalSubTheard">@Model.GoalViewModel.SecondGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -343,7 +343,7 @@
                 colordescription = "black";
             };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.ThirdGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard">@Model.GoalViewModel.ThirdGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -351,7 +351,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.ThirdGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="goalSubTheard">@Model.GoalViewModel.ThirdGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "ThirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ThirdGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -391,7 +391,7 @@
                 colordescription = "black";
             };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.FourthGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard">@Model.GoalViewModel.FourthGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -399,7 +399,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FourthGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="goalSubTheard">@Model.GoalViewModel.FourthGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FourthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FourthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -439,7 +439,7 @@
                 colordescription = "black";
             };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.FifthGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard">@Model.GoalViewModel.FifthGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -447,7 +447,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.FifthGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="goalSubTheard">@Model.GoalViewModel.FifthGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FifthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FifthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -487,7 +487,7 @@
                 colordescription = "black";
             };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.SixthGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard">@Model.GoalViewModel.SixthGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -495,7 +495,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SixthGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="goalSubTheard">@Model.GoalViewModel.SixthGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SixthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SixthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -535,7 +535,7 @@
                 colordescription = "black";
             };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.SeventhGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard">@Model.GoalViewModel.SeventhGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -543,7 +543,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.SeventhGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="goalSubTheard">@Model.GoalViewModel.SeventhGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SeventhGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SeventhGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -583,7 +583,7 @@
                 colordescription = "black";
             };
             <div class=" d-flex align-items-center flex-column @color" style="padding-bottom:40px;">
-                <h1 class="masthead-heading text-uppercase mb-0 theard">@Model.GoalViewModel.EightGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard">@Model.GoalViewModel.EightGoals[0].GoalName</h1>
                 <div class="divider-custom @icon">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -591,7 +591,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="padding-bottom:50px;" class="subtheard">@Model.GoalViewModel.EightGoals[0].GoalQuestion</div>
+                <div style="padding-bottom:50px;" class="goalSubTheard">@Model.GoalViewModel.EightGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "EighthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EightGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })

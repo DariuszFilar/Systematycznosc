@@ -10776,9 +10776,9 @@ footer {
 
 
 @media (max-width: 768px) {
-    #Opener {
-        padding-top: 100px !important;
-        font-size: 55px;
+    .openTheard {
+        padding-top: 150px !important;
+        font-size: 45px;
     }
 
     .theard {
@@ -10786,18 +10786,43 @@ footer {
         text-align: center;
         font-size: 45px;
     }
+
+    .goalTheard {
+        text-align: center;
+        font-size: 37px !important;
+        padding-top: 55px;
+        align-items: center;
+    }
+
+    .goalSubTheard {
+        font-size: 32px;
+        text-align: center;
+    }
 }
 
 @media (min-width: 768px) {
-    #Opener {
-        padding-top: 200px !important;
-        font-size: 55px;
+    .openTheard {
+        padding-top: 150px !important;
+        font-size: 45px;
     }
 
     .theard {
         overflow-wrap: break-word;
         text-align: center;
         font-size: 45px !important;
+    }
+
+    .goalTheard {
+        text-align: center;
+        font-size: 37px !important;
+        padding-top: 55px;
+        align-items: center;
+    }
+
+    .goalSubTheard {
+        font-size: 32px;
+        text-align: center;
+        padding-bottom: 50px
     }
 }
 
@@ -10825,12 +10850,26 @@ footer {
         text-align: center;
         font-size: 45px !important;
     }
+
+    .goalTheard {
+        text-align: center;
+        font-size: 37px !important;
+        padding-top: 55px;
+        align-items: center;
+    }
+
+    .goalSubTheard {
+        font-size: 32px;
+        text-align: center;
+        padding-bottom: 50px
+    }
 }
 
 .theard {
     text-align: center;
     font-size: 45px !important;
     padding-top: 55px;
+    align-items: center;
 }
 
 .subtheard {
@@ -10838,6 +10877,17 @@ footer {
     text-align: center;
 }
 
+.goalTheard {
+    text-align: center;
+    font-size: 37px !important;
+    padding-top: 55px;
+    align-items: center;
+}
+.goalSubTheard {
+    font-size: 32px;
+    text-align: center;
+    padding-bottom: 50px
+}
 .saveButtonDiv {
     padding-bottom: 3px;
     padding-left: 3px;

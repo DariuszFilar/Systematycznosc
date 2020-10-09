@@ -9,7 +9,7 @@
 }
 
 <div class=" d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
-    <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; text-align:center;" id="Opener">Cele dzienne</h1>
+    <h1 class="masthead-heading text-uppercase mb-0 openTheard">Cele dzienne</h1>
     <div class="divider-custom divider-light" style="">
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon">
@@ -28,9 +28,9 @@
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
-                            @Html.Label("Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.Label("Nazwa celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; color: white;" })
                             @Html.TextBox("goalName", null, new { placeholder = "Tu wpisz pytanie odnośnie celu", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "relationshipValue", required = string.Empty })
-                            @Html.Label("Pytanie odnośnie celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;" })
+                            @Html.Label("Pytanie odnośnie celu:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none;color: white" })
                             @Html.TextBox("goalQuestion", null, new { placeholder = "Tu wpisz pytanie odnośnie celu", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", name = "relationshipValue", required = string.Empty })
                         </div>
                     </div>
@@ -39,9 +39,12 @@
                     <div class="saveButtonDiv">
                         <button style="font-size:20px; color:white;" type="submit" value="newGoal" class="btn btn-xl btn-outline-info btn-secondary" id="saveButton" name="savebutton">Zapisz</button>
                     </div>
+                    @if (@Model.FirstGoals.Count() > 2)
+                    {
                     <div class="saveButtonDiv" id="panel2">
                         @Html.ActionLink("Panel edycyjny", "Goaledit", "Goal", null, new { @class = "btn btn-xl btn-outline-info btn-secondary", style = "font-size:20px; color:white;" })
                     </div>
+                    }
                 </div>
             }
         }
@@ -59,7 +62,7 @@
     {
         if (Model.FirstGoals[0].GoalName != null)
         {
-           colornumber++;
+            colornumber++;
             if ((colornumber % 2) == 0)
             {
                 color = "bg-white";
@@ -73,7 +76,7 @@
                 colordescription = "white";
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center;">@Model.FirstGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.FirstGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
@@ -82,7 +85,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px; color:@colordescription">@Model.FirstGoals[0].GoalQuestion</div>
+                <div class="goalSubTheard" style="color:@colordescription">@Model.FirstGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -110,7 +113,7 @@
 
         if (Model.SecondGoals[0].GoalName != null)
         {
-           colornumber++;
+            colornumber++;
             if ((colornumber % 2) == 0)
             {
                 color = "bg-white";
@@ -124,7 +127,7 @@
                 colordescription = "white";
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription">@Model.SecondGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.SecondGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
@@ -133,7 +136,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px; color:@colordescription">@Model.SecondGoals[0].GoalQuestion</div>
+                <div class="goalSubTheard" style="color:@colordescription">@Model.SecondGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -160,7 +163,7 @@
     {
         if (Model.ThirdGoals[0].GoalName != null)
         {
-           colornumber++;
+            colornumber++;
             if ((colornumber % 2) == 0)
             {
                 color = "bg-white";
@@ -174,7 +177,7 @@
                 colordescription = "white";
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription">@Model.ThirdGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.ThirdGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
@@ -183,7 +186,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px; color:@colordescription">@Model.ThirdGoals[0].GoalQuestion</div>
+                <div class="goalSubTheard" style="color:@colordescription;">@Model.ThirdGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "ThirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ThirdGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -224,7 +227,7 @@
                 colordescription = "white";
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription">@Model.FourthGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.FourthGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
@@ -233,7 +236,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px; color:@colordescription">@Model.FourthGoals[0].GoalQuestion</div>
+                <div class="goalSubTheard" style="color:@colordescription;">@Model.FourthGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FourthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FourthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -274,7 +277,7 @@
                 colordescription = "white";
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription">@Model.FifthGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.FifthGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
@@ -283,7 +286,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px; color:@colordescription">@Model.FifthGoals[0].GoalQuestion</div>
+                <div class="goalSubTheard" style="color:@colordescription;">@Model.FifthGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FifthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FifthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -333,7 +336,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px; color:@colordescription">@Model.SixthGoals[0].GoalQuestion</div>
+                <div class="goalSubTheard" style="color:@colordescription;">@Model.SixthGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SixthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SixthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -360,7 +363,7 @@
     {
         if (Model.SeventhGoals[0].GoalName != null)
         {
-             colornumber++;
+            colornumber++;
             if ((colornumber % 2) == 0)
             {
                 color = "bg-white";
@@ -383,7 +386,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px; color:@colordescription">@Model.SeventhGoals[0].GoalQuestion</div>
+                <div class="goalSubTheard" style="color:@colordescription;">@Model.SeventhGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SeventhGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SeventhGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -424,7 +427,7 @@
                 colordescription = "white";
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
-                <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription">@Model.EightGoals[0].GoalName</h1>
+                <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.EightGoals[0].GoalName</h1>
                 <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
@@ -433,7 +436,7 @@
                     </div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <div style="font-size:37px; text-align:center; padding-bottom:50px; color:@colordescription">@Model.EightGoals[0].GoalQuestion</div>
+                <div class="goalSubTheard" style="color:@colordescription;">@Model.EightGoals[0].GoalQuestion</div>
                 @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "EightGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EightGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
