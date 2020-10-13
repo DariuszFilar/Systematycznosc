@@ -79,9 +79,9 @@ namespace Systematycznosc.Controllers
             };
 
             if (todoValue != null)
-                return PartialView("_AddTodo", model);
+                return PartialView("_TodoTable", model);
             if (importantEventName != null && importantEventDate != null)
-                return PartialView("_AddImportantEvent", model);
+                return PartialView("_ImportantEventTable", model);
             else
                 return View();
         }

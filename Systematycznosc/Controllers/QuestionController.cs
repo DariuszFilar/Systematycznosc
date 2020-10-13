@@ -76,9 +76,9 @@ namespace Systematycznosc.Controllers
             };
 
             if (morningQuestionValue != null)
-                return PartialView("_AddMorningQuestion", model);
+                return PartialView("_MorningQuestionTable", model);
             if (eveningQuestionValue != null)
-                return PartialView("_AddEveningQuestion", model);
+                return PartialView("_EveningQuestionTable", model);
             else
                 return View();
         }

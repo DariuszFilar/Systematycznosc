@@ -1,6 +1,5 @@
 ﻿@model Systematycznosc.ViewModels.GoalViewModel
 
-
 @{
     string icon = "";
     string color = "";
@@ -18,7 +17,6 @@
         <div class="divider-custom-line"></div>
     </div>
     <div style="font-size:37px; text-align:center; padding-bottom:50px;">Warto je spełniać</div>
-
     @{
         if (Model.EightGoals.Count() == 0)
         {
@@ -77,7 +75,6 @@
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
                 <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.FirstGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -86,7 +83,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="goalSubTheard" style="color:@colordescription">@Model.FirstGoals[0].GoalQuestion</div>
-                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FirstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FirstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "firstGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "firstGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -101,7 +98,7 @@
                         <button style="font-size:40px;" type="submit" value="firstGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
-                <div id="FirstGoalTable">@{Html.RenderPartial("_FirstGoalTable", Model);}</div>
+                <div id="firstGoalTable">@{Html.RenderPartial("_FirstGoalTable", Model);}</div>
             </div>
         }
     }
@@ -110,7 +107,6 @@
 @{
     if (Model.SecondGoals.Any(x => x.GoalName != null))
     {
-
         if (Model.SecondGoals[0].GoalName != null)
         {
             colornumber++;
@@ -128,7 +124,6 @@
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
                 <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.SecondGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -137,7 +132,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="goalSubTheard" style="color:@colordescription">@Model.SecondGoals[0].GoalQuestion</div>
-                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SecondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SecondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "secondGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "secondGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -152,7 +147,7 @@
                         <button style="font-size:40px;" type="submit" value="secondGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
-                <div id="SecondGoalTable">@{Html.RenderPartial("_SecondGoalTable", Model);}</div>
+                <div id="secondGoalTable">@{Html.RenderPartial("_SecondGoalTable", Model);}</div>
             </div>
         }
     }
@@ -178,7 +173,6 @@
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
                 <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.ThirdGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -187,7 +181,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="goalSubTheard" style="color:@colordescription;">@Model.ThirdGoals[0].GoalQuestion</div>
-                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "ThirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "ThirdGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "thirdGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "thirdGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -202,7 +196,7 @@
                         <button style="font-size:40px;" type="submit" value="thirdGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
-                <div id="ThirdGoalTable">@{Html.RenderPartial("_ThirdGoalTable", Model);}</div>
+                <div id="thirdGoalTable">@{Html.RenderPartial("_ThirdGoalTable", Model);}</div>
             </div>
         }
     }
@@ -228,7 +222,6 @@
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
                 <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.FourthGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -237,7 +230,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="goalSubTheard" style="color:@colordescription;">@Model.FourthGoals[0].GoalQuestion</div>
-                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FourthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FourthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "fourthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "fourthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -252,7 +245,7 @@
                         <button style="font-size:40px;" type="submit" value="fourthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
-                <div id="FourthGoalTable">@{Html.RenderPartial("_FourthGoalTable", Model);}</div>
+                <div id="fourthGoalTable">@{Html.RenderPartial("_FourthGoalTable", Model);}</div>
             </div>
         }
     }
@@ -278,7 +271,6 @@
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
                 <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.FifthGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -287,7 +279,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="goalSubTheard" style="color:@colordescription;">@Model.FifthGoals[0].GoalQuestion</div>
-                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "FifthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "FifthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "fifthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "fifthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -302,7 +294,7 @@
                         <button style="font-size:40px;" type="submit" value="fifthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
-                <div id="FifthGoalTable">@{Html.RenderPartial("_FifthGoalTable", Model);}</div>
+                <div id="fifthGoalTable">@{Html.RenderPartial("_FifthGoalTable", Model);}</div>
             </div>
         }
     }
@@ -328,7 +320,6 @@
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
                 <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription">@Model.SixthGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -337,7 +328,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="goalSubTheard" style="color:@colordescription;">@Model.SixthGoals[0].GoalQuestion</div>
-                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SixthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SixthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "sixthGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "sixthGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -352,7 +343,7 @@
                         <button style="font-size:40px;" type="submit" value="sixthGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
-                <div id="SixthGoalTable">@{Html.RenderPartial("_SixthGoalTable", Model);}</div>
+                <div id="sixthGoalTable">@{Html.RenderPartial("_SixthGoalTable", Model);}</div>
             </div>
         }
     }
@@ -378,7 +369,6 @@
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
                 <h1 class="masthead-heading text-uppercase mb-0" style="font-size:55px; padding-top:55px;text-align:center; color:@colordescription">@Model.SeventhGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -387,7 +377,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="goalSubTheard" style="color:@colordescription;">@Model.SeventhGoals[0].GoalQuestion</div>
-                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "SeventhGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "SeventhGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "seventhGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "seventhGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -402,7 +392,7 @@
                         <button style="font-size:40px;" type="submit" value="seventhGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
-                <div id="SeventhGoalTable">@{Html.RenderPartial("_SeventhGoalTable", Model);}</div>
+                <div id="seventhGoalTable">@{Html.RenderPartial("_SeventhGoalTable", Model);}</div>
             </div>
         }
     }
@@ -428,7 +418,6 @@
             };
             <div class=" d-flex align-items-center flex-column @color pb-5">
                 <h1 class="masthead-heading text-uppercase mb-0 goalTheard" style="color:@colordescription">@Model.EightGoals[0].GoalName</h1>
-                <!-- Icon Divider -->
                 <div class="divider-custom @icon" style="">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon">
@@ -437,7 +426,7 @@
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="goalSubTheard" style="color:@colordescription;">@Model.EightGoals[0].GoalQuestion</div>
-                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "EightGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "EightGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
+                @using (Ajax.BeginForm("Index", "Goal", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "eightGoalTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "eightGoalTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px" }))
                 {
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div>
@@ -452,7 +441,7 @@
                         <button style="font-size:40px;" type="submit" value="eightGoal" class="btn btn-success" name="saveButton" id="saveButton">Zapisz</button>
                     </div>
                 }
-                <div id="EightGoalTable">@{Html.RenderPartial("_EightGoalTable", Model);}</div>
+                <div id="eightGoalTable">@{Html.RenderPartial("_EightGoalTable", Model);}</div>
             </div>
         }
     }
@@ -461,11 +450,6 @@
 @section Scripts
 {
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-    <script src="//cdn.datatables.net/plug-ins/1.10.11/sorting/date-eu.js" type="text/javascript"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
-    <script src="//cdn.datatables.net/plug-ins/1.10.12/sorting/datetime-moment.js"></script>
-    <script src="//cdn.datatables.net/plug-ins/1.10.11/sorting/date-eu.js"></script>
     <script src="~/scripts/jquery-1.10.2.js"></script>
     <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
 }

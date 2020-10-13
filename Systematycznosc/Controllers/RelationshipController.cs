@@ -51,7 +51,7 @@ namespace Systematycznosc.Controllers
                 ModelState.Clear();
                 var relationships = _context.Relationships.Where(x => x.UserProfileId == userId);
                 RelationshipViewModel model = new RelationshipViewModel(relationships);
-                return PartialView("_Addrelationship", model);
+                return PartialView("_RelationshipTable", model);
             }
 
             else
@@ -59,7 +59,7 @@ namespace Systematycznosc.Controllers
                 ModelState.Clear();
                 var relationships = _context.Relationships.Where(x => x.UserProfileId == userId);
                 RelationshipViewModel model = new RelationshipViewModel(relationships);
-                return PartialView("_Addrelationship", model);
+                return PartialView("_RelationshipTable", model);
             }
         }
 

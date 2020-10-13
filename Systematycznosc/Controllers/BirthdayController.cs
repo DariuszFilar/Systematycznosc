@@ -97,11 +97,11 @@ namespace Systematycznosc.Controllers
             };
             
             if (familyBirthdayName != null && familyBirthdayDate != null)
-                return PartialView("_AddFamilyBirthday", model);
+                return PartialView("_FamilyBirthdayTable", model);
             if (friendBirthdayName != null && friendBirthdayDate != null)
-                return PartialView("_AddFriendBirthday", model);
+                return PartialView("_FriendBirthdayTable", model);
             if (otherBirthdayName != null && otherBirthdayDate != null)
-                return PartialView("_AddOtherBirthday", model);
+                return PartialView("_OtherBirthdayTable", model);
             else
                 return View();
         }

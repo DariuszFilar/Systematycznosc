@@ -2,7 +2,9 @@
 @model Systematycznosc.ViewModels.BirthdayViewModel
 
 <div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
+
     <h1 class="masthead-heading text-uppercase mb-0 openTheard">Urodziny rodziny</h1>
+
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
         <div class="divider-custom-icon">
@@ -11,11 +13,11 @@
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
 
-    <div id="addFamilyBirthday">@{Html.RenderPartial("_AddFamilyBirthday", Model);}</div>
+    <div id="familyBirthdayTable">@{Html.RenderPartial("_FamilyBirthdayTable", Model);}</div>
 
     @{ if (Model.FamilyBirthdays.Count() < 12)
         {
-            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addFamilyBirthday" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addFamilyBirthday" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFamilyBirthday" }))
+            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "familyBirthdayTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "familyBirthdayTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFamilyBirthday" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 {
@@ -48,7 +50,9 @@
 </div>
 
 <div class="d-flex align-items-center flex-column portfolio mb-0 bg-white">
+
     <h1 class="masthead-heading text-uppercase mb-0 openTheard" style="color:black;">Urodziny przyjaciół</h1>
+
     <div class="divider-custom">
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon">
@@ -57,11 +61,11 @@
         <div class="divider-custom-line"></div>
     </div>
 
-    <div id="addFriendBirthday">@{Html.RenderPartial("_AddFriendBirthday", Model);}</div>
+    <div id="friendBirthdayTable">@{Html.RenderPartial("_FriendBirthdayTable", Model);}</div>
 
     @{ if (Model.FriendsBirthdays.Count() < 12)
         {
-            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "_AddFriendBirthday" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addFriendBirthday" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFriendBirthday" }))
+            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "friendBirthdayTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "friendBirthdayTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFriendBirthday" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 {
@@ -94,7 +98,9 @@
 </div>
 
 <div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
+
     <h1 class="masthead-heading text-uppercase mb-0 openTheard">Urodziny innych</h1>
+
     <div class="divider-custom">
         <div class="divider-custom-line" style="background-color:white!important;"></div>
         <div class="divider-custom-icon">
@@ -104,11 +110,11 @@
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
 
-    <div id="addOtherBirthday">@{Html.RenderPartial("_AddOtherBirthday", Model);}</div>
+    <div id="otherBirthdayTable">@{Html.RenderPartial("_OtherBirthdayTable", Model);}</div>
 
     @{ if (Model.OthersBirthdays.Count() < 12)
         {
-            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "addOtherBirthday" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "addOtherBirthday" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformOtherBirthday" }))
+            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "otherBirthdayTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "otherBirthdayTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformOtherBirthday" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 {
@@ -144,7 +150,9 @@
 {
     <script src="~/scripts/jquery.unobtrusive-ajax.js"></script>
 }
+
 @Scripts.Render("~/bundles/jquery")
+
 <script type="text/javascript">
     var amountOfFamilyBirthday = @Model.FamilyBirthdays.Count();
     var amountOfFriendBirthday = @Model.FriendsBirthdays.Count();
@@ -220,6 +228,5 @@
             },
         });
       });
-
 </script>
 

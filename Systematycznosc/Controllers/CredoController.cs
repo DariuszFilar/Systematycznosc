@@ -51,7 +51,7 @@ namespace Systematycznosc.Controllers
                 ModelState.Clear();
                 var credos = _context.Credoes.Where(x => x.UserProfileId == userId);
                 CredoViewModel model = new CredoViewModel(credos);
-                return PartialView("_AddCredo", model);
+                return PartialView("_CredoTable", model);
             }
 
             else
