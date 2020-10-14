@@ -371,6 +371,10 @@
     <Compile Include="Migrations\202009091212458_AddedAnotherGoals.Designer.cs">
       <DependentUpon>202009091212458_AddedAnotherGoals.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010140926330_FixDB.cs" />
+    <Compile Include="Migrations\202010140926330_FixDB.Designer.cs">
+      <DependentUpon>202010140926330_FixDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -735,6 +739,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009091212458_AddedAnotherGoals.resx">
       <DependentUpon>202009091212458_AddedAnotherGoals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010140926330_FixDB.resx">
+      <DependentUpon>202010140926330_FixDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

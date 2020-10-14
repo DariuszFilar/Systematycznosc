@@ -320,8 +320,8 @@ namespace Systematycznosc.Controllers
                 if (goals[0].GoalDate != null && goals[1].GoalDate != null && goals[2].GoalDate != null && goals[3].GoalDate != null && goals[4].GoalDate != null && goals[5].GoalDate != null &&
                goals[6].GoalDate == null && goals[5].GoalDate != DateTime.Today)
                 {
-                    goals[5].GoalDate = DateTime.Today;
-                    goals[5].GoalStatus = status;
+                    goals[6].GoalDate = DateTime.Today;
+                    goals[6].GoalStatus = status;
                 }
 
                 //Dla zajętych
