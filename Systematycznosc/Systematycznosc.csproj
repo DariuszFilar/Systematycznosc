@@ -375,6 +375,10 @@
     <Compile Include="Migrations\202010140926330_FixDB.Designer.cs">
       <DependentUpon>202010140926330_FixDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202010141025475_FixedDB1.cs" />
+    <Compile Include="Migrations\202010141025475_FixedDB1.Designer.cs">
+      <DependentUpon>202010141025475_FixedDB1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -742,6 +746,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202010140926330_FixDB.resx">
       <DependentUpon>202010140926330_FixDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010141025475_FixedDB1.resx">
+      <DependentUpon>202010141025475_FixedDB1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
