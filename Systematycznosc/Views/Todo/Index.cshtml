@@ -19,7 +19,7 @@
         <div class="divider-custom-line" style="background-color:white!important;"></div>
     </div>
     <div id="todoTable">@{Html.RenderPartial("_TodoTable", Model);}</div>
-    @{ if (Model.Todoes.Count() < 12)
+    @{ if (Model.Todoes.Count() < 16)
         {
             using (Ajax.BeginForm("Index", "Todo", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "todoTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "todoTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformTodo" }))
             {
@@ -62,7 +62,7 @@
         <div class="divider-custom-line"></div>
     </div>
     <div id="importantEventTable">@{Html.RenderPartial("_ImportantEventTable", Model);}</div>
-    @{ if (Model.ImportantEvents.Count() < 12)
+    @{ if (Model.ImportantEvents.Count() < 16)
         {
             using (Ajax.BeginForm("Index", "Todo", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "importantEventTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "importantEventTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformImportantEvent" }))
             {
@@ -108,14 +108,14 @@
     var amountOfImportantEvent = @Model.ImportantEvents.Count();
 
     $(document).ready(function () {
-        if (@Model.Todoes.Count() <= 11) {
+        if (@Model.Todoes.Count() <= 15) {
             $("#panelTodo2").hide();
         }
         if (@Model.Todoes.Count() == 0) {
             $("#panelTodo").hide();
         }
 
-        if (@Model.ImportantEvents.Count() <= 11) {
+        if (@Model.ImportantEvents.Count() <= 15) {
             $("#panelImportantEvent2").hide();
         }
         if (@Model.ImportantEvents.Count() == 0) {
@@ -127,7 +127,7 @@
         $.ajax({
             success: function (data) {
                 amountOfTodo++;
-                if (amountOfTodo > 11) {
+                if (amountOfTodo > 15) {
                     $("#addformTodo").html("Osiągnięto maksymalną ilość rzeczy do zrobienia, wejdź w opcje by edytować");
                     $("#panelTodo2").show();
                 }
@@ -143,7 +143,7 @@
             success: function (data) {
                 amountOfImportantEvent++;
 
-                if (amountOfImportantEvent > 11) {
+                if (amountOfImportantEvent > 15) {
                     $("#addformImportantEvent").html("Osiągnięto maksymalną ilość ważnych wydarzeń, wejdź w opcje by edytować");
                     $("#panelImportantEvent2").show();
                 }

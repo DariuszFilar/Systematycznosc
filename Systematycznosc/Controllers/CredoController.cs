@@ -37,7 +37,7 @@ namespace Systematycznosc.Controllers
         public ActionResult Index(string credoValue)
         {
             var userId = User.Identity.GetUserId();
-            if (_context.Credoes.Where(x => x.UserProfileId == userId).Count() < 12)
+            if (_context.Credoes.Where(x => x.UserProfileId == userId).Count() < 16)
             {
                 var credo = new Credo
                 {

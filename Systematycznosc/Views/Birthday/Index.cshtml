@@ -15,16 +15,24 @@
 
     <div id="familyBirthdayTable">@{Html.RenderPartial("_FamilyBirthdayTable", Model);}</div>
 
-    @{ if (Model.FamilyBirthdays.Count() < 12)
+    @{ if (Model.FamilyBirthdays.Count() < 16)
         {
-            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "familyBirthdayTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "familyBirthdayTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFamilyBirthday" }))
+            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "familyBirthdayTable" },
+                new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "familyBirthdayTable" },
+                new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFamilyBirthday" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
                             @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; color:white; padding-top:55px;" })
-                            @Html.TextBox("familyBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", required = string.Empty })
+                            @Html.TextBox("familyBirthdayName", null, new
+                            {
+                                placeholder = "Tu wpisz imię oraz nazwisko",
+                                @class = "form-control",
+                                style = "float:none!important; display:inline-block; font-size:25px;",
+                                required = string.Empty
+                            })
                             @Html.TextBox("familyBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
                     </div>
@@ -63,16 +71,24 @@
 
     <div id="friendBirthdayTable">@{Html.RenderPartial("_FriendBirthdayTable", Model);}</div>
 
-    @{ if (Model.FriendsBirthdays.Count() < 12)
+    @{ if (Model.FriendsBirthdays.Count() < 16)
         {
-            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "friendBirthdayTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "friendBirthdayTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFriendBirthday" }))
+            using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "friendBirthdayTable" },
+                new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "friendBirthdayTable" },
+                new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformFriendBirthday" }))
             {
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 {
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
                             @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; padding-top:55px;" })
-                            @Html.TextBox("friendBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", required = string.Empty })
+                            @Html.TextBox("friendBirthdayName", null, new
+                            {
+                                placeholder = "Tu wpisz imię oraz nazwisko",
+                                @class = "form-control",
+                                style = "float:none!important; display:inline-block; font-size:25px;",
+                                required = string.Empty
+                            })
                             @Html.TextBox("friendBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
                     </div>
@@ -112,7 +128,7 @@
 
     <div id="otherBirthdayTable">@{Html.RenderPartial("_OtherBirthdayTable", Model);}</div>
 
-    @{ if (Model.OthersBirthdays.Count() < 12)
+    @{ if (Model.OthersBirthdays.Count() < 16)
         {
             using (Ajax.BeginForm("Index", "Birthday", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "otherBirthdayTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "otherBirthdayTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformOtherBirthday" }))
             {
@@ -121,7 +137,13 @@
                     <div class="form-group">
                         <div class="col-md-10" style="margin-left: auto; margin-right: auto; float: none!important;">
                             @Html.Label("Imie i nazwisko:", new { @class = "control-label", style = "margin-left:auto; margin-right:auto; display:inline-block; float:none; color:white; padding-top:55px;" })
-                            @Html.TextBox("otherBirthdayName", null, new { placeholder = "Tu wpisz imię oraz nazwisko", @class = "form-control", style = "float:none!important; display:inline-block; font-size:25px;", required = string.Empty })
+                            @Html.TextBox("otherBirthdayName", null, new
+                            {
+                                placeholder = "Tu wpisz imię oraz nazwisko",
+                                @class = "form-control",
+                                style = "float:none!important; display:inline-block; font-size:25px;",
+                                required = string.Empty
+                            })
                             @Html.TextBox("otherBirthdayDate", null, new { @type = "date", @class = " datepicker", @style = "font-size:25px; margin-top:5px", required = string.Empty })
                         </div>
                     </div>
@@ -159,21 +181,21 @@
     var amountOfOtherBirthday = @Model.OthersBirthdays.Count();
 
     $(document).ready(function () {
-        if (@Model.FamilyBirthdays.Count() <= 11) {
+        if (@Model.FamilyBirthdays.Count() <= 15) {
             $("#panelFamilyBirthay2").hide();
         }
         if (@Model.FamilyBirthdays.Count() == 0) {
             $("#panelFamilyBirthay").hide();
         }
 
-         if (@Model.FriendsBirthdays.Count() <= 11) {
+         if (@Model.FriendsBirthdays.Count() <= 15) {
             $("#panelFriendBirthay2").hide();
         }
         if (@Model.FriendsBirthdays.Count() == 0) {
             $("#panelFriendBirthay").hide();
         }
 
-        if (@Model.OthersBirthdays.Count() <= 11) {
+        if (@Model.OthersBirthdays.Count() <= 15) {
             $("#panelOtherBirthay2").hide();
         }
         if (@Model.OthersBirthdays.Count() == 0) {
@@ -186,7 +208,7 @@
             success: function (data) {
                 amountOfFamilyBirthday++;
 
-                if (amountOfFamilyBirthday > 11) {
+                if (amountOfFamilyBirthday > 15) {
                     $("#addformFamilyBirthday").html("Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować");
                     $("#panelFamilyBirthay2").show();
                 }
@@ -202,7 +224,7 @@
             success: function (data) {
                 amountOfFriendBirthday++;
 
-                if (amountOfFriendBirthday > 11) {
+                if (amountOfFriendBirthday > 15) {
                     $("#addformFriendBirthday").html("Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować");
                     $("#panelFriendBirthay2").show();
                 }
@@ -218,7 +240,7 @@
             success: function (data) {
                 amountOfOtherBirthday++;
 
-                if (amountOfOtherBirthday > 11) {
+                if (amountOfOtherBirthday > 15) {
                     $("#addformOtherBirthday").html("Osiągnięto maksymalną ilość osób, wejdź w opcje by edytować");
                     $("#panelOtherBirthay2").show();
                 }

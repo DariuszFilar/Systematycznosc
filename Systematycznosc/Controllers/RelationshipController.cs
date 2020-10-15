@@ -37,7 +37,7 @@ namespace Systematycznosc.Controllers
         {
             var userId = User.Identity.GetUserId();
            
-            if (_context.Relationships.Where(x => x.UserProfileId == userId).Count() < 12)
+            if (_context.Relationships.Where(x => x.UserProfileId == userId).Count() < 16)
             {
                 var relationship = new Relationship
                 {

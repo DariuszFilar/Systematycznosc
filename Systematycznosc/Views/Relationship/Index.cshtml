@@ -15,7 +15,7 @@
 
     <div id="relationshipTable">@{Html.RenderPartial("_RelationshipTable", Model);}</div>
 
-    @{ if (Model.Relationships.Count() < 12)
+    @{ if (Model.Relationships.Count() < 16)
         {
             using (Ajax.BeginForm("Index", "Relationship", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "relationshipTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "relationshipTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addform" }))
             {
@@ -58,7 +58,7 @@
     var amountOfRelationship = @Model.Relationships.Count();
 
     $(document).ready(function () {
-        if (@Model.Relationships.Count() <= 11) {
+        if (@Model.Relationships.Count() <= 15) {
             $("#panel").hide();
         }
          if (@Model.Relationships.Count() == 0) {
@@ -70,7 +70,7 @@
         $.ajax({
             success: function (data) {
                 amountOfRelationship++;
-                if (amountOfRelationship > 11) {
+                if (amountOfRelationship > 15) {
                     $("#addform").html("Osiągnięto maksymalną ilość zasad związkowych, wejdź w opcje by edytować");
                     $("#panel").show();
                 }

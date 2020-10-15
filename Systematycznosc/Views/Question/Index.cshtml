@@ -21,7 +21,7 @@
 
     <div id="morningQuestionTable">@{Html.RenderPartial("_MorningQuestionTable", Model);}</div>
 
-    @{ if (Model.MorningQuestions.Count() < 12)
+    @{ if (Model.MorningQuestions.Count() < 16)
         {
             using (Ajax.BeginForm("Index", "Question", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "morningQuestionTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "morningQuestionTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformMorning" }))
             {
@@ -68,7 +68,7 @@
 
     <div id="eveningQuestionTable">@{Html.RenderPartial("_EveningQuestionTable", Model);}</div>
 
-    @{ if (Model.EveningQuestions.Count() < 12)
+    @{ if (Model.EveningQuestions.Count() < 16)
         {
             using (Ajax.BeginForm("Index", "Question", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "eveningQuestionTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "eveningQuestionTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addformEvening" }))
             {
@@ -112,14 +112,14 @@
     var amountOfEveningQuestions = @Model.EveningQuestions.Count();
 
     $(document).ready(function () {
-        if (@Model.MorningQuestions.Count() <= 11) {
+        if (@Model.MorningQuestions.Count() <= 15) {
             $("#panelMorning2").hide();
         }
          if (@Model.MorningQuestions.Count() == 0) {
             $("#panelMorning").hide();
         }
 
-        if (@Model.EveningQuestions.Count() <= 11) {
+        if (@Model.EveningQuestions.Count() <= 15) {
             $("#panelEvening2").hide();
         }
          if (@Model.EveningQuestions.Count() == 0) {
@@ -131,7 +131,7 @@
         $.ajax({
             success: function (data) {
                 amountOfMorningQuestions++;
-                if (amountOfMorningQuestions > 11) {
+                if (amountOfMorningQuestions > 15) {
                     $("#addformMorning").html("Osiągnięto maksymalną ilość pytań porannych, wejdź w opcje by edytować");
                     $("#panelMorning2").show();
                 }
@@ -147,7 +147,7 @@
             success: function (data) {
                 amountOfEveningQuestions++;
 
-                if (amountOfEveningQuestions > 11) {
+                if (amountOfEveningQuestions > 15) {
                     $("#addformEvening").html("Osiągnięto maksymalną ilość pytań wieczornych, wejdź w opcje by edytować");
                     $("#panelEvening2").show();
                 }

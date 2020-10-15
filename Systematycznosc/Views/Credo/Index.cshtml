@@ -15,7 +15,7 @@
 
     <div id="credoTable">@{Html.RenderPartial("_CredoTable", Model);}</div>
 
-    @{ if (Model.Credos.Count() < 12)
+    @{ if (Model.Credos.Count() < 16)
         {
             using (Ajax.BeginForm("Index", "Credo", new { ReturnUrl = ViewBag.ReturnUrl, UpdateTargetId = "credoTable" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "credoTable" }, new { @class = "form-horizontal col-md-11 col-s-5 col-lg-8", role = "form", style = " text-align: center; color:black; font-size:25px", id = "addform" }))
             {
@@ -59,7 +59,7 @@
     var amountOfCredo = @Model.Credos.Count();
 
     $(document).ready(function () {
-        if (@Model.Credos.Count() <= 11) {
+        if (@Model.Credos.Count() <= 15) {
             $("#panel").hide();
         }
          if (@Model.Credos.Count() == 0) {
@@ -71,7 +71,7 @@
         $.ajax({
             success: function (data) {
                 amountOfCredo++;
-                if (amountOfCredo > 11) {
+                if (amountOfCredo > 15) {
                     $("#addform").html("Osiągnięto maksymalną ilość Credo, wejdź w opcje by edytować");
                     $("#panel").show();
                 }

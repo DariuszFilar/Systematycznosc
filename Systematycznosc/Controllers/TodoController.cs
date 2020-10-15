@@ -42,7 +42,7 @@ namespace Systematycznosc.Controllers
 
             if (todoValue != null)
             {
-                if (_context.Todoes.Where(x => x.UserProfileId == userId).Count() < 12)
+                if (_context.Todoes.Where(x => x.UserProfileId == userId).Count() < 16)
                 {
                     var todo = new Todo
                     {
@@ -56,7 +56,7 @@ namespace Systematycznosc.Controllers
 
             if (importantEventName != null && importantEventDate != null)
             {
-                if (_context.ImportantEvents.Where(x => x.UserProfileId == userId).Count() < 12)
+                if (_context.ImportantEvents.Where(x => x.UserProfileId == userId).Count() < 16)
                 {
                     var importantEvent = new ImportantEvent
                     {

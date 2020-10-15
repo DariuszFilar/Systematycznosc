@@ -43,7 +43,7 @@ namespace Systematycznosc.Controllers
 
             if (familyBirthdayName != null && familyBirthdayDate != null)
             {
-                if (_context.FamilyBirthdays.Where(x => x.UserProfileId == userId).Count() < 12)
+                if (_context.FamilyBirthdays.Where(x => x.UserProfileId == userId).Count() < 16)
                 {
                     var familyBirthday = new FamilyBirthday
                     {
@@ -58,7 +58,7 @@ namespace Systematycznosc.Controllers
 
             if (friendBirthdayName != null && friendBirthdayDate != null)
             {
-                if (_context.FriendsBirthdays.Where(x => x.UserProfileId == userId).Count() < 12)
+                if (_context.FriendsBirthdays.Where(x => x.UserProfileId == userId).Count() < 16)
                 {
                     var friendBirthday = new FriendBirthday
                     {
@@ -73,7 +73,7 @@ namespace Systematycznosc.Controllers
 
             if (otherBirthdayName != null && otherBirthdayDate != null)
             {
-                if (_context.OthersBirthdays.Where(x => x.UserProfileId == userId).Count() < 12)
+                if (_context.OthersBirthdays.Where(x => x.UserProfileId == userId).Count() < 16)
                 {
                     var otherBirthday = new OtherBirthday
                     {

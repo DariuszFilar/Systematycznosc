@@ -3,47 +3,49 @@
 @using Microsoft.AspNet.Identity
 
 @{
-    Layout = "~/Views/Shared/EmptyPage.cshtml";
+    Layout = "~/Views/Shared/LoginRegisterPage.cshtml";
 }
 
 
-<header class=" text-white text-center">
-    <div class=" d-flex align-items-center flex-column">
+    <div class="d-flex align-items-center flex-column portfolio bg-primary text-white mb-0">
+
         <h1 class="masthead-heading text-uppercase mb-0 openTheard">Logowanie</h1>
-        <div class="divider-custom " style="">
-            <div class="divider-custom-line" style="background-color:white;"></div>
-            <div class="divider-custom-icon">
-                <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white;"></i>
+
+            <div class="divider-custom ">
+                <div class="divider-custom-line" style="background-color:white;"></div>
+                <div class="divider-custom-icon">
+                    <i class="glyphicon glyphicon-star" style="font-size: 55px; color:white;"></i>
+                </div>
+                <div class="divider-custom-line" style="background-color:white;"></div>
             </div>
-            <div class="divider-custom-line" style="background-color:white;"></div>
-        </div>
-        <div class="subtheard">Witaj na stronie</div>
-        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal pb-5", role = "form", id = "", style = "padding-top:5px;" }))
-        {
-            @Html.AntiForgeryToken()
-            <div id="container">
-                <form>
-                    @if (!Html.ViewData.ModelState.IsValid)
-                    {
-                        <div class="text-danger">
-                            Nieudana próba zalogowania.
+
+            <div class="subtheard">Witaj na stronie</div>
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal pb-5", role = "form", id = "", style = "padding-top:5px;" }))
+            {
+                @Html.AntiForgeryToken()
+                <div id="container">
+                    <form>
+                        @if (!Html.ViewData.ModelState.IsValid)
+                        {
+                            <div class="text-danger">
+                                Nieudana próba zalogowania.
+                            </div>
+                        }
+                        @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
+                        @Html.ValidationMessageFor(model => model.Email, null, new { style = "color:red" })
+                        @Html.PasswordFor(m => m.Password, new { id = "customerEmailId", @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
+                        @Html.ValidationMessageFor(model => model.Password, null, new { style = "color:red" })
+                        <div>
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe, new { @type = "", style = "color:black;" })
+                            @Html.ActionLink("Zarejestruj", "Register", "Account", new { style = "color:black;" })
                         </div>
-                    }
-                    @Html.TextBoxFor(m => m.Email, new { @type = "text", placeholder = "E-mail", onfocus = "this.placeholder=''", onblur = "this.placeholder='E-mail'" })
-                    @Html.ValidationMessageFor(model => model.Email, null, new { style = "color:red" })
-                    @Html.PasswordFor(m => m.Password, new { id = "customerEmailId", @type = "password", placeholder = "hasło", onfocus = "this.placeholder=''", onblur = "this.placeholder='hasło'" })
-                    @Html.ValidationMessageFor(model => model.Password, null, new { style = "color:red" })
-                    <div>
-                        @Html.CheckBoxFor(m => m.RememberMe)
-                        @Html.LabelFor(m => m.RememberMe, new { @type = "", style = "color:black;" })
-                        @Html.ActionLink("Zarejestruj", "Register", "Account", new { style = "color:black;" })
-                    </div>
-                    <div class="text-center mt-4">
-                        <input type="submit" value="Zaloguj się" class="btn btn-xl btn-outline-dark">
-                    </div>
-                </form>
-            </div>
-        }
-    </div>
-</header>
+                        <div class="text-center mt-4">
+                            <input type="submit" value="Zaloguj się" class="btn btn-xl btn-outline-dark">
+                        </div>
+                    </form>
+                </div>
+            }
+        </div>
+        </header>
 

@@ -15,7 +15,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var friendBirthday in Model.FriendsBirthdays.Where(x => x.FriendBirthdayName != null && x.FriendBirthdayDate != null).OrderBy(x => x.FriendBirthdayDate))
+                        @foreach (var friendBirthday in Model.FriendsBirthdays.Where(x => x.FriendBirthdayName != null && x.FriendBirthdayDate != null)
+                            .OrderBy(x => x.FriendBirthdayDate.Value.ToString("MM/dd/yyyy")))
                         {
                             <tr>
 

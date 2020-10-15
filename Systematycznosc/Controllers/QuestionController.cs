@@ -42,7 +42,7 @@ namespace Systematycznosc.Controllers
             var userId = User.Identity.GetUserId();
             if (morningQuestionValue != null)
             {
-                if (_context.MorningQuestions.Where(x => x.UserProfileId == userId).Count() < 12)
+                if (_context.MorningQuestions.Where(x => x.UserProfileId == userId).Count() < 15)
                 {
                     var morningQuestion = new MorningQuestion
                     {
@@ -55,7 +55,7 @@ namespace Systematycznosc.Controllers
             }
             if (eveningQuestionValue != null)
             {
-                if (_context.EveningQuestions.Where(x => x.UserProfileId == userId).Count() < 12)
+                if (_context.EveningQuestions.Where(x => x.UserProfileId == userId).Count() < 15)
                 {
                     var eveningQuestion = new EveningQuestion
                     {
