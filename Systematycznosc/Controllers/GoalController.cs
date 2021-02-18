@@ -385,50 +385,50 @@ namespace Systematycznosc.Controllers
             {
                var goal = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.FirstGoals[0].GoalName;
-                goal[0].GoalQuestion = model.FirstGoals[0].GoalQuestion;
+                goal[0].GoalQuestion = model.FirstGoals[0].GoalName;
             }
 
             if (saveButton == "secondGoal")
             {
                 var goal = _context.SecondGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.SecondGoals[0].GoalName;
-                goal[0].GoalQuestion = model.SecondGoals[0].GoalQuestion;
+                goal[0].GoalQuestion = model.SecondGoals[0].GoalName;
             }
             if (saveButton == "thirdGoal")
             {
                 var goal = _context.ThirdGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.ThirdGoals[0].GoalName;
-                goal[0].GoalQuestion = model.ThirdGoals[0].GoalQuestion;
+                goal[0].GoalQuestion = model.ThirdGoals[0].GoalName;
             }
             if (saveButton == "fourthGoal")
             {
                 var goal = _context.FourthGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.FourthGoals[0].GoalName;
-                goal[0].GoalQuestion = model.FourthGoals[0].GoalQuestion;
+                goal[0].GoalQuestion = model.FourthGoals[0].GoalName;
             }
             if (saveButton == "fifthGoal")
             {
                 var goal = _context.FifthGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.FifthGoals[0].GoalName;
-                goal[0].GoalQuestion = model.FifthGoals[0].GoalQuestion;
+                goal[0].GoalQuestion = model.FifthGoals[0].GoalName;
             }
             if (saveButton == "sixthGoal")
             {
                 var goal = _context.SixthGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.SixthGoals[0].GoalName;
-                goal[0].GoalQuestion = model.SixthGoals[0].GoalQuestion;
+                goal[0].GoalQuestion = model.SixthGoals[0].GoalName;
             }
             if (saveButton == "seventhGoal")
             {
                 var goal = _context.SeventhGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.SeventhGoals[0].GoalName;
-                goal[0].GoalQuestion = model.SeventhGoals[0].GoalQuestion;
+                goal[0].GoalQuestion = model.SeventhGoals[0].GoalName;
             }
             if (saveButton == "eighthGoal")
             {
                 var goal = _context.EighthGoals.Where(x => x.UserProfileId == userId).ToArray();
                 goal[0].GoalName = model.EightGoals[0].GoalName;
-                goal[0].GoalQuestion = model.EightGoals[0].GoalQuestion;
+                goal[0].GoalQuestion = model.EightGoals[0].GoalName;
             }
 
             model.FirstGoals = _context.FirstGoals.Where(x => x.UserProfileId == userId).ToList();
